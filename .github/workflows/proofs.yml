@@ -53,7 +53,7 @@ jobs:
           changed="$(git diff --name-only "$base" HEAD)"
           printf 'changed files:\n%s\n' "$changed"
           if printf '%s\n' "$changed" \
-            | grep -E -q '^(formal/|\.github/workflows/proofs\.yml$)'; then
+            | grep -E '^(formal/|\.github/workflows/proofs\.yml$)' > /dev/null; then
             echo "run_formal=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_formal=false" >> "$GITHUB_OUTPUT"

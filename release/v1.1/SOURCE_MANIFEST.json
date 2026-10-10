@@ -123,8 +123,8 @@
     {
       "path": ".github/workflows/proofs.yml",
       "mode": "100644",
-      "bytes": 6969,
-      "sha256": "1d7edeb982284073ddeff1926e3160fbe73735740dbc845dee3c411c7496f270",
+      "bytes": 6978,
+      "sha256": "2e97b5c9b09b3db1cc39201dcb7a344990dd9d16e7197b972d7d8a4909a73396",
       "role": "repository-automation-or-community"
     },
     {
