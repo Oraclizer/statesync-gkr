@@ -1,0 +1,644 @@
+{
+  "vector_version": 1,
+  "hash_algorithm": "keccak256",
+  "integer_encoding": "fixed-width-big-endian",
+  "source_identity": {
+    "network_name": "zkVerify Volta",
+    "genesis_hash": "0xff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c242",
+    "runtime_spec_name": "tzkv-runtime",
+    "runtime_spec_version": 2000000,
+    "runtime_transaction_version": 1,
+    "runtime_state_version": 1,
+    "runtime_code_hash": "0xb92a5248ec0772a456d91bd7e20c078dc64bf7c4809aa3d48821eb029325e33e"
+  },
+  "authorization": {
+    "signer_set_epoch": 1,
+    "source_network_id": "0x63f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e",
+    "source_genesis_hash": "0xff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c242",
+    "source_runtime_id": "0x7f98ae91ea34aff20365f8f157636ea7b2eccd216212dca424ca4bce2b2b9a8b",
+    "verification_context_hash": "0x676acbc40b7c7b5ba646aee26dd77984104e0674391ebd9f8e70b60d84ca6660",
+    "domain_id": 2,
+    "source_block_number": 6726351,
+    "source_block_hash": "0xb995cd3981fb8013be45d89009aa360a338935e4ec9feb8e653e7d724af9206c",
+    "aggregation_id": 53668,
+    "root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+    "leaf_count": 1,
+    "authorization_nonce": 1
+  },
+  "configured_signers": [
+    "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+    "0x6813eb9362372eef6200f3b1dbc3f819671cba69",
+    "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+  ],
+  "threshold": 2,
+  "attesting_signers": [
+    "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+    "0x6813eb9362372eef6200f3b1dbc3f819671cba69"
+  ],
+  "attesting_signatures": [
+    "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b",
+    "0x927c2ddb8fe7c6c5b683b28ec064bb32bfcacbc85e7d95c62e10dc03e6fec905547b94007288034de16fd961e9c3d631b0f755805ca60433fd386a55b490992f1c"
+  ],
+  "receipt_fixture": {
+    "statement": "0xb4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+    "leaf_index": 0,
+    "merkle_path": []
+  },
+  "pfr_only_digest": "0xa5a5ed3ac2ad0b61efdebcc8f9db1a020cb20fd186e2ea3657c747cb0aec5df7",
+  "pfr_only_signer": "0x1eff47bc3a10a45d4b230b5d10e37751fe6aa718",
+  "pfr_only_signature": "0x6457db3ee18bd1c13829af54553c95862e87362a325989a42352b262169ab3734c6061fa290797f2a90c6e19f51d82259d8e52d6a60138324f770a2df170f5e71c",
+  "settlement_claim_fixture": {
+    "raw_statement": "0x01000100010001001f0000001800000000000000000000000000000000000000abde249a257cd4e6c3ed34f2749a7d8be66fd418f5a5d8595bffc956b45f0e0088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320005000000000000000000000000000000000000000000000000000000000000004cc6356134cfb0dcefee384334580a10c3f82929f64a9f8833dd47ebc2cdbf00",
+    "route_id": "0x27b40b99a41976f061e94124b84cc8c43ee4e5ed6bad2e94267057e1d375f2ef",
+    "primary_transition_id": "0x959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "source": "0x63f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e",
+    "destination_chain_id": 84532,
+    "destination_consumer": "0x0000000000000000000000000807c544d38ae7729f8798388d89be6502a1e8a8",
+    "action_kind": "membership",
+    "checkpoint": 6726351,
+    "session_id": "0xb995cd3981fb8013be45d89009aa360a338935e4ec9feb8e653e7d724af9206c",
+    "bvc_id": "0x676acbc40b7c7b5ba646aee26dd77984104e0674391ebd9f8e70b60d84ca6660",
+    "accepted_root": "0x88957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e148453200",
+    "state": "committed",
+    "signer_set_epoch": 7,
+    "issuance_height": 6726351,
+    "supersedes_record_id": null
+  },
+  "negative_cases": [
+    {
+      "id": "zero_configured_signer",
+      "initial_state": "empty",
+      "operation": "construct_policy",
+      "field": "configured_signers",
+      "value": {
+        "kind": "signer_array",
+        "data": [
+          "0x0000000000000000000000000000000000000000",
+          "0x6813eb9362372eef6200f3b1dbc3f819671cba69",
+          "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+        ]
+      },
+      "expected_error": "ZeroConfiguredSigner",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "duplicate_configured_signer",
+      "initial_state": "empty",
+      "operation": "construct_policy",
+      "field": "configured_signers",
+      "value": {
+        "kind": "signer_array",
+        "data": [
+          "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+          "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+          "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+        ]
+      },
+      "expected_error": "DuplicateConfiguredSigner",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "unsorted_configured_signers",
+      "initial_state": "empty",
+      "operation": "construct_policy",
+      "field": "configured_signers",
+      "value": {
+        "kind": "signer_array",
+        "data": [
+          "0x6813eb9362372eef6200f3b1dbc3f819671cba69",
+          "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+          "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+        ]
+      },
+      "expected_error": "ConfiguredSignersNotSorted",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "invalid_threshold",
+      "initial_state": "empty",
+      "operation": "construct_policy",
+      "field": "threshold",
+      "value": {
+        "kind": "u16",
+        "data": 4
+      },
+      "expected_error": "InvalidThreshold",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "zero_recovered_signer",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x00000000000000000000000000000000000000000000000000000000000000000dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b"
+        ]
+      },
+      "expected_error": "ZeroAttester",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "duplicate_recovered_signer",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b",
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b"
+        ]
+      },
+      "expected_error": "DuplicateAttester",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "unsorted_recovered_signers",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x927c2ddb8fe7c6c5b683b28ec064bb32bfcacbc85e7d95c62e10dc03e6fec905547b94007288034de16fd961e9c3d631b0f755805ca60433fd386a55b490992f1c",
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b"
+        ]
+      },
+      "expected_error": "AttestersNotSorted",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "nonmember_recovered_signer",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x4447e6dd35042c316114a4f4dd4e0c3454bdc29e2d4b87c73127cf82cd27530a53a90e348485d63261eceea31afc801dd5f6f3e1af3fc90cf5f712b196bd24631c"
+        ]
+      },
+      "expected_error": "UnauthorizedAttester",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "below_threshold",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b"
+        ]
+      },
+      "expected_error": "BelowThreshold",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "zero_r_signature",
+      "initial_state": "empty",
+      "operation": "recover_signature",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x00000000000000000000000000000000000000000000000000000000000000000dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71b"
+        ]
+      },
+      "expected_error": "InvalidSignature",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "zero_s_signature",
+      "initial_state": "empty",
+      "operation": "recover_signature",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c00000000000000000000000000000000000000000000000000000000000000001b"
+        ]
+      },
+      "expected_error": "InvalidSignature",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "high_s_signature",
+      "initial_state": "empty",
+      "operation": "recover_signature",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674cf23dacc9524e96cf3723c115c1620182e6b88d6fa5f223069d4be5151804ff6a1c"
+        ]
+      },
+      "expected_error": "HighSignatureS",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "invalid_recovery_id",
+      "initial_state": "empty",
+      "operation": "recover_signature",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0x24e99c2e886dc9580021cbcfca9c50834283f9a0d87e5b4655540e48c1db674c0dc25336adb16930c8dc3eea3e9dfe7bd3f64f7709567d3522867977b83141d71d"
+        ]
+      },
+      "expected_error": "InvalidRecoveryId",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "cross_role_pfr_domain_signature",
+      "initial_state": "empty",
+      "operation": "register_evm_call",
+      "field": "signatures",
+      "value": {
+        "kind": "signature_array",
+        "data": [
+          "0xc6ddd1fdd78a95833292d48573b5824fe6f831e97333b2964f5bbd679b4d809e0eec5b94a95e05d756f00d072829b80eb75c2227d6546b740edb864d75fc34ee1c"
+        ]
+      },
+      "expected_error": "UnauthorizedAttester",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "stale_epoch",
+      "initial_state": "empty",
+      "operation": "register_authorization",
+      "field": "signer_set_epoch",
+      "value": {
+        "kind": "u64",
+        "data": 0
+      },
+      "expected_error": "StaleSignerSetEpoch",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "authority_context",
+      "initial_state": "empty",
+      "operation": "register_authorization",
+      "field": "source_network_id",
+      "value": {
+        "kind": "hex32",
+        "data": "0x62f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e"
+      },
+      "expected_error": "AuthorityContextMismatch",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "invalid_leaf_count",
+      "initial_state": "empty",
+      "operation": "register_authorization",
+      "field": "leaf_count",
+      "value": {
+        "kind": "u32",
+        "data": 2
+      },
+      "expected_error": "InvalidLeafCount",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "skipped_initial_nonce",
+      "initial_state": "empty",
+      "operation": "register_authorization",
+      "field": "authorization_nonce",
+      "value": {
+        "kind": "u64",
+        "data": 2
+      },
+      "expected_error": "UnexpectedAuthorizationNonce",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    },
+    {
+      "id": "exact_authorization_replay",
+      "initial_state": "registered",
+      "operation": "register_authorization",
+      "field": "authorization",
+      "value": {
+        "kind": "preset",
+        "data": "exact_authorization"
+      },
+      "expected_error": "AuthorizationReplay",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "same_coordinate_metadata_conflict",
+      "initial_state": "registered",
+      "operation": "register_authorization",
+      "field": "authorization",
+      "value": {
+        "kind": "preset",
+        "data": "conflicting_root_authorization"
+      },
+      "expected_error": "RootConflict",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "reused_next_coordinate_nonce",
+      "initial_state": "registered",
+      "operation": "register_authorization",
+      "field": "authorization",
+      "value": {
+        "kind": "preset",
+        "data": "reused_next_coordinate_nonce"
+      },
+      "expected_error": "UnexpectedAuthorizationNonce",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "skipped_next_coordinate_nonce",
+      "initial_state": "registered",
+      "operation": "register_authorization",
+      "field": "authorization",
+      "value": {
+        "kind": "preset",
+        "data": "skipped_next_coordinate_nonce"
+      },
+      "expected_error": "UnexpectedAuthorizationNonce",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "wrong_statement",
+      "initial_state": "registered",
+      "operation": "validate_attachment",
+      "field": "receipt_attachment",
+      "value": {
+        "kind": "attachment",
+        "data": {
+          "statement": "0xb5b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+          "authenticated_root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+          "leaf_count": 1,
+          "leaf_index": 0,
+          "merkle_path": []
+        }
+      },
+      "expected_error": "ReceiptRootMismatch",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "wrong_authenticated_root",
+      "initial_state": "registered",
+      "operation": "validate_attachment",
+      "field": "receipt_attachment",
+      "value": {
+        "kind": "attachment",
+        "data": {
+          "statement": "0xb4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+          "authenticated_root": "0x7d609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+          "leaf_count": 1,
+          "leaf_index": 0,
+          "merkle_path": []
+        }
+      },
+      "expected_error": "ReceiptRootMismatch",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "wrong_leaf_index",
+      "initial_state": "registered",
+      "operation": "validate_attachment",
+      "field": "receipt_attachment",
+      "value": {
+        "kind": "attachment",
+        "data": {
+          "statement": "0xb4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+          "authenticated_root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+          "leaf_count": 1,
+          "leaf_index": 1,
+          "merkle_path": []
+        }
+      },
+      "expected_error": "InvalidMerklePath",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "nonempty_one_leaf_path",
+      "initial_state": "registered",
+      "operation": "validate_attachment",
+      "field": "receipt_attachment",
+      "value": {
+        "kind": "attachment",
+        "data": {
+          "statement": "0xb4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+          "authenticated_root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+          "leaf_count": 1,
+          "leaf_index": 0,
+          "merkle_path": [
+            "0x0000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        }
+      },
+      "expected_error": "InvalidMerklePath",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "unsafe_leaf_count_two",
+      "initial_state": "registered",
+      "operation": "validate_attachment",
+      "field": "receipt_attachment",
+      "value": {
+        "kind": "attachment",
+        "data": {
+          "statement": "0xb4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+          "authenticated_root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+          "leaf_count": 2,
+          "leaf_index": 0,
+          "merkle_path": []
+        }
+      },
+      "expected_error": "InvalidMerklePath",
+      "before_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2",
+      "after_state_digest": "0x75b8ceddffaee542e1830cc6af9148eae5d68a8f32bbf7ff6b0a12521659b3d2"
+    },
+    {
+      "id": "claim_replay",
+      "initial_state": "consumed",
+      "operation": "consume_replay",
+      "field": "replay_keys",
+      "value": {
+        "kind": "replay",
+        "data": {
+          "claim_id": "0x92a3b5b95bbba1a162dcd7107a7e797e7ca132c1fe7ae438e51014b37e4d03d4",
+          "settlement_key": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "expected_error": "ClaimReplay",
+      "before_state_digest": "0xb9122bb645dd0e12d152694d0815d5acd83b007233b36ec151d3a7ea914174ce",
+      "after_state_digest": "0xb9122bb645dd0e12d152694d0815d5acd83b007233b36ec151d3a7ea914174ce"
+    },
+    {
+      "id": "settlement_replay",
+      "initial_state": "consumed",
+      "operation": "consume_replay",
+      "field": "replay_keys",
+      "value": {
+        "kind": "replay",
+        "data": {
+          "claim_id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "settlement_key": "0xe55506cb0cb5c7d6a8b1ca41a28beea24b5d160987566075ec10e11cd382e93d"
+        }
+      },
+      "expected_error": "SettlementReplay",
+      "before_state_digest": "0xb9122bb645dd0e12d152694d0815d5acd83b007233b36ec151d3a7ea914174ce",
+      "after_state_digest": "0xb9122bb645dd0e12d152694d0815d5acd83b007233b36ec151d3a7ea914174ce"
+    },
+    {
+      "id": "root_nonce_counter_overflow",
+      "initial_state": "empty",
+      "operation": "register_overflow",
+      "field": "root_counters",
+      "value": {
+        "kind": "root_overflow",
+        "data": {
+          "next_authorization_nonce": 18446744073709551615,
+          "root_transition_count": 0,
+          "authorization": {
+            "signer_set_epoch": 1,
+            "source_network_id": "0x63f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e",
+            "source_genesis_hash": "0xff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c242",
+            "source_runtime_id": "0x7f98ae91ea34aff20365f8f157636ea7b2eccd216212dca424ca4bce2b2b9a8b",
+            "verification_context_hash": "0x676acbc40b7c7b5ba646aee26dd77984104e0674391ebd9f8e70b60d84ca6660",
+            "domain_id": 2,
+            "source_block_number": 6726351,
+            "source_block_hash": "0xb995cd3981fb8013be45d89009aa360a338935e4ec9feb8e653e7d724af9206c",
+            "aggregation_id": 53668,
+            "root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+            "leaf_count": 1,
+            "authorization_nonce": 18446744073709551615
+          },
+          "attesting_signers": [
+            "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+            "0x6813eb9362372eef6200f3b1dbc3f819671cba69"
+          ]
+        }
+      },
+      "expected_error": "ArithmeticOverflow",
+      "before_state_digest": "0x4ef616c9f2b821874dcce63d4b3090ffddaa32c09421b115690c74636e191b81",
+      "after_state_digest": "0x4ef616c9f2b821874dcce63d4b3090ffddaa32c09421b115690c74636e191b81"
+    },
+    {
+      "id": "root_event_counter_overflow",
+      "initial_state": "empty",
+      "operation": "register_overflow",
+      "field": "root_counters",
+      "value": {
+        "kind": "root_overflow",
+        "data": {
+          "next_authorization_nonce": 1,
+          "root_transition_count": 18446744073709551615,
+          "authorization": {
+            "signer_set_epoch": 1,
+            "source_network_id": "0x63f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e",
+            "source_genesis_hash": "0xff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c242",
+            "source_runtime_id": "0x7f98ae91ea34aff20365f8f157636ea7b2eccd216212dca424ca4bce2b2b9a8b",
+            "verification_context_hash": "0x676acbc40b7c7b5ba646aee26dd77984104e0674391ebd9f8e70b60d84ca6660",
+            "domain_id": 2,
+            "source_block_number": 6726351,
+            "source_block_hash": "0xb995cd3981fb8013be45d89009aa360a338935e4ec9feb8e653e7d724af9206c",
+            "aggregation_id": 53668,
+            "root": "0x7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+            "leaf_count": 1,
+            "authorization_nonce": 1
+          },
+          "attesting_signers": [
+            "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+            "0x6813eb9362372eef6200f3b1dbc3f819671cba69"
+          ]
+        }
+      },
+      "expected_error": "ArithmeticOverflow",
+      "before_state_digest": "0x62a4c30c9551793f69c6474bbaf1dc57bb3164d5fe9cf85664c15513ff41b51f",
+      "after_state_digest": "0x62a4c30c9551793f69c6474bbaf1dc57bb3164d5fe9cf85664c15513ff41b51f"
+    },
+    {
+      "id": "replay_event_counter_overflow",
+      "initial_state": "empty",
+      "operation": "consume_overflow",
+      "field": "replay_counter",
+      "value": {
+        "kind": "replay_overflow",
+        "data": {
+          "replay_transition_count": 18446744073709551615,
+          "claim_id": "0x92a3b5b95bbba1a162dcd7107a7e797e7ca132c1fe7ae438e51014b37e4d03d4",
+          "settlement_key": "0xe55506cb0cb5c7d6a8b1ca41a28beea24b5d160987566075ec10e11cd382e93d"
+        }
+      },
+      "expected_error": "ArithmeticOverflow",
+      "before_state_digest": "0x6239c7b601adf6608c506ae1811d515696bab45d933258436205d40c9e207198",
+      "after_state_digest": "0x6239c7b601adf6608c506ae1811d515696bab45d933258436205d40c9e207198"
+    },
+    {
+      "id": "accepted_root_label_mismatch",
+      "initial_state": "empty",
+      "operation": "validate_settlement_fixture",
+      "field": "accepted_root",
+      "value": {
+        "kind": "hex32",
+        "data": "0x89957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e148453200"
+      },
+      "expected_error": "AcceptedRootMismatch",
+      "before_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459",
+      "after_state_digest": "0xbac9097df303d0e7917f556a919e5b6a11f5c86af2ae25836e0830c639578459"
+    }
+  ],
+  "expected": {
+    "canonical_preimage": "0x5353474b525f524543454950545f524f4f545f51554f52554d5f5631000000000000000163f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836eff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c2427f98ae91ea34aff20365f8f157636ea7b2eccd216212dca424ca4bce2b2b9a8b676acbc40b7c7b5ba646aee26dd77984104e0674391ebd9f8e70b60d84ca666000000002000000000066a2cfb995cd3981fb8013be45d89009aa360a338935e4ec9feb8e653e7d724af9206c000000000000d1a47c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e000000010000000000000001",
+    "signing_digest": "0x7ccc4e3c7d7f38c2f37e515e26edf63b9d3cc8b069b463600961c780ea535c7d",
+    "coordinate_id": "0x02642bf98eddfd93180e16bd10f7b00206d37d708e281f3bdb331f689ee94698",
+    "registration_result": "Registered",
+    "authorization_replay_error": "AuthorizationReplay",
+    "coordinate_conflict_error": "RootConflict",
+    "root_registry_before": 0,
+    "root_registry_after": 1,
+    "root_transition_count_before": 0,
+    "root_transition_count_after": 1,
+    "next_nonce_before": 1,
+    "next_nonce_after": 2,
+    "replay_claim_error": "ClaimReplay",
+    "replay_settlement_error": "SettlementReplay",
+    "replay_claims_before": 0,
+    "replay_claims_after": 1,
+    "replay_settlements_before": 0,
+    "replay_settlements_after": 1,
+    "replay_transition_count_before": 0,
+    "replay_transition_count_after": 1,
+    "raw_statement_sha256": "0x959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "preclaim_hash": "0x8efaa82794a8587ba8f497dbdcbb65695704322a87f0d16bf667af565ba6c3ad",
+    "primary_finality_record_id": "0xa5a5ed3ac2ad0b61efdebcc8f9db1a020cb20fd186e2ea3657c747cb0aec5df7",
+    "claim_id": "0x92a3b5b95bbba1a162dcd7107a7e797e7ca132c1fe7ae438e51014b37e4d03d4",
+    "settlement_key": "0xe55506cb0cb5c7d6a8b1ca41a28beea24b5d160987566075ec10e11cd382e93d",
+    "raw_accepted_root": "0x88957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e148453200"
+  }
+}

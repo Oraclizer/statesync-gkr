@@ -1,0 +1,21 @@
+chapter AFP
+
+session GKR_Protocol (AFP) = "Sumcheck_Protocol" +
+  description \<open>
+    Soundness of the GKR protocol assembly (layered-circuit reduction chain)
+    over the sumcheck protocol. Builds on the AFP entry Sumcheck_Protocol
+    (Garvia, Sprenger, Bootle 2024).
+  \<close>
+  options [timeout = 7200]
+  theories
+    Layered_Circuit
+    Multilinear_Extension
+    Wiring_MLE
+    Sumcheck_Instance
+    Layer_Representative
+    GKR_Assembly
+    Verifier_Acceptance_Refinement
+    GKR_Batching
+  document_files
+    "root.tex"
+    "root.bib"

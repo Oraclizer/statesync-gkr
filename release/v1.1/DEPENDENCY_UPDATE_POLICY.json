@@ -1,0 +1,54 @@
+{
+  "schema": "statesync-gkr.dependency-update-policy.v1",
+  "status": "ENFORCED_BY_DEFAULT_BRANCH_RULESET",
+  "visibility": {
+    "dependabot_alerts": "ENABLED",
+    "version_update_pull_requests": "ACTIONS_ENABLED_CARGO_PAUSED_FOR_FROZEN_IDENTITY",
+    "security_update_pull_requests": "ENABLED",
+    "ignore_rule_count": 0
+  },
+  "groups": {
+    "proof-crypto": {
+      "patterns": [
+        "p3-*",
+        "risc0-*",
+        "sha2",
+        "sha3",
+        "k256",
+        "ecdsa",
+        "elliptic-curve",
+        "signature",
+        "digest",
+        "keccak",
+        "hmac",
+        "subtle",
+        "zeroize",
+        "creusot-std"
+      ],
+      "automatic_merge": false,
+      "manual_merge_requirements": [
+        "exact pull-request head passes the aggregate required check",
+        "proof digest equality passes across configured CPU backends",
+        "affected proof and formal sessions are rebuilt",
+        "a human reviews and manually merges the update"
+      ]
+    },
+    "routine-cargo": {
+      "update_types": [
+        "minor",
+        "patch"
+      ],
+      "automatic_merge": false,
+      "reason": "Cargo version-update pull requests stay paused while the root and spikes lockfiles stay byte-frozen to the accepted v1.1 proof identity; they resume in the next identity cycle behind the aggregate required check enforced by the default-branch ruleset."
+    },
+    "routine-actions": {
+      "update_types": [
+        "minor",
+        "patch"
+      ],
+      "automatic_merge": false,
+      "reason": "Merges pass through a pull request and the aggregate required check enforced by the default-branch ruleset, followed by release-manifest regeneration."
+    }
+  },
+  "claim_boundary": "Grouping controls merge authority; it never suppresses advisories, alerts, or security updates. Cargo version-update pull requests are paused only because the frozen v1.1 lockfiles cannot merge them; the pause ends with the next identity cycle."
+}

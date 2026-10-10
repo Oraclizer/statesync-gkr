@@ -1,0 +1,106 @@
+{
+  "schema": "statesync-gkr.release-attachments.v1",
+  "status": "CANDIDATE_NOT_PUBLISHED",
+  "source_archive_two_run_byte_equality": true,
+  "proof_tracked_in_source_tree": false,
+  "attachment_count": 11,
+  "attachments": [
+    {
+      "asset_name": "statesync-gkr-v1.0-source.tar.gz",
+      "media_type": "application/gzip",
+      "role": "deterministic-source-archive",
+      "bytes": 2669758,
+      "sha256": "9cab5764a126e1c06545fd2b26717275bae4e662c8322b42b72555b0790f6666",
+      "status": "CANDIDATE_NOT_PUBLISHED"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-proof.cbor",
+      "media_type": "application/cbor",
+      "role": "public-proof",
+      "bytes": 279130,
+      "sha256": "2ed107368d0e3cc2f23b4c8366ac7f5992115fa37a2abbd33953fbb78330582a",
+      "status": "CANDIDATE_NOT_PUBLISHED"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-gkr-protocol.pdf",
+      "media_type": "application/pdf",
+      "role": "formal-document",
+      "bytes": 653337,
+      "sha256": "13d8030b608ee1bcdb7cbf736b9cd93890d2370ee428707a16ab1f80ea40bdcf",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "docs/GKR_Protocol.pdf"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-smt-compiler-correctness.pdf",
+      "media_type": "application/pdf",
+      "role": "formal-document",
+      "bytes": 548792,
+      "sha256": "5be29dd579a3fb46fdf94152699bc6fd0008716e6f206359eb2e80ce8dea74fa",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "docs/SMT_Circuit_Compiler_Correctness.pdf"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-proof-manifest.json",
+      "media_type": "application/json",
+      "role": "proof-manifest",
+      "bytes": 2401,
+      "sha256": "08f480eaf068bc113bd1926e2c31d82001cc64991699d8706f388b0e3ce6be5c",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/PROOF_MANIFEST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-public-inputs.json",
+      "media_type": "application/json",
+      "role": "public-inputs",
+      "bytes": 3713,
+      "sha256": "51607874af695589cdf9f1470aeba78f2dd17d9f4abbe09aceaf1a685a508141",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/PUBLIC_INPUTS.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-sbom.spdx.json",
+      "media_type": "application/spdx+json",
+      "role": "sbom",
+      "bytes": 494241,
+      "sha256": "5bc482774a76daafec9216e956b95830387e8380c6fd303c4f00ca7b1e067767",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/SBOM.spdx.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-provenance.intoto.jsonl",
+      "media_type": "application/jsonl",
+      "role": "provenance",
+      "bytes": 2626,
+      "sha256": "9b874a91adbd224ba56873d8474d149703e5214e043c473e2fa7201a0c2603ae",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/PROVENANCE.intoto.jsonl"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-protected-source-manifest.json",
+      "media_type": "application/json",
+      "role": "protected-source-manifest",
+      "bytes": 70154,
+      "sha256": "75370592a45938c77f7c637dd9110af600926b67bf80ae51be2edb5cc86adc88",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/PROTECTED_SOURCE_MANIFEST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-frozen-source-allowlist.json",
+      "media_type": "application/json",
+      "role": "frozen-source-allowlist",
+      "bytes": 525568,
+      "sha256": "9ab8b541261a3b088cf93e5044c429a8440bdc252cc9de1f828f44fb1c9e2bd4",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/FROZEN_SOURCE_ALLOWLIST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.0-dependency-update-policy.json",
+      "media_type": "application/json",
+      "role": "dependency-update-policy",
+      "bytes": 1955,
+      "sha256": "4ea6b5b4c3efcfb2dd767e354c18481c59157ee103dd0d90bde3438ceffa4041",
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "tracked_source_path": "release/v1.0/DEPENDENCY_UPDATE_POLICY.json"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_SumcheckError": { "prover": "alt-ergo", "time": 0.022 },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_elim_DegreeExceeded": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_elim_SumMismatch": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_elim_WrongRoundCount": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

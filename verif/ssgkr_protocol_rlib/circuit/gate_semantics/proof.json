@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_gate_semantics_F": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_mul_F": { "prover": "alt-ergo", "time": 0.007 }
+    }
+  }
+}

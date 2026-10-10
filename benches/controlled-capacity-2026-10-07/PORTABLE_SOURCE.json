@@ -1,0 +1,87 @@
+{
+  "schema": "ssgkr.product-portable-caller.v1",
+  "historical_driver_aggregate_sha256": "5969b884cc3a921e4083e05d417ce9364b2b34b0f090f8a9a0d2dd9223974214",
+  "files": [
+    {
+      "path": "Load/Cargo.lock",
+      "original_source_sha256": "36c0d9637df60b383477c298fa4a65699a248986af7f5cc50f095105dc820184",
+      "portable_sha256": "36c0d9637df60b383477c298fa4a65699a248986af7f5cc50f095105dc820184",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/Cargo.toml",
+      "original_source_sha256": "97e8d1f88167643c78d411ef8feefdf9103d68e624a9cc7e85ef031c4603945a",
+      "portable_sha256": "31fdcc7a478110bb6f31ea2ed22b0d83d326f9a696b49c4842990b454bc85afb",
+      "edits": [
+        "standalone caller dependency path to repository root",
+        "remove terminal blank line; TOML values unchanged",
+        "current repository BUSL-1.1 declaration; historical source rights remain unchanged"
+      ],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/cli.rs",
+      "original_source_sha256": "5a28114728cb82a172de603c5dde7002f345dc0f0f52c010dd67d9a0341e4263",
+      "portable_sha256": "5a28114728cb82a172de603c5dde7002f345dc0f0f52c010dd67d9a0341e4263",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/fixture.rs",
+      "original_source_sha256": "ce4eec8ad6cd70f67a2aef0489f4f8610f48e3a60efb86abedada81f617df71e",
+      "portable_sha256": "ce4eec8ad6cd70f67a2aef0489f4f8610f48e3a60efb86abedada81f617df71e",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/load.rs",
+      "original_source_sha256": "20f721a4a2eb9b3cf41296148607dfb113265bd1e10f9107ea0ef1f22bbc8f1e",
+      "portable_sha256": "20f721a4a2eb9b3cf41296148607dfb113265bd1e10f9107ea0ef1f22bbc8f1e",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/main.rs",
+      "original_source_sha256": "5b6603dfc4cbb5a39ab559a42bae74c8461efbb31c888245baf3b5bf0408b436",
+      "portable_sha256": "5b6603dfc4cbb5a39ab559a42bae74c8461efbb31c888245baf3b5bf0408b436",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/server.rs",
+      "original_source_sha256": "a39c4a8a33427098492a42f57eb194cada911d9b98bb370cf0e16fbc52a72cdb",
+      "portable_sha256": "a39c4a8a33427098492a42f57eb194cada911d9b98bb370cf0e16fbc52a72cdb",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/shared.rs",
+      "original_source_sha256": "9606cf040ca1ef1c5bccbb988d12f7fb5bb80dc3f5292b2dc98c4920d1875e3a",
+      "portable_sha256": "9606cf040ca1ef1c5bccbb988d12f7fb5bb80dc3f5292b2dc98c4920d1875e3a",
+      "edits": [],
+      "arithmetic_changes": 0
+    },
+    {
+      "path": "Load/src/wire.rs",
+      "original_source_sha256": "b96f05e185df7cb2614662f0418ab7e0213fc0597f1d2768daa92adfd533f2a7",
+      "portable_sha256": "b96f05e185df7cb2614662f0418ab7e0213fc0597f1d2768daa92adfd533f2a7",
+      "edits": [],
+      "arithmetic_changes": 0
+    }
+  ],
+  "historical_mode_hashes_reassigned": false,
+  "portable_build_and_controls": "prepared command; requires actual executor receipt",
+  "runtime_equivalence_conditions": [
+    "same immutable production kernel",
+    "same field and fixture generator",
+    "same gate/proof/strict-codec path",
+    "same final original-request verifier",
+    "actual source/binary/environment identities recorded by replay"
+  ],
+  "observer_lock_original_sha256": "201378b651d1751b2b4da029bbd4a2b05d72dfb8ba16ee0be093c5ba2f3709b2",
+  "observer_original_sha256": "25d2904315be2927cc83c680128a3fce0073e6c93196a6592ee9c8d3ac1819f1",
+  "temporary_observer_patch": "cfg(test) child and dev-dependencies on exact immutable tag extraction only; source prefix remains byte-exact",
+  "public_rust_compile_and_controls": "prepared for actual Linux executor, not executed by preparation",
+  "licensing_metadata_revision": "Current BSL distribution; runtime source and original measurement identities are unchanged."
+}

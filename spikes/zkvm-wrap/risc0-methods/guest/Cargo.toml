@@ -1,0 +1,15 @@
+[package]
+name = "ssgkr-risc0-wrap-spike-guest"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[[bin]]
+name = "ssgkr-risc0-wrap-spike-diagnostic-guest"
+path = "src/diagnostic.rs"
+
+[dependencies]
+risc0-zkvm = { version = "=3.0.4", default-features = false, features = ["std"] }
+ssgkr-zkvm-wrap-spike-common = { path = "../../common" }

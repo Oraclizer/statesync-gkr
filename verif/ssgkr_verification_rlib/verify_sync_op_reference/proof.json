@@ -1,0 +1,36 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_circuit_for": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_elim_Ok": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_full_circuit_commitment": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_kind": { "prover": "alt-ergo", "time": 0.002 },
+      "vc_new": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_verify_sync_op_reference": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.009 },
+              { "prover": "alt-ergo", "time": 0.007 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.011 },
+              { "prover": "alt-ergo", "time": 0.006 },
+              { "prover": "alt-ergo", "time": 0.004 },
+              { "prover": "alt-ergo", "time": 0.005 },
+              { "prover": "alt-ergo", "time": 0.007 },
+              { "prover": "alt-ergo", "time": 0.005 }
+            ]
+          }
+        ]
+      },
+      "vc_verify_sync_op_with_TableWiring": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      }
+    }
+  }
+}

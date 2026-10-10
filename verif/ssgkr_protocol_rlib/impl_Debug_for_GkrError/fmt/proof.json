@@ -1,0 +1,19 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_struct_field1_finish": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_debug_struct_field2_finish": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_elim_LayerClaimMismatch": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_elim_Sumcheck": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_fmt_GkrError": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_write_str": { "prover": "alt-ergo", "time": 0.008 }
+    }
+  }
+}

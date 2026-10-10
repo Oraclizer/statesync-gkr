@@ -1,0 +1,409 @@
+{
+  "schema": "statesync-gkr.cpu-study-provenance.v1",
+  "measurement_date": "2026-10-06",
+  "source_tag": "v1.1.0",
+  "source_commit": "1b8d2f829792172b347dedbfde969016c2c05789",
+  "source_archive_sha256": "d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9",
+  "driver_sha256": "b2d5a631e8527bca90d22065ca3692da48863f236f306d5217e8e4528fa1c75c",
+  "released_source_files": [
+    {
+      "path": "crates/batching/Cargo.toml",
+      "sha256": "8cfd503e0d5bad3e2b96452b25ee9bb62cc810608bc819d94559d36ce03b3675"
+    },
+    {
+      "path": "crates/batching/src/lib.rs",
+      "sha256": "3a453f86ba0f72be271ab0d35871eccc8a36d8f707a08b86d188d858326ecf45"
+    },
+    {
+      "path": "crates/commitment/Cargo.toml",
+      "sha256": "a048bae2bf49aadcc17f36b7dfaa1e08c72ac2bc7df5b82f2dca60eac65c2bca"
+    },
+    {
+      "path": "crates/commitment/src/lib.rs",
+      "sha256": "2f636982fb520372497b2a8ff1657923ce61057799c2a58e86a935eab860e5aa"
+    },
+    {
+      "path": "crates/compiler/Cargo.toml",
+      "sha256": "8ba726bb05c85d2be27ab759f9ffd129c0a11bf8e3f3be5c1cf54c81d053f1a8"
+    },
+    {
+      "path": "crates/compiler/src/builder.rs",
+      "sha256": "80e1b2e015f8e2f5184e66b334cdd90534bfd65957416b01cd990c0c5c8441f4"
+    },
+    {
+      "path": "crates/compiler/src/compile.rs",
+      "sha256": "bc893d0c5202a5e3d60e03572104b62d91821d90494b7446aa4073477c8fe207"
+    },
+    {
+      "path": "crates/compiler/src/lib.rs",
+      "sha256": "373e4b1f46f94b31bb064c5e5b34acd301d492b728c1b19f22ddf2356d25b4d7"
+    },
+    {
+      "path": "crates/compiler/src/params.rs",
+      "sha256": "c6198095337056cca8e1796c1af79dffeffbd15480bdd162c6922c31b7b1f772"
+    },
+    {
+      "path": "crates/compiler/src/smt.rs",
+      "sha256": "99f5e96c95a30e18e7657280f82352fef931667169461c76bfc448cc2281eb7b"
+    },
+    {
+      "path": "crates/compiler/src/witness.rs",
+      "sha256": "ca451fb0e1e6fdb53db9b6fe9a4cbd7346b5e513c6d090e6174fbaa96ad2f10f"
+    },
+    {
+      "path": "crates/primitives/Cargo.toml",
+      "sha256": "bf33d7159b95c8d2278876e464b674cbcc1f3e092006a5510a2fba3518cf6e14"
+    },
+    {
+      "path": "crates/primitives/src/field.rs",
+      "sha256": "033fbd2fbe86a3147339b65cc72900f405894e2cfc30af7ca24ac25ff855a8fe"
+    },
+    {
+      "path": "crates/primitives/src/hash.rs",
+      "sha256": "330b703f09909d201fa5d7ed0c4e1c35cfb091c8d6936282f5b74cd2ad6f65a7"
+    },
+    {
+      "path": "crates/primitives/src/lib.rs",
+      "sha256": "dbda41d7841c19c73244fcd0717a938b75e14c06ac5bea377d4452247b1c6be9"
+    },
+    {
+      "path": "crates/primitives/src/poseidon2_arith.rs",
+      "sha256": "8f0eb96ca30cf7319e0fe0cbc94c43febf66061ca461e0fc142910f963025b9b"
+    },
+    {
+      "path": "crates/primitives/src/transcript.rs",
+      "sha256": "cdc744f769b52336558f0bb63f0a662c38b20b87320b6d2c864695fb2c19b748"
+    },
+    {
+      "path": "crates/protocol/Cargo.toml",
+      "sha256": "06ea95e658db8df35cdef0586a295fd5501dd50a7f2c7268c85fc6d86df9aee4"
+    },
+    {
+      "path": "crates/protocol/src/circuit.rs",
+      "sha256": "691f5667b17618d9c01b1d958b224bfaea883fff82d5406b550bbb1729770c57"
+    },
+    {
+      "path": "crates/protocol/src/lib.rs",
+      "sha256": "851f1dcddf4bcd32b29bb95a98f73b55d9388a02528d2b70ae93e57546a96143"
+    },
+    {
+      "path": "crates/protocol/src/mle.rs",
+      "sha256": "0f919232b81df736a54b76706e22df776f6025a49e92e2d310dff8d86c2ab283"
+    },
+    {
+      "path": "crates/protocol/src/reduce.rs",
+      "sha256": "0055b781aff0e0da98b9721bf34e93a9dae000f8ce9c1f469fb45cde822ecefb"
+    },
+    {
+      "path": "crates/protocol/src/wiring.rs",
+      "sha256": "cca741ba00a196ce54a9be54dc1b0ff33a8a4efa685a7aa7a5dcd23ad0b72f8d"
+    },
+    {
+      "path": "crates/sumcheck/Cargo.toml",
+      "sha256": "393be9adf36286e8a9de3415ec365a733a0e094e248ae2c4c7f04041ed7db495"
+    },
+    {
+      "path": "crates/sumcheck/src/lib.rs",
+      "sha256": "f7d2dd309f0ec8eb61ca4374a4d6624e9ab161776e46c38b28544e5fda689e3d"
+    },
+    {
+      "path": "crates/sumcheck/src/poly.rs",
+      "sha256": "94424a11b0fc3f47248e8413e9ecda8daa95a8c444f532a0f013b0197f0208ca"
+    },
+    {
+      "path": "crates/verification/Cargo.toml",
+      "sha256": "dc390eddc2776b35e2ab9533d40a2eb075e31e6f0ff29c3d5d9b79429a43a106"
+    },
+    {
+      "path": "crates/verification/src/config.rs",
+      "sha256": "5ee6158a986897a9df6ec7587a0edbe5ea519db7f1f986863f7970e0152f303c"
+    },
+    {
+      "path": "crates/verification/src/lib.rs",
+      "sha256": "de37d2ace2866aa0c632a7213b98c0bc7d1448b52500ed7e909e42cf4a5e16e5"
+    },
+    {
+      "path": "crates/verification/src/types.rs",
+      "sha256": "61bf9759c960a80b35072ba6f8e56d5d2a337af7ccefb66a6869c28d157308bc"
+    },
+    {
+      "path": "crates/wrap/Cargo.toml",
+      "sha256": "af498c26b70e87f621dc461cb1c131075a5ab5784c722b469d599aac72fe2ca4"
+    },
+    {
+      "path": "crates/wrap/examples/generate-prepared-material-v1.rs",
+      "sha256": "4f441959da09ad468cd372ba0f3b1e4b8806aff5676a39a969eedf1f489902be"
+    },
+    {
+      "path": "crates/wrap/examples/risc0-route-b-manifest-v1.rs",
+      "sha256": "48471dc49786ee7c2f8a3009c5d1c2cdbccff76e5f8479a7b091da7cd465616a"
+    },
+    {
+      "path": "crates/wrap/src/encoding.rs",
+      "sha256": "67b6ae1fd4e501eb577c69f977c24c7899c1e41e5ac199ca6af2e4bd503737f1"
+    },
+    {
+      "path": "crates/wrap/src/lib.rs",
+      "sha256": "20ac78235a94192ca032a8fb89eed756f269023638fbe43a95d8ddc87ec5c603"
+    },
+    {
+      "path": "crates/wrap/src/prepared.rs",
+      "sha256": "45da1429d97963c5e83ddfd872b1466547746ed9555e0a26163b14ab9451f8c7"
+    },
+    {
+      "path": "crates/wrap/src/risc0_destination_policy.rs",
+      "sha256": "06fd852f99264f6bfce107ccbe8a9ddbe7dc6e41e56df7fdb5c56ba8ea3c4543"
+    },
+    {
+      "path": "crates/wrap/src/risc0_route_b_manifest.rs",
+      "sha256": "8a4224805167455f6139d09193360444b7f087c77c1583096fb22721c8056bb6"
+    },
+    {
+      "path": "crates/wrap/src/settlement.rs",
+      "sha256": "8ba31a7c58a56abeb7a9c463008616de48b3e4ae4b3f64f6e6c375bf9f9671c9"
+    },
+    {
+      "path": "crates/wrap/src/statement.rs",
+      "sha256": "25f6a560770e00dc7daae10b6b7e78bf86f78df6a1429e3c300928c25128d194"
+    },
+    {
+      "path": "crates/wrap/tests/prepared_material_a0.rs",
+      "sha256": "e6d269d75fd4f9633c9a4cb28446b0ce83667fbe816374193ce47da3f3e0472b"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/GKR_Assembly.thy",
+      "sha256": "3e61eaf09bc950171df8df0d7aaf6a4341446ea8f83587096f23bfa8f519e331"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/GKR_Batching.thy",
+      "sha256": "5c81b4a8b0fe04b6fce80aa057bd8dd10c4627546a4a9d7c3770dc4c112ae21f"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Layer_Representative.thy",
+      "sha256": "ac866d47a10347bc4f25afe6042adb899e53cb0605933ff840d0a3338860b17a"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Layered_Circuit.thy",
+      "sha256": "1923e56152f62a696f77e157a786a24ac980a3a62cd80ecf459b73dae0740c3c"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Multilinear_Extension.thy",
+      "sha256": "3d53f000a6c7b56fc806cb448bc7e2a55e3b27957be9d2f27dea720a4cc30efa"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/ROOT",
+      "sha256": "3609e45264718492b90d4fefddf7e5bccce49fb6537d90ff9c5eab0a059645b2"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Sumcheck_Instance.thy",
+      "sha256": "84c9a0e8a92d448a54a603dd5d227247d8893361b7e4083e2f753b4f5ed00bd2"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Verifier_Acceptance_Refinement.thy",
+      "sha256": "197b41e3019340cc476563e810feb6b9ac0639e3eafb21a41ba751a21e71bef8"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Wiring_MLE.thy",
+      "sha256": "13e2ea72c5abd3311e09eab0c4ae68ab6790fce3d567ebada1c7a8458eb9282f"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/document/root.bib",
+      "sha256": "27053faa1bbfc8728c175a0b88cccd3b456e3e37e47dafad7b47330636bfc96f"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/document/root.tex",
+      "sha256": "76f28ac83e37269f533f49a0dff2c24519335da7366c6ad3823a25edbaef24cf"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Field/KoalaBear_Ext4_Field.thy",
+      "sha256": "0321b9615a7aecf35d372717e02f3628417f8533505d27f9410727992b7e730a"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Field/ROOT",
+      "sha256": "850a9fe923f4819b07d6c430bb566db9a94873671919f341b7faa6db9c0d399d"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_GKR/KoalaBear_Ext4_GKR.thy",
+      "sha256": "6e2e2b820944601ffd84b8fc83e55bc4651b5cd230c536705a9bc6202c4e650f"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_GKR/ROOT",
+      "sha256": "7a30bccb45be497ed56ae7d4a48191171b9c18909d12fb2746265bebbc41c37d"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Lift/KoalaBear_Ext4_Lift.thy",
+      "sha256": "04aea4bb033b100a4f277ee923b97843b1be03b82bf27e4bde8c236f328bc42b"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Lift/ROOT",
+      "sha256": "f17d9e428f1cc9784f220e1a29a50826f83cf9928de877649909ef6537913a34"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Nonsquare/KoalaBear_Ext4_Nonsquare.thy",
+      "sha256": "b3b3d1e87927239fa9d37a039083dcc62c0475a1ac0543fe6e915fcd47e1ff17"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Nonsquare/ROOT",
+      "sha256": "812867bfffbe44f88486c800c376eb3070b0d82f7685618dbf3754e2fba96ef5"
+    },
+    {
+      "path": "formal/isabelle/README.md",
+      "sha256": "585bd6e84584a9c75cf7dd50802bf534a7fd1fef75e2cf918d175e0b48e0557e"
+    },
+    {
+      "path": "formal/isabelle/ROOTS",
+      "sha256": "e791fb68ae896b3aecdb1d411506f59a482c81d898ac10b82b8b50a8b1e3d6a1"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Correctness.thy",
+      "sha256": "a7430cdf580c8aca3aec1e215b5efb162f22541244951dfee704793c7104d9bb"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Instance.thy",
+      "sha256": "26ccc23d62745d0fd302df23ee9fd35396ecaee01cd0ba7ba702ac76112c81be"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Model.thy",
+      "sha256": "c3b33b380d29fccec5647c593b456f6f3e6482b8ae50344a04b6bb671f14fc3a"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Composition.thy",
+      "sha256": "a767ef4324d5e522240a34a679745ceac5f597d793fb45389fce2ad485730b4b"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Composition_Instance.thy",
+      "sha256": "23e71d780df5171ead998cee3aab6108cf32a908283d0ea77cf959d3ac657456"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/KoalaBear_Field.thy",
+      "sha256": "a72532b77b632e1e9f8ea7c22526f60c5e0a991d6937f14bb55f03c47b0ff5b7"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Leaf_Fold.thy",
+      "sha256": "104ef12bae3ead01b45b103fb0ede0bcfaf67e13ace9009eb6e12348ec4187f1"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/ROOT",
+      "sha256": "25a3944b17c972f5353259f927d29db3dcaf5cd3aaab9ec63bc47d54b6082688"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/SMT_Semantics.thy",
+      "sha256": "23b1e71eaae255e8be7867e0d97b42c0c3338eaa3fc38239f4bf16825afc1b28"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/document/root.tex",
+      "sha256": "41928311a4043ab1276f95e6df07ad94a710eabea8ba5991058566d4c21793f3"
+    },
+    {
+      "path": "src/bin/measure.rs",
+      "sha256": "354574f57cd2670851bf36c3ba858a05e8716c47f2008e891a76f12a0d1a5f39"
+    },
+    {
+      "path": "src/bin/profile.rs",
+      "sha256": "ac26fc7991771e5955f0844a9c72042efe63211c13ce86f7c5efb1e780de770d"
+    },
+    {
+      "path": "src/bin/proof_digest.rs",
+      "sha256": "37b7d66f349186a86a39cdc5342ce1f0361b0c14c3ed4b0bbce991fa748ed4fb"
+    },
+    {
+      "path": "src/config.rs",
+      "sha256": "bb7ce76ce9ac7bf17e690423d16291dd39f7745ead7fc39505cab3369401965b"
+    },
+    {
+      "path": "src/lib.rs",
+      "sha256": "a8a43d4687ecda6e57fac6ba9bb0509a5425e532263d9f8a36e51ea7b2e96475"
+    },
+    {
+      "path": "src/oss_interface.rs",
+      "sha256": "7686e8b00e5de5cf46453c645c2fc3db9cdef960e7909b8382fbb1ac2cf8b64f"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "283797b91cb1b839f1b1571e83f2aff03629023400afd637a221bdbcef0a4bcf"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "547c7d1c98aa2c95be22a4328cb0f5da77005ea7eaa538fffb87cf87042fb450"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "f916f94b730fd30a48f79eaec8cb093c2f1ef3f05ba1dbcd3c3e5c624826e466"
+    }
+  ],
+  "frozen_measured_inputs": {
+    "driver/src/main.rs": "b2d5a631e8527bca90d22065ca3692da48863f236f306d5217e8e4528fa1c75c",
+    "driver/Cargo.toml": "d53a3383987ba709c3e783911683c60525bc1214213a3d9c30f1d31567b5d25d",
+    "driver/Cargo.lock": "b06f61dbd22b3079d871295d5f148f0a3ea74631cc79b60961bee4bf7a3fa93a",
+    "build-native/release/ssgkr-benchmark-driver": "046dcf2769da44f14f901fd1c3e59c4af550eab704cbbe650e9dc3d083fdbcdf",
+    "high-final-plan.json": "c4acdb9870b07dcf703c8a81e604f69964e19a98c54e2b88a757a4aea9e3668e",
+    "high-final.sh": "4c6445bf6bdac16807cc70e9c88afef3827c39fbac8174d1f0fab03d3a59f749"
+  },
+  "source_after_check_count": 81,
+  "frozen_input_after_check_count": 6,
+  "source_bytes_unchanged": true,
+  "driver_inputs_unchanged": true,
+  "native_binary_unchanged": true,
+  "released_dependencies_match": true,
+  "native_portable_control_hashes_equal": true,
+  "representative_encoded_bytes_equal": true,
+  "stock_proof_digest_equal": true,
+  "control_hashes": {
+    "file": "control-hashes.csv",
+    "sha256": "11dd29e81f23bd16a42b0567db3ed6dd68e214aa16344e0ecaced80568b6f1f4"
+  },
+  "source_crosscheck": "Recorded core/crate/formal bytes and root Cargo/toolchain anchors were compared with the signed release source; no source, ABI or proof identity change.",
+  "numerical_crosscheck": "All 243 keys, sample IDs, process exits, RSS and run-specific statistics matched a separately calculated raw-cell summary.",
+  "sdk_smoke": {
+    "source_sha256": "3da437810fbde7f4539be1b275bdd52f069ea628b368c8714365527d015ef8f7",
+    "source_git_revision": "1b8d2f829792172b347dedbfde969016c2c05789",
+    "dependency_lock_matches_release": true,
+    "process_exit": 0,
+    "output_markers": [
+      "honest-proof=PASS",
+      "encoded-proof=PASS",
+      "tampered-proof=REJECTED"
+    ],
+    "scope": "The complete application in docs/usage.md was compiled and executed, including honest, encoded and typed-tamper checks."
+  },
+  "original_bundle_records": [
+    {
+      "original_bundle": "high-final.tar.gz",
+      "sha256": "978665dd4d6edee62a28a6b7501265da97a2fc80355cd563458af2dc528c7856",
+      "bytes": 4215510,
+      "distribution": "Original operational logs are not part of the public package; compact timing data and sanitized provenance are supplied here."
+    },
+    {
+      "original_bundle": "native-smt-baseline.tar.gz",
+      "sha256": "426d1049ce1bc7c89bc99b41f3153431b2e250aa79663b8c05e3f1addc34d3a2",
+      "bytes": 134990,
+      "distribution": "Original operational logs are not part of the public package; compact timing data and sanitized provenance are supplied here."
+    },
+    {
+      "original_bundle": "developer-smoke.tar.gz",
+      "sha256": "4e5b77fdea943fe8a6f50b7bf6415d4edc2ce6d56c38bf124bcb9ac66dc80c40",
+      "bytes": 56822,
+      "distribution": "Original operational logs are not part of the public package; compact timing data and sanitized provenance are supplied here."
+    }
+  ],
+  "figures": [
+    {
+      "file": "figures/prepared-prover-scaling.png",
+      "sha256": "d7377a5053d60af1abc93f9cc370382d0c15d7ea1496f8826e14e6de6da93561",
+      "original_sha256": "d7377a5053d60af1abc93f9cc370382d0c15d7ea1496f8826e14e6de6da93561",
+      "normalization": "Original bytes."
+    },
+    {
+      "file": "figures/request-path-throughput.png",
+      "sha256": "f7840be11d891d8003392ace2acb412c090c1101b119e09c42df921bc5dff512",
+      "original_sha256": "f7840be11d891d8003392ace2acb412c090c1101b119e09c42df921bc5dff512",
+      "normalization": "Original bytes."
+    },
+    {
+      "file": "figures/depth-latency-and-memory.png",
+      "sha256": "f420aa009f648dd451f554998b9cce2d02f84cf3e0e463251d2d7d5057b47989",
+      "original_sha256": "f420aa009f648dd451f554998b9cce2d02f84cf3e0e463251d2d7d5057b47989",
+      "normalization": "Original bytes."
+    }
+  ]
+}

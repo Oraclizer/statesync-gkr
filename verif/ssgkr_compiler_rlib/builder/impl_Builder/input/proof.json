@@ -1,0 +1,24 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_from_str": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_input": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              null,
+              { "prover": "alt-ergo", "time": 0.021 },
+              { "prover": "alt-ergo", "time": 0.021 },
+              { "prover": "alt-ergo", "time": 0.015 },
+              { "prover": "alt-ergo", "time": 0.015 }
+            ]
+          }
+        ]
+      },
+      "vc_push": { "prover": "alt-ergo", "time": 0.013 }
+    }
+  }
+}

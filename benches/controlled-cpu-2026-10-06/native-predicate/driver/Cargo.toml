@@ -1,0 +1,13 @@
+[package]
+name = "ssgkr-native-smt-baseline"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+statesync-gkr = { path = "../../source" }
+
+[lints.rust]
+unsafe_code = "forbid"

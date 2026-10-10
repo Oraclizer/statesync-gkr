@@ -1,0 +1,10 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_LeafState": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_clone_MerklePath": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_clone_SmtWitness": { "prover": "alt-ergo", "time": 0.016 }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_num_vars_SparseLayerOracle": {
+        "prover": "alt-ergo",
+        "time": 0.003
+      }
+    }
+  }
+}

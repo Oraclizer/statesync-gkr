@@ -1,0 +1,75 @@
+{
+  "schema": "ssgkr/receipt-gated-local-transition-vector/v1",
+  "status": "private-nondeployment-local-candidate",
+  "profile": "ssgkr/receipt-gated-local-transition/v1",
+  "versions": {
+    "oip_semantic": [
+      0,
+      5,
+      0
+    ],
+    "inner_proof": 1,
+    "transition_codec": 1
+  },
+  "frozen_inputs": {
+    "product_commit": "b976643b9500bb019cab0518b8da6bd50ada62fa",
+    "product_tree": "b3e47f9e03c6a15f5db38b1134e2491862f7eb2f",
+    "readiness_index_sha256": "d25c6a2124bf3e0d6625efd3d481fe8354f93b5cbe36ef1ade0bdce806f1c118",
+    "a14_report_sha256": "8fb774e9f42ecbbaf4fffded2f0ba979bfeb339b4632b99c70b77ea6e4ff798d",
+    "a14_manifest_sha256": "79b6f4274e72ce8846ba03e3b7134b7a509c7fed459d828b08e0049d8fe9f8b6",
+    "evm_commit": "de13557322237865632a748d1ae6848b9a1d1d15",
+    "evm_tree": "a92dc39e0ef5ce4f3aad7ccc3eeae5ca62c3b521",
+    "lifecycle_evidence_sha256": "511d1cb85a508433a4bfd49f545d27049f773eac3a081f6a659502023ca90d19",
+    "lifecycle_vector_sha256": "089bf1681666d5a0150ebea74296f5f392b552a9cfbc19b90875cc88e05a08af",
+    "route_vector_sha256": "0fa1531f62bf1f9a6a4bc7c02cb4c5a452ba06fa47ff9b0dc35a5ca04b8d619b",
+    "destination_vector_sha256": "29a4528629d471ab9d3efcefec4a494477a93b5866e689fbeb3010b1e7627141"
+  },
+  "transition": {
+    "route_id": "27b40b99a41976f061e94124b84cc8c43ee4e5ed6bad2e94267057e1d375f2ef",
+    "program_binary_size": 706152,
+    "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+    "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+    "raw_guest_elf_sha256": "ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81",
+    "raw192_sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "statement_leaf": "b4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+    "primary_finality_record_id": "a5a5ed3ac2ad0b61efdebcc8f9db1a020cb20fd186e2ea3657c747cb0aec5df7",
+    "primary_finality_committed": true,
+    "source_network_id": "63f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e",
+    "destination_chain_id": 84532,
+    "destination_consumer": "0000000000000000000000000807c544d38ae7729f8798388d89be6502a1e8a8",
+    "domain_id": 2,
+    "aggregation_id": 53668,
+    "leaf_count": 1,
+    "leaf_index": 0,
+    "merkle_path": [],
+    "authenticated_receipt_root": "7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+    "lifecycle": {
+      "status": "active",
+      "current_revision": 1,
+      "registered_revision": 1,
+      "draining_from_revision": 0,
+      "registered_at_block": 100,
+      "drain_started_at_block": 0,
+      "consume_until_block": 0,
+      "destination_block": 101,
+      "lineage_abandoned": false,
+      "replacement_route_id": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "claim_id": "92a3b5b95bbba1a162dcd7107a7e797e7ca132c1fe7ae438e51014b37e4d03d4",
+    "settlement_key": "e55506cb0cb5c7d6a8b1ca41a28beea24b5d160987566075ec10e11cd382e93d",
+    "expected_predecessor": "1111111111111111111111111111111111111111111111111111111111111111",
+    "next_application_state": "88957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e148453200"
+  },
+  "expected": {
+    "canonical_bytes": "0x5353474b525f524543454950545f47415445445f4c4f43414c5f5452414e534954494f4e5f563100000005000000010001b976643b9500bb019cab0518b8da6bd50ada62fab3e47f9e03c6a15f5db38b1134e2491862f7eb2fd25c6a2124bf3e0d6625efd3d481fe8354f93b5cbe36ef1ade0bdce806f1c1188fb774e9f42ecbbaf4fffded2f0ba979bfeb339b4632b99c70b77ea6e4ff798d79b6f4274e72ce8846ba03e3b7134b7a509c7fed459d828b08e0049d8fe9f8b6de13557322237865632a748d1ae6848b9a1d1d15a92dc39e0ef5ce4f3aad7ccc3eeae5ca62c3b521511d1cb85a508433a4bfd49f545d27049f773eac3a081f6a659502023ca90d19089bf1681666d5a0150ebea74296f5f392b552a9cfbc19b90875cc88e05a08af0fa1531f62bf1f9a6a4bc7c02cb4c5a452ba06fa47ff9b0dc35a5ca04b8d619b29a4528629d471ab9d3efcefec4a494477a93b5866e689fbeb3010b1e762714127b40b99a41976f061e94124b84cc8c43ee4e5ed6bad2e94267057e1d375f2ef00000000000ac6687dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9badd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721b4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492a5a5ed3ac2ad0b61efdebcc8f9db1a020cb20fd186e2ea3657c747cb0aec5df70163f64f53339e0cfb288c57b0091f4932fa3181361fa87ba1dc583fbc172d836e0000000000014a340000000000000000000000000807c544d38ae7729f8798388d89be6502a1e8a800000002000000000000d1a4000000010000000000007c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e01000000000000000100000000000000010000000000000000000000000000006400000000000000000000000000000000000000000000006500000000000000000000000000000000000000000000000000000000000000000092a3b5b95bbba1a162dcd7107a7e797e7ca132c1fe7ae438e51014b37e4d03d4e55506cb0cb5c7d6a8b1ca41a28beea24b5d160987566075ec10e11cd382e93d111111111111111111111111111111111111111111111111111111111111111188957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e148453200",
+    "candidate_id": "0x7350decf282c65b3f8770a89dbebb296910579cba3c91655ea072747e5444db5",
+    "secondary_finalized": false,
+    "selected_cdk_backend": "NOT SET"
+  },
+  "nonclaims": [
+    "Not an OIP wire encoding.",
+    "Not a selected CDK backend or L3 transition.",
+    "Not a Base confirmation or SECONDARY_FINALIZED fact.",
+    "No key, funding, signature creation, RPC mutation, deployment, or transaction."
+  ]
+}

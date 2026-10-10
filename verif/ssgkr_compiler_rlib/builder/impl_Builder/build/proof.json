@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_build": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_build_with_hints": { "prover": "alt-ergo", "time": 0.007 }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+name: Reproduction report
+description: Report an exact-tag source or release-asset reproduction result.
+title: "[Reproduction]: "
+labels: ["reproduction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reproducing this release. Independent reproduction on
+        hardware we have not tested is one of the most useful contributions
+        this project can receive.
+
+        Please follow [REPRODUCING.md](https://github.com/Oraclizer/statesync-gkr/blob/main/REPRODUCING.md)
+        and attach a filled copy of
+        [`release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json`](https://github.com/Oraclizer/statesync-gkr/blob/main/release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json).
+        A PARTIAL or FAIL result is as valuable as a PASS. Please report what
+        you actually observed rather than adjusting it to match the guide.
+  - type: dropdown
+    id: disposition
+    attributes:
+      label: Result
+      options:
+        - PASS
+        - PARTIAL
+        - FAIL
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Exact tag or commit
+      placeholder: v1.0 or a full commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, architecture, Rust, Python, CPU, RAM, and disk.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands executed
+      description: List the exact commands and whether source, proof, or both were checked.
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Time and resources
+      description: Wall time, peak RAM, disk use, and any deviations from the guide.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Observed output
+      description: Include concise non-sensitive output. Do not attach credentials or private paths.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: I removed credentials, personal data, private paths, and restricted material.
+          required: true
+        - label: I will use the private security channel if this result may expose a vulnerability.
+          required: true

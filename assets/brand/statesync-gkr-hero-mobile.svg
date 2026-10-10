@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet">
+  <title id="title">StateSync-GKR for narrow screens</title>
+  <desc id="desc">A compact mobile banner where sparse state cells flow through layered reductions into a compact claim beside the StateSync-GKR project name.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061513"/><stop offset=".58" stop-color="#0a2422"/><stop offset="1" stop-color="#12312d"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0v28" fill="none" stroke="#75e3b0" stroke-width="1" opacity=".035"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#75e3b0"/></marker>
+  </defs>
+  <rect width="640" height="320" rx="24" fill="url(#bg)"/>
+  <rect width="640" height="320" rx="24" fill="url(#grid)"/>
+  <path d="M28 72V28h44M568 28h44v44M28 248v44h44M568 292h44v-44" fill="none" stroke="#75e3b0" stroke-width="2" opacity=".12"/>
+  <g transform="translate(46 80)">
+    <g fill="#0a2224" stroke="#3d7669" stroke-width="2"><rect x="0" y="0" width="34" height="34" rx="7"/><rect x="44" y="0" width="34" height="34" rx="7"/><rect x="0" y="44" width="34" height="34" rx="7"/><rect x="44" y="44" width="34" height="34" rx="7"/><rect x="0" y="88" width="34" height="34" rx="7"/><rect x="44" y="88" width="34" height="34" rx="7"/></g>
+    <g fill="#75e3b0"><circle cx="17" cy="17" r="5"/><circle cx="61" cy="61" r="5"/><circle cx="17" cy="105" r="5"/></g>
+    <path d="M78 17h34l34 44M78 61h68M78 105h34l34-44" fill="none" stroke="#66b8d2" stroke-width="3"/>
+    <circle cx="146" cy="61" r="9" fill="#66b8d2"/>
+    <path d="M155 61h44" fill="none" stroke="#75e3b0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="204" y="34" width="52" height="54" rx="10" fill="#0a2224" stroke="#75e3b0" stroke-width="2"/>
+    <path d="M216 50h28M216 61h22M216 72h28" stroke="#75e3b0" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="324" y="82" fill="#75e3b0" font-size="13" font-weight="700" letter-spacing="2">EXPERIMENTAL RUST PROVER</text>
+    <text x="314" y="150" fill="#f3f7f4" font-size="38" font-weight="800" letter-spacing=".7">STATESYNC-GKR</text>
+    <rect x="318" y="171" width="72" height="5" rx="2.5" fill="#75e3b0"/>
+    <text x="314" y="218" fill="#d5e4e0" font-size="16" font-weight="650">GKR PROVING FOR SPARSE-MERKLE</text>
+    <text x="314" y="245" fill="#d5e4e0" font-size="16" font-weight="650">STATE TRANSITIONS</text>
+  </g>
+</svg>

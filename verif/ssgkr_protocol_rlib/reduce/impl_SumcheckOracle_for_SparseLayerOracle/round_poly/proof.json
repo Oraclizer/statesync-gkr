@@ -1,0 +1,48 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_add_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_cf_u64": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_deref_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.005
+      },
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_elim_Some'0": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_enumerate_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_extrap": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_from_coeffs_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_into_iter_Enumerate_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_into_iter_Range_usize": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.006
+      },
+      "vc_lagrange_interpolate": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_mul_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_next_Enumerate_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.018
+      },
+      "vc_next_Range_usize": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_round_poly_SparseLayerOracle": null,
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.008 }
+    }
+  }
+}

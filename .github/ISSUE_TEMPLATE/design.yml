@@ -1,0 +1,54 @@
+name: Design proposal
+description: Propose a focused architecture, interface, encoding, or verification change.
+title: "[Design]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Explain the problem before proposing a mechanism. Large or
+        identity-affecting work requires explicit scope and verification.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete limitation, defect, or interoperability need exists?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed design
+      description: Describe owners, inputs, outputs, state, failure behavior, and compatibility.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: What simpler or safer alternatives were considered?
+    validations:
+      required: true
+  - type: textarea
+    id: claims
+    attributes:
+      label: Claim and trust-boundary impact
+      description: Which claims, assumptions, dependencies, and non-claims change?
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: List positive, negative, mutation, formal, and reproducibility checks.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: I did not include credentials, personal data, private paths, or restricted material.
+          required: true
+        - label: I identified whether the proposal changes the frozen proof-bound source or program identity.
+          required: true

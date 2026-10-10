@@ -1,0 +1,67 @@
+{
+  "schema": "statesync-gkr.risc0-secure-proof-run.v1",
+  "release_line": "v1.1",
+  "status": "COMPLETED_LOCALLY_VERIFIED_NOT_PUBLISHED",
+  "run": {
+    "launch_utc": "2026-09-20T10:38:15Z",
+    "finished_utc": "2026-09-20T11:13:23Z",
+    "wall_clock": "35:07.52",
+    "peak_resident_set_kbytes": 1317936,
+    "process_exit": 0
+  },
+  "environment": {
+    "accelerator": "NVIDIA L40S",
+    "accelerator_memory_mib": 46068,
+    "driver_version": "580.126.09",
+    "kernel": "Linux 6.8.0-1047-aws x86_64",
+    "distribution": "Ubuntu 22.04.5 LTS",
+    "max_streaming_multiprocessor_utilization_percent": 100,
+    "network_reachable_during_build": false,
+    "note": "A rented single-accelerator cloud instance, terminated after the run. The instance identifier, storage identifiers and network addresses are operational detail and are not part of this record."
+  },
+  "prover": {
+    "vendor": "risc0",
+    "version": "3.0.4",
+    "source_commit": "d7ee368e59ce6d9f94ecaeb6fc845e39ec5e9366",
+    "server_binary_sha256": "1fd2bb2a407cf50d1a0214daa2dd1820a754b6aab7bc23935fa84c08f4c90fb9",
+    "server_build": "cuda,disable-dev-mode, sm_89, nvidia/cuda:12.2.2-devel-ubuntu20.04",
+    "host_binary_sha256": "cad5e07c07465c9f8baddbf6364ad52ae8f35529954d742f5a1449c0ee77aab9",
+    "dev_mode": false,
+    "proof_kind": "succinct",
+    "executor_transport": "local inter-process server"
+  },
+  "inputs": {
+    "program_binary_sha256": "9bb3740d9c0e35f55a42adafa5bfd5cc89fe2520e1c391632807c4e33931cb04",
+    "program_binary_bytes": 699408,
+    "image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
+    "prepared_material_bytes": 7772516,
+    "prepared_material_sha256": "988f08d498bf8d20570d88dc2551dffd585ff99eb15868de37f598d3e9a6d974"
+  },
+  "execution": {
+    "segments": 1237,
+    "user_cycles": 1179805728,
+    "total_cycles": 1296105472,
+    "prove_milliseconds": 2107286,
+    "local_verify_milliseconds": 16,
+    "preflight_execute_only_seconds": 21
+  },
+  "outputs": {
+    "journal_bytes": 192,
+    "raw192_sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "verifier_version_hash": "aa24368f9ce9025f58596d966209fc3f322c8cac37dae753bb9b0367d273700d",
+    "statement_leaf": "ea414507f2843a858178ece4775ebc99f7502dc5b6554c82c38d77092475ce66",
+    "proof_wire": "zkverify_risc0_verifier_proof_inner_only",
+    "proof_payload_bytes": 279128,
+    "proof_payload_sha256": "b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822"
+  },
+  "checks": [
+    "The executed program identity was compared against the accepted expected record before proving.",
+    "The host verified the full receipt against the image identifier before serializing the payload.",
+    "The serialized payload was hashed on the run host and again after transfer, and the two hashes agree."
+  ],
+  "non_claims": [
+    "This is a project-operated run, not an independent reproduction, audit, or endorsement.",
+    "It does not establish cryptographic security, dependency safety, or production fitness.",
+    "It does not itself establish public-chain acceptance; that is recorded separately once submitted."
+  ]
+}

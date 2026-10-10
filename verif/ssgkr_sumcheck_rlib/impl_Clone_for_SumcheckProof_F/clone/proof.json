@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_RoundPoly_F": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_clone_SumcheckProof_F": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_clone_Vec_RoundPoly_F_Global": {
+        "prover": "alt-ergo",
+        "time": 0.0
+      }
+    }
+  }
+}

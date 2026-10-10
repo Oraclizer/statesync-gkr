@@ -1,0 +1,75 @@
+name: Source consistency and historical proof
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+
+concurrency:
+  group: frozen-proof-bound-source-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frozen-source-policy:
+    name: source consistency and licensing policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          ref: ${{ github.event_name == 'release' && github.event.release.tag_name || github.sha }}
+      - name: Verify source consistency and historical baseline
+        run: |
+          # Pull requests are checked in the pull-request mode: the frozen
+          # protected surface and the content rules fully apply, while the
+          # whole-tree manifests are enforced where they can hold, on the
+          # maintained branch and on release tags. This matches the mode
+          # split documented in ci.yml; the previous unconditional
+          # clean-history run failed every pull request that did not also
+          # regenerate the tree manifests.
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python3 release/v1.1/verify.py --mode pull-request
+          else
+            python3 release/v1.1/verify.py --mode clean-history
+          fi
+
+  release-proof-attachment:
+    name: exact historical proof attachment
+    if: github.event_name == 'release'
+    needs: frozen-source-policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          ref: ${{ github.event.release.tag_name }}
+      - name: Download the exact release proof asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROOF_ASSET: statesync-gkr-v1.1-proof.cbor
+        run: |
+          mkdir "$RUNNER_TEMP/proof"
+          gh release download "${{ github.event.release.tag_name }}" \
+            --repo "${{ github.repository }}" \
+            --pattern "$PROOF_ASSET" \
+            --dir "$RUNNER_TEMP/proof"
+          test -f "$RUNNER_TEMP/proof/$PROOF_ASSET"
+          test "$(find "$RUNNER_TEMP/proof" -maxdepth 1 -type f | wc -l)" -eq 1
+          python3 release/v1.1/verify.py \
+            --mode clean-history \
+            --require-proof \
+            --proof "$RUNNER_TEMP/proof/$PROOF_ASSET"
+
+# These jobs check current source/licensing consistency and the historical
+# proof attachment. They do not reproduce or assign a new compiled identity.
+# The exact approved Cargo license field is distinguished from the 78
+# byte-unchanged protected files; the historical program record is preserved.

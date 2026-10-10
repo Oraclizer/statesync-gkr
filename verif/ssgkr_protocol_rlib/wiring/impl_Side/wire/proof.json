@@ -1,0 +1,23 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_elim_Fixed": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_elim_Prog": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_wire": {
+        "tactic": "split_vc",
+        "children": [
+          null,
+          {
+            "tactic": "split_vc",
+            "children": [ { "prover": "alt-ergo", "time": 0.015 }, null ]
+          },
+          null,
+          { "prover": "alt-ergo", "time": 0.019 },
+          { "prover": "alt-ergo", "time": 0.011 },
+          { "prover": "alt-ergo", "time": 0.02 }
+        ]
+      }
+    }
+  }
+}

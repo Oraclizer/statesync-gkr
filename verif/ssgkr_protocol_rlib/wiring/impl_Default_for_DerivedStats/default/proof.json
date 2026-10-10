@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_default_DerivedStats": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_default_usize": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

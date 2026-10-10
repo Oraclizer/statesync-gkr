@@ -1,0 +1,2375 @@
+{
+  "schema": "oraclizer.ss-gkr.w8-frozen-proof-bound-surface-manifest.v1",
+  "generated_at_date": "2026-08-21",
+  "subject": {
+    "repository": "Oraclizer/statesync-gkr",
+    "commit": "fb743179db47d6bbea9412f26151e038df2a3f56",
+    "tree": "ac8fd586929ee9cecaeeb524363ca73edb4084ab",
+    "worktree_clean": true,
+    "rejected_rebind_commit_never_reused": "2080d3d61e2610a808c0b5121b62fc0246434002"
+  },
+  "selection_authority": [
+    "Jay direction SELECT FROZEN PROOF-BOUND SOURCE DISCLOSURE, Parts 1, 2, and 5",
+    "release/v1.0-rc/MANIFEST.json protected_git_paths",
+    "release/v1.0-rc/EVIDENCE_INDEX.json identity and proof authorities",
+    "SS-GKR/Audits/w7-v1.0-component-rc-readiness-audit-v1.md",
+    "SS-GKR/ss-gkr-w8-protected-source-disclosure-director-package-v1.0.md"
+  ],
+  "selection_rule": {
+    "recursive_prefixes": [
+      "src/",
+      "crates/",
+      "spikes/zkvm-wrap/common/",
+      "spikes/zkvm-wrap/risc0-host/",
+      "spikes/zkvm-wrap/risc0-methods/",
+      "tests/vectors/"
+    ],
+    "exact_paths": [
+      "Cargo.toml",
+      "Cargo.lock",
+      "rust-toolchain.toml",
+      "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.json",
+      "spikes/zkvm-wrap/identity/risc0-route-b-guest-change-v1.json",
+      "examples/receipt_gated_transition_v1.rs",
+      "tests/reference/receipt_gated_local_transition_v1.py"
+    ],
+    "excluded_as_non_proof_bytes": [
+      "spikes/zkvm-wrap/logs/risc0-v3.0.4-final-identity-cuda-secure-proof-2026-08-13.json",
+      "spikes/zkvm-wrap/logs/risc0-v3.0.4-final-identity-volta-2.0.0-w2-public-chain-evidence-2026-08-14.json"
+    ],
+    "exclusion_reason": "Those tracked JSON files are evidence narratives/metadata, not the 279130-byte proof payload. They remain eligible for Part 4 sanitation or archive routing.",
+    "arbitrary_expansion": false
+  },
+  "tracked_path_count": 79,
+  "tracked_path_set_sha256": "e91cf1768632c12f812a345b605dbc86002fa9a8e55dc94eb6a0a4f35f085636",
+  "tracked_total_bytes": 1507924,
+  "entries": [
+    {
+      "path": "Cargo.lock",
+      "mode": "100644",
+      "git_blob_oid": "0005781f4cb1a53c3bdba2e059a02d36e496826d",
+      "bytes": 26105,
+      "sha256": "547c7d1c98aa2c95be22a4328cb0f5da77005ea7eaa538fffb87cf87042fb450",
+      "categories": [
+        "cargo-lock-toolchain"
+      ]
+    },
+    {
+      "path": "Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "914946b745320474b310df2bf02b1522511b50da",
+      "bytes": 5090,
+      "sha256": "283797b91cb1b839f1b1571e83f2aff03629023400afd637a221bdbcef0a4bcf",
+      "categories": [
+        "cargo-lock-toolchain"
+      ]
+    },
+    {
+      "path": "crates/batching/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "5f40ead54eb64c95c073663d5ab8674bb3e7e342",
+      "bytes": 472,
+      "sha256": "8cfd503e0d5bad3e2b96452b25ee9bb62cc810608bc819d94559d36ce03b3675",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/batching/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "a947ad67fac16a450e72f03676d150f293185b36",
+      "bytes": 10235,
+      "sha256": "3a453f86ba0f72be271ab0d35871eccc8a36d8f707a08b86d188d858326ecf45",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/commitment/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "dda52b1bf26719eefbffa6d9f0866e49b8f7a010",
+      "bytes": 461,
+      "sha256": "a048bae2bf49aadcc17f36b7dfaa1e08c72ac2bc7df5b82f2dca60eac65c2bca",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/commitment/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "31e22fd8938613325bfc4cc0b35bc5d6c4013dfa",
+      "bytes": 6978,
+      "sha256": "2f636982fb520372497b2a8ff1657923ce61057799c2a58e86a935eab860e5aa",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "7dc211c6e680ab946d47d1f7c3b15c91d56bc9b1",
+      "bytes": 796,
+      "sha256": "8ba726bb05c85d2be27ab759f9ffd129c0a11bf8e3f3be5c1cf54c81d053f1a8",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/builder.rs",
+      "mode": "100644",
+      "git_blob_oid": "d09439df388ac560c312fb8818aa24b7b0eaeec0",
+      "bytes": 20409,
+      "sha256": "80e1b2e015f8e2f5184e66b334cdd90534bfd65957416b01cd990c0c5c8441f4",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/compile.rs",
+      "mode": "100644",
+      "git_blob_oid": "8f2b6d3f7b831fea627f6f2ca6cc194d7d006c48",
+      "bytes": 45989,
+      "sha256": "bc893d0c5202a5e3d60e03572104b62d91821d90494b7446aa4073477c8fe207",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "637d9805e93a4601aedca5b1158a54e7c6da06ac",
+      "bytes": 2606,
+      "sha256": "373e4b1f46f94b31bb064c5e5b34acd301d492b728c1b19f22ddf2356d25b4d7",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/params.rs",
+      "mode": "100644",
+      "git_blob_oid": "2a0715cd4bdc3be816c33bf5eee9162117256cfa",
+      "bytes": 2844,
+      "sha256": "c6198095337056cca8e1796c1af79dffeffbd15480bdd162c6922c31b7b1f772",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/smt.rs",
+      "mode": "100644",
+      "git_blob_oid": "1879f76dcf5efc10979dae3a061f89291a3eaed4",
+      "bytes": 22665,
+      "sha256": "99f5e96c95a30e18e7657280f82352fef931667169461c76bfc448cc2281eb7b",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/compiler/src/witness.rs",
+      "mode": "100644",
+      "git_blob_oid": "223956ec0d7c8685bce5c8768e8bdfd604e8979e",
+      "bytes": 14092,
+      "sha256": "ca451fb0e1e6fdb53db9b6fe9a4cbd7346b5e513c6d090e6174fbaa96ad2f10f",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "46b59621abe0b62373aa57bf93f004e3e81b9c5c",
+      "bytes": 808,
+      "sha256": "bf33d7159b95c8d2278876e464b674cbcc1f3e092006a5510a2fba3518cf6e14",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/src/field.rs",
+      "mode": "100644",
+      "git_blob_oid": "4478d895a45d0d3c4f5b2f4f44276209a36d2d71",
+      "bytes": 1372,
+      "sha256": "033fbd2fbe86a3147339b65cc72900f405894e2cfc30af7ca24ac25ff855a8fe",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/src/hash.rs",
+      "mode": "100644",
+      "git_blob_oid": "512954aa5f62c387609724e423d50ec3b9bb21e5",
+      "bytes": 26703,
+      "sha256": "330b703f09909d201fa5d7ed0c4e1c35cfb091c8d6936282f5b74cd2ad6f65a7",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "7f6d937578e6dd4e7fd143f1f9cdad04f722d9bd",
+      "bytes": 1081,
+      "sha256": "dbda41d7841c19c73244fcd0717a938b75e14c06ac5bea377d4452247b1c6be9",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/src/poseidon2_arith.rs",
+      "mode": "100644",
+      "git_blob_oid": "2a08433c825fc4700888f325567569093abd2216",
+      "bytes": 7340,
+      "sha256": "8f0eb96ca30cf7319e0fe0cbc94c43febf66061ca461e0fc142910f963025b9b",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/primitives/src/transcript.rs",
+      "mode": "100644",
+      "git_blob_oid": "e2d891c51834da1482a35c47a4b69811fe64f60e",
+      "bytes": 3726,
+      "sha256": "cdc744f769b52336558f0bb63f0a662c38b20b87320b6d2c864695fb2c19b748",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "af0184b14fd9d9e1ff3292b9754db4f316104e48",
+      "bytes": 836,
+      "sha256": "06ea95e658db8df35cdef0586a295fd5501dd50a7f2c7268c85fc6d86df9aee4",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/src/circuit.rs",
+      "mode": "100644",
+      "git_blob_oid": "d464fecc9dc11739f21839c38755733a94d78733",
+      "bytes": 10489,
+      "sha256": "691f5667b17618d9c01b1d958b224bfaea883fff82d5406b550bbb1729770c57",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "fc6caa66cffd9665ea2251f7eb8d506500980147",
+      "bytes": 6213,
+      "sha256": "851f1dcddf4bcd32b29bb95a98f73b55d9388a02528d2b70ae93e57546a96143",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/src/mle.rs",
+      "mode": "100644",
+      "git_blob_oid": "ce691bc018ad674ee5d778d347a50eab73665a9e",
+      "bytes": 7239,
+      "sha256": "0f919232b81df736a54b76706e22df776f6025a49e92e2d310dff8d86c2ab283",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/src/reduce.rs",
+      "mode": "100644",
+      "git_blob_oid": "3caa5907284d5e248095e34f6fe2b5571e3a3301",
+      "bytes": 46675,
+      "sha256": "710f54592f2a34bfa544725763b1c7b7ac0634c3218b9c2b581bf183f3b36597",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/protocol/src/wiring.rs",
+      "mode": "100644",
+      "git_blob_oid": "50c890eff001ebe67b61c19aa0bb215cb5aceca9",
+      "bytes": 61461,
+      "sha256": "cca741ba00a196ce54a9be54dc1b0ff33a8a4efa685a7aa7a5dcd23ad0b72f8d",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/sumcheck/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "239504188cad772cd083b1dab4a538e374fad556",
+      "bytes": 862,
+      "sha256": "393be9adf36286e8a9de3415ec365a733a0e094e248ae2c4c7f04041ed7db495",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/sumcheck/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "01cbe675b1e2bc3c0b38a2206b9d0e5311229be5",
+      "bytes": 11986,
+      "sha256": "65917ae654a8fb4733312ddf3442257df1e6cf80a1cf27f635172c7fe85e68e3",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/sumcheck/src/poly.rs",
+      "mode": "100644",
+      "git_blob_oid": "ff5222d051d44ffee6f05df211a56ea957d65af6",
+      "bytes": 12813,
+      "sha256": "94424a11b0fc3f47248e8413e9ecda8daa95a8c444f532a0f013b0197f0208ca",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/verification/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "22cce42bca17cbb1db20337f0637f9e953e8791d",
+      "bytes": 590,
+      "sha256": "dc390eddc2776b35e2ab9533d40a2eb075e31e6f0ff29c3d5d9b79429a43a106",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/verification/src/config.rs",
+      "mode": "100644",
+      "git_blob_oid": "330047a4fe7287d7ca7fb093d73c0fb36a322160",
+      "bytes": 1495,
+      "sha256": "5ee6158a986897a9df6ec7587a0edbe5ea519db7f1f986863f7970e0152f303c",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/verification/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "940ecb5713d3e353e98e379d2404a39ce07e786f",
+      "bytes": 13031,
+      "sha256": "79ef483e68ddfc2fa5af4e9d08147b436590234c2a91982d7fc84a9636bedf6a",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/verification/src/types.rs",
+      "mode": "100644",
+      "git_blob_oid": "426410cfc03e84c8d9e559a993b63eff6cd72241",
+      "bytes": 821,
+      "sha256": "61bf9759c960a80b35072ba6f8e56d5d2a337af7ccefb66a6869c28d157308bc",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "4efce3545ad4c21e20737c341966d5a996f71933",
+      "bytes": 1048,
+      "sha256": "af498c26b70e87f621dc461cb1c131075a5ab5784c722b469d599aac72fe2ca4",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/examples/generate-prepared-material-v1.rs",
+      "mode": "100644",
+      "git_blob_oid": "ef71ea7f5a57e5c2f9ab284ba9438fd3b40982fb",
+      "bytes": 4183,
+      "sha256": "4f441959da09ad468cd372ba0f3b1e4b8806aff5676a39a969eedf1f489902be",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/examples/risc0-route-b-manifest-v1.rs",
+      "mode": "100644",
+      "git_blob_oid": "52ce14c583e839beb0bc837f3e1fc552f8c01b32",
+      "bytes": 685,
+      "sha256": "48471dc49786ee7c2f8a3009c5d1c2cdbccff76e5f8479a7b091da7cd465616a",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/encoding.rs",
+      "mode": "100644",
+      "git_blob_oid": "7303d594c61f89c1da5607ac693ba92979d49815",
+      "bytes": 19533,
+      "sha256": "67b6ae1fd4e501eb577c69f977c24c7899c1e41e5ac199ca6af2e4bd503737f1",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "fa4400b635daf0b2d25787231b400f5101a89487",
+      "bytes": 5815,
+      "sha256": "20ac78235a94192ca032a8fb89eed756f269023638fbe43a95d8ddc87ec5c603",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/prepared.rs",
+      "mode": "100644",
+      "git_blob_oid": "07b45d9be51f4b6ada22f2c04b8068633dbdfdef",
+      "bytes": 47242,
+      "sha256": "45da1429d97963c5e83ddfd872b1466547746ed9555e0a26163b14ab9451f8c7",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/risc0_destination_policy.rs",
+      "mode": "100644",
+      "git_blob_oid": "1231f24e689c74ab91d27b89139d130c404320e4",
+      "bytes": 67496,
+      "sha256": "06fd852f99264f6bfce107ccbe8a9ddbe7dc6e41e56df7fdb5c56ba8ea3c4543",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/risc0_route_b_manifest.rs",
+      "mode": "100644",
+      "git_blob_oid": "33b43839bf9e6358cb4c298d055604c6919c003b",
+      "bytes": 37757,
+      "sha256": "8a4224805167455f6139d09193360444b7f087c77c1583096fb22721c8056bb6",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/settlement.rs",
+      "mode": "100644",
+      "git_blob_oid": "dc4b5c822159b20e6bbb6c6c80aea8f1b1b999c9",
+      "bytes": 35229,
+      "sha256": "8ba31a7c58a56abeb7a9c463008616de48b3e4ae4b3f64f6e6c375bf9f9671c9",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/src/statement.rs",
+      "mode": "100644",
+      "git_blob_oid": "9193c9f0f80bd5590d0d59e407f6cbc94bc93b79",
+      "bytes": 7571,
+      "sha256": "25f6a560770e00dc7daae10b6b7e78bf86f78df6a1429e3c300928c25128d194",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "crates/wrap/tests/prepared_material_a0.rs",
+      "mode": "100644",
+      "git_blob_oid": "0bd47de34bf48b1cf6fed99680e4818be558e25b",
+      "bytes": 17208,
+      "sha256": "e6d269d75fd4f9633c9a4cb28446b0ce83667fbe816374193ce47da3f3e0472b",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "examples/receipt_gated_transition_v1.rs",
+      "mode": "100644",
+      "git_blob_oid": "ecb90273b90979639c07624323746e39ec3e3cce",
+      "bytes": 28887,
+      "sha256": "a987a8808a6b23200b7f1388577fb075f07738ac3a402da945fa193a1c9f150a",
+      "categories": [
+        "canonical-receipt-vector-field-name-consumer"
+      ]
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "mode": "100644",
+      "git_blob_oid": "78c67d55132267537b0ef10d10719e36790dd8a5",
+      "bytes": 132,
+      "sha256": "f916f94b730fd30a48f79eaec8cb093c2f1ef3f05ba1dbcd3c3e5c624826e466",
+      "categories": [
+        "cargo-lock-toolchain"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/Cargo.lock",
+      "mode": "100644",
+      "git_blob_oid": "0d3a8cbea1aa604cebe6dd938e417cd5f930bb25",
+      "bytes": 16826,
+      "sha256": "c6761b6c6ff73a9668b14ec5dfac293f1768f2086426ff7b05cf378b073d9f9b",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "a109a5d3bb76896ba02d096c109eccbbf304e482",
+      "bytes": 192,
+      "sha256": "2e765effb36e705a5be5a5bacb48d68afb80627934d4856e1f1f029e1d6c09f9",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "f3d9f7e922bae75a90e3fe7f302c91d06073f9f1",
+      "bytes": 10600,
+      "sha256": "249469d617b25174f34c26fd2833c542b120b46c01122840189c30a590f3c946",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-change-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "0a6babb674fcc90967795d5c8196c34e4a0db1db",
+      "bytes": 4961,
+      "sha256": "09887dd7d33131d6455d72f101f334182f7bbbb7ce9f4095cbbd780e88b8b716",
+      "categories": [
+        "identity-change-record"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "a96a272245b105ea0e61313a9c648ffbf7266792",
+      "bytes": 1946,
+      "sha256": "ce4b2c4a79755ce30369fd367029f6853698e24cfe87a07df44e94d49ef10333",
+      "categories": [
+        "expected-identity"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/Cargo.lock",
+      "mode": "100644",
+      "git_blob_oid": "b2c3ae2bf2c084d0803027089a30f015d4f587ff",
+      "bytes": 73890,
+      "sha256": "c030936ed7810cb2fbf1e037a365a5d9aa37b44ec00e7be3cb2c70cae7fe7715",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "97423bf2e52f5768fa812059cb99baa74a61e1c4",
+      "bytes": 506,
+      "sha256": "f461bec122d3673bab70ab465d5d1b538ff0db15439e6f179590dca9d1eb3633",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/src/main.rs",
+      "mode": "100644",
+      "git_blob_oid": "c62ab5fe848686adb45b860904aee20ac77bcd15",
+      "bytes": 20331,
+      "sha256": "b580b857cfcf8866a2af53b4674a789e42de2d1d12fae17405e33ed8a586bc89",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "3de8dd63d8830f3ed4955ceea43dafeefcd9d786",
+      "bytes": 205,
+      "sha256": "ca2002c101eefd7b12d05885f92bebb9c94ba91bdbe760a6d01b77ce6a4cbdaf",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/build.rs",
+      "mode": "100644",
+      "git_blob_oid": "08a8a4eb72e5ae99c9647680707f0f4c461238cf",
+      "bytes": 48,
+      "sha256": "d3d0aa4add6d6294b4cd9199c9b7162187b7383980cda986051fe94497334f75",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/Cargo.lock",
+      "mode": "100644",
+      "git_blob_oid": "1f98125c8ffbe71259a8fe44a8f3905f14762154",
+      "bytes": 48115,
+      "sha256": "be809dbac9425af0f84c70ef322a122ade9957820434c7644b83f109504f8eb0",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/Cargo.toml",
+      "mode": "100644",
+      "git_blob_oid": "5ddf74c5deed7dc54de3594d7c537cdc2deee21d",
+      "bytes": 352,
+      "sha256": "e8cccc9256fe20701dd6b25fb89b43f9b18dbeb091bb3dab4630d733c04024e2",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/src/diagnostic.rs",
+      "mode": "100644",
+      "git_blob_oid": "f5ed669745a791b7553454b406a295e414011c47",
+      "bytes": 1435,
+      "sha256": "5e856a3b1a1077f52382d1ed0fc5a123382f2d2027dcd71e5a64a417c84284f1",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/src/main.rs",
+      "mode": "100644",
+      "git_blob_oid": "aca915daca4cf9931253b342ac5f4ba7d1de00f5",
+      "bytes": 506,
+      "sha256": "91cbc12286999f7e138bf3a19043696458d447e19392846386c2a86db9557a5f",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "1bdb3085fa164c7151a1128bcc4ea78dd3a96657",
+      "bytes": 51,
+      "sha256": "902d56d952004dd42e65c148a4b537710f869054556528b25ed3e67d050bb255",
+      "categories": [
+        "proof-bound-guest-host-closure"
+      ]
+    },
+    {
+      "path": "src/bin/measure.rs",
+      "mode": "100644",
+      "git_blob_oid": "55b13fa35d770b2d1a4150929dfd0eb0792a7246",
+      "bytes": 22383,
+      "sha256": "354574f57cd2670851bf36c3ba858a05e8716c47f2008e891a76f12a0d1a5f39",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "src/bin/profile.rs",
+      "mode": "100644",
+      "git_blob_oid": "556cdae44361e748a7f33f791d6ee7d7413873b3",
+      "bytes": 17047,
+      "sha256": "ac26fc7991771e5955f0844a9c72042efe63211c13ce86f7c5efb1e780de770d",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "src/bin/proof_digest.rs",
+      "mode": "100644",
+      "git_blob_oid": "1c4aaeeaf1a31623a1b812a963153a9265bc2ecd",
+      "bytes": 6192,
+      "sha256": "37b7d66f349186a86a39cdc5342ce1f0361b0c14c3ed4b0bbce991fa748ed4fb",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "src/config.rs",
+      "mode": "100644",
+      "git_blob_oid": "eeeb088aaefd6dc0630fb913ed9995e053973bb1",
+      "bytes": 137,
+      "sha256": "bb7ce76ce9ac7bf17e690423d16291dd39f7745ead7fc39505cab3369401965b",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "src/lib.rs",
+      "mode": "100644",
+      "git_blob_oid": "edec2345c4b79cd6dcd5b0cdff85a67b1cec33d3",
+      "bytes": 23589,
+      "sha256": "a8a43d4687ecda6e57fac6ba9bb0509a5425e532263d9f8a36e51ea7b2e96475",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "src/oss_interface.rs",
+      "mode": "100644",
+      "git_blob_oid": "50f1adbd53da96a365f18deaadbfc74f807aef4d",
+      "bytes": 1504,
+      "sha256": "7686e8b00e5de5cf46453c645c2fc3db9cdef960e7909b8382fbb1ac2cf8b64f",
+      "categories": [
+        "protected-rust-source"
+      ]
+    },
+    {
+      "path": "tests/reference/receipt_gated_local_transition_v1.py",
+      "mode": "100644",
+      "git_blob_oid": "b0da0bfd7340f4a3c6778e8af0f9aaee4215acb2",
+      "bytes": 8123,
+      "sha256": "32088d60e7bb01e35bd987c024c43a47fe1a9367075defbfc5305c8a08fb4408",
+      "categories": [
+        "canonical-receipt-vector-field-name-consumer"
+      ]
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/membership-d24.bin",
+      "mode": "100644",
+      "git_blob_oid": "3a746cea9652d24642c2be4cb2103571bcd1be35",
+      "bytes": 176948,
+      "sha256": "35f9ccd12be12a1e4edee206b88fedfa9aa4bf4971757bff60667ecf02a09587",
+      "categories": [
+        "cryptographic-vector"
+      ]
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/nonmembership-d24.bin",
+      "mode": "100644",
+      "git_blob_oid": "43770b1edf2b2a947e070e296622cfabe9213548",
+      "bytes": 181646,
+      "sha256": "1873091159ec39569a49090dc209a675cd9373ac2bfee69e04c62411de99f1fa",
+      "categories": [
+        "cryptographic-vector"
+      ]
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/update-d24.bin",
+      "mode": "100644",
+      "git_blob_oid": "b99749580bb82141b4a0e301b1b3e6fceb951cec",
+      "bytes": 186992,
+      "sha256": "aa4b5d5844e2fdeb70b04601f42383d7ff72d920bdf0ba0e2ba0acfb29cb8a20",
+      "categories": [
+        "cryptographic-vector"
+      ]
+    },
+    {
+      "path": "tests/vectors/receipt-gated-local-transition-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "591f9c73691305c45172571bee5f2ca7f6929e00",
+      "bytes": 5540,
+      "sha256": "ce65f3cadebf4a2b5857c8872dde0c298875913feaa6bca35e97d492e0d6b02a",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-destination-policy-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "64a1175d358767f5cdc769445fb845f62154c54e",
+      "bytes": 28429,
+      "sha256": "29a4528629d471ab9d3efcefec4a494477a93b5866e689fbeb3010b1e7627141",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-final-identity-candidate-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "b7f2ef83fe5d653bdbc1f25f005e87d74dbda52d",
+      "bytes": 4511,
+      "sha256": "6b14abdedf7c13c233b8f218d1792da04c7994ad3f41d154d562463d3eba172f",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-final-identity-candidate-v1.transcript.txt",
+      "mode": "100644",
+      "git_blob_oid": "1ddae6105639db4111ea8393f50fe8aaeb711202",
+      "bytes": 2422,
+      "sha256": "8da1b233da0a6820ac95b7052fcd07c558b9136dfa7169b4fdca0b13c281be8f",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-manifest-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "5f1c4ffb83e7d043deb72833aece549a2b2a84c3",
+      "bytes": 4511,
+      "sha256": "ddf44d08cab57821d7f6726abd74ba90f7d021160b96c2d3634a0c93e2b39b28",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-manifest-v1.transcript.txt",
+      "mode": "100644",
+      "git_blob_oid": "9789d2ced3bc8cc3d3ddcb2f0c4e06e63aec0326",
+      "bytes": 2422,
+      "sha256": "3c13d27792f59d4039a847fdb3742fe9eaece71c4904d34b01e9014ae5cf28d0",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.json",
+      "mode": "100644",
+      "git_blob_oid": "7490704da068207a936c3fff3aec9cd220690d4f",
+      "bytes": 4511,
+      "sha256": "0fa1531f62bf1f9a6a4bc7c02cb4c5a452ba06fa47ff9b0dc35a5ca04b8d619b",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.transcript.txt",
+      "mode": "100644",
+      "git_blob_oid": "421882a377322be8c715505cf900991467dc0a10",
+      "bytes": 2422,
+      "sha256": "2d5eba1e2e34e8270faacf161ecb91be877c634660b3fed6b02541c4cc31da95",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    },
+    {
+      "path": "tests/vectors/wrap-settlement-v1-codec.txt",
+      "mode": "100644",
+      "git_blob_oid": "b6ab8ee5edcbf90b3ae9512c5e3b331d408c8964",
+      "bytes": 1562,
+      "sha256": "56e5da8cb35742f10bc633e9117e61ad82e0095d8628d4d1fdc9a90f8b1f8b0c",
+      "categories": [
+        "cryptographic-vector",
+        "canonical-vector-field-or-byte-order"
+      ]
+    }
+  ],
+  "external_proof_artifact": {
+    "logical_public_name": "risc0-v3.0.4-final-identity-zkverify-proof.cbor",
+    "git_tracked": false,
+    "mode": "external-object",
+    "bytes": 279130,
+    "sha256": "2ed107368d0e3cc2f23b4c8366ac7f5992115fa37a2abbd33953fbb78330582a",
+    "private_local_locator_emitted": false,
+    "authority": {
+      "tracked_evidence_path": "spikes/zkvm-wrap/logs/risc0-v3.0.4-final-identity-cuda-secure-proof-2026-08-13.json",
+      "tracked_evidence_sha256": "eb730934de31372b5d31e9371e154e4a2bef2625cadc761b3d0665a1a4159e2d",
+      "proof_bundle_manifest_sha256": "7c76aafefa824a1e392880bd5cff98cd94a98c65587030488f78b80a492e73e2"
+    }
+  },
+  "canonical_json_object_key_order": [
+    {
+      "path": "tests/vectors/receipt-gated-local-transition-v1.json",
+      "containing_blob_sha256": "ce65f3cadebf4a2b5857c8872dde0c298875913feaa6bca35e97d492e0d6b02a",
+      "object_key_orders": [
+        {
+          "json_pointer": "/",
+          "keys_in_order": [
+            "schema",
+            "status",
+            "profile",
+            "versions",
+            "frozen_inputs",
+            "transition",
+            "expected",
+            "nonclaims"
+          ]
+        },
+        {
+          "json_pointer": "/versions",
+          "keys_in_order": [
+            "oip_semantic",
+            "inner_proof",
+            "transition_codec"
+          ]
+        },
+        {
+          "json_pointer": "/frozen_inputs",
+          "keys_in_order": [
+            "product_commit",
+            "product_tree",
+            "readiness_index_sha256",
+            "a14_report_sha256",
+            "a14_manifest_sha256",
+            "evm_commit",
+            "evm_tree",
+            "lifecycle_evidence_sha256",
+            "lifecycle_vector_sha256",
+            "route_vector_sha256",
+            "destination_vector_sha256"
+          ]
+        },
+        {
+          "json_pointer": "/transition",
+          "keys_in_order": [
+            "route_id",
+            "program_binary_size",
+            "program_binary_sha256",
+            "image_id",
+            "raw_guest_elf_sha256",
+            "raw192_sha256",
+            "statement_leaf",
+            "primary_finality_record_id",
+            "primary_finality_committed",
+            "source_network_id",
+            "destination_chain_id",
+            "destination_consumer",
+            "domain_id",
+            "aggregation_id",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path",
+            "authenticated_receipt_root",
+            "lifecycle",
+            "claim_id",
+            "settlement_key",
+            "expected_predecessor",
+            "next_application_state"
+          ]
+        },
+        {
+          "json_pointer": "/transition/lifecycle",
+          "keys_in_order": [
+            "status",
+            "current_revision",
+            "registered_revision",
+            "draining_from_revision",
+            "registered_at_block",
+            "drain_started_at_block",
+            "consume_until_block",
+            "destination_block",
+            "lineage_abandoned",
+            "replacement_route_id"
+          ]
+        },
+        {
+          "json_pointer": "/expected",
+          "keys_in_order": [
+            "canonical_bytes",
+            "candidate_id",
+            "secondary_finalized",
+            "selected_cdk_backend"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-destination-policy-v1.json",
+      "containing_blob_sha256": "29a4528629d471ab9d3efcefec4a494477a93b5866e689fbeb3010b1e7627141",
+      "object_key_orders": [
+        {
+          "json_pointer": "/",
+          "keys_in_order": [
+            "vector_version",
+            "hash_algorithm",
+            "integer_encoding",
+            "source_identity",
+            "authorization",
+            "configured_signers",
+            "threshold",
+            "attesting_signers",
+            "attesting_signatures",
+            "receipt_fixture",
+            "pfr_only_digest",
+            "pfr_only_signer",
+            "pfr_only_signature",
+            "settlement_claim_fixture",
+            "negative_cases",
+            "expected"
+          ]
+        },
+        {
+          "json_pointer": "/source_identity",
+          "keys_in_order": [
+            "network_name",
+            "genesis_hash",
+            "runtime_spec_name",
+            "runtime_spec_version",
+            "runtime_transaction_version",
+            "runtime_state_version",
+            "runtime_code_hash"
+          ]
+        },
+        {
+          "json_pointer": "/authorization",
+          "keys_in_order": [
+            "signer_set_epoch",
+            "source_network_id",
+            "source_genesis_hash",
+            "source_runtime_id",
+            "verification_context_hash",
+            "domain_id",
+            "source_block_number",
+            "source_block_hash",
+            "aggregation_id",
+            "root",
+            "leaf_count",
+            "authorization_nonce"
+          ]
+        },
+        {
+          "json_pointer": "/receipt_fixture",
+          "keys_in_order": [
+            "statement",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/settlement_claim_fixture",
+          "keys_in_order": [
+            "raw_statement",
+            "route_id",
+            "primary_transition_id",
+            "source",
+            "destination_chain_id",
+            "destination_consumer",
+            "action_kind",
+            "checkpoint",
+            "session_id",
+            "bvc_id",
+            "accepted_root",
+            "state",
+            "signer_set_epoch",
+            "issuance_height",
+            "supersedes_record_id"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/0",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/0/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/1",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/1/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/2",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/2/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/3",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/3/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/4",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/4/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/5",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/5/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/6",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/6/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/7",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/7/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/8",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/8/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/9",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/9/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/10",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/10/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/11",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/11/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/12",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/12/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/13",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/13/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/14",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/14/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/15",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/15/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/16",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/16/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/17",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/17/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/18",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/18/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/19",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/19/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/20",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/20/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/21",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/21/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/22",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/22/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/22/value/data",
+          "keys_in_order": [
+            "statement",
+            "authenticated_root",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/23",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/23/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/23/value/data",
+          "keys_in_order": [
+            "statement",
+            "authenticated_root",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/24",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/24/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/24/value/data",
+          "keys_in_order": [
+            "statement",
+            "authenticated_root",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/25",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/25/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/25/value/data",
+          "keys_in_order": [
+            "statement",
+            "authenticated_root",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/26",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/26/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/26/value/data",
+          "keys_in_order": [
+            "statement",
+            "authenticated_root",
+            "leaf_count",
+            "leaf_index",
+            "merkle_path"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/27",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/27/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/27/value/data",
+          "keys_in_order": [
+            "claim_id",
+            "settlement_key"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/28",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/28/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/28/value/data",
+          "keys_in_order": [
+            "claim_id",
+            "settlement_key"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/29",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/29/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/29/value/data",
+          "keys_in_order": [
+            "next_authorization_nonce",
+            "root_transition_count",
+            "authorization",
+            "attesting_signers"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/29/value/data/authorization",
+          "keys_in_order": [
+            "signer_set_epoch",
+            "source_network_id",
+            "source_genesis_hash",
+            "source_runtime_id",
+            "verification_context_hash",
+            "domain_id",
+            "source_block_number",
+            "source_block_hash",
+            "aggregation_id",
+            "root",
+            "leaf_count",
+            "authorization_nonce"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/30",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/30/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/30/value/data",
+          "keys_in_order": [
+            "next_authorization_nonce",
+            "root_transition_count",
+            "authorization",
+            "attesting_signers"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/30/value/data/authorization",
+          "keys_in_order": [
+            "signer_set_epoch",
+            "source_network_id",
+            "source_genesis_hash",
+            "source_runtime_id",
+            "verification_context_hash",
+            "domain_id",
+            "source_block_number",
+            "source_block_hash",
+            "aggregation_id",
+            "root",
+            "leaf_count",
+            "authorization_nonce"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/31",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/31/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/31/value/data",
+          "keys_in_order": [
+            "replay_transition_count",
+            "claim_id",
+            "settlement_key"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/32",
+          "keys_in_order": [
+            "id",
+            "initial_state",
+            "operation",
+            "field",
+            "value",
+            "expected_error",
+            "before_state_digest",
+            "after_state_digest"
+          ]
+        },
+        {
+          "json_pointer": "/negative_cases/32/value",
+          "keys_in_order": [
+            "kind",
+            "data"
+          ]
+        },
+        {
+          "json_pointer": "/expected",
+          "keys_in_order": [
+            "canonical_preimage",
+            "signing_digest",
+            "coordinate_id",
+            "registration_result",
+            "authorization_replay_error",
+            "coordinate_conflict_error",
+            "root_registry_before",
+            "root_registry_after",
+            "root_transition_count_before",
+            "root_transition_count_after",
+            "next_nonce_before",
+            "next_nonce_after",
+            "replay_claim_error",
+            "replay_settlement_error",
+            "replay_claims_before",
+            "replay_claims_after",
+            "replay_settlements_before",
+            "replay_settlements_after",
+            "replay_transition_count_before",
+            "replay_transition_count_after",
+            "raw_statement_sha256",
+            "preclaim_hash",
+            "primary_finality_record_id",
+            "claim_id",
+            "settlement_key",
+            "raw_accepted_root"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-final-identity-candidate-v1.json",
+      "containing_blob_sha256": "6b14abdedf7c13c233b8f218d1792da04c7994ad3f41d154d562463d3eba172f",
+      "object_key_orders": [
+        {
+          "json_pointer": "/",
+          "keys_in_order": [
+            "vector_version",
+            "manifest",
+            "statement_sample",
+            "settlement_key_sample"
+          ]
+        },
+        {
+          "json_pointer": "/manifest",
+          "keys_in_order": [
+            "manifest_version",
+            "route_family",
+            "proof_system",
+            "source_network",
+            "verifier",
+            "statement",
+            "aggregation_domain_id",
+            "destination",
+            "trust",
+            "transport",
+            "conflict",
+            "settlement_key",
+            "receipt_tuple"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/source_network",
+          "keys_in_order": [
+            "network_name",
+            "genesis_hash",
+            "runtime_spec_name",
+            "runtime_spec_version",
+            "runtime_transaction_version",
+            "runtime_state_version",
+            "runtime_source_tag",
+            "runtime_source_commit"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/verifier",
+          "keys_in_order": [
+            "risc0_release",
+            "risc0_source_commit",
+            "guest_toolchain",
+            "guest_elf_sha256",
+            "verification_context",
+            "verifier_version_preimage",
+            "verifier_version_hash",
+            "image_id",
+            "image_id_encoding",
+            "zkverify_vk_semantics"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/statement",
+          "keys_in_order": [
+            "application_statement_version",
+            "raw_statement_encoding",
+            "raw_statement_bytes",
+            "public_values_semantics",
+            "circuit_commitment_binding",
+            "native_statement_formula"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/destination",
+          "keys_in_order": [
+            "network_name",
+            "chain_id",
+            "gateway_proxy",
+            "gateway_proxy_code_hash",
+            "gateway_implementation",
+            "gateway_implementation_code_hash"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/trust",
+          "keys_in_order": [
+            "role_model",
+            "observed_publisher",
+            "observed_publisher_capability",
+            "upgrader_capability",
+            "default_admin_capability",
+            "upgrader_principal_pinned",
+            "default_admin_principal_pinned",
+            "proxy_is_upgradeable",
+            "proxy_and_implementation_are_tcb"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/transport",
+          "keys_in_order": [
+            "authentication",
+            "destination_verifies_volta_grandpa_finality",
+            "source_finality_policy"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/conflict",
+          "keys_in_order": [
+            "same_coordinate_overwrite_possible",
+            "conflict_rejection",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/settlement_key",
+          "keys_in_order": [
+            "domain",
+            "hash_algorithm",
+            "preimage_order",
+            "primary_transition_id_bytes",
+            "destination_chain_id_encoding",
+            "destination_consumer_bytes",
+            "action_kind_encoding",
+            "includes_route_id"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/receipt_tuple",
+          "keys_in_order": [
+            "domain_id_encoding",
+            "aggregation_id_encoding",
+            "leaf_count_encoding",
+            "leaf_index_encoding",
+            "merkle_path_node_bytes",
+            "canonical_relation_required",
+            "live_enforcement",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/statement_sample",
+          "keys_in_order": [
+            "raw192"
+          ]
+        },
+        {
+          "json_pointer": "/settlement_key_sample",
+          "keys_in_order": [
+            "primary_transition_id",
+            "intended_destination_chain_id",
+            "intended_destination_consumer",
+            "action_kind"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-manifest-v1.json",
+      "containing_blob_sha256": "ddf44d08cab57821d7f6726abd74ba90f7d021160b96c2d3634a0c93e2b39b28",
+      "object_key_orders": [
+        {
+          "json_pointer": "/",
+          "keys_in_order": [
+            "vector_version",
+            "manifest",
+            "statement_sample",
+            "settlement_key_sample"
+          ]
+        },
+        {
+          "json_pointer": "/manifest",
+          "keys_in_order": [
+            "manifest_version",
+            "route_family",
+            "proof_system",
+            "source_network",
+            "verifier",
+            "statement",
+            "aggregation_domain_id",
+            "destination",
+            "trust",
+            "transport",
+            "conflict",
+            "settlement_key",
+            "receipt_tuple"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/source_network",
+          "keys_in_order": [
+            "network_name",
+            "genesis_hash",
+            "runtime_spec_name",
+            "runtime_spec_version",
+            "runtime_transaction_version",
+            "runtime_state_version",
+            "runtime_source_tag",
+            "runtime_source_commit"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/verifier",
+          "keys_in_order": [
+            "risc0_release",
+            "risc0_source_commit",
+            "guest_toolchain",
+            "guest_elf_sha256",
+            "verification_context",
+            "verifier_version_preimage",
+            "verifier_version_hash",
+            "image_id",
+            "image_id_encoding",
+            "zkverify_vk_semantics"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/statement",
+          "keys_in_order": [
+            "application_statement_version",
+            "raw_statement_encoding",
+            "raw_statement_bytes",
+            "public_values_semantics",
+            "circuit_commitment_binding",
+            "native_statement_formula"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/destination",
+          "keys_in_order": [
+            "network_name",
+            "chain_id",
+            "gateway_proxy",
+            "gateway_proxy_code_hash",
+            "gateway_implementation",
+            "gateway_implementation_code_hash"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/trust",
+          "keys_in_order": [
+            "role_model",
+            "observed_publisher",
+            "observed_publisher_capability",
+            "upgrader_capability",
+            "default_admin_capability",
+            "upgrader_principal_pinned",
+            "default_admin_principal_pinned",
+            "proxy_is_upgradeable",
+            "proxy_and_implementation_are_tcb"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/transport",
+          "keys_in_order": [
+            "authentication",
+            "destination_verifies_volta_grandpa_finality",
+            "source_finality_policy"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/conflict",
+          "keys_in_order": [
+            "same_coordinate_overwrite_possible",
+            "conflict_rejection",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/settlement_key",
+          "keys_in_order": [
+            "domain",
+            "hash_algorithm",
+            "preimage_order",
+            "primary_transition_id_bytes",
+            "destination_chain_id_encoding",
+            "destination_consumer_bytes",
+            "action_kind_encoding",
+            "includes_route_id"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/receipt_tuple",
+          "keys_in_order": [
+            "domain_id_encoding",
+            "aggregation_id_encoding",
+            "leaf_count_encoding",
+            "leaf_index_encoding",
+            "merkle_path_node_bytes",
+            "canonical_relation_required",
+            "live_enforcement",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/statement_sample",
+          "keys_in_order": [
+            "raw192"
+          ]
+        },
+        {
+          "json_pointer": "/settlement_key_sample",
+          "keys_in_order": [
+            "primary_transition_id",
+            "intended_destination_chain_id",
+            "intended_destination_consumer",
+            "action_kind"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.json",
+      "containing_blob_sha256": "0fa1531f62bf1f9a6a4bc7c02cb4c5a452ba06fa47ff9b0dc35a5ca04b8d619b",
+      "object_key_orders": [
+        {
+          "json_pointer": "/",
+          "keys_in_order": [
+            "vector_version",
+            "manifest",
+            "statement_sample",
+            "settlement_key_sample"
+          ]
+        },
+        {
+          "json_pointer": "/manifest",
+          "keys_in_order": [
+            "manifest_version",
+            "route_family",
+            "proof_system",
+            "source_network",
+            "verifier",
+            "statement",
+            "aggregation_domain_id",
+            "destination",
+            "trust",
+            "transport",
+            "conflict",
+            "settlement_key",
+            "receipt_tuple"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/source_network",
+          "keys_in_order": [
+            "network_name",
+            "genesis_hash",
+            "runtime_spec_name",
+            "runtime_spec_version",
+            "runtime_transaction_version",
+            "runtime_state_version",
+            "runtime_source_tag",
+            "runtime_source_commit"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/verifier",
+          "keys_in_order": [
+            "risc0_release",
+            "risc0_source_commit",
+            "guest_toolchain",
+            "guest_elf_sha256",
+            "verification_context",
+            "verifier_version_preimage",
+            "verifier_version_hash",
+            "image_id",
+            "image_id_encoding",
+            "zkverify_vk_semantics"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/statement",
+          "keys_in_order": [
+            "application_statement_version",
+            "raw_statement_encoding",
+            "raw_statement_bytes",
+            "public_values_semantics",
+            "circuit_commitment_binding",
+            "native_statement_formula"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/destination",
+          "keys_in_order": [
+            "network_name",
+            "chain_id",
+            "gateway_proxy",
+            "gateway_proxy_code_hash",
+            "gateway_implementation",
+            "gateway_implementation_code_hash"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/trust",
+          "keys_in_order": [
+            "role_model",
+            "observed_publisher",
+            "observed_publisher_capability",
+            "upgrader_capability",
+            "default_admin_capability",
+            "upgrader_principal_pinned",
+            "default_admin_principal_pinned",
+            "proxy_is_upgradeable",
+            "proxy_and_implementation_are_tcb"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/transport",
+          "keys_in_order": [
+            "authentication",
+            "destination_verifies_volta_grandpa_finality",
+            "source_finality_policy"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/conflict",
+          "keys_in_order": [
+            "same_coordinate_overwrite_possible",
+            "conflict_rejection",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/settlement_key",
+          "keys_in_order": [
+            "domain",
+            "hash_algorithm",
+            "preimage_order",
+            "primary_transition_id_bytes",
+            "destination_chain_id_encoding",
+            "destination_consumer_bytes",
+            "action_kind_encoding",
+            "includes_route_id"
+          ]
+        },
+        {
+          "json_pointer": "/manifest/receipt_tuple",
+          "keys_in_order": [
+            "domain_id_encoding",
+            "aggregation_id_encoding",
+            "leaf_count_encoding",
+            "leaf_index_encoding",
+            "merkle_path_node_bytes",
+            "canonical_relation_required",
+            "live_enforcement",
+            "enforcement_owner"
+          ]
+        },
+        {
+          "json_pointer": "/statement_sample",
+          "keys_in_order": [
+            "raw192"
+          ]
+        },
+        {
+          "json_pointer": "/settlement_key_sample",
+          "keys_in_order": [
+            "primary_transition_id",
+            "intended_destination_chain_id",
+            "intended_destination_consumer",
+            "action_kind"
+          ]
+        }
+      ]
+    }
+  ],
+  "freeze_semantics": {
+    "path_set_exact": true,
+    "mode_exact": true,
+    "bytes_exact": true,
+    "sha256_exact": true,
+    "comments_doc_attributes_package_descriptions_panic_assert_schema_keys_test_names_in_scope_are_bytes": true,
+    "new_identity_or_expected_hash_update": "FORBIDDEN",
+    "proof_regeneration": "FORBIDDEN"
+  },
+  "declared_public_professional_contact": {
+    "contact": "jay@oraclizer.io",
+    "contact_sha256": "24d61ad5997857015d3b2b818985ebe47657f099d4af44ad03fbcb9b0e50b958",
+    "classification": "DECLARED PUBLIC PROFESSIONAL AUTHOR/SECURITY CONTACT",
+    "legacy_annotation": false,
+    "private_pii": false,
+    "scope_is_exact_not_domain_wide": true,
+    "protected_surface_occurrence_count": 1,
+    "owners": [
+      {
+        "contact": "jay@oraclizer.io",
+        "contact_sha256": "24d61ad5997857015d3b2b818985ebe47657f099d4af44ad03fbcb9b0e50b958",
+        "path": "Cargo.toml",
+        "line_number_advisory": 27,
+        "line_byte_offset_zero_based": 21,
+        "containing_blob_sha256": "283797b91cb1b839f1b1571e83f2aff03629023400afd637a221bdbcef0a4bcf",
+        "role": "workspace.package authors public professional contact"
+      },
+      {
+        "contact": "jay@oraclizer.io",
+        "contact_sha256": "24d61ad5997857015d3b2b818985ebe47657f099d4af44ad03fbcb9b0e50b958",
+        "path": "CITATION.cff",
+        "line_number_advisory": 9,
+        "line_byte_offset_zero_based": 12,
+        "containing_blob_sha256": "a52fac01f0c4d5a2485c0915ac4a618a024300b7c7c1542a5cdb9dc732a46167",
+        "role": "software citation author public professional contact"
+      },
+      {
+        "contact": "jay@oraclizer.io",
+        "contact_sha256": "24d61ad5997857015d3b2b818985ebe47657f099d4af44ad03fbcb9b0e50b958",
+        "path": "SECURITY.md",
+        "line_number_advisory": 9,
+        "line_byte_offset_zero_based": 1,
+        "containing_blob_sha256": "7407373cc6ce1d38af2a99dc3c91812debe505e8815775ba2d8907f3fc30551a",
+        "role": "private vulnerability-reporting public contact channel"
+      },
+      {
+        "contact": "jay@oraclizer.io",
+        "contact_sha256": "24d61ad5997857015d3b2b818985ebe47657f099d4af44ad03fbcb9b0e50b958",
+        "path": "SECURITY.md",
+        "line_number_advisory": 9,
+        "line_byte_offset_zero_based": 26,
+        "containing_blob_sha256": "7407373cc6ce1d38af2a99dc3c91812debe505e8815775ba2d8907f3fc30551a",
+        "role": "private vulnerability-reporting public contact channel"
+      }
+    ],
+    "any_other_email_or_path_role": "FAIL"
+  }
+}

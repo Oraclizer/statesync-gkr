@@ -1,0 +1,182 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_add_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.023
+      },
+      "vc_bind_SparseLayerOracle": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.009 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.033 },
+              { "prover": "alt-ergo", "time": 0.026 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.029 }, null ]
+              },
+              null,
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.012 }, null ]
+              },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.027 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.026 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.026 },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.027 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.026 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.018 },
+              { "prover": "alt-ergo", "time": 0.025 },
+              { "prover": "alt-ergo", "time": 0.028 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.023 },
+              { "prover": "alt-ergo", "time": 0.027 },
+              { "prover": "alt-ergo", "time": 0.026 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.022 },
+              { "prover": "alt-ergo", "time": 0.009 },
+              { "prover": "alt-ergo", "time": 0.013 },
+              { "prover": "alt-ergo", "time": 0.011 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.015 },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.018 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.024 },
+              { "prover": "alt-ergo", "time": 0.015 },
+              { "prover": "alt-ergo", "time": 0.021 },
+              { "prover": "alt-ergo", "time": 0.013 },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.01 }, null ]
+              },
+              null,
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.017 }, null ]
+              },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.018 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.018 },
+              { "prover": "alt-ergo", "time": 0.016 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              {
+                "tactic": "split_vc",
+                "children": [ { "prover": "alt-ergo", "time": 0.013 }, null ]
+              },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.016 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.016 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.013 },
+              { "prover": "alt-ergo", "time": 0.021 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.006 },
+              { "prover": "alt-ergo", "time": 0.016 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.026 },
+              { "prover": "alt-ergo", "time": 0.036 },
+              { "prover": "alt-ergo", "time": 0.01 },
+              { "prover": "alt-ergo", "time": 0.011 },
+              null,
+              { "prover": "alt-ergo", "time": 0.013 },
+              { "prover": "alt-ergo", "time": 0.015 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.009 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.01 },
+              { "prover": "alt-ergo", "time": 0.025 },
+              { "prover": "alt-ergo", "time": 0.038 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.027 },
+              { "prover": "alt-ergo", "time": 0.025 },
+              { "prover": "alt-ergo", "time": 0.031 }
+            ]
+          }
+        ]
+      },
+      "vc_build_phase2": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_elim_Some'0": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_index_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.023
+      },
+      "vc_index_mut_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_into_iter_Range_usize": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_into_iter_array_refmut_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global_3": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_into_iter_array_refmut_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global_4": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_mul_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.021
+      },
+      "vc_next_IntoIter_refmut_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_next_IntoIter_refmut_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global'0": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_next_Range_usize": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_push_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.022
+      },
+      "vc_sub_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_truncate_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      }
+    }
+  }
+}

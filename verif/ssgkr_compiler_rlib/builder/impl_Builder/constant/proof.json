@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_constant'": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_new_tup2_NodeId_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.004
+      },
+      "vc_push": { "prover": "alt-ergo", "time": 0.013 }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_collect_Map_Copied_Iter_MontyField31_KoalaBearParameters_embed": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_copied_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.005
+      },
+      "vc_copied_Iter_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_deref_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_embed": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_first_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_fold_point": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_from_iter_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_from_str": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_into_iter_Map_Copied_Iter_MontyField31_KoalaBearParameters_embed": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_iter_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_len_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_len_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.012
+      },
+      "vc_map_Copied_Iter_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_mle_eval_base": null,
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_unwrap_or_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      }
+    }
+  }
+}

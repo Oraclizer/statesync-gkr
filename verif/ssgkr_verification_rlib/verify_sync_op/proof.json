@@ -1,0 +1,45 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_compile_with_hints": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_derive": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_elim_Ok": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_full_circuit_commitment": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_kind": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_new": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_round_template_Poseidon2Gadget": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_verify_sync_op": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              { "prover": "alt-ergo", "time": 0.006 },
+              { "prover": "alt-ergo", "time": 0.004 },
+              { "prover": "alt-ergo", "time": 0.005 },
+              { "prover": "alt-ergo", "time": 0.009 },
+              { "prover": "alt-ergo", "time": 0.011 },
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.007 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.011 },
+              { "prover": "alt-ergo", "time": 0.008 },
+              { "prover": "alt-ergo", "time": 0.005 },
+              { "prover": "alt-ergo", "time": 0.007 },
+              { "prover": "alt-ergo", "time": 0.012 },
+              { "prover": "alt-ergo", "time": 0.012 }
+            ]
+          }
+        ]
+      },
+      "vc_verify_sync_op_with_DerivedRegularWiring": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      }
+    }
+  }
+}

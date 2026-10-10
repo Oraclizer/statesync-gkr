@@ -1,0 +1,17 @@
+[package]
+name = "ssgkr-supplement-driver"
+version = "0.1.1"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+statesync-gkr = { path = "../source" }
+ssgkr-verification = { path = "../source/crates/verification" }
+rayon = "=1.12.0"
+sha2 = "=0.11.0"
+serde_json = "=1.0.149"
+
+[lints.rust]
+unsafe_code = "forbid"

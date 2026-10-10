@@ -1,0 +1,10 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_PolyError": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_elim_NotPowerOfTwo": { "prover": "alt-ergo", "time": 0.008 }
+    }
+  }
+}

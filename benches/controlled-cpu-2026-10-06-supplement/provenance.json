@@ -1,0 +1,509 @@
+{
+  "source_release": "v1.1.0",
+  "source_commit": "1b8d2f829792172b347dedbfde969016c2c05789",
+  "source_archive_sha256": "d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9",
+  "recorded_helper_sha256": {
+    "final.sh": "f1b35c50c93792b6f43c4335699fbdbc246691ce6566af2bcc420fde59e292bd",
+    "run-cells.py": "39b38dc9771e109c115d634697652b0145b22cab5ef944efa238530c3dd2b579",
+    "validate-cells.py": "e6b37059399c10aa07a831090137672cd53ba37bb1e75be6e23c34dfd0b0a044",
+    "validate-plan.py": "bccde307a3262d1e8868582fa6218e17dcb93a14697a08b3b54112b015867713",
+    "check-common-lock.py": "0dcff3df8a1fad20e470fe5bfde9dc9a9f187d0c9161292e27909d4da5f48cd9"
+  },
+  "driver_inputs": [
+    {
+      "path": "driver/Cargo.toml",
+      "bytes": 322,
+      "sha256": "6cf1ca36975a6f81da8497d18776d57d98fcaaa71512f8fa85ce12219f88d0b7"
+    },
+    {
+      "path": "driver/Cargo.lock",
+      "bytes": 26230,
+      "sha256": "65813f1824d18d9b15e9bc2f66bd892bca58e46576c2b6031124cbb2005a41c5"
+    },
+    {
+      "path": "driver/src/fixture.rs",
+      "bytes": 2984,
+      "sha256": "4662fe5c0e2afee1cdf89abd9d206e5ccb5e6e6ca59e2cd36894953798bec971"
+    },
+    {
+      "path": "driver/src/main.rs",
+      "bytes": 28496,
+      "sha256": "3bdc9e63f52b6378dd789dbeefb61ab8788c6ce47b6eba92d3a0ec0374ab6f50"
+    },
+    {
+      "path": "driver/src/variants.rs",
+      "bytes": 4252,
+      "sha256": "3bf9a0fc8938ceaa70993e15312d81b1c5345f675e8b8f36ed8ff2b9776ad84b"
+    }
+  ],
+  "figures": [
+    {
+      "file": "figures/cpu-work-and-completion-rate.png",
+      "sha256": "a012fdc088ae0bb1a10b26a9b3e8a62eb77f8dcab807df559c189a3d3a8ed4b5",
+      "bytes": 152075,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/direct-component-costs.png",
+      "sha256": "514714183686abf311c6a6be7adab83e743f1380895711dd965bff9cf1e8f81d",
+      "bytes": 68751,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/encoded-acceptance-frontier.png",
+      "sha256": "d94646c2062bc5a8e75537a1ce44d54aa382289905ddbacbf626585a185cebee",
+      "bytes": 199853,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/initial-campaign-latency-cdf.png",
+      "sha256": "e831bc846458d5666cb67615c16152d2f4bc4a0c7dbbceda086d4dd3a811c228",
+      "bytes": 356140,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/input-types-latency-cdf.png",
+      "sha256": "27441f63da9abef509b880c064a3e557a459b49d6ec69b3b5ec4b6d4cf99fb8d",
+      "bytes": 349180,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/paired-wiring-comparison.png",
+      "sha256": "2b78b0c409026f2353f0d33e578481d18ad10253e80779bf53d1e243f2c1c0b7",
+      "bytes": 68691,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/preparation-amortization-model.png",
+      "sha256": "823179d5d1784a1a266d2001a8f3eb3c992002e91910d8148dc3cb3b0b4cc392",
+      "bytes": 120756,
+      "copy": "original inspected PNG bytes; no rerender"
+    },
+    {
+      "file": "figures/process-order-variation.png",
+      "sha256": "37df25369de6aed1d9b48010a6c8dd9c50827379912efc17a498aa044a0c2a86",
+      "bytes": 104274,
+      "copy": "original inspected PNG bytes; no rerender"
+    }
+  ],
+  "helper_distribution": "Recorded provider/operator scripts are not copied; their hashes are preserved. Generic replay is a separate reviewed interface.",
+  "lscpu": {
+    "lscpu": [
+      {
+        "field": "Architecture:",
+        "data": "x86_64"
+      },
+      {
+        "field": "CPU op-mode(s):",
+        "data": "32-bit, 64-bit"
+      },
+      {
+        "field": "Address sizes:",
+        "data": "46 bits physical, 57 bits virtual"
+      },
+      {
+        "field": "Byte Order:",
+        "data": "Little Endian"
+      },
+      {
+        "field": "CPU(s):",
+        "data": "192"
+      },
+      {
+        "field": "On-line CPU(s) list:",
+        "data": "0-191"
+      },
+      {
+        "field": "Vendor ID:",
+        "data": "AuthenticAMD"
+      },
+      {
+        "field": "Model name:",
+        "data": "AMD EPYC 9R45 96-Core Processor"
+      },
+      {
+        "field": "CPU family:",
+        "data": "26"
+      },
+      {
+        "field": "Model:",
+        "data": "2"
+      },
+      {
+        "field": "Thread(s) per core:",
+        "data": "1"
+      },
+      {
+        "field": "Core(s) per socket:",
+        "data": "96"
+      },
+      {
+        "field": "Socket(s):",
+        "data": "2"
+      },
+      {
+        "field": "Stepping:",
+        "data": "1"
+      },
+      {
+        "field": "Frequency boost:",
+        "data": "enabled"
+      },
+      {
+        "field": "CPU max MHz:",
+        "data": "4509.3750"
+      },
+      {
+        "field": "CPU min MHz:",
+        "data": "1500.0000"
+      },
+      {
+        "field": "BogoMIPS:",
+        "data": "5199.85"
+      },
+      {
+        "field": "Flags:",
+        "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin cppc amd_ibpb_ret arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d sev sev_es debug_swap srso_user_kernel_no"
+      },
+      {
+        "field": "Virtualization:",
+        "data": "AMD-V"
+      },
+      {
+        "field": "L1d cache:",
+        "data": "9 MiB (192 instances)"
+      },
+      {
+        "field": "L1i cache:",
+        "data": "6 MiB (192 instances)"
+      },
+      {
+        "field": "L2 cache:",
+        "data": "192 MiB (192 instances)"
+      },
+      {
+        "field": "L3 cache:",
+        "data": "768 MiB (24 instances)"
+      },
+      {
+        "field": "NUMA node(s):",
+        "data": "2"
+      },
+      {
+        "field": "NUMA node0 CPU(s):",
+        "data": "0-95"
+      },
+      {
+        "field": "NUMA node1 CPU(s):",
+        "data": "96-191"
+      },
+      {
+        "field": "Vulnerability Gather data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Indirect target selection:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Itlb multihit:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability L1tf:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Meltdown:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mmio stale data:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Reg file data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Retbleed:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec rstack overflow:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec store bypass:",
+        "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+      },
+      {
+        "field": "Vulnerability Spectre v1:",
+        "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+      },
+      {
+        "field": "Vulnerability Spectre v2:",
+        "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP disabled; PBRSB-eIBRS Not affected; BHI Not affected"
+      },
+      {
+        "field": "Vulnerability Srbds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsa:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsx async abort:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Vmscape:",
+        "data": "Not affected"
+      }
+    ]
+  },
+  "clock_tick_hz": 100,
+  "physical_cpu_set": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191",
+  "topology_csv": [
+    "# The following is the parsable format, which can be fed to other",
+    "# programs. Each different item in every column has an unique ID",
+    "# starting usually from zero.",
+    "# CPU,Core,Socket,Node",
+    "0,0,0,0",
+    "1,1,0,0",
+    "2,2,0,0",
+    "3,3,0,0",
+    "4,4,0,0",
+    "5,5,0,0",
+    "6,6,0,0",
+    "7,7,0,0",
+    "8,8,0,0",
+    "9,9,0,0",
+    "10,10,0,0",
+    "11,11,0,0",
+    "12,12,0,0",
+    "13,13,0,0",
+    "14,14,0,0",
+    "15,15,0,0",
+    "16,16,0,0",
+    "17,17,0,0",
+    "18,18,0,0",
+    "19,19,0,0",
+    "20,20,0,0",
+    "21,21,0,0",
+    "22,22,0,0",
+    "23,23,0,0",
+    "24,24,0,0",
+    "25,25,0,0",
+    "26,26,0,0",
+    "27,27,0,0",
+    "28,28,0,0",
+    "29,29,0,0",
+    "30,30,0,0",
+    "31,31,0,0",
+    "32,32,0,0",
+    "33,33,0,0",
+    "34,34,0,0",
+    "35,35,0,0",
+    "36,36,0,0",
+    "37,37,0,0",
+    "38,38,0,0",
+    "39,39,0,0",
+    "40,40,0,0",
+    "41,41,0,0",
+    "42,42,0,0",
+    "43,43,0,0",
+    "44,44,0,0",
+    "45,45,0,0",
+    "46,46,0,0",
+    "47,47,0,0",
+    "48,48,0,0",
+    "49,49,0,0",
+    "50,50,0,0",
+    "51,51,0,0",
+    "52,52,0,0",
+    "53,53,0,0",
+    "54,54,0,0",
+    "55,55,0,0",
+    "56,56,0,0",
+    "57,57,0,0",
+    "58,58,0,0",
+    "59,59,0,0",
+    "60,60,0,0",
+    "61,61,0,0",
+    "62,62,0,0",
+    "63,63,0,0",
+    "64,64,0,0",
+    "65,65,0,0",
+    "66,66,0,0",
+    "67,67,0,0",
+    "68,68,0,0",
+    "69,69,0,0",
+    "70,70,0,0",
+    "71,71,0,0",
+    "72,72,0,0",
+    "73,73,0,0",
+    "74,74,0,0",
+    "75,75,0,0",
+    "76,76,0,0",
+    "77,77,0,0",
+    "78,78,0,0",
+    "79,79,0,0",
+    "80,80,0,0",
+    "81,81,0,0",
+    "82,82,0,0",
+    "83,83,0,0",
+    "84,84,0,0",
+    "85,85,0,0",
+    "86,86,0,0",
+    "87,87,0,0",
+    "88,88,0,0",
+    "89,89,0,0",
+    "90,90,0,0",
+    "91,91,0,0",
+    "92,92,0,0",
+    "93,93,0,0",
+    "94,94,0,0",
+    "95,95,0,0",
+    "96,96,1,1",
+    "97,97,1,1",
+    "98,98,1,1",
+    "99,99,1,1",
+    "100,100,1,1",
+    "101,101,1,1",
+    "102,102,1,1",
+    "103,103,1,1",
+    "104,104,1,1",
+    "105,105,1,1",
+    "106,106,1,1",
+    "107,107,1,1",
+    "108,108,1,1",
+    "109,109,1,1",
+    "110,110,1,1",
+    "111,111,1,1",
+    "112,112,1,1",
+    "113,113,1,1",
+    "114,114,1,1",
+    "115,115,1,1",
+    "116,116,1,1",
+    "117,117,1,1",
+    "118,118,1,1",
+    "119,119,1,1",
+    "120,120,1,1",
+    "121,121,1,1",
+    "122,122,1,1",
+    "123,123,1,1",
+    "124,124,1,1",
+    "125,125,1,1",
+    "126,126,1,1",
+    "127,127,1,1",
+    "128,128,1,1",
+    "129,129,1,1",
+    "130,130,1,1",
+    "131,131,1,1",
+    "132,132,1,1",
+    "133,133,1,1",
+    "134,134,1,1",
+    "135,135,1,1",
+    "136,136,1,1",
+    "137,137,1,1",
+    "138,138,1,1",
+    "139,139,1,1",
+    "140,140,1,1",
+    "141,141,1,1",
+    "142,142,1,1",
+    "143,143,1,1",
+    "144,144,1,1",
+    "145,145,1,1",
+    "146,146,1,1",
+    "147,147,1,1",
+    "148,148,1,1",
+    "149,149,1,1",
+    "150,150,1,1",
+    "151,151,1,1",
+    "152,152,1,1",
+    "153,153,1,1",
+    "154,154,1,1",
+    "155,155,1,1",
+    "156,156,1,1",
+    "157,157,1,1",
+    "158,158,1,1",
+    "159,159,1,1",
+    "160,160,1,1",
+    "161,161,1,1",
+    "162,162,1,1",
+    "163,163,1,1",
+    "164,164,1,1",
+    "165,165,1,1",
+    "166,166,1,1",
+    "167,167,1,1",
+    "168,168,1,1",
+    "169,169,1,1",
+    "170,170,1,1",
+    "171,171,1,1",
+    "172,172,1,1",
+    "173,173,1,1",
+    "174,174,1,1",
+    "175,175,1,1",
+    "176,176,1,1",
+    "177,177,1,1",
+    "178,178,1,1",
+    "179,179,1,1",
+    "180,180,1,1",
+    "181,181,1,1",
+    "182,182,1,1",
+    "183,183,1,1",
+    "184,184,1,1",
+    "185,185,1,1",
+    "186,186,1,1",
+    "187,187,1,1",
+    "188,188,1,1",
+    "189,189,1,1",
+    "190,190,1,1",
+    "191,191,1,1"
+  ],
+  "kernel": "6.8.0-1066-aws",
+  "visible_memory_kib": 394214636,
+  "clock_policy": {
+    "control": "notsupported",
+    "boost": "1",
+    "scaling_driver": "acpi-cpufreq",
+    "scaling_governor": "performance",
+    "scaling_min_freq": "1500000",
+    "scaling_max_freq": "2600000",
+    "scaling_cur_freq": "2600000"
+  },
+  "observed_cpu_mhz_summary": "proc_cpu_mhz_count=192 min=2501.923 max=4534.165 mean=2671.158",
+  "rustc": [
+    "rustc 1.96.1 (31fca3adb 2026-06-26)",
+    "binary: rustc",
+    "commit-hash: 31fca3adb283cc9dfd56b49cdee9a96eb9c96ffd",
+    "commit-date: 2026-06-26",
+    "host: x86_64-unknown-linux-gnu",
+    "release: 1.96.1",
+    "LLVM version: 22.1.2"
+  ],
+  "placement_scope": "Allowed CPU set; no per-thread placement, fixed-frequency or identical physical-machine claim.",
+  "original_bundle": {
+    "sha256": "d7ae56631f0e4df0cc4901ce9802e64a1dd965c0e955d18ddd47a6c88df43fe5",
+    "bytes": 89904498,
+    "scope": "Private operational bundle; public package retains lossless measurement data and sanitized metadata."
+  },
+  "independent_analysis": {
+    "original_sha256": "51f6548c1001eab25f78abfce419a1e0eb14bcc93852d6c8ccb2399ef2557c1c",
+    "source_audit": {
+      "status": "PASS",
+      "source_files": 577,
+      "revision": "1b8d2f829792172b347dedbfde969016c2c05789",
+      "manifest_sha256": "b36bdd584333c2e08a957195d74d860ee21fbb51f57eb622d0d7565f976ec7a5",
+      "scope": "remote before hashes against every immutable release Git blob"
+    },
+    "cell_statistics_match": true,
+    "public_cohorts_sha256": "c2178dee3b54c2707387ee72305c3bec6af4142741b6aa46a70ff6b6ec582e6b"
+  }
+}

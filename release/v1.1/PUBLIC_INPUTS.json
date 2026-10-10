@@ -1,0 +1,36 @@
+{
+  "schema": "statesync-gkr.public-inputs.v1",
+  "release_line": "v1.1",
+  "status": "EXACT_PROTECTED_VECTOR_EXTRACTION",
+  "source_vectors": [
+    "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.json",
+    "tests/vectors/receipt-gated-local-transition-v1.json"
+  ],
+  "image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
+  "raw192": {
+    "bytes": 192,
+    "hex": "0x01000100010001001f0000001800000000000000000000000000000000000000abde249a257cd4e6c3ed34f2749a7d8be66fd418f5a5d8595bffc956b45f0e0088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320005000000000000000000000000000000000000000000000000000000000000004cc6356134cfb0dcefee384334580a10c3f82929f64a9f8833dd47ebc2cdbf00",
+    "sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721"
+  },
+  "statement_leaf": "ea414507f2843a858178ece4775ebc99f7502dc5b6554c82c38d77092475ce66",
+  "previous_line_bindings": {
+    "note": "The route identifier and the local candidate transition recorded for the previous line are bound to the previous image identifier. They are kept in release/v1.0 and in the protected vectors as the record of that submission and are not reissued for this line.",
+    "route_id": "27b40b99a41976f061e94124b84cc8c43ee4e5ed6bad2e94267057e1d375f2ef",
+    "receipt": {
+      "domain_id": 2,
+      "aggregation_id": 53668,
+      "leaf_count": 1,
+      "leaf_index": 0,
+      "merkle_path": [],
+      "authenticated_root": "7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e"
+    }
+  },
+  "receipt": {
+    "domain_id": 2,
+    "aggregation_id": 56583,
+    "leaf_count": 1,
+    "leaf_index": 0,
+    "merkle_path": [],
+    "authenticated_root": "43820b7d3a614a3df41ce846d149c5955501a208108e8c90e9d9a3dac60fb4b9"
+  }
+}

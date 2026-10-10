@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_default_LayerHints": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_default_Vec_Option_FamilyTag_Global": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      }
+    }
+  }
+}

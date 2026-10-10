@@ -1,0 +1,79 @@
+{
+  "schema": "statesync-gkr.public-proof-manifest.v1",
+  "release_line": "v1.1",
+  "status": "LOCAL_ATTACHMENT_HASH_VERIFIED",
+  "program_identity": {
+    "program_binary_bytes": 699408,
+    "program_binary_sha256": "9bb3740d9c0e35f55a42adafa5bfd5cc89fe2520e1c391632807c4e33931cb04",
+    "image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
+    "raw_guest_elf_sha256": "38b337c16334226f9dcd2ea319b5e6924aa583ba637126c9d7a8cfacb5cb9a5d",
+    "methods_source_sha256": "3b8c0c23d5f0ceb84e1224b472428772c1f53bcd5c97b5ff1502acc1a6878e03",
+    "host_binary_sha256": "cad5e07c07465c9f8baddbf6364ad52ae8f35529954d742f5a1449c0ee77aab9",
+    "diagnostic_program_binary_sha256": "0ea12e7bb8a02b0003aa3b190b0707c6e2ef22df00648ca96896909fb01a4610",
+    "diagnostic_raw_guest_elf_sha256": "ca7cdb1de37397232ae5cd799e0ca09217a08fe90a2556292db8f227cfee4b89"
+  },
+  "proof": {
+    "asset_name": "statesync-gkr-v1.1-proof.cbor",
+    "format": "RISC Zero v3 inner-only CBOR",
+    "bytes": 279128,
+    "sha256": "b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822",
+    "tracked_in_source_tree": false,
+    "current_check": "SIZE_AND_SHA256_PASS",
+    "cryptographic_local_verification": "VERIFIED_AGAINST_IMAGE_ID_AT_PRODUCTION_TIME_AND_ACCEPTED_BY_THE_PUBLIC_VERIFIER",
+    "production_run": {
+      "proof_kind": "succinct",
+      "dev_mode": false,
+      "segments": 1237,
+      "user_cycles": 1179805728,
+      "total_cycles": 1296105472,
+      "prove_wall_seconds": 2107,
+      "local_verify_milliseconds": 16
+    }
+  },
+  "public_statement": {
+    "raw192_bytes": 192,
+    "raw192_sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "statement_leaf": "ea414507f2843a858178ece4775ebc99f7502dc5b6554c82c38d77092475ce66",
+    "verifier_version_hash": "aa24368f9ce9025f58596d966209fc3f322c8cac37dae753bb9b0367d273700d",
+    "note": "The guest journal is unchanged from the previous line; the statement leaf differs because it binds the image identifier."
+  },
+  "public_verifier_observation": {
+    "network": "zkVerify Volta",
+    "runtime_spec_name": "tzkv-runtime",
+    "runtime_spec_version": 2000000,
+    "submission_block": 7267596,
+    "submission_block_hash": "0xfcbe9e726d1a4a7f4a0c01ca65842c5cc93b80aadf5f3a57525918555a63cf7e",
+    "submission_extrinsic_index": 3,
+    "submission_extrinsic_hash": "0x4208e4882cd97ca870c3a6a9313858a1c6fe837195c53b317506dccadea80266",
+    "verifier_call": "settlementRisc0Pallet.submitProof",
+    "proof_variant": "V3_0",
+    "aggregation_domain_id": 2,
+    "aggregation_id": 56583,
+    "observed_events": [
+      "settlementRisc0Pallet.ProofVerified",
+      "aggregate.NewProof",
+      "system.ExtrinsicSuccess"
+    ],
+    "result": "ACCEPTED_AND_QUEUED_FOR_AGGREGATION",
+    "independent_check": "The accepted extrinsic ends with exactly the intended call bytes, recomputed from the proof file and the public inputs."
+  },
+  "receipt_observation": {
+    "aggregation_block": 7267619,
+    "aggregation_block_hash": "0xbb7e2e430ff2f6db119c34bb2952393a98f19f7bb6042e901ed2f7e4003c9279",
+    "blocks_from_submission_to_aggregation": 23,
+    "leaf_count": 1,
+    "leaf_index": 0,
+    "merkle_path": [],
+    "leaf": "ea414507f2843a858178ece4775ebc99f7502dc5b6554c82c38d77092475ce66",
+    "authenticated_root": "43820b7d3a614a3df41ce846d149c5955501a208108e8c90e9d9a3dac60fb4b9",
+    "independent_root_equality": true,
+    "independent_root_method": "Keccak-256 of the single leaf, recomputed with a local implementation checked against published test vectors, without asking the node."
+  },
+  "claim_ceiling": {
+    "production_activated": false,
+    "destination_consensus_verified": false,
+    "secondary_finalized": false,
+    "custody_restore_pass": false,
+    "custody_note": "The durable-storage custody check belongs to the previous release line and is not reissued here."
+  }
+}

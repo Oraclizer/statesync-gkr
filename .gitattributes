@@ -1,0 +1,10 @@
+# StateSync-GKR line-ending policy.
+# Keep source, proofs, and documentation on LF across supported development
+# environments so line-ending conversion cannot create phantom changes.
+* text=auto eol=lf
+*.rs   text eol=lf
+*.thy  text eol=lf
+*.toml text eol=lf
+*.md   text eol=lf
+# Binary artifacts are excluded from text normalization.
+*.pdf  binary

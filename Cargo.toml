@@ -1,0 +1,134 @@
+# SEAL[S-1]: crate boundaries and the dependency direction are design-frozen
+# (ARCHITECTURE.md "Frozen interfaces"): primitives <- sumcheck <- protocol
+# <- compiler <- {batching, commitment} <- {verification, wrap} <- root
+# facade. Verification and wrap share only the lower commitment owner. The
+# generic layer (sumcheck, protocol) must never depend on ssgkr-compiler or
+# otherwise learn SMT specifics, and only ssgkr-primitives may name p3-* paths.
+# Changing any of this is a design-review event, never an inline edit.
+[workspace]
+resolver = "3"
+members = [
+    "crates/primitives",
+    "crates/sumcheck",
+    "crates/protocol",
+    "crates/compiler",
+    "crates/batching",
+    "crates/commitment",
+    "crates/verification",
+    "crates/wrap",
+]
+
+[workspace.package]
+version = "0.1.0-dev"
+edition = "2024"
+rust-version = "1.85"
+license = "BUSL-1.1"
+repository = "https://github.com/oraclizer/statesync-gkr"
+authors = ["Jay Kim <jay@oraclizer.io>"]
+
+[workspace.dependencies]
+# plonky3: exact pin (upstream API is not yet declared stable, so we pin
+# hard and isolate every p3-* surface behind the thin adapter crate
+# `ssgkr-primitives`, which is the ONLY workspace crate allowed to depend
+# on p3-* directly. A future rebase touches that crate alone.
+p3-field = "=0.4.3"
+p3-koala-bear = "=0.4.3"
+p3-challenger = "=0.4.3"
+p3-poseidon2 = "=0.4.3"
+p3-symmetric = "=0.4.3"
+p3-merkle-tree = "=0.4.3"
+sha2 = "=0.11.0"
+sha3 = "=0.11.0"
+k256 = { version = "=0.13.4", features = ["ecdsa"] }
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.149"
+
+# Job-level parallelism for the v0.2 batch prover (root facade ONLY; the
+# frozen core crates gain no dependency). Each job's transcript is seeded
+# from its own public inputs, so worker count and scheduling order cannot
+# reach proof bytes (ADR-0001 determinism gate, pinned by tests).
+rayon = "1.10"
+
+# Creusot contract crate (FV refinement track, obligations R1~R4). Pinned to
+# the exact rev of the installed Creusot 0.13.0-dev toolchain (WSL runner) so
+# specs and verifier cannot drift. Members pull it ONLY under
+# `[target.'cfg(creusot)'.dependencies]`: normal builds on every platform
+# never compile it (the LGPL-licensed crate stays out of the production
+# dependency tree); `cargo creusot` sets `--cfg creusot` and activates it.
+creusot-std = { git = "https://github.com/creusot-rs/creusot", rev = "7af97e00c2ded88868cfa3c304adefcb46f39708" }
+
+# Internal crates. Dependency direction is a frozen design boundary:
+#   primitives <- sumcheck <- protocol <- compiler
+#     <- {batching, commitment} <- {verification, wrap} <- root.
+# `verification` and `wrap` have no edge between them; both consume the
+# lower-level `commitment` owner.
+# `sumcheck` and `protocol` MUST NOT depend on `compiler` (no SMT
+# assumptions in the generic layer - reusable-crate contribution gate).
+ssgkr-primitives = { path = "crates/primitives" }
+ssgkr-sumcheck = { path = "crates/sumcheck" }
+ssgkr-protocol = { path = "crates/protocol" }
+ssgkr-compiler = { path = "crates/compiler" }
+ssgkr-batching = { path = "crates/batching" }
+ssgkr-commitment = { path = "crates/commitment" }
+ssgkr-verification = { path = "crates/verification" }
+ssgkr-wrap = { path = "crates/wrap", default-features = false }
+
+[workspace.lints.rust]
+# FV-friendly Rust baseline: no unsafe anywhere in this workspace.
+# (plonky3 internals handle SIMD; if 2a ever needs an exception it is an
+# escalation, not an inline decision.)
+unsafe_code = "forbid"
+missing_docs = "warn"
+# `--cfg creusot` is set by the Creusot verifier build (FV refinement track);
+# declare it so normal builds accept the cfg-gated contract code.
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(creusot)'] }
+
+[workspace.lints.clippy]
+unwrap_used = "warn"
+expect_used = "warn"
+panic = "warn"
+
+[package]
+name = "statesync-gkr"
+description = "GKR prover stack specialised for sparse-Merkle-tree state verification, built on plonky3 primitives"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[features]
+default = ["host"]
+# Host-only execution surface. The default preserves the public facade and
+# parallel batch API; zkVM guests disable defaults at their shared common edge.
+host = ["dep:rayon", "ssgkr-wrap/host"]
+
+[[bin]]
+name = "measure"
+path = "src/bin/measure.rs"
+required-features = ["host"]
+
+[dependencies]
+ssgkr-primitives.workspace = true
+ssgkr-sumcheck.workspace = true
+ssgkr-protocol.workspace = true
+ssgkr-compiler.workspace = true
+ssgkr-batching.workspace = true
+ssgkr-verification.workspace = true
+ssgkr-wrap = { workspace = true, default-features = false }
+rayon = { workspace = true, optional = true }
+
+# cfg(creusot)-gated: compiled only under `cargo creusot`, invisible to
+# normal builds on every platform (see the workspace manifest note).
+[target.'cfg(creusot)'.dependencies]
+creusot-std.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true
+sha3.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

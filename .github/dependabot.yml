@@ -1,0 +1,70 @@
+version: 2
+# The proof-crypto group routes cryptographic and proof-system dependencies to
+# mandatory human review. The zkVM integration manifests under spikes/ are part
+# of the byte-frozen proof-bound source and are intentionally outside every
+# update scope; changing them is a new program identity, not an update.
+# The root Cargo.lock is also byte-frozen to the accepted proof identity of the
+# current release line, so cargo
+# version-update pull requests cannot merge in this cycle. Their limit is 0
+# until the next identity cycle; security alerts and security updates stay
+# enabled, and the group definitions below keep the review policy explicit.
+updates:
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    groups:
+      proof-crypto:
+        patterns:
+          - "p3-*"
+          - "risc0-*"
+          - "sha2"
+          - "sha3"
+          - "k256"
+          - "ecdsa"
+          - "elliptic-curve"
+          - "signature"
+          - "digest"
+          - "keccak"
+          - "hmac"
+          - "subtle"
+          - "zeroize"
+          - "creusot-std"
+        update-types:
+          - major
+          - minor
+          - patch
+      routine-cargo:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "p3-*"
+          - "risc0-*"
+          - "sha2"
+          - "sha3"
+          - "k256"
+          - "ecdsa"
+          - "elliptic-curve"
+          - "signature"
+          - "digest"
+          - "keccak"
+          - "hmac"
+          - "subtle"
+          - "zeroize"
+          - "creusot-std"
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-actions:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch

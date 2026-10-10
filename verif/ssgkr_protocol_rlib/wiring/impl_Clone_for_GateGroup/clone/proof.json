@@ -1,0 +1,26 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_GateGroup": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_clone_Side": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_clone_Vec_tup3_u32_u32_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_clone_Vec_tup4_u32_u32_u32_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_clone_tup3_u32_u32_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_clone_tup4_u32_u32_u32_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_clone_u64": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

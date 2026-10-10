@@ -1,0 +1,161 @@
+{
+  "schema": "statesync-gkr.risc0-route-b.toolchain-payload-profile.v1",
+  "authority": {
+    "release_line": "v1",
+    "payload_acceptance": "exact",
+    "packaging_digests": "observed-only-not-payload-authority",
+    "historical_interpretation_superseded": "d6028673cd8ddbc56eca1ee46dff24185033e0fc57c1d6e9e2bca65bc9ab1fc9 was recorded as a config ID but is an OCI index digest"
+  },
+  "base_image": {
+    "reference": "docker.io/risczero/risc0-guest-builder@sha256:3e12f71bacd27527a61dea96fa0e53e468c99aa261d3a1019b593f6dbd943eb3",
+    "repository_digest_sha256": "3e12f71bacd27527a61dea96fa0e53e468c99aa261d3a1019b593f6dbd943eb3",
+    "ordered_rootfs_diff_ids": [
+      "sha256:954c82bdeb5fcc80094317528fa3fcbb1026aeff64f872527d35ec9b4343b84d",
+      "sha256:291880b4872ba61b8e7971364ab8b1ffc5fb4178a3f85dcb83b74aec0c360cec",
+      "sha256:ab96d04dced80c49781c11ca035ff9935c59d48a503f0fae1ae5505dd3f77247",
+      "sha256:21a4f3e4f541483aae1fc00996fe7dffe71516ca2324abc111ce4c9c0ef456d2",
+      "sha256:96f0492e7920128db981d1c267047936ecbc4597e9f014861fc98232b780b00f",
+      "sha256:16d0b3e8d7ca1569aea8918f459529d0d2799736a44dc63e4f76960c0a9d0c30",
+      "sha256:c98caa30c3a6d335937bd51fa0f40c84637a9bd99374512a5516fdf3301bebcd"
+    ]
+  },
+  "toolchain_payload": {
+    "local_acquisition_ref": "ssgkr-route-b-toolchain-acquired:rust-1.96.1",
+    "architecture": "amd64",
+    "os": "linux",
+    "created": "2026-08-02T09:32:43.106673683+09:00",
+    "config": {
+      "Env": [
+        "PATH=/root/.risc0/bin:/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "RUSTUP_TOOLCHAIN=1.96.1"
+      ],
+      "Entrypoint": [
+        "/bin/sh"
+      ],
+      "Labels": {
+        "org.opencontainers.image.ref.name": "ubuntu",
+        "org.opencontainers.image.version": "20.04"
+      }
+    },
+    "ordered_layers": [
+      {"compressed_digest": "sha256:7007490126efaae58924972668256aaeb4858e6c4537eb4257e1978719b958c7", "compressed_size_bytes": 28580671, "diff_id": "sha256:954c82bdeb5fcc80094317528fa3fcbb1026aeff64f872527d35ec9b4343b84d"},
+      {"compressed_digest": "sha256:36f3b5122e201e1da7223c3be9baf7d516555307af8cff7ca34127371a5518b2", "compressed_size_bytes": 39744673, "diff_id": "sha256:291880b4872ba61b8e7971364ab8b1ffc5fb4178a3f85dcb83b74aec0c360cec"},
+      {"compressed_digest": "sha256:442f5be68f8aac9dcb94ee19e89fdd42f5d1b963871561c148a454bde80f0ca2", "compressed_size_bytes": 160103904, "diff_id": "sha256:ab96d04dced80c49781c11ca035ff9935c59d48a503f0fae1ae5505dd3f77247"},
+      {"compressed_digest": "sha256:f84c079c9fafb3aae76f607cd0022dbc0cca71817417c2fb26c3ec08e2f0f1e7", "compressed_size_bytes": 284931866, "diff_id": "sha256:21a4f3e4f541483aae1fc00996fe7dffe71516ca2324abc111ce4c9c0ef456d2"},
+      {"compressed_digest": "sha256:3c2cd199c7112987f9bd362e9952b298bcd31f6fc6dfa48005fbb33e1e128dbe", "compressed_size_bytes": 2459373, "diff_id": "sha256:96f0492e7920128db981d1c267047936ecbc4597e9f014861fc98232b780b00f"},
+      {"compressed_digest": "sha256:c0a8f48792670c12b48cc38bcf44b937eb5ba000a817e31cd45822e9b1b1dd71", "compressed_size_bytes": 579696091, "diff_id": "sha256:16d0b3e8d7ca1569aea8918f459529d0d2799736a44dc63e4f76960c0a9d0c30"},
+      {"compressed_digest": "sha256:6f810b40eaa573efaa8f3eae2b50c5171bc92a640ba59ae4dfb3cc4a57b7e3aa", "compressed_size_bytes": 503100235, "diff_id": "sha256:c98caa30c3a6d335937bd51fa0f40c84637a9bd99374512a5516fdf3301bebcd"},
+      {"compressed_digest": "sha256:1266dbddcd498f60265d5ab5439ba8b913547aa1a65a3602d2ca9285cc9568b9", "compressed_size_bytes": 223403370, "diff_id": "sha256:7f4e42e8476837b7bb497dde0d767a7ef771a6583d19843c0e6a72cc439d3d92"}
+    ],
+    "top_layer": {
+      "compressed_digest": "sha256:1266dbddcd498f60265d5ab5439ba8b913547aa1a65a3602d2ca9285cc9568b9",
+      "compressed_size_bytes": 223403370,
+      "diff_id": "sha256:7f4e42e8476837b7bb497dde0d767a7ef771a6583d19843c0e6a72cc439d3d92",
+      "tar_member_count": 184,
+      "whiteout_count": 0,
+      "tar_member_path_list_sha256": "c6cdc99bb798f4243b43f632a8aefd74d62508f53dc96a0565a49bfa5d963bc6",
+      "gnu_tar_numeric_owner_verbose_list_sha256": "3a7670f13d457167b7382f9b279df0d1a89708fbcb325f469856732eaf3c8667",
+      "tar_listing_hash_role": "supplemental-tool-specific-evidence"
+    },
+    "normalized_ordered_history": [
+      {"created_by": "/bin/sh -c #(nop)  ARG RELEASE", "comment": "", "empty_layer": true},
+      {"created_by": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH", "comment": "", "empty_layer": true},
+      {"created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu", "comment": "", "empty_layer": true},
+      {"created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=20.04", "comment": "", "empty_layer": true},
+      {"created_by": "/bin/sh -c #(nop) ADD file:233702cd816c07bc9fed02881b11fb3bdcaee41f3ce3ec1c9f0c4a060b155d5b in / ", "comment": "", "empty_layer": false},
+      {"created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]", "comment": "", "empty_layer": true},
+      {"created_by": "ARG RISC0_RUST_TOOLCHAIN_VERSION=1.88.0", "comment": "buildkit.dockerfile.v0", "empty_layer": true},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c apt-get update # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c apt-get install -y --no-install-recommends ca-certificates clang curl libssl-dev pkg-config build-essential # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL 'https://sh.rustup.rs' | sh -s -- -y # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "ENV PATH=/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", "comment": "buildkit.dockerfile.v0", "empty_layer": true},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c curl -L https://risczero.com/install | bash # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "ENV PATH=/root/.risc0/bin:/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", "comment": "buildkit.dockerfile.v0", "empty_layer": true},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c rzup install cpp # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "RUN |1 RISC0_RUST_TOOLCHAIN_VERSION=1.88.0 /bin/sh -c rzup install rust ${RISC0_RUST_TOOLCHAIN_VERSION} # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "ENTRYPOINT [\"/bin/sh\"]", "comment": "buildkit.dockerfile.v0", "empty_layer": true},
+      {"created_by": "RUN /bin/sh -c rustup toolchain install 1.96.1 --profile minimal # buildkit", "comment": "buildkit.dockerfile.v0", "empty_layer": false},
+      {"created_by": "ENV RUSTUP_TOOLCHAIN=1.96.1", "comment": "buildkit.dockerfile.v0", "empty_layer": true}
+    ],
+    "installation_command": "rustup toolchain install 1.96.1 --profile minimal"
+  },
+  "compiler_binaries": {
+    "host_rustc": {
+      "path": "/root/.rustup/toolchains/1.96.1-x86_64-unknown-linux-gnu/bin/rustc",
+      "version": "rustc 1.96.1 (31fca3adb 2026-06-26)",
+      "version_verbose_sha256": "2af3376cb254e69564e00978cada767f05432a299af78300c47d14c103366c1e",
+      "size_bytes": 646024,
+      "binary_sha256": "4a84e05991ad6f2a84c1361c29b52b38c390365bd1fc269b1936c88d482a8928"
+    },
+    "host_cargo": {
+      "path": "/root/.rustup/toolchains/1.96.1-x86_64-unknown-linux-gnu/bin/cargo",
+      "version": "cargo 1.96.1 (356927216 2026-06-26)",
+      "version_verbose_sha256": "f690e6067457b8cddb2160630feb46e25467b3e7d020852ee53fe2a3f3969eec",
+      "size_bytes": 42878680,
+      "binary_sha256": "a73b2c25573d251489101c0d8f19ad3702eb9761166de5ed8437b472b6c038ce"
+    },
+    "guest_rustc": {
+      "path": "/root/.risc0/toolchains/v1.88.0-rust-x86_64-unknown-linux-gnu/bin/rustc",
+      "version": "rustc 1.88.0-dev (de85b1d3d 2025-06-26)",
+      "version_verbose_sha256": "21a87295c189a277ef46222c6958f454dc3ac6846706ff719d36b1537737dd30",
+      "size_bytes": 7952,
+      "binary_sha256": "895b46e3d37c2265aa6069dd0976918b7dbc55279fbcb397f12e790f56ea959c"
+    },
+    "rzup": {
+      "path": "/root/.risc0/bin/rzup",
+      "version": "rzup 0.4.0",
+      "version_output_sha256": "ca23cdbeaa3ea35bf674c42d3aebb1e553d62a9fe192adcb1996492f3e676d89",
+      "size_bytes": 5381608,
+      "binary_sha256": "d69d6b2bf5cb6f37296e564a4bb8025198fba5a676fcdfc78070c8bf484e326b"
+    }
+  },
+  "fixed_inputs": {
+    "cargo_cache_archive_sha256": "050c369d0b52bfbd2584e85425ac259634fc230a930e61eaa50499b1e66ba975",
+    "cargo_cache_manifest_sha256": "f1f751a88f832711a4ec31c7aafcfa90e1983120465376749594ed9821612b86",
+    "cargo_cache_manifest_file_count": 13966,
+    "host_cargo_lock_sha256": "c030936ed7810cb2fbf1e037a365a5d9aa37b44ec00e7be3cb2c70cae7fe7715",
+    "guest_cargo_lock_sha256": "be809dbac9425af0f84c70ef322a122ade9957820434c7644b83f109504f8eb0",
+    "source_manifest_sha256": "b9c9c2813d9d58ab0d7f8240df32efd7bead587e172da53556273490d6d0b4c1"
+  },
+  "expected_outputs": {
+    "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+    "program_binary_size_bytes": 706152,
+    "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+    "raw_guest_elf_sha256": "ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81",
+    "methods_rs_sha256": "a749506bb1c68a13b718f4678af3884fc43cc1fb7e2fa16cae177a191186b5db",
+    "host_binary_sha256": "5e6e8969b3dc12a49972ef79f577af10fa642e2b0e394e802174abfaa415fdf8",
+    "diagnostic_program_binary_sha256": "99bc2a68e6ca656cbd69e949c1489ff4b6b8f227c6fdc37d0dc18c211d18a7cf",
+    "diagnostic_raw_guest_elf_sha256": "cadb6596855987ef6a7a2b19ab7c5e7f2330cc841ffe4da9c9cccb23ce99ca8b"
+  },
+  "packaging_evidence": {
+    "historical": {
+      "oci_index_digest": "sha256:d6028673cd8ddbc56eca1ee46dff24185033e0fc57c1d6e9e2bca65bc9ab1fc9",
+      "runtime_manifest_digest": "sha256:109d160180472eab03165ace5a9479733c05c3e4fdee8e5f6ed2cdb0cf671b39",
+      "runtime_config_digest": "sha256:4db1043623e19303cbf430c2559c71e349473ede885d75e050d95396e94b483f",
+      "runtime_config_media_type": "application/vnd.oci.image.config.v1+json",
+      "runtime_config_size_bytes": 4131,
+      "attestation_manifest_digest": "sha256:0f2a93068a9577c1ef7dab48ddcd6e483d92ba7d9f73117f4cc731506579dca1",
+      "attestation_subject_digest": "sha256:109d160180472eab03165ace5a9479733c05c3e4fdee8e5f6ed2cdb0cf671b39",
+      "attestation_layer_digest": "sha256:6db062592af2535293afa72e1907c6f6704bac636256907cd9f08378f73070c7",
+      "attestation_layer_size_bytes": 1379
+    },
+    "current_observation": {
+      "oci_index_digest": "sha256:b520e3e5782a9bc0b9ae09ee627b55331b5489e1f96594991f15ee6953296f7d",
+      "runtime_manifest_digest": "sha256:109d160180472eab03165ace5a9479733c05c3e4fdee8e5f6ed2cdb0cf671b39",
+      "runtime_config_digest": "sha256:4db1043623e19303cbf430c2559c71e349473ede885d75e050d95396e94b483f",
+      "runtime_config_media_type": "application/vnd.oci.image.config.v1+json",
+      "runtime_config_size_bytes": 4131,
+      "attestation_manifest_digest": "sha256:ea25246dd12715aa00f14cd3a5c44db16a272902301ad9bc16dc2b69c24447ce",
+      "attestation_subject_digest": "sha256:109d160180472eab03165ace5a9479733c05c3e4fdee8e5f6ed2cdb0cf671b39",
+      "attestation_layer_digest": "sha256:a70ee9426a2d21e3cae1f78f6e2f93290d271f923a6231f8ea2adb22d1277bc8",
+      "attestation_layer_size_bytes": 1859
+    },
+    "acceptance_rule": "OCI index, manifest, config, and attestation digests are recorded observations; only the exact normalized runtime payload and fixed inputs are acceptance authority"
+  },
+  "claim_ceiling": {
+    "fixed_source_cache_payload_equivalence_only": true,
+    "config_id_replacement": false,
+    "general_equivalence_to_unavailable_historical_filesystem_claimed": false,
+    "identity_outputs_must_be_reproduced_separately": true
+  }
+}

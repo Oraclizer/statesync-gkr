@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2200" viewBox="0 0 600 2200" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet">
+  <title id="title">StateSync-GKR architecture overview for narrow screens</title>
+  <desc id="desc">A vertical architecture where the host enters the facade, which composes the sparse-Merkle compiler, verification owner, batching, and wrap boundary above the generic protocol, sumcheck, commitment, and primitive crates. Verification and wrap have no direct crate dependency.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061513"/><stop offset="1" stop-color="#12312d"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#75e3b0"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#66b8d2"/></marker>
+    <style>.stage{fill:#091d1b;stroke:#2b5753;stroke-width:2}.card{fill:#0a2224;stroke:#3d7669;stroke-width:2}.blue{fill:#0b232b;stroke:#398097;stroke-width:2}.open{fill:#261e13;stroke:#f4b85f;stroke-width:2;stroke-dasharray:8 6}.title{font:750 28px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.label{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.text{font:16px Inter,Segoe UI,Arial,sans-serif;fill:#d5e4e0}.small{font:14px Inter,Segoe UI,Arial,sans-serif;fill:#9db6b2}.eyebrow{font:700 13px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1.5px;fill:#75e3b0}.flow{fill:none;stroke:#75e3b0;stroke-width:3;marker-end:url(#arrow)}.bflow{fill:none;stroke:#66b8d2;stroke-width:3;marker-end:url(#blue-arrow)}.link{fill:none;stroke:#75e3b0;stroke-width:3}</style>
+  </defs>
+  <rect width="600" height="2200" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="598" height="2198" rx="23" fill="none" stroke="#2b5753" stroke-width="2"/>
+  <text class="title" x="30" y="52">Architecture overview</text>
+  <text class="small" x="30" y="82">Crate responsibilities · composition · deployment boundary</text>
+
+  <rect class="stage" x="24" y="112" width="552" height="258" rx="22"/>
+  <text class="eyebrow" x="48" y="150">HOST BOUNDARY</text>
+  <rect class="card" x="84" y="174" width="432" height="66" rx="14"/><text class="label" x="300" y="214" text-anchor="middle">Host / OssCoreInterface</text>
+  <path class="flow" d="M300 240v36"/>
+  <rect class="card" x="84" y="280" width="432" height="66" rx="14"/><text class="label" x="300" y="309" text-anchor="middle">statesync-gkr facade</text><text class="small" x="300" y="332" text-anchor="middle">prepared state · composed API · host seam</text>
+
+  <path class="flow" d="M300 370v46"/>
+  <rect class="stage" x="24" y="420" width="552" height="800" rx="22"/>
+  <text class="eyebrow" x="48" y="460">WORKLOAD AND OWNERSHIP</text>
+  <rect class="card" x="84" y="486" width="432" height="78" rx="14"/><text class="label" x="300" y="518" text-anchor="middle">Facade composition</text><text class="small" x="300" y="543" text-anchor="middle">compiler · verification · batching · wrap</text>
+  <path class="link" d="M300 564v42H168M300 606H432"/>
+  <path class="flow" d="M168 606v30"/><path class="flow" d="M432 606v30"/>
+
+  <rect class="card" x="48" y="640" width="240" height="108" rx="14"/><text class="label" x="168" y="676" text-anchor="middle">ssgkr-compiler</text><text class="small" x="168" y="704" text-anchor="middle">SMT semantics · witness</text><text class="small" x="168" y="728" text-anchor="middle">circuit construction</text>
+  <rect class="card" x="312" y="640" width="240" height="108" rx="14"/><text class="label" x="432" y="676" text-anchor="middle">ssgkr-verification</text><text class="small" x="432" y="704" text-anchor="middle">configuration · prove</text><text class="small" x="432" y="728" text-anchor="middle">verify owner</text>
+  <path class="flow" d="M288 694h20"/>
+
+  <rect class="blue" x="48" y="786" width="240" height="108" rx="14"/><text class="label" x="168" y="822" text-anchor="middle">ssgkr-batching</text><text class="small" x="168" y="850" text-anchor="middle">independent proof jobs</text><text class="small" x="168" y="874" text-anchor="middle">one ordinary proof each</text>
+  <rect class="blue" x="312" y="786" width="240" height="108" rx="14"/><text class="label" x="432" y="822" text-anchor="middle">ssgkr-wrap</text><text class="small" x="432" y="850" text-anchor="middle">canonical encoding</text><text class="small" x="432" y="874" text-anchor="middle">external route relation</text>
+  <path class="bflow" d="M552 694h16v273h-48"/>
+  <rect class="blue" x="84" y="926" width="432" height="82" rx="14"/><text class="label" x="300" y="958" text-anchor="middle">ssgkr-commitment</text><text class="small" x="300" y="984" text-anchor="middle">circuit + strategy identity</text>
+  <path class="bflow" d="M552 840h16v239h-12"/>
+  <rect class="open" x="312" y="1040" width="240" height="78" rx="14"/><text class="label" x="432" y="1072" text-anchor="middle">WrapBackend</text><text x="432" y="1098" text-anchor="middle" fill="#f4b85f" font-size="14">external boundary</text>
+
+  <rect x="48" y="1148" width="504" height="48" rx="14" fill="#12312d" stroke="#2b5753" stroke-width="2"/>
+  <text class="small" x="300" y="1178" text-anchor="middle">Shared commitment; no verification-to-wrap crate edge</text>
+
+  <rect class="stage" x="24" y="1268" width="552" height="500" rx="22"/>
+  <text class="eyebrow" x="48" y="1308">GENERIC PROTOCOL CORE</text>
+  <rect class="blue" x="84" y="1336" width="432" height="84" rx="14"/><text class="label" x="300" y="1370" text-anchor="middle">ssgkr-protocol</text><text class="small" x="300" y="1396" text-anchor="middle">layered circuit · GKR reduction</text>
+  <path class="bflow" d="M300 1420v38"/>
+  <rect class="blue" x="84" y="1462" width="432" height="84" rx="14"/><text class="label" x="300" y="1496" text-anchor="middle">ssgkr-sumcheck</text><text class="small" x="300" y="1522" text-anchor="middle">generic multilinear sumcheck</text>
+  <path class="bflow" d="M300 1546v38"/>
+  <rect class="blue" x="84" y="1588" width="432" height="102" rx="14"/><text class="label" x="300" y="1622" text-anchor="middle">ssgkr-primitives</text><text class="small" x="300" y="1648" text-anchor="middle">pinned field · hash · transcript</text><text class="small" x="300" y="1672" text-anchor="middle">sole p3-* adapter</text>
+  <rect x="48" y="1710" width="504" height="36" rx="12" fill="#12312d" stroke="#2b5753"/><text class="small" x="300" y="1733" text-anchor="middle">Core crates supply compiler, verification, protocol, and sumcheck</text>
+
+  <rect class="stage" x="24" y="1818" width="552" height="298" rx="22"/>
+  <text class="eyebrow" x="48" y="1858">DECLARED CARGO DEPENDENCIES</text>
+  <text class="small" x="48" y="1886">source → target means source depends on target</text>
+  <rect class="card" x="48" y="1910" width="504" height="82" rx="14"/>
+  <text class="small" x="68" y="1938">facade → primitives, sumcheck, protocol, compiler,</text><text class="small" x="68" y="1964">batching, verification, wrap</text>
+  <rect class="card" x="48" y="2008" width="504" height="82" rx="14"/>
+  <text class="small" x="68" y="2036">verification → primitives, protocol, compiler, batching, commitment</text><text class="small" x="68" y="2062">wrap → primitives, sumcheck, protocol, compiler, commitment</text>
+  <text class="small" x="30" y="2160">Batching is pointwise. Route B evidence is selected; production deployment is not.</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_FamilyTag": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_clone_LayerHints": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_clone_Option_FamilyTag": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_clone_Vec_Option_FamilyTag_Global": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      }
+    }
+  }
+}

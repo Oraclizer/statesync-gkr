@@ -1,0 +1,25 @@
+[package]
+name = "ssgkr-protocol"
+description = "GKR protocol assembly (layered-circuit IR, layer reduction, proof chain) over the sumcheck crate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+# Generic layer: may depend on sumcheck + primitives only.
+# MUST NOT depend on ssgkr-compiler (no SMT/workload assumptions here).
+ssgkr-primitives.workspace = true
+ssgkr-sumcheck.workspace = true
+
+# Creusot contracts (FV refinement track, R2 GKR-assembly anchors).
+# cfg(creusot)-gated: compiled only under `cargo creusot`, invisible to
+# normal builds on every platform (see the workspace manifest note).
+[target.'cfg(creusot)'.dependencies]
+creusot-std.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,28 @@
+{
+  "schema": "statesync-gkr.reproduction-receipt.v1",
+  "release": "v1.1",
+  "result": "PASS_PARTIAL_OR_FAIL",
+  "source_commit": "FULL_COMMIT_SHA",
+  "source_archive_sha256": "OBSERVED_SHA256",
+  "proof_sha256": "OBSERVED_SHA256",
+  "environment": {
+    "operating_system": "OBSERVED_VALUE",
+    "architecture": "OBSERVED_VALUE",
+    "rust": "OBSERVED_VALUE",
+    "python": "OBSERVED_VALUE",
+    "cpu": "OBSERVED_VALUE",
+    "ram_bytes": 0,
+    "free_disk_bytes_before": 0
+  },
+  "observations": {
+    "source_quickstart": "PASS_PARTIAL_FAIL_OR_NOT_RUN",
+    "source_archive": "PASS_PARTIAL_FAIL_OR_NOT_RUN",
+    "proof_attachment": "PASS_PARTIAL_FAIL_OR_NOT_RUN",
+    "tamper_rejection": "PASS_PARTIAL_FAIL_OR_NOT_RUN",
+    "wall_seconds": 0,
+    "peak_ram_bytes": 0,
+    "disk_delta_bytes": 0,
+    "deviations": []
+  },
+  "notes": "Record observations only; this receipt is not an audit or endorsement."
+}

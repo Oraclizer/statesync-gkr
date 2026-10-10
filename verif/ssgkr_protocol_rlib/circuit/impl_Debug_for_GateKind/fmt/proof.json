@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_fmt_GateKind": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_write_str": { "prover": "alt-ergo", "time": 0.01 }
+    }
+  }
+}

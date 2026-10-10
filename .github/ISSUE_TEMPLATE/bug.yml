@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible implementation defect
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report vulnerabilities here. Follow SECURITY.md for private reporting.
+  - type: input
+    id: revision
+    attributes:
+      label: Revision
+      description: Exact commit SHA or tag
+      placeholder: 40-character commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, architecture, Rust version, and relevant features
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Commands and smallest input needed to reproduce the issue
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Report hygiene
+      options:
+        - label: I removed credentials, private data, and local absolute paths.
+          required: true
+        - label: This is not an undisclosed security vulnerability.
+          required: true

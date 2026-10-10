@@ -1,0 +1,10 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_elim_Occupied": { "prover": "alt-ergo", "time": 0.0 },
+      "vc_eq_LeafState": { "prover": "alt-ergo", "time": 0.023 },
+      "vc_eq_ref_LeafPayload": { "prover": "alt-ergo", "time": 0.007 }
+    }
+  }
+}

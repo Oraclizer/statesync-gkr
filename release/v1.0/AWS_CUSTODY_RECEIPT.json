@@ -1,0 +1,32 @@
+{
+  "schema": "statesync-gkr.aws-custody-receipt.v1",
+  "status": "PASS_VERSION_BOUND",
+  "release": "v1.0",
+  "terminal_disposition": "AWS_TERMINAL_PASS_CLEANUP_RESIDUE0",
+  "terminal_index_sha256": "1839ec609d562c418b028572cf09d314d49040bc409ea6a6bd226bd948ee9ad7",
+  "independent_index_audit_sha256": "69ef919d487f1c8a90690d4737981ca51772fec5831a08cb5e21970438269cac",
+  "terminal_artifact_references_checked": 20,
+  "terminal_artifact_references_missing": 0,
+  "terminal_artifact_references_mismatched": 0,
+  "release_objects": {
+    "current_objects": 7,
+    "versions": 7,
+    "delete_markers": 0,
+    "exact_restore_receipt_versions": 1
+  },
+  "encryption_profile": "provider-managed server-side AES-256 encryption",
+  "object_lock_profile": "Governance retention, version-bound to v1.0 evidence",
+  "restore_result": "PASS",
+  "role_separation_check": "PASS_WITHIN_PROJECT",
+  "temporary_resource_residue": 0,
+  "custody_pass": true,
+  "scope": "Release-artifact provenance, clean restore, role separation, terminal lockdown, and cleanup for the exact v1.0 evidence only.",
+  "public_statement": "StateSync-GKR v1.0 used AWS infrastructure for a version-bound custody and clean-restore check of its release artifacts, separately verified within the project; AWS did not audit, certify, or endorse StateSync-GKR, and this evidence records provenance and rebuild results for v1.0 only, not cryptographic security or later releases.",
+  "non_claims": [
+    "AWS audit, certification, or endorsement",
+    "cryptographic security audit",
+    "correctness or production fitness",
+    "assurance for later releases"
+  ],
+  "redaction": "Account, role, root/MFA, network, resource identifiers, credentials, private paths, and raw operational logs are excluded from the public receipt."
+}

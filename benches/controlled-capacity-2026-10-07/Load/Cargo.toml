@@ -1,0 +1,18 @@
+[package]
+name = "ssgkr-load-driver"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "BUSL-1.1"
+
+[workspace]
+
+[dependencies]
+statesync-gkr = { path = "../../../" }
+rayon = "=1.12.0"
+sha2 = "=0.11.0"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.149"
+
+[lints.rust]
+unsafe_code = "forbid"

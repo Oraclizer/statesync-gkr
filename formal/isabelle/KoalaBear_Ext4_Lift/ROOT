@@ -1,0 +1,11 @@
+chapter AFP
+
+session KoalaBear_Ext4_Lift = KoalaBear_Ext4_Field +
+  description \<open>
+    Polynomial and multilinear-extension preservation plus layer,
+    circuit, well-formedness, and false-output lifting. Imports only the
+    quartic field session.
+  \<close>
+  options [timeout = 7200]
+  theories
+    KoalaBear_Ext4_Lift

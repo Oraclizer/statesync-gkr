@@ -1,0 +1,29 @@
+{
+  "schema": "statesync-gkr.licensing-distribution.v1",
+  "distribution_version": "1.1.1",
+  "license": "BUSL-1.1",
+  "source_binding": {
+    "historical_identity_source_sha256": "13eacaa5bf18f26c8089ec6ddf27a7410bb436f28330e12f1135abf5684cf31c",
+    "current_distribution_source_sha256": "7f1ff6b352b8d93cf839273a086ae4db3d62eabae34c1f9fb1ef018dbc1d6dae",
+    "changed_protected_path": "Cargo.toml",
+    "changed_field": "workspace.package.license",
+    "historical_cargo_sha256": "283797b91cb1b839f1b1571e83f2aff03629023400afd637a221bdbcef0a4bcf",
+    "current_cargo_sha256": "3156d7423eaab5c4b7efc826618bfe18fa653ee5c2c7bcc06de898fab58b5a1d"
+  },
+  "historical_protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
+  "historical_allowlist_sha256": "3a68db09cabe247e860a88ff4dd3241890c1b2c7ef1d41ebbf9dacaeebe14450",
+  "current_compiled_identity_reproduced": false,
+  "proof_scope": "historical-v1.1-program-only",
+  "bounded_build_observation": {
+    "status": "STOPPED_AT_HOST_MEMORY_RESERVE",
+    "program_comparison_completed": false,
+    "new_proof_generated": false
+  },
+  "interpretation": [
+    "The active source distribution changes one package-license field in the 64-file identity selection.",
+    "The 79-path historical authority remains byte-frozen; its 78 other files must match exactly.",
+    "The in-memory Cargo projection checks the exact prior bytes but does not write or distribute a prior-license source copy.",
+    "The recorded v1.1 program and proof remain historical evidence. This record does not claim the licensed metadata source reproduced that compiled identity.",
+    "Existing recipients and third-party notices retain their original rights."
+  ]
+}

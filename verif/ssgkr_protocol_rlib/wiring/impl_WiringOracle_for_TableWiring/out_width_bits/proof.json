@@ -1,0 +1,28 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_index_Vec_Layer_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_out_width_bits_TableWiring": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              {
+                "tactic": "split_vc",
+                "children": [
+                  { "prover": "alt-ergo", "time": 0.018 },
+                  { "prover": "alt-ergo", "time": 0.015 }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

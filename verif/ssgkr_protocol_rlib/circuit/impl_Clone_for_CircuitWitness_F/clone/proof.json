@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_CircuitWitness_F": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_clone_F": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_clone_Vec_F_Global": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_clone_Vec_Vec_F_Global_Global": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      }
+    }
+  }
+}

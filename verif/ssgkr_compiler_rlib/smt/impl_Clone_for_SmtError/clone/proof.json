@@ -1,0 +1,15 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_AssetId": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_clone_HashError": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_clone_SmtError": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_clone_u32": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_elim_KeyOutOfRange": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_elim_LeafEncoding": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_elim_PathLengthMismatch": { "prover": "alt-ergo", "time": 0.009 }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_eq_table": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_from_str": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_lb": { "prover": "alt-ergo", "time": 0.019 },
+      "vc_len_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_split_at_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_split_side": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              { "prover": "alt-ergo", "time": 0.014 },
+              null,
+              { "prover": "alt-ergo", "time": 0.006 },
+              { "prover": "alt-ergo", "time": 0.005 },
+              { "prover": "alt-ergo", "time": 0.004 },
+              { "prover": "alt-ergo", "time": 0.01 },
+              { "prover": "alt-ergo", "time": 0.014 }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

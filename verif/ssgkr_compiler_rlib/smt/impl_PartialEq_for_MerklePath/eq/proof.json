@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_eq_MerklePath": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_eq_Vec_Digest_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      }
+    }
+  }
+}

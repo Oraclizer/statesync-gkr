@@ -1,0 +1,35 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_ConstGroup": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_clone_DerivedLayer": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_clone_GateGroup": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_clone_Gate_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_clone_Vec_ConstGroup_Global": {
+        "prover": "alt-ergo",
+        "time": 0.016
+      },
+      "vc_clone_Vec_GateGroup_Global": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_clone_Vec_Gate_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_clone_Vec_tup2_u32_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.012
+      },
+      "vc_clone_tup2_u32_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.012
+      },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.012 }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980"
+     role="img" aria-labelledby="architecture-title architecture-desc"
+     preserveAspectRatio="xMidYMid meet">
+  <title id="architecture-title">StateSync-GKR architecture overview</title>
+  <desc id="architecture-desc">The host enters the facade. The facade composes the sparse-Merkle compiler, verification owner, batching, and wrap boundary above generic protocol, sumcheck, commitment, and primitive crates. Verification and wrap have no direct crate dependency.</desc>
+  <defs>
+    <linearGradient id="architecture-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061513"/>
+      <stop offset=".62" stop-color="#0A2422"/>
+      <stop offset="1" stop-color="#12312D"/>
+    </linearGradient>
+    <marker id="state-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#75E3B0"/>
+    </marker>
+    <marker id="receipt-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#66B8D2"/>
+    </marker>
+    <style>
+      .text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#F3F7F4}
+      .muted{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#9DB6B2}
+      .node{fill:#091D1B;stroke:#2B5753;stroke-width:1.6}
+      .state{fill:#0B2521;stroke:#75E3B0;stroke-width:1.8}
+      .receipt{fill:#0A2224;stroke:#66B8D2;stroke-width:1.8}
+      .open{fill:#261E13;stroke:#F4B85F;stroke-width:1.8;stroke-dasharray:8 6}
+      .flow{fill:none;stroke:#75E3B0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .rflow{fill:none;stroke:#66B8D2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .supply{fill:none;stroke:#9DB6B2;stroke-width:1.5;stroke-dasharray:4 5}
+    </style>
+  </defs>
+
+  <rect width="1200" height="980" rx="24" fill="url(#architecture-bg)"/>
+  <rect x="1" y="1" width="1198" height="978" rx="23" fill="none" stroke="#2B5753"/>
+  <text x="54" y="58" class="text" font-size="28" font-weight="760">Architecture overview</text>
+  <text x="54" y="84" class="muted" font-size="14">CRATE RESPONSIBILITIES • PRE-RELEASE COMPOSITION • EXTERNAL DEPLOYMENT OPEN</text>
+
+  <rect x="54" y="112" width="1092" height="112" rx="18" class="node"/>
+  <text x="76" y="138" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">HOST BOUNDARY</text>
+  <rect x="92" y="158" width="230" height="44" rx="11" class="state"/>
+  <text x="207" y="185" class="text" font-size="14" font-weight="700" text-anchor="middle">Host / OssCoreInterface</text>
+  <rect x="436" y="146" width="334" height="66" rx="13" class="state"/>
+  <text x="603" y="174" class="text" font-size="16" font-weight="750" text-anchor="middle">statesync-gkr facade</text>
+  <text x="603" y="196" class="muted" font-size="12" text-anchor="middle">prepared state • composed API • host seam</text>
+  <path d="M322 180H436" class="flow" marker-end="url(#state-arrow)"/>
+
+  <rect x="54" y="244" width="1092" height="246" rx="18" class="node"/>
+  <text x="76" y="272" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">WORKLOAD AND OWNERSHIP</text>
+
+  <rect x="82" y="304" width="236" height="72" rx="13" class="state"/>
+  <text x="200" y="334" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-compiler</text>
+  <text x="200" y="356" class="muted" font-size="11" text-anchor="middle">SMT semantics • witness • circuit</text>
+
+  <rect x="362" y="304" width="236" height="72" rx="13" class="state"/>
+  <text x="480" y="334" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-verification</text>
+  <text x="480" y="356" class="muted" font-size="11" text-anchor="middle">config • prove • verify owner</text>
+
+  <rect x="642" y="304" width="218" height="72" rx="13" class="node"/>
+  <text x="751" y="334" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-batching</text>
+  <text x="751" y="356" class="muted" font-size="11" text-anchor="middle">independent proof jobs</text>
+
+  <rect x="904" y="294" width="210" height="92" rx="13" class="receipt"/>
+  <text x="1009" y="325" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-wrap</text>
+  <text x="1009" y="347" class="muted" font-size="11" text-anchor="middle">canonical encoding + relation</text>
+  <text x="1009" y="368" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif"
+        font-size="10" text-anchor="middle">external proof boundary</text>
+
+  <rect x="362" y="420" width="498" height="46" rx="11" class="receipt"/>
+  <text x="611" y="448" class="text" font-size="13" font-weight="700" text-anchor="middle">ssgkr-commitment • circuit + strategy identity</text>
+
+  <rect x="934" y="417" width="150" height="48" rx="11" class="open"/>
+  <text x="1009" y="437" class="text" font-size="12" font-weight="700" text-anchor="middle">WrapBackend</text>
+  <text x="1009" y="455" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif"
+        font-size="10" text-anchor="middle">OPEN SEAM</text>
+
+  <path d="M525 212V266H200V304" class="flow" marker-end="url(#state-arrow)"/>
+  <path d="M584 212V304" class="flow" marker-end="url(#state-arrow)"/>
+  <path d="M636 212V266H751V304" class="flow" marker-end="url(#state-arrow)"/>
+  <path d="M682 212V266H1009V294" class="rflow" marker-end="url(#receipt-arrow)"/>
+  <path d="M318 340H362" class="flow" marker-end="url(#state-arrow)"/>
+  <text x="340" y="329" class="muted" font-size="9" text-anchor="middle">circuit + witness</text>
+  <path d="M480 376V420" class="rflow" marker-end="url(#receipt-arrow)"/>
+  <path d="M1009 386V417" class="rflow" marker-end="url(#receipt-arrow)"/>
+  <path d="M904 443H860" class="supply"/>
+  <text x="882" y="433" class="muted" font-size="9" text-anchor="middle">consumes</text>
+  <text x="751" y="399" class="muted" font-size="10" text-anchor="middle">one ordinary proof per job</text>
+  <path d="M705 390H797" class="supply"/>
+  <text x="1009" y="401" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif"
+        font-size="9" text-anchor="middle">no direct dependency to verification</text>
+
+  <rect x="54" y="510" width="1092" height="206" rx="18" class="node"/>
+  <text x="76" y="538" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">GENERIC PROTOCOL CORE</text>
+  <rect x="112" y="576" width="250" height="68" rx="13" class="receipt"/>
+  <text x="237" y="605" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-protocol</text>
+  <text x="237" y="627" class="muted" font-size="11" text-anchor="middle">layered circuit • GKR reduction</text>
+  <rect x="474" y="576" width="250" height="68" rx="13" class="receipt"/>
+  <text x="599" y="605" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-sumcheck</text>
+  <text x="599" y="627" class="muted" font-size="11" text-anchor="middle">generic multilinear sumcheck</text>
+  <rect x="836" y="566" width="250" height="88" rx="13" class="receipt"/>
+  <text x="961" y="597" class="text" font-size="15" font-weight="720" text-anchor="middle">ssgkr-primitives</text>
+  <text x="961" y="619" class="muted" font-size="11" text-anchor="middle">pinned field • hash • transcript</text>
+  <text x="961" y="639" class="muted" font-size="10" text-anchor="middle">sole p3-* adapter</text>
+
+  <path d="M480 376V530H237V576" class="flow" marker-end="url(#state-arrow)"/>
+  <path d="M362 610H474" class="rflow" marker-end="url(#receipt-arrow)"/>
+  <path d="M724 610H836" class="rflow" marker-end="url(#receipt-arrow)"/>
+  <path d="M961 654V685H200V376" class="supply"/>
+  <path d="M480 685V376M599 685V644M237 685V644" class="supply"/>
+  <text x="974" y="682" class="muted" font-size="9">supplies compiler • verification • protocol • sumcheck</text>
+
+  <rect x="54" y="738" width="1092" height="38" rx="10" fill="#12312D" stroke="#2B5753"/>
+  <circle cx="78" cy="757" r="5" fill="#75E3B0"/>
+  <text x="92" y="762" class="muted" font-size="11">Batching is pointwise, not aggregation</text>
+  <circle cx="370" cy="757" r="5" fill="#66B8D2"/>
+  <text x="384" y="762" class="muted" font-size="11">Commitment is shared without a verification-to-wrap crate edge</text>
+  <circle cx="798" cy="757" r="5" fill="#F4B85F"/>
+  <text x="812" y="762" class="muted" font-size="11">Route B evidence selected • production deployment not selected</text>
+
+  <rect x="54" y="798" width="1092" height="150" rx="18" class="node"/>
+  <text x="76" y="826" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">DECLARED CARGO DEPENDENCIES</text>
+  <text x="1122" y="826" class="muted" font-size="10" text-anchor="end">source → target means “source depends on target”</text>
+
+  <rect x="76" y="844" width="516" height="82" rx="11" fill="#0A2224" stroke="#2B5753"/>
+  <text x="94" y="864" class="text" font-size="10">statesync-gkr → primitives, sumcheck, protocol, compiler, batching, verification, wrap</text>
+  <text x="94" y="882" class="text" font-size="10">compiler → primitives, protocol</text>
+  <text x="94" y="900" class="text" font-size="10">protocol → primitives, sumcheck</text>
+  <text x="94" y="918" class="text" font-size="10">sumcheck → primitives</text>
+
+  <rect x="608" y="844" width="516" height="82" rx="11" fill="#0A2224" stroke="#2B5753"/>
+  <text x="626" y="864" class="text" font-size="10">batching → primitives, protocol, compiler</text>
+  <text x="626" y="882" class="text" font-size="10">commitment → primitives, protocol, compiler</text>
+  <text x="626" y="900" class="text" font-size="10">verification → primitives, protocol, compiler, batching, commitment</text>
+  <text x="626" y="918" class="text" font-size="10">wrap → primitives, sumcheck, protocol, compiler, commitment</text>
+
+  <text x="76" y="967" class="muted" font-size="10">
+    Composition arrows above show runtime responsibility flow; this panel is the complete direct Cargo edge list.
+  </text>
+</svg>

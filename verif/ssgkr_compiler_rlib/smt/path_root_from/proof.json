@@ -1,0 +1,8 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_path_root_from_H": { "prover": "alt-ergo", "time": 0.008 }
+    }
+  }
+}

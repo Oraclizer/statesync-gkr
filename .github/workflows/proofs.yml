@@ -1,0 +1,170 @@
+name: Proofs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: proofs-${{ github.ref }}
+  # Cancel superseded runs only for pull requests. On the maintained branch a
+  # long heap-building run must finish, not die to the next push; queued runs
+  # wait instead.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    # Decides whether this event can change the proof result. Anything that
+    # is not a pull request always gets the full build; a pull request gets
+    # it only when a proof input differs from the base snapshot. The
+    # aggregate job below fails closed if this decision cannot be made.
+    name: Decide whether proof inputs changed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      run_formal: ${{ steps.decide.outputs.run_formal }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Depth 2 keeps both parents of the pull-request merge commit, so
+          # the base snapshot is present without a later authenticated
+          # fetch (credentials are deliberately not persisted).
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Compare proof inputs against the base snapshot
+        id: decide
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "run_formal=true" >> "$GITHUB_OUTPUT"
+            echo "not a pull request: the full proof build always runs"
+            exit 0
+          fi
+          base="${{ github.event.pull_request.base.sha }}"
+          changed="$(git diff --name-only "$base" HEAD)"
+          printf 'changed files:\n%s\n' "$changed"
+          if printf '%s\n' "$changed" \
+            | grep -E '^(formal/|\.github/workflows/proofs\.yml$)' > /dev/null; then
+            echo "run_formal=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_formal=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  isabelle-sessions:
+    # Rebuilds every registered Isabelle session from source against the pinned
+    # distribution and the pinned dated AFP release. The target sessions
+    # are cleaned every run so the check is a real re-verification; parent
+    # heaps (HOL-Probability and the AFP dependencies) are cached between
+    # runs. The gate above skips this build for pull requests that leave
+    # every proof input untouched, so documentation changes are not taxed
+    # with a long build; the weekly unconditional run on the maintained
+    # branch backstops that decision.
+    name: Isabelle2025-2 / all registered sessions
+    needs: [gate]
+    if: ${{ needs.gate.outputs.run_formal == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    env:
+      ISABELLE_SHA256: a20a507bc7c1270d8be96a9f3fbec06345387789d2dc2c4d3df6260d47bfb33c
+      ISABELLE_URL: https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/Isabelle2025-2_linux.tar.gz
+      AFP_SHA256: c6189c00b5d93c39c59a0f999b8272e48464c34dccc33d99a553b4308314eacf
+      AFP_URL: https://www.isa-afp.org/release/afp-2026-08-05.tar.gz
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Restore cached Isabelle archive
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/Isabelle2025-2_linux.tar.gz
+          key: isabelle-${{ env.ISABELLE_SHA256 }}
+      - name: Restore cached AFP release
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/afp.tar.gz
+          key: afp-${{ env.AFP_SHA256 }}
+      - name: Restore cached parent heaps
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.isabelle/Isabelle2025-2/heaps
+          key: heaps-${{ env.ISABELLE_SHA256 }}-${{ env.AFP_SHA256 }}-v1
+      - name: Install pinned Isabelle2025-2
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/Isabelle2025-2_linux.tar.gz"
+          if [ ! -f "$archive" ]; then
+            curl --fail --location \
+              --connect-timeout 30 --max-time 1800 \
+              --retry 5 --retry-delay 15 --retry-connrefused --retry-all-errors \
+              --output "$archive" "$ISABELLE_URL"
+          fi
+          echo "$ISABELLE_SHA256  $archive" | sha256sum --check --strict
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          test "$("$RUNNER_TEMP/Isabelle2025-2/bin/isabelle" version)" = "Isabelle2025-2"
+      - name: Install pinned AFP release
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/afp.tar.gz"
+          if [ ! -f "$archive" ]; then
+            curl --fail --location \
+              --connect-timeout 30 --max-time 1200 \
+              --retry 5 --retry-delay 15 --retry-connrefused --retry-all-errors \
+              --output "$archive" "$AFP_URL"
+          fi
+          # The URL pins the dated AFP release and the digest pins its bytes;
+          # the Sumcheck_Protocol sources in this release are byte-identical to
+          # the entry the sessions were developed against.
+          echo "$AFP_SHA256  $archive" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/afp"
+          tar -xzf "$archive" -C "$RUNNER_TEMP/afp" --strip-components=1
+          test -f "$RUNNER_TEMP/afp/thys/Sumcheck_Protocol/ROOT"
+      - name: Build all registered sessions from clean targets
+        shell: bash
+        run: >-
+          "$RUNNER_TEMP/Isabelle2025-2/bin/isabelle" build
+          -c -o threads=4
+          -d "$RUNNER_TEMP/afp/thys"
+          -d formal/isabelle
+          GKR_Protocol
+          SMT_Circuit_Compiler_Correctness
+          KoalaBear_Ext4_Nonsquare
+          KoalaBear_Ext4_Field
+          KoalaBear_Ext4_Lift
+          KoalaBear_Ext4_GKR
+
+  Proofs:
+    # Single aggregate check for the proof lane. It always reports, so it
+    # can be a required status check: a skipped build is accepted only when
+    # the gate positively decided that no proof input changed, and any gate
+    # failure fails the lane.
+    name: Proofs
+    if: ${{ always() }}
+    needs: [gate, isabelle-sessions]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require the proof lane
+        env:
+          GATE_RESULT: ${{ needs.gate.result }}
+          RUN_FORMAL: ${{ needs.gate.outputs.run_formal }}
+          FORMAL_RESULT: ${{ needs.isabelle-sessions.result }}
+        run: |
+          set -euo pipefail
+          test "$GATE_RESULT" = success
+          if [ "$RUN_FORMAL" = "true" ]; then
+            test "$FORMAL_RESULT" = success
+          else
+            test "$FORMAL_RESULT" = skipped
+          fi

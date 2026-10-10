@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_struct_field1_finish": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_elim_NotPowerOfTwo": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_fmt_PolyError": { "prover": "alt-ergo", "time": 0.007 }
+    }
+  }
+}

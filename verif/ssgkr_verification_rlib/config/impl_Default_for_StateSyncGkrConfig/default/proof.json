@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_default_BatchPolicy": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_default_LayerStrategy": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_default_SmtParams": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_default_StateSyncGkrConfig": {
+        "prover": "alt-ergo",
+        "time": 0.005
+      }
+    }
+  }
+}

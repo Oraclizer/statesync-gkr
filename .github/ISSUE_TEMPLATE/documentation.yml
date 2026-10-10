@@ -1,0 +1,30 @@
+name: Documentation report
+description: Report inaccurate, missing, or unclear public documentation
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Document location
+      description: Repository-relative file and section or URL
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is inaccurate or unclear?
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction or evidence
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This report contains no credentials, private data, or local absolute paths.
+          required: true

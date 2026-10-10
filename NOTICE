@@ -1,0 +1,48 @@
+StateSync-GKR
+Copyright (c) 2026 Oraclizer Labs, Inc.
+
+This repository is licensed under the Business Source License 1.1. The
+LICENSE file is the controlling text. This file records the license history
+and the notices that the former contribution terms require.
+
+License history
+
+- Versions up to and including v1.1.0, published on 2026-10-04 as the signed
+  tag v1.1.0 and archived at https://doi.org/10.5281/zenodo.23136385, were
+  released under the MIT License or the Apache License, Version 2.0, at the
+  recipient's option. Rights already granted to recipients of those copies
+  remain valid. The former source history and signed release are retained
+  separately; they are no longer an alternative public source distribution.
+- From 2026-10-09 the maintained branch and every later version are licensed
+  under the Business Source License 1.1 with the parameters stated in LICENSE:
+  non-production use is free, production use solely to verify proofs is
+  granted, and each version converts to the Apache License, Version 2.0 three
+  years after its first public distribution.
+
+Contributions accepted under the former terms
+
+The review contributions of Bernhard Müller merged on 2026-09-22
+(docs/challenge-generation-review.md, docs/challenge-sampling-review.md and
+the corresponding passages of FORMAL_VERIFICATION.md) were submitted under
+the former MIT OR Apache-2.0 contribution terms. They remain available from
+their author under those terms, and this notice preserves the attribution
+those licenses require. The accompanying MIT permission notice for those
+review contributions is retained in LICENSES/legacy-review-MIT.txt. The
+current complete distribution is offered under the root Business Source
+License 1.1; this does not revoke rights previously granted for the review
+contributions.
+
+Current distribution and historical evidence
+
+Version 1.1.1 aligns the workspace, standalone benchmark caller, citation
+metadata and current package inventory with BUSL-1.1. The workspace package
+versions remain unchanged; this is a licensing revision, not a new engine
+algorithm or a new formal-verification claim.
+
+The historical v1.1 source manifest, expected executable identity and proof
+observations remain explicit historical records. A single package-license
+field differs in the current identity source selection. The current metadata
+revision has not been declared to reproduce the historical compiled identity.
+See release/v1.1/LICENSING_DISTRIBUTION.json for the exact source comparison
+and its limit. A historical license name in that evidence or in a required
+third-party notice is not the license grant for the current distribution.
