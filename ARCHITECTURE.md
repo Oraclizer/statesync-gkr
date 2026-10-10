@@ -70,8 +70,8 @@ manifest, receipt, and local transition encodings.
 7. The facade emits a primary record and proof result.
 
 Isabelle owns the mathematical semantics, composition results and forward
-acceptance theorem. Concrete round and finish checks supply the theorem's
-former local bridge. Selected Rust contracts have recorded solver proofs for
+acceptance theorem. The concrete round checks and the finish-evaluation part
+of the Rust/model value relation supply the theorem's former local bridge. Selected Rust contracts have recorded solver proofs for
 public-input equality and the acceptance classifier, while narrowed
 foreign-field seams leave the surrounding verifier checks available to
 contract translation. This gives developers a review map from a request to

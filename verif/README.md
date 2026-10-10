@@ -8,8 +8,9 @@ configuration that drives it is `why3find.json` at the repository root.
 
 The recorded public-input equality and acceptance-classifier proofs provide
 concrete review anchors for the verdict's observations. The
-[refinement guide](../docs/refinement.md) maps these results and the remaining
-`null` obligations to their Rust source and forward model theorem.
+[refinement guide](../docs/refinement.md) maps these results and selected open
+`null` obligations to their Rust source and forward model theorem; other
+records also contain open obligations.
 
 These records are tool inputs for replaying the contract proofs. They are not
 a substitute for reading the named source, the stated assumptions, and the

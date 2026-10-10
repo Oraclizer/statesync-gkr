@@ -47,7 +47,7 @@
   </g>
 
   <g font-family="Inter,Segoe UI,Arial,sans-serif">
-    <text x="566" y="124" fill="#75e3b0" font-size="17" font-weight="750" letter-spacing="3.1">EXPERIMENTAL RUST PROVER COMPONENT</text>
+    <text x="566" y="124" fill="#75e3b0" font-size="17" font-weight="750" letter-spacing="3.1">RUST PROVER COMPONENT</text>
     <text x="558" y="230" fill="#f3f7f4" font-size="72" font-weight="800" letter-spacing="1.1">STATESYNC-GKR</text>
     <rect x="566" y="262" width="82" height="5" rx="2.5" fill="#75e3b0"/>
     <text x="566" y="321" fill="#d5e4e0" font-size="25" font-weight="650" letter-spacing="0.9">GKR PROVING FOR SPARSE-MERKLE</text>

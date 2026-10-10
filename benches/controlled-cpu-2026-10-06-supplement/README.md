@@ -224,5 +224,6 @@ The GKR verifier still takes the full Merkle witness and recomputes its native
 hash paths; direct SMT predicates and full GKR verification are different work.
 The recorded external vendor route remains fixed N=1 depth-24 membership.
 No source/runtime/formal, guest ABI, proof identity, tagged Release or DOI was
-changed. A comprehensive implementation security audit remains outstanding;
-see the [security policy](../../SECURITY.md) for the review boundaries.
+changed. The implementation has not undergone a comprehensive independent
+security audit; see the [security policy](../../SECURITY.md) for the review
+boundaries.

@@ -127,7 +127,7 @@ RAM), release mode:
 | `cargo run --release --locked --example state_sync_prove_verify` | about 21 s from a cold clone | Measured on the previous line; see `release/v1.0/RELEASE_NOTES.md` |
 | `cargo test --workspace --release --locked` | about 30 s warm, dominated by compilation when cold | A first cold build takes substantially longer |
 | Hosted CI, all jobs | about 3 minutes with a warm dependency cache | Fork pull requests start with a cold cache and take longer |
-| Isabelle sessions | a long-running job; each session declares a 7200 s timeout | Advanced profile; the hosted Proofs workflow rebuilds all registered sessions on the maintained branch, weekly, and on proof-touching pull requests |
+| Isabelle sessions | a long-running job; sessions declare 3600 s or 7200 s timeouts | Advanced profile; the hosted Proofs workflow rebuilds all registered sessions on the maintained branch, weekly, and on proof-touching pull requests |
 
 The Proofs lane is a required check, but it does not tax ordinary changes: a
 gate job compares your pull request against its base, and the long Isabelle

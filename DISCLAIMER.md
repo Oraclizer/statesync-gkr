@@ -18,8 +18,8 @@ the reduction only with a proved probability bound, that these results compose,
 that batching preserves each single-job proof, and that the soundness statement
 transfers to the exact degree-four extension field the implementation uses. A
 further forward theorem connects related acceptance traces to the GKR
-reduction-chain event and derives the former local-bridge premise from concrete
-round and finish checks. Recorded Creusot proofs cover selected public-input
+reduction-chain event and derives the former local-bridge premise from the
+concrete round checks and the finish-evaluation part of the value relation. Recorded Creusot proofs cover selected public-input
 equality and acceptance-classifier contracts. Narrowed foreign-field equality
 seams expose the surrounding verifier control flow to contract translation.
 These artifacts give developers a review map for the checks that determine
@@ -41,9 +41,9 @@ establish an independently reproduced compiled identity for this working tree.
 ## What this repository does not establish
 
 This software is provided as is, without warranties or conditions of any
-kind, under the [Business Source License 1.1](LICENSE). A comprehensive
-independent security audit of the implementation has not been completed, and
-the verified models do not substitute for one. A production deployment should
+kind, under the [Business Source License 1.1](LICENSE). The implementation
+has not undergone a comprehensive independent security audit, and the verified
+models do not substitute for one. A production deployment should
 review the documented implementation and cryptographic assumptions and the
 intended application's operational risks.
 

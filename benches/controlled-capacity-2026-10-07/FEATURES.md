@@ -49,8 +49,9 @@ It does not describe nine independently isolated causal experiments.
   wrong original statements and malformed trailing bytes. A proof-byte hash
   alone is not acceptance.
 - **Reusable core and refinement evidence:** generic Add/Mul/cubic-affine
-  fixtures support other arithmetic frontends. The model's forward acceptance
-  theorem derives the former local bridge from concrete checks; selected Rust
+  fixtures support other arithmetic frontends. The model's conditional forward
+  acceptance theorem derives the former local bridge from concrete round checks
+  and the finish part of its value relation; selected Rust
   contract proofs and ordinary verifier translation provide a reusable
   [acceptance-check review map](../../docs/refinement.md). The Rust/model value
   relation remains a premise and recorded open obligations retain no proof

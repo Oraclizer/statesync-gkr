@@ -154,15 +154,16 @@ own circuit, witness, output claim, transcript conventions and the consumption
 of both residual input MLE claims. Arbitrary Rust-program compilation and a
 runtime field/hash-selection service are not bundled interfaces.
 
-Reuse of this engine follows [BSL 1.1](../LICENSE), with free non-production
+Reuse of the current source (v1.1.1 and later) follows [BSL 1.1](../LICENSE), with free non-production
 use and the verification-only production grant. [NOTICE](../NOTICE) records
 the contribution notices. Six
 Isabelle sessions with twenty theories provide the compiler equivalence, GKR
 assembly model, composition, batching and supporting results described in
 [formal verification](../FORMAL_VERIFICATION.md) and
 [the paper](https://arxiv.org/abs/2610.05335). The refinement work also
-supplies a forward acceptance theorem whose former local bridge is derived
-from concrete checks, selected public-input and acceptance-classifier contract
+supplies a conditional forward acceptance theorem whose former local bridge
+is derived from concrete round checks and the finish part of the value
+relation, selected public-input and acceptance-classifier contract
 proofs, and ordinary translation of the main verifier control flow around
 explicit foreign-field seams. A new frontend can reuse this
 [review map](refinement.md) while establishing its own input binding and

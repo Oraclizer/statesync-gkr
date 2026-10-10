@@ -4,9 +4,9 @@
 
 StateSync-GKR v1.1.1 and later versions are distributed under BUSL-1.1;
 production proving requires a commercial license (see the root LICENSE). The
-model results and implementation evidence are described below. A comprehensive
-independent security audit of the implementation has not been completed, and
-these notes do not establish deployment safety or secondary finality.
+model results and implementation evidence are described below. The
+implementation has not undergone a comprehensive independent security audit,
+and these notes do not establish deployment safety or secondary finality.
 
 Version 1.1.1 updates the package license metadata. The Rust kernel, formal
 sources, locks and toolchain pins retain their recorded bytes. The historical
@@ -30,14 +30,16 @@ here: the AWS durable-storage custody check, dependency scan, and advisory
 scan recorded in `release/v1.0`. They remain true statements about the v1.0
 artifacts and make no claim about v1.1.
 
-## Historical v1.1 implementation changes
+## Refinement evidence
 
 The refinement work provides a reusable review basis for the request-to-acceptance
 path. Developers can inspect how public inputs, round checks, carry values and
 final input evaluations contribute to the verdict across named Rust code,
-selected contract proofs and the forward model theorem. The
+selected contract proofs and the conditional forward model theorem. The
 [refinement guide](../../docs/refinement.md) identifies the completed results
-and recorded open obligations.
+and selected open obligations.
+
+## Historical v1.1 implementation changes
 
 - The sumcheck, per-layer GKR, and facade verifier bodies no longer opt out of
   Creusot translation as a whole. Each opt-out was narrowed to the single
@@ -47,14 +49,16 @@ and recorded open obligations.
   can evaluate a shift, each with a direct rejection test.
 - `Verifier_Acceptance_Refinement` relates a successful acceptance trace of
   the shipped Rust verifier to the reduction-chain event of the GKR assembly
-  result. Concrete round and finish-evaluation checks derive the former
-  local-bridge premise. The Rust/model value and off-cube representation
+  result. The concrete round checks and the finish-evaluation part of the
+  value relation derive the former local-bridge premise. The Rust/model value and off-cube representation
   relation remains an explicit, undischarged premise, so the result is a
   conditional refinement. The reverse direction is a non-claim.
-- Recorded contract proofs establish public-input equality and the acceptance
-  classifier's use of the actual verdict observations. Translation coverage
-  and these selected proofs do not close the recorded `null` obligations or
-  establish whole-function GKR verification.
+- Recorded contract proofs establish the public-input equality contract and
+  that the acceptance classifier's verdict is the conjunction of its seven
+  observations. Populating those observations from the actual checks is source
+  structure in the test and translation build, whose facade obligation remains
+  open. Translation coverage and these selected proofs do not close the
+  recorded `null` obligations or establish whole-function GKR verification.
 
 ## Included component
 

@@ -23,31 +23,33 @@ protocol and compiler models machine-checked in Isabelle/HOL.
 [Quick start](#quick-start) · [API guide](docs/usage.md) · [Measured profiles](docs/performance.md) · [Formal verification](FORMAL_VERIFICATION.md) · [Refinement evidence](docs/refinement.md)
 
 Its SMT frontend proves membership, non-membership and single-leaf updates.
-The SMT circuit compiler, the GKR and sumcheck protocol and their composition
-are machine-checked in Isabelle/HOL, including the exact degree-four
-KoalaBear extension field that the implementation uses. A mechanized forward
-acceptance theorem and recorded proofs for selected Rust contracts connect the
-model to the shipped verifier: the checks that turn a request into an
-acceptance verdict (public-input binding, sumcheck rounds, carry construction
-and final input evaluations) can be traced across model and code. The theorem
-keeps one explicit Rust-to-model value relation as a premise; see
-[Refinement evidence and reuse](docs/refinement.md).
+Models of the SMT circuit compiler and of the GKR and sumcheck protocol, and
+their composition, are machine-checked in Isabelle/HOL, building on the
+Archive of Formal Proofs `Sumcheck_Protocol` entry and including the exact
+degree-four KoalaBear extension field that the implementation uses. A
+conditional, mechanized forward acceptance theorem and recorded proofs for
+selected Rust contracts relate the model to the shipped verifier: the checks
+that turn a request into an acceptance verdict (public-input binding,
+sumcheck rounds, carry construction and final input evaluations) can be traced
+across model and code. The theorem keeps an explicit Rust-to-model value
+relation as a premise; see [Refinement evidence and reuse](docs/refinement.md).
 
 Prepare a circuit once, reuse its proving and verification material, and run
 independent CPU proving jobs in parallel. The protocol and sumcheck crates
 have no dependency on the SMT compiler, so other arithmetic-circuit frontends
-can build on the same engine and reuse its
+can build on the same engine and use its
 [acceptance-check review map](docs/refinement.md) when reviewing an integration.
 
 > **Security status:** The protocol and compiler models are machine-checked,
-> and the verifier's acceptance checks are tied to them through a forward
-> refinement theorem, selected Rust contract proofs and executable rejection
-> tests. Whole-program compiled correspondence and executable Fiat-Shamir
-> security are not yet established, and a comprehensive independent security
-> audit of the implementation has not been completed. Production proving is
-> available under a commercial license; a production deployment should review
-> the documented [implementation and cryptographic assumptions](FORMAL_VERIFICATION.md)
-> and its application's [operational risks](SECURITY.md).
+> and the verifier's acceptance checks are related to them through a
+> conditional forward refinement theorem, selected Rust contract proofs and
+> executable rejection tests. Whole-program compiled correspondence and
+> executable Fiat-Shamir security are not established, the inner GKR proof is
+> not zero-knowledge, and the implementation has not undergone a comprehensive
+> independent security audit. Production proving is available under a
+> commercial license; a production deployment should review the documented
+> [implementation and cryptographic assumptions](FORMAL_VERIFICATION.md) and
+> its application's [operational risks](SECURITY.md).
 
 ## Implementation benefits
 
@@ -92,7 +94,7 @@ StateSync-GKR used **about 89 times less peak process RAM** and achieved
 | Independent proof jobs | Parallel CPU work with one result per original request |
 | Empty, occupied and tombstone leaves | Distinct absence, insertion, update, deletion and restoration semantics |
 | Strict encoding and request binding | Rejection of malformed or mismatched proof material |
-| Reusable core and refinement evidence | Build another arithmetic frontend and reuse the model, selected contracts and acceptance-check review map |
+| Reusable core and refinement evidence | Build another arithmetic frontend on the same engine and use the model and the acceptance-check review map |
 
 The RAM result is whole-process RSS for a two-layer mixed circuit of width
 4,096: production Sparse versus this engine's test-only Dense reference.
@@ -369,12 +371,15 @@ and the exact degree-four KoalaBear extension. Registered concrete instances
 establish that the model assumptions can be satisfied.
 
 The verifier acceptance work proves the forward implication from related
-acceptance traces to the GKR reduction-chain event and derives the former
-local-bridge premise from concrete round and finish checks. Recorded Creusot
-proofs establish selected public-input and acceptance-classifier contracts.
-Narrowing whole-verifier translation opt-outs to foreign-field equality seams
-exposes the surrounding round, rejection, carry and final-input logic to
-contract translation. These artifacts let developers trace and re-check the
+acceptance traces to the GKR reduction-chain event. The former local-bridge
+premise is no longer assumed: it is derived from the concrete round checks
+and the finish-evaluation part of the Rust/model value relation. Recorded
+Creusot proofs establish selected public-input and acceptance-classifier
+contracts. Narrowing whole-verifier translation opt-outs to foreign-field
+equality seams exposes the surrounding round, rejection, carry and final-input
+logic to contract translation, while wiring-oracle evaluations, transcript
+operations and the circuit and public-input observation helpers remain trusted
+translation boundaries. These artifacts let developers trace and re-check the
 acceptance rules and reuse that review basis for integration and maintenance.
 
 The Rust/model value and off-cube representation relation remains a stated

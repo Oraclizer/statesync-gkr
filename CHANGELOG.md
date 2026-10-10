@@ -9,7 +9,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - A refinement evidence guide, `docs/refinement.md`, that maps the forward
-  acceptance theorem, the selected Rust contract proofs and the recorded open
+  acceptance theorem, the selected Rust contract proofs and selected open
   obligations to their source.
 
 ### Changed

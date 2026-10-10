@@ -2,7 +2,7 @@
      role="img" aria-labelledby="verification-title verification-desc"
      preserveAspectRatio="xMidYMid meet">
   <title id="verification-title">StateSync-GKR verification evidence flow</title>
-  <desc id="verification-desc">A forward acceptance theorem derives the former local bridge from concrete round and finish checks under an explicit Rust/model value premise. Selected Rust contracts have recorded Creusot/Why3 evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence are separate lanes.</desc>
+  <desc id="verification-desc">A conditional forward acceptance theorem derives the former local bridge from concrete round checks and the finish part of an explicit Rust/model value premise. Selected Rust contracts have recorded Creusot/Why3 evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence are separate lanes.</desc>
   <defs>
     <linearGradient id="verification-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#061513"/>

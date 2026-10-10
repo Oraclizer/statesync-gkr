@@ -8,13 +8,14 @@ and verifier observations to selected Rust contracts and the conditional
 forward acceptance theorem. Use it to identify the checks and remaining
 assumptions an integration must preserve.
 
-> **Security status:** Machine-checked models, a forward acceptance theorem
-> and recorded selected Rust contract proofs make the acceptance checks
-> traceable. The Rust/model value relation remains a premise; whole-program
-> compiled correspondence and executable Fiat-Shamir security remain
-> unestablished. Exact results and remaining assumptions are described in
-> [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md). A comprehensive
-> independent security audit of the implementation has not been completed.
+> **Security status:** Machine-checked models, a conditional forward
+> acceptance theorem and recorded selected Rust contract proofs make the
+> acceptance checks traceable. The Rust/model value relation remains a
+> premise; whole-program compiled correspondence and executable Fiat-Shamir
+> security are not established, and the inner GKR proof is not
+> zero-knowledge. Exact results and remaining assumptions are described in
+> [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md). The implementation has
+> not undergone a comprehensive independent security audit.
 > Evaluate the remaining input, transcript, dependency and operational risks
 > for the intended application.
 
@@ -396,8 +397,9 @@ its bound input data and supply its circuit, witness, output claim and transcrip
 conventions. The SMT facade performs those checks for its supported request
 format. Its recorded public-input equality and acceptance-classifier contracts
 make those acceptance conditions inspectable. The forward model theorem
-derives its former local bridge from concrete round and finish checks, but
-retains the explicit Rust/model value relation. A custom frontend reuses this
+derives its former local bridge from the concrete round checks and the
+finish-evaluation part of the explicit Rust/model value relation, which it
+retains as a premise. A custom frontend reuses this
 [review basis](refinement.md), then establishes its own statement binding and
 residual-claim checks; existing evidence does not automatically cover it.
 
