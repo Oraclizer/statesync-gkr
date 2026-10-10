@@ -486,6 +486,8 @@ production support programme.
 
 We thank Bernhard Müller ([@muellerberndt](https://github.com/muellerberndt)) for his independent review of the verifier's challenge-generation assumptions and the implementation-facing interpretation of the extension-field soundness bound. His analysis clarified the distinction between the mechanized field/model results and the remaining multi-round Fiat–Shamir and input-binding arguments, and informed the corresponding claim corrections. The project maintainer remains responsible for the implementation and the remaining security arguments.
 
+[Contributor and review history](CONTRIBUTORS.md) records the original authorship and the scope of this review.
+
 ## License and citation
 
 From 2026-10-09 the maintained branch and every version after v1.1.0 are

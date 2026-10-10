@@ -41,7 +41,7 @@
       "release/v1.1/TREE_MANIFEST.json"
     ]
   },
-  "path_count": 949,
+  "path_count": 950,
   "entries": [
     {
       "path": ".gitattributes",
@@ -177,6 +177,13 @@
       "role": "documentation"
     },
     {
+      "path": "CONTRIBUTORS.md",
+      "mode": "100644",
+      "bytes": 250,
+      "sha256": "0a1df93ef161f071d6ed2816eec3d667ca1ec34fafdacc3b3e1a74c1344da258",
+      "role": "documentation"
+    },
+    {
       "path": "Cargo.lock",
       "mode": "100644",
       "bytes": 26105,
@@ -235,8 +242,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 28789,
-      "sha256": "aa1175f87c951c663db01976de26e8676d0e51b253b888d82d19cd5c6256cc1f",
+      "bytes": 28902,
+      "sha256": "d7969b379517f6f12f372ad9bbaee2682f10975ab7bd848a39dd737d5bec9a7f",
       "role": "documentation"
     },
     {
