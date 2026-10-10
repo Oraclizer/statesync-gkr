@@ -4,28 +4,38 @@ This changelog records user-visible component changes.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.1.1]
+## [Unreleased]
+
+### Added
+
+- A refinement evidence guide, `docs/refinement.md`, that maps the forward
+  acceptance theorem, the selected Rust contract proofs and the recorded open
+  obligations to their source.
 
 ### Changed
 
-- Licensing: the maintained branch and every version after v1.1.0 are
-  licensed under the Business Source License 1.1, with a production grant
-  limited to proof verification and conversion of each version to Apache-2.0
-  three years after its first public distribution. Rights already granted
-  to recipients through v1.1.0 remain valid. The previous signed history and
-  releases are preserved separately from the current public distribution.
-  Current workspace and caller licenses, CITATION.cff, and the package
-  inventory now declare BUSL-1.1. The historical program/proof expectations
-  remain unchanged; current metadata is not assigned a new compiled identity.
-  See LICENSE, NOTICE, and release/v1.1/LICENSING_DISTRIBUTION.json.
+- Documentation: the security status states the verified scope and the
+  remaining assumptions, and licensing notes, citation coordinates and stale
+  references were corrected.
+
+## [1.1.1] - 2026-10-10
+
+### Changed
+
+- License: StateSync-GKR v1.1.1 and later versions are licensed under the
+  Business Source License 1.1, with a production grant limited to proof
+  verification and conversion of each version to Apache-2.0 three years after
+  it is first publicly distributed under BSL. Versions up to and including
+  v1.1.0 were released under MIT OR Apache-2.0. The workspace and caller
+  package metadata, CITATION.cff and the package inventory declare BUSL-1.1;
+  the historical program and proof expectations are unchanged. See LICENSE,
+  NOTICE and release/v1.1/LICENSING_DISTRIBUTION.json.
 - CONTRIBUTING records the contribution license grant that the Business
   Source License and commercial licensing require.
 
 ## [1.1.0] - 2026-10-04
 
-Published as the signed tag `v1.1.0` with an immutable release, now retained
-with the historical source, and the
-[historical software DOI](https://doi.org/10.5281/zenodo.23136385).
+Archived as [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
 
 ### Added
 
@@ -129,7 +139,8 @@ or Release was published for this candidate.
 
 ### Security
 
-This release is unaudited research software and is not for production.
+At release, this candidate had not received a security audit and was not
+intended for production use.
 Passing tests and mechanized model results do not guarantee cryptographic
 security, absence of implementation defects, side-channel resistance,
 availability, deployment correctness, or operational safety.

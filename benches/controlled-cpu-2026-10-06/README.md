@@ -101,13 +101,19 @@ or turn the recorded execution observations into a formal theorem.
 
 ## Source and caller
 
-The runner downloads the immutable
-[source archive](https://github.com/Oraclizer/statesync-gkr/releases/download/v1.1.0/statesync-gkr-v1.1-source.tar.gz)
-and requires SHA-256
-`d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9`.
-It stages that source beside the standalone driver, retaining the measured
-`../source` path dependency and checking shared package versions, sources and
-checksums against the release lock.
+The historical runner pins the source archive used for the recorded study,
+SHA-256 `d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9`.
+Its original download coordinate is retained in [run.sh](run.sh); it is not
+the current distribution endpoint and no longer provides an available
+anonymous download. Exact historical replay requires authorized access
+to those archived bytes and the recorded environment. Do not substitute the
+current source archive or assign that historical digest to a new package.
+
+The runner stages those exact bytes beside the standalone driver, retaining
+the measured `../source` path dependency and checking shared package versions,
+sources and checksums against the recorded lock. For a separately identified
+functional check of the current checkout, use the [current small-check guide](../controlled-capacity-2026-10-07/README.md).
+That check does not reproduce the historical measurements.
 
 The measured driver is [driver/src/main.rs](driver/src/main.rs), SHA-256
 `b2d5a631e8527bca90d22065ca3692da48863f236f306d5217e8e4528fa1c75c`.
@@ -150,7 +156,12 @@ by batch size is an amortized cost, not an individual parallel job's latency.
 RSS is the whole-process maximum, including fixtures, prepared state, pools,
 correctness initialization, jobs and returned proofs.
 
-## Replay modes
+## Historical replay modes
+
+The commands below document the preserved runner interface. It still downloads
+the unavailable recorded URL and has no local-archive input option, so these
+are not currently executable replay commands. Possession of the historical
+archive alone is not sufficient to run the unmodified wrapper.
 
 Prerequisites: x86-64 Linux, Rust 1.96.1, Python 3.11+, normal Rust build tools,
 GNU time, curl, sha256sum, tar, taskset and lscpu. Tools must already be installed.

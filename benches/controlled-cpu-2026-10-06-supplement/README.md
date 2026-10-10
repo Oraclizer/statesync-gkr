@@ -183,11 +183,23 @@ Recalculate the compressed public data without compiling or proving:
 python3 data.py check-package .
 ```
 
-Use [run.sh](run.sh) for a separately labeled small smoke or the frozen full
-matrix on a dedicated Linux host. It stages the immutable release archive
-(SHA-256 `d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9`),
-checks the measured driver/lock, and uses existing controls from the original
-public study. Prerequisites are Linux, Python 3.11+, Rust 1.96.1, normal Rust
+[run.sh](run.sh) and [replay.py](replay.py) describe historical replay of the
+recorded source archive, SHA-256
+`d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9`.
+The original download coordinate in the driver is not the current distribution
+endpoint and no longer provides an available anonymous download. Exact replay
+requires authorized access to those archived bytes. Keep that
+historical digest and the measured driver/lock intact. For a separately
+identified functional check of the current checkout, use the [current small-check guide](../controlled-capacity-2026-10-07/README.md);
+it does not reproduce these measurements.
+
+The commands below document the preserved historical procedure. The wrapper
+still downloads only the recorded URL and has no local-archive input option.
+Because that URL is unavailable, these are not currently executable replay
+commands; possessing the old archive alone does not make this wrapper runnable.
+The historical procedure used a separately labeled small smoke or the frozen
+full matrix with existing controls from the original study.
+Its prerequisites were Linux, Python 3.11+, Rust 1.96.1, normal Rust
 build tools, GNU time, lscpu, taskset and tar. Full mode requires 192 available
 physical/logical CPUs, no SMT, AVX-512 capability and 360+ GiB visible memory
 to match the recorded 384 GiB host profile; that memory check is not an engine
@@ -212,4 +224,5 @@ The GKR verifier still takes the full Merkle witness and recomputes its native
 hash paths; direct SMT predicates and full GKR verification are different work.
 The recorded external vendor route remains fixed N=1 depth-24 membership.
 No source/runtime/formal, guest ABI, proof identity, tagged Release or DOI was
-changed. This remains unaudited research software.
+changed. A comprehensive implementation security audit remains outstanding;
+see the [security policy](../../SECURITY.md) for the review boundaries.

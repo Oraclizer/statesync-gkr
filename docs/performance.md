@@ -1,14 +1,5 @@
 # Performance and measured operating profiles
 
-Version 1.1.1 is a BSL distribution and package-metadata revision. The Rust
-kernel and formal sources retain their recorded contents. The root Cargo
-license field is the sole change in the identity-source selection. The
-[licensing distribution record](../release/v1.1/LICENSING_DISTRIBUTION.json)
-separates that source comparison from the historical v1.1 executable and
-proof. The current metadata revision has not completed an exact compiled
-identity reproduction; the historical proof is evidence of its recorded
-program only.
-
 The evaluation asks three different questions: how much memory one layer's
 prover owns, how quickly an internal computation completes, and which actual
 arrival load reaches cryptographic acceptance within a stated latency budget.
@@ -132,6 +123,11 @@ results are reused without pooling different hosts or rerunning the earlier
 418 processes. Cube/affine fusion has source-structure evidence, not a separate
 measured speed multiplier. The nine mechanisms combine measurement, structure,
 controls and formal-model evidence rather than nine isolated causal experiments.
+The reusable-core benefit also includes selected Rust contract proofs and a
+conditional forward acceptance theorem, summarized in the
+[refinement review map](refinement.md). Those results help inspect and maintain
+acceptance checks; the measured speed and memory improvements are separate
+engineering observations.
 
 ## Arrival through actual full-proof acceptance
 

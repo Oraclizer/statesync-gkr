@@ -14,7 +14,7 @@ It does not describe nine independently isolated causal experiments.
 | Independent proof parallelism | Use workers while preserving request/result mapping | Measurement and controls |
 | State lifecycle | Distinguish empty, tombstone and occupied states | Semantics and input controls |
 | Strict codec and binding | Reject malformed or wrong-request proofs | Rejection controls |
-| Reusable protocol core | Support other arithmetic frontends | Generic fixtures and model |
+| Reusable core and refinement evidence | Build other arithmetic frontends and reuse the acceptance-check review map | Generic fixtures, models, selected Rust contracts and conditional forward theorem |
 
 ## Measurement and application conditions
 
@@ -48,9 +48,14 @@ It does not describe nine independently isolated causal experiments.
 - **Codec and binding:** `smoke.py` and encoded-acceptance controls exercise
   wrong original statements and malformed trailing bytes. A proof-byte hash
   alone is not acceptance.
-- **Reusable core:** generic Add/Mul/cubic-affine fixtures and the existing
-  formal model support reuse. A frontend must consume both residual input MLE
-  claims. The maintained source follows the root [LICENSE](../../LICENSE),
+- **Reusable core and refinement evidence:** generic Add/Mul/cubic-affine
+  fixtures support other arithmetic frontends. The model's forward acceptance
+  theorem derives the former local bridge from concrete checks; selected Rust
+  contract proofs and ordinary verifier translation provide a reusable
+  [acceptance-check review map](../../docs/refinement.md). The Rust/model value
+  relation remains a premise and recorded open obligations retain no proof
+  credit. A frontend must bind its own statement and consume both residual
+  input MLE claims. The maintained source follows the root [LICENSE](../../LICENSE),
   including its non-production and verification-only production permissions.
 
 Detailed raw records and scientific result selection have different roles.

@@ -1,18 +1,27 @@
 # Formal verification
 
-Version 1.1.1 is a BSL distribution and package-metadata revision. The Rust
-kernel and formal sources retain their recorded contents. The root Cargo
-license field is the sole change in the identity-source selection. The
-[licensing distribution record](release/v1.1/LICENSING_DISTRIBUTION.json)
-separates that source comparison from the historical v1.1 executable and
-proof. The current metadata revision has not completed an exact compiled
-identity reproduction; the historical proof is evidence of its recorded
-program only.
+StateSync-GKR provides machine-checked compiler and GKR models, a mechanized
+forward verifier-acceptance theorem, and recorded proofs for selected Rust
+contracts. The refinement work derives the former local-bridge premise from
+concrete round and finish checks and exposes the main verifier control flow
+to contract translation. Developers can trace request binding, round checks,
+carry construction and final input evaluations across named code and proof
+sources, and reuse that review map for integration and maintenance.
+
+The forward theorem retains an explicit Rust/model value-relation premise.
+[Refinement evidence and reuse](docs/refinement.md) distinguishes the completed
+results, recorded contract proofs and open correspondence obligations.
+
+The Rust kernel and formal sources retain their recorded contents. The
+[distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
+current source consistency from the historical v1.1 executable and proof: an
+exact compiled identity has not been reproduced for the current package
+metadata, so the attached proof is evidence for its recorded program only.
 
 <p align="center">
   <picture>
     <source media="(max-width: 900px)" srcset="assets/diagrams/verification-flow-mobile.svg">
-    <img src="assets/diagrams/verification-flow.svg" width="900" alt="Isabelle models connect through a documented partial mapping to Rust contracts and Creusot replay evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence are separate lanes.">
+    <img src="assets/diagrams/verification-flow.svg" width="900" alt="A mechanized forward acceptance theorem derives the former local bridge from concrete checks, under an explicit Rust/model value premise. Selected Rust contracts have recorded Creusot/Why3 evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence remain separate lanes.">
   </picture>
 </p>
 
@@ -76,7 +85,19 @@ Independent-job batch results agree pointwise with their single-job counterparts
 
 ### Verifier acceptance refinement
 
-A successful acceptance trace of the shipped Rust verifier inhabits the reduction-chain event of Theorem B, given an explicit relation between the Rust trace values and the model. That relation is a stated premise and is not discharged against the compiled program, so the result is a conditional refinement. The reverse direction is a stated non-claim.
+The mechanized forward theorem takes an accepted trace, model well-formedness
+and the explicit Rust/model value relation to the reduction-chain event of
+Theorem B. Concrete sumcheck-round and finish-evaluation checks derive the
+former local-bridge premise. This makes the acceptance argument inspectable at
+the checks it depends on, rather than leaving that bridge as a single assumed
+implication.
+
+The remaining `rust_hol_value_trace_relation` relates the Rust/Creusot trace,
+final running claim, wiring right-hand side and off-cube polynomial
+representation to the model. It is load-bearing and is not discharged against
+the exact compiled program, so the refinement remains conditional. The model
+event omits request/public-input guards; the reverse direction cannot authorize
+an executable acceptance whose binding fails.
 
 - **Named theorems:** `production_verifier_acceptance_refines_gkr_chain_bad`, `verifier_acceptance_implies_gkr_chain_bad`, `gkr_chain_bad_does_not_imply_public_input_acceptance`
 - **Canonical source:** `Verifier_Acceptance_Refinement.thy`
@@ -120,6 +141,15 @@ or production safety.
 
 R2-1 is the leaf-tag domain-separation obligation: the first leaf-preimage
 field remains the encoding tag in the compiler and primitive hash paths.
+
+The recorded contract proofs include the public-input equality helper and
+acceptance classifier. They let a reviewer check which actual observations
+enter the verdict. Narrowing whole-function translation opt-outs makes the
+surrounding verifier control flow available to Creusot; translation coverage
+does not itself prove every translated function. The recorded layer-verifier,
+leaf-fold and compiler-with-hints evidence includes open `null` obligations,
+in addition to the facade obligations described above. These open records are
+preserved without proof credit. See the [source and evidence map](docs/refinement.md#source-and-evidence-map).
 
 ## Trusted and assumed boundaries
 

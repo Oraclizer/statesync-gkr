@@ -1,16 +1,18 @@
-# StateSync-GKR v1.1.1 licensing distribution notes
+# StateSync-GKR v1.1 release notes
 
 ## Status
 
-This package describes an unaudited research component. It is not production
-software, does not authorize deployment, and does not claim secondary
-finality. The current distribution is licensed under BUSL-1.1.
+StateSync-GKR v1.1.1 and later versions are distributed under BUSL-1.1;
+production proving requires a commercial license (see the root LICENSE). The
+model results and implementation evidence are described below. A comprehensive
+independent security audit of the implementation has not been completed, and
+these notes do not establish deployment safety or secondary finality.
 
-Version 1.1.1 changes licensing and distribution metadata. The Rust kernel,
-formal sources, locks and toolchain pins retain their recorded bytes. The
-historical v1.1 identity cycle and its proof are preserved as historical
-evidence. The exact current metadata source has not completed a compiled
-identity comparison and is not assigned a new verified program identity.
+Version 1.1.1 updates the package license metadata. The Rust kernel, formal
+sources, locks and toolchain pins retain their recorded bytes. The historical
+v1.1 identity cycle and its proof are preserved as historical evidence; the
+current package metadata has not been shown to reproduce that compiled
+identity and is not assigned a new verified program identity.
 [LICENSING_DISTRIBUTION.json](LICENSING_DISTRIBUTION.json) records that boundary.
 
 ## Relation to v1.0
@@ -18,8 +20,8 @@ identity comparison and is not assigned a new verified program identity.
 `release/v1.0` is kept byte frozen. It records what the previous cycle
 claimed, and it last held over the whole tree at commit
 `a456846f98df6e0b60c9e6d33d67592a82ef9500`. To check that earlier claim on its
-own terms requires the original historical copy at that commit. Its history
-is preserved separately from this current public repository. The verifier in this directory holds the whole
+own terms requires the original historical copy at that commit, which is not
+part of this repository. The verifier in this directory holds the whole
 superseded directory to one recorded digest, so the earlier record cannot be
 edited without failing a required check.
 
@@ -30,6 +32,13 @@ artifacts and make no claim about v1.1.
 
 ## Historical v1.1 implementation changes
 
+The refinement work provides a reusable review basis for the request-to-acceptance
+path. Developers can inspect how public inputs, round checks, carry values and
+final input evaluations contribute to the verdict across named Rust code,
+selected contract proofs and the forward model theorem. The
+[refinement guide](../../docs/refinement.md) identifies the completed results
+and recorded open obligations.
+
 - The sumcheck, per-layer GKR, and facade verifier bodies no longer opt out of
   Creusot translation as a whole. Each opt-out was narrowed to the single
   foreign extension-field equality it needs.
@@ -38,9 +47,14 @@ artifacts and make no claim about v1.1.
   can evaluate a shift, each with a direct rejection test.
 - `Verifier_Acceptance_Refinement` relates a successful acceptance trace of
   the shipped Rust verifier to the reduction-chain event of the GKR assembly
-  result, and states the reverse direction as a non-claim. The relation
-  between the Rust trace values and the model is an explicit premise and is
-  not discharged, so the result is a conditional refinement.
+  result. Concrete round and finish-evaluation checks derive the former
+  local-bridge premise. The Rust/model value and off-cube representation
+  relation remains an explicit, undischarged premise, so the result is a
+  conditional refinement. The reverse direction is a non-claim.
+- Recorded contract proofs establish public-input equality and the acceptance
+  classifier's use of the actual verdict observations. Translation coverage
+  and these selected proofs do not close the recorded `null` obligations or
+  establish whole-function GKR verification.
 
 ## Included component
 
@@ -124,9 +138,15 @@ checks still apply to both.
 ## Non-claims
 
 This release does not claim a security audit, absence of vulnerabilities,
-production fitness, zero knowledge beyond the documented proof profile,
-aggregate-proof batching, controlled-hardware performance, deployed contracts,
+deployment safety for a particular application, zero knowledge beyond the
+documented proof profile, aggregate-proof batching, production performance
+guarantees, deployed contracts,
 native rollup proving, parent-chain confirmation, legal compliance, or
 operational support commitments. It does not claim compiled-Rust semantics,
 Fiat-Shamir soundness, whole-program refinement, or the converse of the
 verifier acceptance refinement.
+
+The separate [controlled studies](../../docs/performance.md) contain limited
+self-measured results for their stated hardware, workloads and timing
+boundaries. Their observations do not establish performance for other
+environments or an unlimited-duration service guarantee.

@@ -9,15 +9,12 @@ abstract: >-
   the verification-circuit compiler, the layer reduction, and their
   composition are mechanized in Isabelle/HOL across six registered sessions
   that build with no admitted proof, and the Rust implementation is connected
-  to those models through
-  recorded contracts, differential tests, and adversarial vectors.
-  Version 1.1.1 revises distribution licensing and package metadata. The
-  historical v1.1 executable and proof retain their recorded scope; an exact
-  compiled identity has not been established for the current metadata source.
+  to those models through a forward verifier-acceptance theorem, recorded
+  contract proofs, differential tests, and adversarial vectors. The attached
+  zkVM proof applies to the recorded historical v1.1 program.
 type: software
 version: "1.1.1"
 doi: "10.5281/zenodo.23280552"
-# The historical v1.1.0 DOI is documented in REPRODUCING.md.
 # Component release version; separate from unpublished Cargo package versions.
 authors:
   - family-names: "Kim"

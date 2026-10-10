@@ -1,21 +1,22 @@
 # Usage and API boundary
 
-Version 1.1.1 is a BSL distribution and package-metadata revision. The Rust
-kernel and formal sources retain their recorded contents. The root Cargo
-license field is the sole change in the identity-source selection. The
-[licensing distribution record](../release/v1.1/LICENSING_DISTRIBUTION.json)
-separates that source comparison from the historical v1.1 executable and
-proof. The current metadata revision has not completed an exact compiled
-identity reproduction; the historical proof is evidence of its recorded
-program only.
-
 StateSync-GKR is a Rust source release. Start with its SMT facade for
 membership, non-membership and single-leaf updates. The lower `sumcheck` and
-`gkr` modules are reusable by other circuit frontends.
+`gkr` modules are reusable by other circuit frontends. The
+[refinement evidence](refinement.md) provides a review map from request binding
+and verifier observations to selected Rust contracts and the conditional
+forward acceptance theorem. Use it to identify the checks and remaining
+assumptions an integration must preserve.
 
-> **WARNING:** This is a research implementation, unaudited and not ready for
-> production use. Model verification and the remaining implementation
-> assumptions are described in [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md).
+> **Security status:** Machine-checked models, a forward acceptance theorem
+> and recorded selected Rust contract proofs make the acceptance checks
+> traceable. The Rust/model value relation remains a premise; whole-program
+> compiled correspondence and executable Fiat-Shamir security remain
+> unestablished. Exact results and remaining assumptions are described in
+> [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md). A comprehensive
+> independent security audit of the implementation has not been completed.
+> Evaluate the remaining input, transcript, dependency and operational risks
+> for the intended application.
 
 ## Choosing a path
 
@@ -49,7 +50,8 @@ free; production use solely to verify proofs is granted. Other production use,
 including proof generation, embedding or redistributing proving functionality
 and third-party proof services, requires a commercial license. Each version
 converts to Apache 2.0 three years after first publication under BSL. See
-[NOTICE](../NOTICE) for the version boundary and preserved metadata.
+[LICENSE](../LICENSE) for the exact terms and [NOTICE](../NOTICE) for
+applicable notices.
 
 ```sh
 git clone --depth 1 https://github.com/Oraclizer/statesync-gkr.git
@@ -75,10 +77,9 @@ requirements under [Reproducing the release](../REPRODUCING.md).
 ## Pin the source in an application
 
 The packages are unpublished. The following standalone application's
-`Cargo.toml` selects the current maintained source. Pin a current commit when recording a fixed reproduction subject.
-Choose a maintained source revision separately if that is the version you
-intend to integrate; its root LICENSE controls, even while frozen package
-metadata still carries the old declaration:
+`Cargo.toml` selects this repository. Pin an exact commit when recording a
+fixed reproduction subject. The root [LICENSE](../LICENSE) and the workspace
+package metadata use BUSL-1.1:
 
 
 ```toml
@@ -393,7 +394,14 @@ The sumcheck verifier returns a residual `Subclaim`, and the GKR verifier
 returns residual input claims. A custom frontend must discharge them against
 its bound input data and supply its circuit, witness, output claim and transcript
 conventions. The SMT facade performs those checks for its supported request
-format. Arbitrary program compilation, alternative field/hash profiles and
+format. Its recorded public-input equality and acceptance-classifier contracts
+make those acceptance conditions inspectable. The forward model theorem
+derives its former local bridge from concrete round and finish checks, but
+retains the explicit Rust/model value relation. A custom frontend reuses this
+[review basis](refinement.md), then establishes its own statement binding and
+residual-claim checks; existing evidence does not automatically cover it.
+
+Arbitrary program compilation, alternative field/hash profiles and
 other application adapters are not bundled with this release.
 
 ## Contributor checks

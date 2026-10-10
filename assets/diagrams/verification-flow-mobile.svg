@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="1940" viewBox="0 0 600 1940" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet">
   <title id="title">StateSync-GKR verification evidence flow for narrow screens</title>
-  <desc id="desc">A vertical evidence architecture connecting Isabelle models through a documented partial mapping to Rust contracts and Creusot replay evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence remain separate lanes.</desc>
+  <desc id="desc">A vertical evidence architecture showing a forward acceptance theorem whose former local bridge follows from concrete checks under an explicit Rust/model value premise, selected Rust contracts and recorded Creusot/Why3 evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence remain separate lanes.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061513"/><stop offset="1" stop-color="#12312d"/></linearGradient>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#75e3b0"/></marker>
@@ -15,9 +15,9 @@
   <text class="eyebrow" x="48" y="152">FORMAL MODEL AND MAPPED REFINEMENT LANE</text>
   <rect class="model" x="84" y="180" width="432" height="96" rx="14"/><text class="label" x="300" y="214" text-anchor="middle">Isabelle model</text><text class="small" x="300" y="241" text-anchor="middle">GKR_Protocol · SMT_Circuit_Compiler_Correctness</text><text class="small" x="300" y="263" text-anchor="middle">machine-checked model results</text>
   <path class="flow" d="M300 276v38"/>
-  <rect class="model" x="84" y="318" width="432" height="88" rx="14"/><text class="label" x="300" y="351" text-anchor="middle">Documented mapping</text><text class="small" x="300" y="379" text-anchor="middle">model → Rust anchors · scope + trusted boundary</text>
+  <rect class="model" x="84" y="318" width="432" height="88" rx="14"/><text class="label" x="300" y="351" text-anchor="middle">Forward acceptance theorem</text><text class="small" x="300" y="379" text-anchor="middle">Concrete checks; Rust/model value premise</text>
   <path class="flow" d="M300 406v38"/>
-  <rect class="model" x="84" y="448" width="432" height="88" rx="14"/><text class="label" x="300" y="481" text-anchor="middle">Mapped contracts</text><text class="small" x="300" y="509" text-anchor="middle">cfg(creusot) · selected Rust surfaces</text>
+  <rect class="model" x="84" y="448" width="432" height="88" rx="14"/><text class="label" x="300" y="481" text-anchor="middle">Selected Rust contracts</text><text class="small" x="300" y="509" text-anchor="middle">Public inputs + acceptance; recorded solver proofs</text>
   <path class="flow" d="M300 536v38"/>
   <rect class="evidence" x="84" y="578" width="432" height="110" rx="14"/><text class="label" x="300" y="612" text-anchor="middle">Creusot / Why3 evidence</text><text class="small" x="300" y="639" text-anchor="middle">verification-condition discharge</text><text class="small" x="300" y="663" text-anchor="middle">proof.json replay metadata · explicit tool limits</text>
 

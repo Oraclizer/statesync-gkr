@@ -1,48 +1,33 @@
 StateSync-GKR
 Copyright (c) 2026 Oraclizer Labs, Inc.
 
-This repository is licensed under the Business Source License 1.1. The
-LICENSE file is the controlling text. This file records the license history
-and the notices that the former contribution terms require.
+StateSync-GKR v1.1.1 and later versions are licensed under the Business Source
+License 1.1. The LICENSE file is the controlling text: non-production use is
+free, production use solely to verify proofs is granted, and each version
+licensed under BSL converts to the Apache License, Version 2.0 three years
+after it is first publicly distributed under BSL. Versions up to and including
+v1.1.0, published on 2026-10-04 and archived at
+https://doi.org/10.5281/zenodo.23136385, were released under the MIT License
+or the Apache License, Version 2.0, at the recipient's option. Dependency
+licenses apply to the corresponding third-party components and are recorded in
+the software bill of materials.
 
-License history
+Review contribution notice
 
-- Versions up to and including v1.1.0, published on 2026-10-04 as the signed
-  tag v1.1.0 and archived at https://doi.org/10.5281/zenodo.23136385, were
-  released under the MIT License or the Apache License, Version 2.0, at the
-  recipient's option. Rights already granted to recipients of those copies
-  remain valid. The former source history and signed release are retained
-  separately; they are no longer an alternative public source distribution.
-- From 2026-10-09 the maintained branch and every later version are licensed
-  under the Business Source License 1.1 with the parameters stated in LICENSE:
-  non-production use is free, production use solely to verify proofs is
-  granted, and each version converts to the Apache License, Version 2.0 three
-  years after its first public distribution.
+Bernhard Müller authored docs/challenge-generation-review.md and the related
+review-derived passages in FORMAL_VERIFICATION.md, merged on 2026-09-22. Those
+contributions retain their MIT OR Apache-2.0 permission terms. The MIT
+permission notice is preserved in LICENSES/challenge-generation-review-MIT.txt
+and applies only to those review contributions. This notice does not change
+their original authorship and does not represent a new review or signature by
+their author.
 
-Contributions accepted under the former terms
+Source and proof scope
 
-The review contributions of Bernhard Müller merged on 2026-09-22
-(docs/challenge-generation-review.md, docs/challenge-sampling-review.md and
-the corresponding passages of FORMAL_VERIFICATION.md) were submitted under
-the former MIT OR Apache-2.0 contribution terms. They remain available from
-their author under those terms, and this notice preserves the attribution
-those licenses require. The accompanying MIT permission notice for those
-review contributions is retained in LICENSES/legacy-review-MIT.txt. The
-current complete distribution is offered under the root Business Source
-License 1.1; this does not revoke rights previously granted for the review
-contributions.
-
-Current distribution and historical evidence
-
-Version 1.1.1 aligns the workspace, standalone benchmark caller, citation
-metadata and current package inventory with BUSL-1.1. The workspace package
-versions remain unchanged; this is a licensing revision, not a new engine
-algorithm or a new formal-verification claim.
-
-The historical v1.1 source manifest, expected executable identity and proof
-observations remain explicit historical records. A single package-license
-field differs in the current identity source selection. The current metadata
-revision has not been declared to reproduce the historical compiled identity.
-See release/v1.1/LICENSING_DISTRIBUTION.json for the exact source comparison
-and its limit. A historical license name in that evidence or in a required
-third-party notice is not the license grant for the current distribution.
+The current source manifest identifies the files in this distribution. The
+recorded executable identity and proof describe their historical v1.1 program
+only; an exact compiled identity has not been established for the current
+package metadata. See release/v1.1/LICENSING_DISTRIBUTION.json for the source
+and proof boundaries. License names that appear in historical records or in
+third-party notices describe those records or components; they are not the
+license grant for v1.1.1 and later versions.

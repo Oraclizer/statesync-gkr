@@ -58,7 +58,7 @@ under it against one recorded digest, so an edit or a removal fails the live
 gate instead of silently rewriting what the earlier release claimed. To check
 the earlier claim on its own terms requires the original historical copy and the commit named in
 [RELEASE_NOTES.md](RELEASE_NOTES.md); that commit is not part of this current
-public repository. Existing recipients retain their original rights.
+public repository.
 
 ## Identity source selection
 
@@ -86,8 +86,8 @@ compiled program identity to the current source.
 ## Historical controlled identity build
 
 The following recipe documents the historical source selection. Running it
-against changed current package metadata fails its exact source guard. It is
-not a command that converts a current BSL copy to the historical license.
+against changed current package metadata fails its exact source guard. It
+does not establish an exact program identity for a different source selection.
 
 ```sh
 spikes/zkvm-wrap/reproducible/risc0-route-b/verify-two-clean-builds.sh \

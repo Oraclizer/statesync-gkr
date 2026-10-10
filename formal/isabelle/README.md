@@ -3,6 +3,9 @@
 This directory is the canonical home of StateSync-GKR Isabelle sources.
 Repository-level ownership, refinement status, tool evidence, and claim
 boundaries are recorded in [`../../FORMAL_VERIFICATION.md`](../../FORMAL_VERIFICATION.md).
+[Refinement evidence and reuse](../../docs/refinement.md) explains how the
+forward acceptance theorem and selected Rust contracts provide a review map,
+including the former local-bridge derivation and remaining value-relation premise.
 
 ## Mechanized sessions
 

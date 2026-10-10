@@ -1,8 +1,7 @@
 # Contributing
 
-Thank you for looking at StateSync-GKR. This is a small research project with
-one maintainer, and careful outside review is one of the most valuable things
-it can receive.
+Thank you for looking at StateSync-GKR. Careful outside review and reproducible
+reports help improve the implementation and its documented security boundaries.
 
 The contributions that help most right now:
 
@@ -13,7 +12,11 @@ The contributions that help most right now:
   verification path, especially with a failing test.
 - **Independent review of the claim boundaries.** If
   [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) claims more than the
-  theorems actually establish, that is a bug worth reporting.
+  theorems actually establish, that is a bug worth reporting. Missing
+  established results also deserve correction. The
+  [refinement review map](docs/refinement.md) names the theorem, selected Rust
+  contracts, actual acceptance checks and recorded open obligations that a
+  claim should match.
 - **Documentation that was wrong or unclear on first read.** If you had to
   work something out yourself, the docs should have told you.
 
@@ -50,8 +53,10 @@ not build the same thing.
 
 ## Development checks
 
-These are exactly what CI runs, in the same order. If all of them pass
-locally, the hosted checks should pass too.
+These commands cover the core local development checks. Hosted workflows
+also select their target environment and the pull request's base authority,
+so passing this block locally does not by itself establish a hosted result;
+the workflow runs on the exact commit do.
 
 ```sh
 rustup show
@@ -82,18 +87,30 @@ cargo run --release --locked --bin proof_digest
 python3 release/v1.1/verify_dependency_update_policy.py
 python3 release/v1.1/test_verify_mode_policy.py
 python3 release/v1.1/test_documentation_consistency.py
+python3 release/v1.1/test_license_distribution.py
 python3 release/v1.1/verify.py --mode pull-request
 python3 spikes/zkvm-wrap/reproducible/risc0-route-b/test_validate_toolchain_payload_packaging.py
 ```
 
-`verify.py --mode pull-request` is the check CI runs on a pull request: it
-validates the frozen protected surface and the sensitive-content rules without
-requiring you to regenerate any release manifest. The command after it checks
-the controlled-build payload profiles against the identity record of their own
-release line. `test_documentation_consistency.py` holds the prose to the files
-that decide it, so a count or an asset name that drifts from its authority
-fails here rather than in a reader's hands. The full-tree manifests are
-maintained on the release line, not by contributors.
+`verify.py --mode pull-request` checks the frozen protected surface and the
+sensitive-content rules without requiring you to regenerate any release
+manifest. The [CI launcher](.github/workflows/ci.yml) additionally runs the
+wrapper, verifier and helper from the pull request's base revision; a missing
+base authority fails. Running a modified head's verifier locally does not
+replace that authority check. The policy fixtures exercise rejection cases,
+while the controlled-build packaging fixtures compare payload profiles with
+the recorded identity of their own line without building a guest.
+`test_documentation_consistency.py` holds the prose to the files that decide
+it, so a count or an asset name that drifts from its authority fails here
+rather than in a reader's hands. Maintainers regenerate the full-tree
+manifests for the maintained branch.
+
+Hosted CI also compares separate baseline and native CPU-backend proof digests;
+the single local digest command above does not perform that comparison. The
+[controlled-capacity workflow](.github/workflows/controlled-capacity.yml) has a
+separate small caller/memory check, and [Proofs](.github/workflows/proofs.yml)
+selects the registered formal sessions under its documented event and path
+rules. Those workflows and their actual run results determine hosted status.
 
 If a change affects Isabelle theories or mapped verification claims, build the
 registered sessions (see
@@ -221,7 +238,8 @@ an advisory as appropriate.
 
 ## Signed release identity
 
-Signed release tags begin with `v1.1.0`. Earlier commits keep their original
-signing status. Maintainer commits made after that release are signed, and
-merges preserve their signatures; rebase merging is disabled on the published
-repository. The maintainer's SSH signing key is listed on the GitHub account.
+Release tags are signed; the first signed release tag in this repository is
+`v1.1.1`. Maintainer commits are signed, contributor author metadata is
+preserved, and merge commits keep the submitted commits and their signatures;
+rebase merging is disabled. The maintainer's SSH signing key is listed on the
+GitHub account.

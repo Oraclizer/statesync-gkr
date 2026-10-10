@@ -1,7 +1,9 @@
 # Support
 
-StateSync-GKR is unaudited research software and has no production support
-commitment.
+The security evidence and the remaining implementation-review boundaries are
+described in [SECURITY.md](SECURITY.md). This public repository provides
+best-effort community support. Commercial licensing for production use is
+arranged with Oraclizer Labs, Inc. through [oraclizer.io](https://oraclizer.io).
 
 ## Public issues
 
@@ -16,7 +18,9 @@ Do not use a public issue for an undisclosed vulnerability. Follow
 
 Maintainer responses may cover the repository source, documented build and test
 commands, public vectors, formal sessions, release verifier, and claim
-boundaries.
+boundaries. Questions that trace an acceptance check to its selected Rust
+contract, forward theorem or recorded open obligation can use the
+[refinement review map](docs/refinement.md).
 
 The repository does not provide deployment operation, key management, incident
 response, legal or regulatory advice, performance guarantees, integration

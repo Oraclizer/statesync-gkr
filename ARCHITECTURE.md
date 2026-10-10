@@ -69,10 +69,18 @@ manifest, receipt, and local transition encodings.
    claims, and round messages in a fixed order.
 7. The facade emits a primary record and proof result.
 
-The model and implementation relationship is scoped. Isabelle owns the
-mathematical semantics and composition results. Rust tests and bounded
-contracts connect selected implementation seams. Trusted functions, foreign
-libraries, hash assumptions, and unsupported tool surfaces remain explicit.
+Isabelle owns the mathematical semantics, composition results and forward
+acceptance theorem. Concrete round and finish checks supply the theorem's
+former local bridge. Selected Rust contracts have recorded solver proofs for
+public-input equality and the acceptance classifier, while narrowed
+foreign-field seams leave the surrounding verifier checks available to
+contract translation. This gives developers a review map from a request to
+the checks that determine acceptance.
+
+The Rust/model value and off-cube representation relation remains an explicit
+premise. Trusted functions, foreign libraries, hash assumptions and unsupported
+tool surfaces remain visible. [Refinement evidence and reuse](docs/refinement.md)
+separates those premises and open obligations from the completed results.
 
 ## Finality vocabulary
 
@@ -141,7 +149,7 @@ See [ADR-0002](docs/adr/0002-external-proof-role-contract.md).
 
 ## Frozen interfaces
 
-The proof identity of the current release line freezes six compatibility
+The recorded historical v1.1 program identity fixes six compatibility
 surfaces:
 
 - dependency direction;
@@ -163,8 +171,10 @@ its own witness, transcript, and proof. Sequential and parallel paths are
 checked for pointwise agreement.
 
 The component does not claim a single aggregate proof, shared mutable
-cross-job proof state, scheduler liveness, or a controlled-hardware performance
-result.
+cross-job proof state or scheduler liveness. The separate
+[controlled measurements](docs/performance.md) describe bounded workloads on
+their recorded hardware; they are not a production performance guarantee or
+a consequence of the pointwise batching model.
 
 ## Prepared material
 

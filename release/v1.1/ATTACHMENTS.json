@@ -9,8 +9,8 @@
       "asset_name": "statesync-gkr-v1.1-source.tar.gz",
       "media_type": "application/gzip",
       "role": "deterministic-source-archive",
-      "bytes": 42923829,
-      "sha256": "15c916cd7a34a4e71eb2714f6aaa91b6c0da063cdd3bd48adaff8b58dd0a492d",
+      "bytes": 42930501,
+      "sha256": "ce302b078ed1fb6105d1d5c881a2c9e46ad165cc7735938713e518e055ad9198",
       "status": "PREPARED_RELEASE_ASSET"
     },
     {
@@ -61,8 +61,8 @@
       "asset_name": "statesync-gkr-v1.1-sbom.spdx.json",
       "media_type": "application/spdx+json",
       "role": "sbom",
-      "bytes": 780014,
-      "sha256": "6541324514357a92bb11fabcedeb9f47039a0660d7ee257bd3a6935a4b9fed27",
+      "bytes": 780657,
+      "sha256": "b79bf4d58ae8ebb1d90e2f721705167ffcdcac5758477ae793a16f8ce35e338b",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "release/v1.1/SBOM.spdx.json"
     },
@@ -71,7 +71,7 @@
       "media_type": "application/jsonl",
       "role": "provenance",
       "bytes": 4596,
-      "sha256": "dadf18c8cee8f71c03463d14f7987f16935ac005ce31737b5eb78b8dffb12681",
+      "sha256": "ef75c6e8cb85590b196f91f39f35a5c2aaea5dc8bb628cd6f8c2960381bc197e",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "release/v1.1/PROVENANCE.intoto.jsonl"
     },

@@ -2,9 +2,9 @@
 
 Every recorded proof is bound to an exact RISC Zero program identity, and
 this directory preserves the expected records for those historical lines.
-The current v1.1.1 BSL distribution changes one Cargo license field and does
-not claim a newly reproduced compiled identity. Its source checks and the
-historical program boundary are recorded in
+The current source differs from the recorded v1.1 program source in one root
+Cargo package-metadata field and does not claim a newly reproduced compiled
+identity. Its source checks and the historical program boundary are recorded in
 [LICENSING_DISTRIBUTION.json](../../../release/v1.1/LICENSING_DISTRIBUTION.json).
 This directory holds one expected record per historical identity line. A record is never
 rewritten when a new line opens: the new line gets its own file, and the
@@ -38,8 +38,9 @@ failure.
 Do not update expected hashes to make a changed build pass. A changed
 protected source is a different candidate identity and requires separately
 authorized identity and proof work. A proof is never carried across lines: the
-v1.0 proof belongs to the v1.0 identity and the current proof belongs to the
-current one.
+v1.0 proof belongs to its recorded v1.0 identity, and the recorded v1.1 proof
+belongs to its historical v1.1 identity. Neither establishes a compiled
+identity for the current source.
 
 ## Public policy check
 
@@ -58,9 +59,9 @@ The controlled exact build is documented in
 [`../reproducible/risc0-route-b/README.md`](../reproducible/risc0-route-b/README.md).
 That recipe carries one payload profile per release line and selects the
 profile together with the expected record above, so a build is always compared
-against the line it belongs to. A final release requires its separately
-verified receipt. Public hosted checks
-enforce source immutability; they do not claim to rerun the controlled build.
+against the line it belongs to. A claim of reproduced program identity requires
+a matching verified receipt. Hosted source checks enforce source consistency;
+they do not claim to rerun the controlled build.
 
 ## Legacy annotation boundary
 
