@@ -1,0 +1,38 @@
+{
+  "schema": "ssgkr.controlled-capacity-dataset-locator.v1",
+  "dataset_identifier": "statesync-gkr-controlled-capacity-2026-10-07",
+  "status": "PREPARED_FOR_REVIEW_PUBLICATION_PENDING",
+  "publication_url": null,
+  "dataset_doi": null,
+  "dataset_and_figure_license": "pending final rights-holder choice",
+  "product_path": "benches/controlled-capacity-2026-10-07",
+  "expected_layout": [
+    "Raw/<frozen-study>/<calculation-run>/<role>/",
+    "Analysis/<study>/",
+    "Replay/Drivers/Load/",
+    "Replay/Drivers/Memory/",
+    "Replay/Analysis/",
+    "PACKAGE_CONTRACT.json",
+    "PUBLIC_MANIFEST.json",
+    "NORMALIZATION.json",
+    "PRESERVATION.json"
+  ],
+  "study_execution_counts": {
+    "Memory": 264,
+    "Limits": 17,
+    "Arrival": 38,
+    "Horizontal": 12,
+    "Fine": 57,
+    "Capacity192": 47
+  },
+  "existing_public_cpu_paths": [
+    "benches/controlled-cpu-2026-10-06",
+    "benches/controlled-cpu-2026-10-06-supplement"
+  ],
+  "existing_public_cpu_processes": 418,
+  "measured_software_commit": "1b8d2f829792172b347dedbfde969016c2c05789",
+  "software_doi": "10.5281/zenodo.23136385",
+  "public_archive_sha256": null,
+  "original_private_archive_sha256": null,
+  "hash_boundary": "private file hashes and normalized public file hashes are different objects; no archive hash is invented"
+}

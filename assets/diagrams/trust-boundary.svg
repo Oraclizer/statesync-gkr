@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"
+     role="img" aria-labelledby="trust-title trust-desc"
+     preserveAspectRatio="xMidYMid meet">
+  <title id="trust-title">Selected evidence route and external deployment boundary</title>
+  <desc id="trust-desc">Route B records a RISC Zero proof, zkVerify receipt, observed delivery, destination experiment, and host-only reference transition. Actual CDK L3 execution, native proof, parent settlement, and Base confirmation remain external.</desc>
+  <defs>
+    <linearGradient id="trust-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061513"/>
+      <stop offset=".62" stop-color="#0A2422"/>
+      <stop offset="1" stop-color="#12312D"/>
+    </linearGradient>
+    <marker id="trust-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#66B8D2"/>
+    </marker>
+    <marker id="external-arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#F4B85F"/>
+    </marker>
+    <style>
+      .text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#F3F7F4}
+      .muted{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#9DB6B2}
+      .node{fill:#091D1B;stroke:#66B8D2;stroke-width:1.7}
+      .external{fill:#261E13;stroke:#F4B85F;stroke-width:1.7}
+      .future{fill:#091D1B;stroke:#9DB6B2;stroke-width:1.7;stroke-dasharray:8 6}
+      .defect{fill:#2B1716;stroke:#DB7868;stroke-width:1.8}
+      .flow{fill:none;stroke:#66B8D2;stroke-width:2.2;stroke-linecap:round}
+      .dotted{fill:none;stroke:#F4B85F;stroke-width:2.2;stroke-dasharray:7 7;stroke-linecap:round}
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="url(#trust-bg)"/>
+  <rect x="1" y="1" width="1198" height="758" rx="23" fill="none" stroke="#2B5753"/>
+  <text x="54" y="56" class="text" font-size="27" font-weight="760">SELECTED ROUTE B EVIDENCE</text>
+  <text x="54" y="83" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif"
+        font-size="14" font-weight="650">Component evidence • production deployment not established</text>
+
+  <rect x="54" y="108" width="1092" height="274" rx="18" fill="#091D1B" stroke="#2B5753"/>
+  <text x="76" y="136" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">OBSERVED FLOW</text>
+
+  <rect x="78" y="173" width="172" height="78" rx="13" class="node"/>
+  <text x="164" y="203" class="text" font-size="14" font-weight="720" text-anchor="middle">RISC Zero proof</text>
+  <text x="164" y="225" class="muted" font-size="11" text-anchor="middle">+ public values</text>
+
+  <rect x="290" y="173" width="190" height="78" rx="13" class="external"/>
+  <text x="385" y="202" class="text" font-size="14" font-weight="720" text-anchor="middle">zkVerify</text>
+  <text x="385" y="224" class="muted" font-size="11" text-anchor="middle">verification + aggregation</text>
+
+  <rect x="520" y="173" width="180" height="78" rx="13" class="external" stroke-dasharray="7 6"/>
+  <text x="610" y="202" class="text" font-size="13" font-weight="720" text-anchor="middle">authorized-account</text>
+  <text x="610" y="224" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif"
+        font-size="11" text-anchor="middle">delivery</text>
+
+  <rect x="740" y="173" width="166" height="78" rx="13" class="node"/>
+  <text x="823" y="203" class="text" font-size="14" font-weight="720" text-anchor="middle">destination</text>
+  <text x="823" y="225" class="muted" font-size="11" text-anchor="middle">gateway</text>
+
+  <rect x="946" y="173" width="174" height="78" rx="13" class="node"/>
+  <text x="1033" y="203" class="text" font-size="14" font-weight="720" text-anchor="middle">stored root</text>
+  <text x="1033" y="225" class="muted" font-size="11" text-anchor="middle">+ membership</text>
+
+  <path d="M250 212H290" class="flow" marker-end="url(#trust-arrow)"/>
+  <path d="M480 212H520" class="dotted" marker-end="url(#external-arrow)"/>
+  <path d="M700 212H740" class="dotted" marker-end="url(#external-arrow)"/>
+  <path d="M906 212H946" class="flow" marker-end="url(#trust-arrow)"/>
+
+  <rect x="78" y="288" width="828" height="62" rx="12" fill="#261E13" stroke="#F4B85F"/>
+  <circle cx="104" cy="319" r="6" fill="#F4B85F"/>
+  <text x="122" y="315" class="text" font-size="13" font-weight="700">Destination trust boundary</text>
+  <text x="122" y="336" fill="#F4B85F" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12">
+    The destination contract does not independently verify source finality.
+  </text>
+
+  <rect x="946" y="288" width="174" height="62" rx="12" class="future"/>
+  <text x="1033" y="313" class="text" font-size="12" font-weight="700" text-anchor="middle">future settlement</text>
+  <text x="1033" y="333" class="muted" font-size="11" text-anchor="middle">consumer</text>
+  <path d="M1033 251V288" class="flow" marker-end="url(#trust-arrow)"/>
+
+  <text x="54" y="422" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">REFERENCE CONTROLS • NOT A LIVE DEPLOYMENT</text>
+  <rect x="54" y="442" width="528" height="94" rx="16" class="defect"/>
+  <circle cx="84" cy="473" r="7" fill="#DB7868"/>
+  <text x="104" y="477" class="text" font-size="15" font-weight="720">Conflicting coordinate rejected</text>
+  <text x="84" y="505" fill="#D5E4E0" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12">
+    The versioned reference policy rejects replay and conflicting metadata.
+  </text>
+
+  <rect x="618" y="442" width="528" height="94" rx="16" class="defect"/>
+  <circle cx="648" cy="473" r="7" fill="#DB7868"/>
+  <text x="668" y="477" class="text" font-size="15" font-weight="720">Canonical one-leaf tuple enforced</text>
+  <text x="648" y="505" fill="#D5E4E0" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12">
+    The supported profile fixes leaf count, index, empty path, and root relation.
+  </text>
+
+  <text x="54" y="579" class="muted" font-size="11" font-weight="700" letter-spacing="1.3">REQUIRED BEFORE A PRODUCTION SETTLEMENT PATH</text>
+  <rect x="54" y="599" width="1092" height="116" rx="18" fill="#091D1B" stroke="#2B5753"/>
+  <g font-family="ui-sans-serif,system-ui,sans-serif">
+    <circle cx="88" cy="632" r="10" fill="#12312D" stroke="#75E3B0"/>
+    <text x="88" y="636" fill="#75E3B0" font-size="10" font-weight="800" text-anchor="middle">1</text>
+    <text x="108" y="637" class="text" font-size="12">Use fresh principals and addresses</text>
+
+    <circle cx="333" cy="632" r="10" fill="#12312D" stroke="#75E3B0"/>
+    <text x="333" y="636" fill="#75E3B0" font-size="10" font-weight="800" text-anchor="middle">2</text>
+    <text x="353" y="637" class="text" font-size="12">Complete human security and custody review</text>
+
+    <circle cx="722" cy="632" r="10" fill="#12312D" stroke="#75E3B0"/>
+    <text x="722" y="636" fill="#75E3B0" font-size="10" font-weight="800" text-anchor="middle">3</text>
+    <text x="742" y="637" class="text" font-size="12">Set numeric policy and recovery objectives</text>
+
+    <circle cx="242" cy="679" r="10" fill="#12312D" stroke="#75E3B0"/>
+    <text x="242" y="683" fill="#75E3B0" font-size="10" font-weight="800" text-anchor="middle">4</text>
+    <text x="262" y="684" class="text" font-size="12">Execute actual CDK L3 + native proof</text>
+
+    <circle cx="664" cy="679" r="10" fill="#12312D" stroke="#75E3B0"/>
+    <text x="664" y="683" fill="#75E3B0" font-size="10" font-weight="800" text-anchor="middle">5</text>
+    <text x="684" y="684" class="text" font-size="12">Confirm parent settlement and Base finality</text>
+  </g>
+
+  <text x="54" y="741" class="muted" font-size="11">
+    Evidence selection and an L2 smoke do not establish SECONDARY_FINALIZED or deployment assurance.
+  </text>
+</svg>

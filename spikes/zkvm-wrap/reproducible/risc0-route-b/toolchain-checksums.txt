@@ -1,0 +1,21 @@
+# sha256  label
+3e12f71bacd27527a61dea96fa0e53e468c99aa261d3a1019b593f6dbd943eb3  risc0-guest-builder-repo-digest
+d6028673cd8ddbc56eca1ee46dff24185033e0fc57c1d6e9e2bca65bc9ab1fc9  historical-derived-oci-index-digest
+4db1043623e19303cbf430c2559c71e349473ede885d75e050d95396e94b483f  observed-runtime-config-digest
+109d160180472eab03165ace5a9479733c05c3e4fdee8e5f6ed2cdb0cf671b39  observed-runtime-manifest-digest
+b520e3e5782a9bc0b9ae09ee627b55331b5489e1f96594991f15ee6953296f7d  observed-current-oci-index-digest
+7f4e42e8476837b7bb497dde0d767a7ef771a6583d19843c0e6a72cc439d3d92  toolchain-top-layer-diff-id
+9106a34dc80b0e4d7aafd1cecff147f8b6c52ed81e2853ec320def9caa2cb96a  toolchain-payload-profile-v1.json
+ab0b69ed6eb7633f45bd112427544fbb137f5137049f187b3fcbcc8b2f11199f  toolchain-payload-profile-v1.1.json
+4a84e05991ad6f2a84c1361c29b52b38c390365bd1fc269b1936c88d482a8928  host-rustc-binary
+a73b2c25573d251489101c0d8f19ad3702eb9761166de5ed8437b472b6c038ce  host-cargo-binary
+895b46e3d37c2265aa6069dd0976918b7dbc55279fbcb397f12e790f56ea959c  guest-rustc-binary
+c030936ed7810cb2fbf1e037a365a5d9aa37b44ec00e7be3cb2c70cae7fe7715  risc0-host-Cargo.lock
+be809dbac9425af0f84c70ef322a122ade9957820434c7644b83f109504f8eb0  risc0-guest-Cargo.lock
+050c369d0b52bfbd2584e85425ac259634fc230a930e61eaa50499b1e66ba975  canonical-cargo-cache.tar
+f1f751a88f832711a4ec31c7aafcfa90e1983120465376749594ed9821612b86  canonical-cargo-cache-manifest
+
+# Host: rustc 1.96.1, commit 31fca3adb283cc9dfd56b49cdee9a96eb9c96ffd
+# Host: cargo 1.96.1, commit 356927216a2d746168cf76e5e88cc3f4b58e029d
+# Guest: rustc 1.88.0-dev, commit de85b1d3d7f48a865174798819d943994ed23a37
+# Guest LLVM: 20.1.5

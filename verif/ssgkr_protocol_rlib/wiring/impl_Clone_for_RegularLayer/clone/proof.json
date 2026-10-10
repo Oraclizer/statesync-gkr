@@ -1,0 +1,22 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_LocalGate": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_clone_RegularLayer": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_clone_Vec_LocalGate_Global": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_clone_Vec_tup2_u32_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_clone_tup2_u32_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.016 }
+    }
+  }
+}

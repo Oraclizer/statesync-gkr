@@ -1,0 +1,11 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_elim_Membership": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_elim_NonMembership": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_elim_Update": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_op_key": { "prover": "alt-ergo", "time": 0.02 }
+    }
+  }
+}

@@ -1,0 +1,3876 @@
+{
+  "schema": "statesync-gkr.release-source-manifest.v1",
+  "status": "RELEASE_EVIDENCE",
+  "subject": {
+    "protected_authority_commit": "fb743179db47d6bbea9412f26151e038df2a3f56",
+    "protected_authority_tree": "ac8fd586929ee9cecaeeb524363ca73edb4084ab",
+    "protected_manifest_sha256": "75370592a45938c77f7c637dd9110af600926b67bf80ae51be2edb5cc86adc88",
+    "protected_path_set_sha256": "e91cf1768632c12f812a345b605dbc86002fa9a8e55dc94eb6a0a4f35f085636",
+    "current_git_commit": "BOUND_BY_GIT_TAG",
+    "current_git_tree": "BOUND_BY_GIT_TAG"
+  },
+  "archive_policy": {
+    "member_order": "UTF-8 path byte order",
+    "source_manifest_self_excluded_from_entries_but_included_in_archive": true,
+    "uid": 0,
+    "gid": 0,
+    "uname": "",
+    "gname": "",
+    "mtime": 0,
+    "gzip_mtime": 0,
+    "format": "ustar+gzip",
+    "seal_layer_excluded": [
+      "release/v1.0/ADVISORY_RECEIPT.json",
+      "release/v1.0/ATTACHMENTS.json",
+      "release/v1.0/AWS_CUSTODY_RECEIPT.json",
+      "release/v1.0/DEPENDENCY_RECEIPT.json",
+      "release/v1.0/LICENSE_RECEIPT.json",
+      "release/v1.0/PROOF_MANIFEST.json",
+      "release/v1.0/PROVENANCE.intoto.jsonl",
+      "release/v1.0/PUBLIC_ASSURANCE_RECEIPT.json",
+      "release/v1.0/PUBLIC_INPUTS.json",
+      "release/v1.0/SBOM.spdx.json",
+      "release/v1.0/SHA256SUMS",
+      "release/v1.0/TREE_MANIFEST.json"
+    ]
+  },
+  "path_count": 548,
+  "entries": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "bytes": 350,
+      "sha256": "61766654318003ca00c0637b1c34440b3e38495d87e7a51f79411e083c531817",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "mode": "100644",
+      "bytes": 17,
+      "sha256": "7c5aa8b67835376459aeb1a6df17f2d06c1402c2006c19b4f6cc781368105047",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "mode": "100644",
+      "bytes": 1390,
+      "sha256": "410081b9f6ff0792303c18d7be2d9190421366405b9cfe4d82cbae8c7daa5683",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "mode": "100644",
+      "bytes": 415,
+      "sha256": "376f7212e539c63d2f58e1ec78388e1b1172e28fa2ed88156d80ace392f00da8",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/design.yml",
+      "mode": "100644",
+      "bytes": 1736,
+      "sha256": "815716c06a00545ec97989ad23fc0d3500e70000430209553e94618a55b243be",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/documentation.yml",
+      "mode": "100644",
+      "bytes": 771,
+      "sha256": "17bfca6069fba4992d5d2b40527d27917c3c42e1b692ba73e1f57c28a6fbd16e",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/reproduction.yml",
+      "mode": "100644",
+      "bytes": 2371,
+      "sha256": "4e7d331d1bcaf5af2563330e149c61022ab3caa118e75c1f9790ed2d49eb7ee8",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "mode": "100644",
+      "bytes": 1156,
+      "sha256": "d55df7cde6f3d3959f27605d925f2104e7ed45feb3d0c4641c3b0aee95b183ec",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "mode": "100644",
+      "bytes": 1866,
+      "sha256": "1ad5a46427692a6518830dcfd81354dfa17825e2d62643ed16a7508761912e5c",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "bytes": 5260,
+      "sha256": "0554679d9738313628cb7cc86a74540813c93aaabe7539b33810eb6102f54d99",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/workflows/proofs.yml",
+      "mode": "100644",
+      "bytes": 6969,
+      "sha256": "1d7edeb982284073ddeff1926e3160fbe73735740dbc845dee3c411c7496f270",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".github/workflows/risc0-guest-identity.yml",
+      "mode": "100644",
+      "bytes": 2771,
+      "sha256": "cf03e2294d1cf21d021ffd7c7cb1363fb6c259a36d95a306f98cdc41246b4f50",
+      "role": "repository-automation-or-community"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "bytes": 475,
+      "sha256": "de144baa016d31db3c68eb626968a875c23ca4bcafa5a28f6e758fec233402da",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "mode": "100644",
+      "bytes": 6804,
+      "sha256": "31ad9b8debb36b0c5c4dead076f48b66532d9e85d65b0bf86b8c0eb02a2832af",
+      "role": "documentation"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "bytes": 2866,
+      "sha256": "90c2239726dd756c33800335901338281af658f9be7855a58df5acdb180e9863",
+      "role": "documentation"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "bytes": 1262,
+      "sha256": "0f1f7224338e4f1f34ec23a523c57b69651837ac722e8e02d2ada73b3bb4d90b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "mode": "100644",
+      "bytes": 1358,
+      "sha256": "cd8099447fb03e238e3871053a710a976b84a0d28dcdd5095601e8aa6a0f362b",
+      "role": "documentation"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "bytes": 9213,
+      "sha256": "aa81ca72c0003b13646f6dfe9bf8ff61891f06039827fe91c41250ef5f025ff5",
+      "role": "documentation"
+    },
+    {
+      "path": "Cargo.lock",
+      "mode": "100644",
+      "bytes": 26105,
+      "sha256": "547c7d1c98aa2c95be22a4328cb0f5da77005ea7eaa538fffb87cf87042fb450",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "Cargo.toml",
+      "mode": "100644",
+      "bytes": 5090,
+      "sha256": "283797b91cb1b839f1b1571e83f2aff03629023400afd637a221bdbcef0a4bcf",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "mode": "100644",
+      "bytes": 2610,
+      "sha256": "2b9c294eced3b85522a1ec131f912af88ad571b04e503e26da5c0ba20117348e",
+      "role": "documentation"
+    },
+    {
+      "path": "FORMAL_VERIFICATION.md",
+      "mode": "100644",
+      "bytes": 7845,
+      "sha256": "7388f4aef7431028cc28dfb8a5f73879d17eb34965a1ceb944210708ad200ed6",
+      "role": "documentation"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "mode": "100644",
+      "bytes": 2901,
+      "sha256": "ba4fbbb0f7f247014095d79774c84c8b0b01090bbaf820676a3ff27cdad77abe",
+      "role": "documentation"
+    },
+    {
+      "path": "LICENSE-APACHE",
+      "mode": "100644",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "mode": "100644",
+      "bytes": 1077,
+      "sha256": "97c486f467608e4306f09847d14dfae42d2d86682c318c30b4ae5f0ca3abc755",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "bytes": 16650,
+      "sha256": "14b5d0a229c8daf6cd9b343ebb4c60ba1828067f9181d340b160080bb1960ff2",
+      "role": "documentation"
+    },
+    {
+      "path": "REPRODUCING.md",
+      "mode": "100644",
+      "bytes": 2409,
+      "sha256": "ec6a376bfa7914c9a91ae64f43853bc5ec0215740e5501eefccae4f208156283",
+      "role": "documentation"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "bytes": 1582,
+      "sha256": "15e399781bf7ecb8ed53af0deacb1af5778160c49db83bb25b631ee26794c653",
+      "role": "documentation"
+    },
+    {
+      "path": "SUPPORT.md",
+      "mode": "100644",
+      "bytes": 1420,
+      "sha256": "46316c36dd5ae4a9c6b43464118b9be3080857b4dff91703a07704ef1732ff1e",
+      "role": "documentation"
+    },
+    {
+      "path": "assets/brand/statesync-gkr-hero-mobile.svg",
+      "mode": "100644",
+      "bytes": 2748,
+      "sha256": "5d6f609342e324bef0226434798fe040c13c1a169f06b68ea71c285be7779ea9",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/brand/statesync-gkr-hero.svg",
+      "mode": "100644",
+      "bytes": 4744,
+      "sha256": "c286604833630061cfb4b1470a8703a3e3852cc7b54cab2d7e5c399803278f45",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/brand/statesync-gkr-social-preview.png",
+      "mode": "100644",
+      "bytes": 66264,
+      "sha256": "96c28cf76522dfb6f43d7ed7d3ab2026939603dbd4cb218537acac8cf04e3a2d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/brand/statesync-gkr-social-preview.svg",
+      "mode": "100644",
+      "bytes": 4573,
+      "sha256": "34c749c5b23b39e5d10e940de0e18e500a7b1699ea11c589af8213cc1ff091d6",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/architecture-overview-mobile.svg",
+      "mode": "100644",
+      "bytes": 7603,
+      "sha256": "c382b5f4a1793fd0a701d299e0809ed29dd85a5901b7b2cc3690a111e4f097ec",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/architecture-overview.svg",
+      "mode": "100644",
+      "bytes": 10121,
+      "sha256": "cadae2622f818949234054200238495c3d79612f4b24e3161b4f039fa5878cdc",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/theorem-composition-mobile.svg",
+      "mode": "100644",
+      "bytes": 4799,
+      "sha256": "44b0cdb8a7aded1e7b302030090fd145f964b7138115125b6ff3c1eac9adcbda",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/theorem-composition.svg",
+      "mode": "100644",
+      "bytes": 6368,
+      "sha256": "78bcbcfa6b639cca1f836d8851d1d0a865e08e6fc71412f859de27934d9dd98a",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/trust-boundary-mobile.svg",
+      "mode": "100644",
+      "bytes": 6536,
+      "sha256": "5dcd6f87757ae1992f0e86e55924eae204fe9ad7d2dd83bbad3ba90d963339a0",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/trust-boundary.svg",
+      "mode": "100644",
+      "bytes": 7891,
+      "sha256": "4f03671fbcfa1b4f750dd94e4f1c1ae0ccb3a443ee7fde86f4f10827656d73da",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/verification-flow-mobile.svg",
+      "mode": "100644",
+      "bytes": 6301,
+      "sha256": "011428e198deaf0a1a6668c4b1f911bb16c0da9aecae599bdb062cd89b6e2adb",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "assets/diagrams/verification-flow.svg",
+      "mode": "100644",
+      "bytes": 8058,
+      "sha256": "535a60c85bfd685157644558d9ddc3721fab6b5ffff50443cb7db19fa1cd3e45",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/README.md",
+      "mode": "100644",
+      "bytes": 962,
+      "sha256": "e5c2b004193d1926bcb105f8a42dce09d02b1f0948d4b0155a05da5fc158dc0e",
+      "role": "documentation"
+    },
+    {
+      "path": "benches/REPORT.md",
+      "mode": "100644",
+      "bytes": 11292,
+      "sha256": "950c966801031a133d5ad546516dfa37756bf949e49a2a583f3ef89c151a1bd8",
+      "role": "documentation"
+    },
+    {
+      "path": "crates/batching/Cargo.toml",
+      "mode": "100644",
+      "bytes": 472,
+      "sha256": "8cfd503e0d5bad3e2b96452b25ee9bb62cc810608bc819d94559d36ce03b3675",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/batching/src/lib.rs",
+      "mode": "100644",
+      "bytes": 10235,
+      "sha256": "3a453f86ba0f72be271ab0d35871eccc8a36d8f707a08b86d188d858326ecf45",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/commitment/Cargo.toml",
+      "mode": "100644",
+      "bytes": 461,
+      "sha256": "a048bae2bf49aadcc17f36b7dfaa1e08c72ac2bc7df5b82f2dca60eac65c2bca",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/commitment/src/lib.rs",
+      "mode": "100644",
+      "bytes": 6978,
+      "sha256": "2f636982fb520372497b2a8ff1657923ce61057799c2a58e86a935eab860e5aa",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/Cargo.toml",
+      "mode": "100644",
+      "bytes": 796,
+      "sha256": "8ba726bb05c85d2be27ab759f9ffd129c0a11bf8e3f3be5c1cf54c81d053f1a8",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/builder.rs",
+      "mode": "100644",
+      "bytes": 20409,
+      "sha256": "80e1b2e015f8e2f5184e66b334cdd90534bfd65957416b01cd990c0c5c8441f4",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/compile.rs",
+      "mode": "100644",
+      "bytes": 45989,
+      "sha256": "bc893d0c5202a5e3d60e03572104b62d91821d90494b7446aa4073477c8fe207",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/lib.rs",
+      "mode": "100644",
+      "bytes": 2606,
+      "sha256": "373e4b1f46f94b31bb064c5e5b34acd301d492b728c1b19f22ddf2356d25b4d7",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/params.rs",
+      "mode": "100644",
+      "bytes": 2844,
+      "sha256": "c6198095337056cca8e1796c1af79dffeffbd15480bdd162c6922c31b7b1f772",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/smt.rs",
+      "mode": "100644",
+      "bytes": 22665,
+      "sha256": "99f5e96c95a30e18e7657280f82352fef931667169461c76bfc448cc2281eb7b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/compiler/src/witness.rs",
+      "mode": "100644",
+      "bytes": 14092,
+      "sha256": "ca451fb0e1e6fdb53db9b6fe9a4cbd7346b5e513c6d090e6174fbaa96ad2f10f",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/Cargo.toml",
+      "mode": "100644",
+      "bytes": 808,
+      "sha256": "bf33d7159b95c8d2278876e464b674cbcc1f3e092006a5510a2fba3518cf6e14",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/src/field.rs",
+      "mode": "100644",
+      "bytes": 1372,
+      "sha256": "033fbd2fbe86a3147339b65cc72900f405894e2cfc30af7ca24ac25ff855a8fe",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/src/hash.rs",
+      "mode": "100644",
+      "bytes": 26703,
+      "sha256": "330b703f09909d201fa5d7ed0c4e1c35cfb091c8d6936282f5b74cd2ad6f65a7",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/src/lib.rs",
+      "mode": "100644",
+      "bytes": 1081,
+      "sha256": "dbda41d7841c19c73244fcd0717a938b75e14c06ac5bea377d4452247b1c6be9",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/src/poseidon2_arith.rs",
+      "mode": "100644",
+      "bytes": 7340,
+      "sha256": "8f0eb96ca30cf7319e0fe0cbc94c43febf66061ca461e0fc142910f963025b9b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/primitives/src/transcript.rs",
+      "mode": "100644",
+      "bytes": 3726,
+      "sha256": "cdc744f769b52336558f0bb63f0a662c38b20b87320b6d2c864695fb2c19b748",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/Cargo.toml",
+      "mode": "100644",
+      "bytes": 836,
+      "sha256": "06ea95e658db8df35cdef0586a295fd5501dd50a7f2c7268c85fc6d86df9aee4",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/src/circuit.rs",
+      "mode": "100644",
+      "bytes": 10489,
+      "sha256": "691f5667b17618d9c01b1d958b224bfaea883fff82d5406b550bbb1729770c57",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/src/lib.rs",
+      "mode": "100644",
+      "bytes": 6213,
+      "sha256": "851f1dcddf4bcd32b29bb95a98f73b55d9388a02528d2b70ae93e57546a96143",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/src/mle.rs",
+      "mode": "100644",
+      "bytes": 7239,
+      "sha256": "0f919232b81df736a54b76706e22df776f6025a49e92e2d310dff8d86c2ab283",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/src/reduce.rs",
+      "mode": "100644",
+      "bytes": 46675,
+      "sha256": "710f54592f2a34bfa544725763b1c7b7ac0634c3218b9c2b581bf183f3b36597",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/protocol/src/wiring.rs",
+      "mode": "100644",
+      "bytes": 61461,
+      "sha256": "cca741ba00a196ce54a9be54dc1b0ff33a8a4efa685a7aa7a5dcd23ad0b72f8d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/sumcheck/Cargo.toml",
+      "mode": "100644",
+      "bytes": 862,
+      "sha256": "393be9adf36286e8a9de3415ec365a733a0e094e248ae2c4c7f04041ed7db495",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/sumcheck/src/lib.rs",
+      "mode": "100644",
+      "bytes": 11986,
+      "sha256": "65917ae654a8fb4733312ddf3442257df1e6cf80a1cf27f635172c7fe85e68e3",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/sumcheck/src/poly.rs",
+      "mode": "100644",
+      "bytes": 12813,
+      "sha256": "94424a11b0fc3f47248e8413e9ecda8daa95a8c444f532a0f013b0197f0208ca",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/verification/Cargo.toml",
+      "mode": "100644",
+      "bytes": 590,
+      "sha256": "dc390eddc2776b35e2ab9533d40a2eb075e31e6f0ff29c3d5d9b79429a43a106",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/verification/src/config.rs",
+      "mode": "100644",
+      "bytes": 1495,
+      "sha256": "5ee6158a986897a9df6ec7587a0edbe5ea519db7f1f986863f7970e0152f303c",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/verification/src/lib.rs",
+      "mode": "100644",
+      "bytes": 13031,
+      "sha256": "79ef483e68ddfc2fa5af4e9d08147b436590234c2a91982d7fc84a9636bedf6a",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/verification/src/types.rs",
+      "mode": "100644",
+      "bytes": 821,
+      "sha256": "61bf9759c960a80b35072ba6f8e56d5d2a337af7ccefb66a6869c28d157308bc",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/Cargo.toml",
+      "mode": "100644",
+      "bytes": 1048,
+      "sha256": "af498c26b70e87f621dc461cb1c131075a5ab5784c722b469d599aac72fe2ca4",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/examples/generate-prepared-material-v1.rs",
+      "mode": "100644",
+      "bytes": 4183,
+      "sha256": "4f441959da09ad468cd372ba0f3b1e4b8806aff5676a39a969eedf1f489902be",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/examples/risc0-route-b-manifest-v1.rs",
+      "mode": "100644",
+      "bytes": 685,
+      "sha256": "48471dc49786ee7c2f8a3009c5d1c2cdbccff76e5f8479a7b091da7cd465616a",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/encoding.rs",
+      "mode": "100644",
+      "bytes": 19533,
+      "sha256": "67b6ae1fd4e501eb577c69f977c24c7899c1e41e5ac199ca6af2e4bd503737f1",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/lib.rs",
+      "mode": "100644",
+      "bytes": 5815,
+      "sha256": "20ac78235a94192ca032a8fb89eed756f269023638fbe43a95d8ddc87ec5c603",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/prepared.rs",
+      "mode": "100644",
+      "bytes": 47242,
+      "sha256": "45da1429d97963c5e83ddfd872b1466547746ed9555e0a26163b14ab9451f8c7",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/risc0_destination_policy.rs",
+      "mode": "100644",
+      "bytes": 67496,
+      "sha256": "06fd852f99264f6bfce107ccbe8a9ddbe7dc6e41e56df7fdb5c56ba8ea3c4543",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/risc0_route_b_manifest.rs",
+      "mode": "100644",
+      "bytes": 37757,
+      "sha256": "8a4224805167455f6139d09193360444b7f087c77c1583096fb22721c8056bb6",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/settlement.rs",
+      "mode": "100644",
+      "bytes": 35229,
+      "sha256": "8ba31a7c58a56abeb7a9c463008616de48b3e4ae4b3f64f6e6c375bf9f9671c9",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/src/statement.rs",
+      "mode": "100644",
+      "bytes": 7571,
+      "sha256": "25f6a560770e00dc7daae10b6b7e78bf86f78df6a1429e3c300928c25128d194",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "crates/wrap/tests/prepared_material_a0.rs",
+      "mode": "100644",
+      "bytes": 17208,
+      "sha256": "e6d269d75fd4f9633c9a4cb28446b0ce83667fbe816374193ce47da3f3e0472b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "docs/GKR_Protocol.pdf",
+      "mode": "100644",
+      "bytes": 653337,
+      "sha256": "13d8030b608ee1bcdb7cbf736b9cd93890d2370ee428707a16ab1f80ea40bdcf",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/SMT_Circuit_Compiler_Correctness.pdf",
+      "mode": "100644",
+      "bytes": 548792,
+      "sha256": "5be29dd579a3fb46fdf94152699bc6fd0008716e6f206359eb2e80ce8dea74fa",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/adr/0001-v02-batch-semantics.md",
+      "mode": "100644",
+      "bytes": 4155,
+      "sha256": "96622c4ad6ede7517cdfb6decd0a4a6ac09ee6610d308e2ad2b880780a5de88d",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/adr/0002-external-proof-role-contract.md",
+      "mode": "100644",
+      "bytes": 2068,
+      "sha256": "eb52d6fb6b3858b2ef7aa8f59c72e5c13ff1505922750d69fa0ed9f37086a42a",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/adr/0003-risc0-native-route-manifest.md",
+      "mode": "100644",
+      "bytes": 3003,
+      "sha256": "c9cad882d7fd2c87661abbd0e40e2f7bc17d4b9e318ea43ccd178cdf8dc56bb8",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/adr/0004-external-wrap-route-selection.md",
+      "mode": "100644",
+      "bytes": 2219,
+      "sha256": "b87fb970ab94d85f0c52cacc0d8032970f73183c6305a4b856ca81c0f005b1d4",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/adr/0005-destination-receipt-enforcement.md",
+      "mode": "100644",
+      "bytes": 2438,
+      "sha256": "f0c62ba14e37cf06cf5cae1edb2361f4a7f5fe4f92a3fdbba9262af7d094a2c5",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/inner-proof-v1.md",
+      "mode": "100644",
+      "bytes": 12405,
+      "sha256": "568d5a2b01d5a70ac9624a528df28135d0e9fbd3e18a653d93f6005f0bcc555e",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/receipt-gated-local-transition-v1.md",
+      "mode": "100644",
+      "bytes": 5391,
+      "sha256": "1487284ef10efe391421224a1659fa8515e0bda99c47d1866e9a5089144fecc2",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/risc0-route-b-destination-policy-v1.md",
+      "mode": "100644",
+      "bytes": 8028,
+      "sha256": "8c7f0470f29397e2920ecd19ae3244350a5e74d3e51b3aba3790d1eb7990751e",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/risc0-route-b-destination-policy-v1.schema.json",
+      "mode": "100644",
+      "bytes": 19910,
+      "sha256": "eb6bb1104f650304cc99d2860d4c3027f46c05eb22019689bc60faac77038d36",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/risc0-route-b-manifest-v1.md",
+      "mode": "100644",
+      "bytes": 4849,
+      "sha256": "a12a438065cf77bba5fe988fce990ef9045d9ac3e0eecf99e0cfa26667d9f744",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/encoding/risc0-route-b-manifest-v1.schema.json",
+      "mode": "100644",
+      "bytes": 10349,
+      "sha256": "14cf5ac057a1447c8475fc3ebcbac1d0cf698373c41a8e8e17e6afb0ea4df096",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/frozen-source-identifiers.md",
+      "mode": "100644",
+      "bytes": 10300,
+      "sha256": "287f1d08895b78dac7e7a5f64fc763faa994a510f6c1515342858469651636ec",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "mode": "100644",
+      "bytes": 2025,
+      "sha256": "38fca67e82f20c2332a84a0dd8689bd64e6d6eca5cd1260d51161af01e6de29b",
+      "role": "documentation"
+    },
+    {
+      "path": "docs/usage.md",
+      "mode": "100644",
+      "bytes": 2691,
+      "sha256": "39be798b15d26514f6a676ad215a93c72699be8200c1de4ee44912adf30b2e88",
+      "role": "documentation"
+    },
+    {
+      "path": "examples/receipt_gated_transition_v1.rs",
+      "mode": "100644",
+      "bytes": 28887,
+      "sha256": "a987a8808a6b23200b7f1388577fb075f07738ac3a402da945fa193a1c9f150a",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "examples/state_sync_prove_verify.rs",
+      "mode": "100644",
+      "bytes": 3108,
+      "sha256": "89b60ad6556d46707cf6c86823a00a41c60f5d58af4542a9461340bf07733818",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/GKR_Assembly.thy",
+      "mode": "100644",
+      "bytes": 61791,
+      "sha256": "3e61eaf09bc950171df8df0d7aaf6a4341446ea8f83587096f23bfa8f519e331",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/GKR_Batching.thy",
+      "mode": "100644",
+      "bytes": 19357,
+      "sha256": "5c81b4a8b0fe04b6fce80aa057bd8dd10c4627546a4a9d7c3770dc4c112ae21f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Layer_Representative.thy",
+      "mode": "100644",
+      "bytes": 19009,
+      "sha256": "ac866d47a10347bc4f25afe6042adb899e53cb0605933ff840d0a3338860b17a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Layered_Circuit.thy",
+      "mode": "100644",
+      "bytes": 10443,
+      "sha256": "1923e56152f62a696f77e157a786a24ac980a3a62cd80ecf459b73dae0740c3c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Multilinear_Extension.thy",
+      "mode": "100644",
+      "bytes": 15118,
+      "sha256": "3d53f000a6c7b56fc806cb448bc7e2a55e3b27957be9d2f27dea720a4cc30efa",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/ROOT",
+      "mode": "100644",
+      "bytes": 512,
+      "sha256": "028106bf156451b6bba88ba5e8f8229a3e5b91f4290ce0278ce2ed0b6c65fca1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Sumcheck_Instance.thy",
+      "mode": "100644",
+      "bytes": 44148,
+      "sha256": "84c9a0e8a92d448a54a603dd5d227247d8893361b7e4083e2f753b4f5ed00bd2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/Wiring_MLE.thy",
+      "mode": "100644",
+      "bytes": 60532,
+      "sha256": "13e2ea72c5abd3311e09eab0c4ae68ab6790fce3d567ebada1c7a8458eb9282f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/document/root.bib",
+      "mode": "100644",
+      "bytes": 1164,
+      "sha256": "27053faa1bbfc8728c175a0b88cccd3b456e3e37e47dafad7b47330636bfc96f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/GKR_Protocol/document/root.tex",
+      "mode": "100644",
+      "bytes": 2488,
+      "sha256": "76f28ac83e37269f533f49a0dff2c24519335da7366c6ad3823a25edbaef24cf",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Field/KoalaBear_Ext4_Field.thy",
+      "mode": "100644",
+      "bytes": 16355,
+      "sha256": "0321b9615a7aecf35d372717e02f3628417f8533505d27f9410727992b7e730a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Field/ROOT",
+      "mode": "100644",
+      "bytes": 321,
+      "sha256": "850a9fe923f4819b07d6c430bb566db9a94873671919f341b7faa6db9c0d399d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_GKR/KoalaBear_Ext4_GKR.thy",
+      "mode": "100644",
+      "bytes": 3366,
+      "sha256": "6e2e2b820944601ffd84b8fc83e55bc4651b5cd230c536705a9bc6202c4e650f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_GKR/ROOT",
+      "mode": "100644",
+      "bytes": 306,
+      "sha256": "7a30bccb45be497ed56ae7d4a48191171b9c18909d12fb2746265bebbc41c37d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Lift/KoalaBear_Ext4_Lift.thy",
+      "mode": "100644",
+      "bytes": 18015,
+      "sha256": "04aea4bb033b100a4f277ee923b97843b1be03b82bf27e4bde8c236f328bc42b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Lift/ROOT",
+      "mode": "100644",
+      "bytes": 327,
+      "sha256": "f17d9e428f1cc9784f220e1a29a50826f83cf9928de877649909ef6537913a34",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Nonsquare/KoalaBear_Ext4_Nonsquare.thy",
+      "mode": "100644",
+      "bytes": 5156,
+      "sha256": "b3b3d1e87927239fa9d37a039083dcc62c0475a1ac0543fe6e915fcd47e1ff17",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/KoalaBear_Ext4_Nonsquare/ROOT",
+      "mode": "100644",
+      "bytes": 405,
+      "sha256": "812867bfffbe44f88486c800c376eb3070b0d82f7685618dbf3754e2fba96ef5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/README.md",
+      "mode": "100644",
+      "bytes": 2820,
+      "sha256": "5e8ef93e7dc38e580510344c025c50e86bec6761462fdda666102cf2f204fe94",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/ROOTS",
+      "mode": "100644",
+      "bytes": 131,
+      "sha256": "e791fb68ae896b3aecdb1d411506f59a482c81d898ac10b82b8b50a8b1e3d6a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Correctness.thy",
+      "mode": "100644",
+      "bytes": 73938,
+      "sha256": "a7430cdf580c8aca3aec1e215b5efb162f22541244951dfee704793c7104d9bb",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Instance.thy",
+      "mode": "100644",
+      "bytes": 23441,
+      "sha256": "26ccc23d62745d0fd302df23ee9fd35396ecaee01cd0ba7ba702ac76112c81be",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Compiler_Model.thy",
+      "mode": "100644",
+      "bytes": 34466,
+      "sha256": "c3b33b380d29fccec5647c593b456f6f3e6482b8ae50344a04b6bb671f14fc3a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Composition.thy",
+      "mode": "100644",
+      "bytes": 11647,
+      "sha256": "a767ef4324d5e522240a34a679745ceac5f597d793fb45389fce2ad485730b4b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Composition_Instance.thy",
+      "mode": "100644",
+      "bytes": 8126,
+      "sha256": "23e71d780df5171ead998cee3aab6108cf32a908283d0ea77cf959d3ac657456",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/KoalaBear_Field.thy",
+      "mode": "100644",
+      "bytes": 16202,
+      "sha256": "a72532b77b632e1e9f8ea7c22526f60c5e0a991d6937f14bb55f03c47b0ff5b7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/Leaf_Fold.thy",
+      "mode": "100644",
+      "bytes": 17881,
+      "sha256": "104ef12bae3ead01b45b103fb0ede0bcfaf67e13ace9009eb6e12348ec4187f1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/ROOT",
+      "mode": "100644",
+      "bytes": 652,
+      "sha256": "25a3944b17c972f5353259f927d29db3dcaf5cd3aaab9ec63bc47d54b6082688",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/SMT_Semantics.thy",
+      "mode": "100644",
+      "bytes": 7785,
+      "sha256": "23b1e71eaae255e8be7867e0d97b42c0c3338eaa3fc38239f4bf16825afc1b28",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "formal/isabelle/SMT_Circuit_Compiler_Correctness/document/root.tex",
+      "mode": "100644",
+      "bytes": 2933,
+      "sha256": "41928311a4043ab1276f95e6df07ad94a710eabea8ba5991058566d4c21793f3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "paper/Figures/fig-refinement.tex",
+      "mode": "100644",
+      "bytes": 1954,
+      "sha256": "c52cdcab9ec0508ad648e1bebe6493ccd482276e281ac2fa7a5e1dfb00fce063",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/Figures/fig-sessions.tex",
+      "mode": "100644",
+      "bytes": 2177,
+      "sha256": "da29a6057005a3c3d7704a6fc13621bcb99df5a4dbfe2f8ed98fa85438446f26",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/Figures/fig-trust-chain.tex",
+      "mode": "100644",
+      "bytes": 2312,
+      "sha256": "413039722070867e253ffab28cc032f21dc32683130bb2fdb4587c19c96b8e9a",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/TEX/paper.tex",
+      "mode": "100644",
+      "bytes": 80685,
+      "sha256": "07da2cd2c06fc92fea74d5b457c141461485a4a728f98d5a49d6de17f6838d5b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/TEX/preprint.sty",
+      "mode": "100644",
+      "bytes": 9202,
+      "sha256": "42b202830f0bea941edf536f60dcb57e7bbe592a378a5616be2a781f6e0eba37",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/TEX/references.bib",
+      "mode": "100644",
+      "bytes": 8765,
+      "sha256": "8195d8b34eea57b1491c85fe0e0b455849a982a49001cff26e7cf3e0b1ca527d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "paper/statesync-gkr-fv-private-draft-v0.3.pdf",
+      "mode": "100644",
+      "bytes": 325779,
+      "sha256": "2c5ca86115121221a84d721397dd6e98c0f1c3f141f906b950ae62772cfe8907",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "release/v1.0/ADVISORY_RECEIPT.json",
+      "mode": "100644",
+      "bytes": 3100,
+      "sha256": "6d75c0427455d8c225f595956ea63b2b8a6cce03211c83003c06565bc905a665",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/AWS_CUSTODY_RECEIPT.json",
+      "mode": "100644",
+      "bytes": 1789,
+      "sha256": "1bf9a73d1019eba126011feec1fc6a13bf4ea353e601756f7fac6108e2e34e83",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/DEPENDENCY_RECEIPT.json",
+      "mode": "100644",
+      "bytes": 1148,
+      "sha256": "75df1a1d7d6e72de3fa64e29f279f31ce57c0401bd0e26d4259f79a70a990e7e",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/DEPENDENCY_UPDATE_POLICY.json",
+      "mode": "100644",
+      "bytes": 1955,
+      "sha256": "4ea6b5b4c3efcfb2dd767e354c18481c59157ee103dd0d90bde3438ceffa4041",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/FROZEN_SOURCE_ALLOWLIST.json",
+      "mode": "100644",
+      "bytes": 525568,
+      "sha256": "9ab8b541261a3b088cf93e5044c429a8440bdc252cc9de1f828f44fb1c9e2bd4",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/PROTECTED_SOURCE_MANIFEST.json",
+      "mode": "100644",
+      "bytes": 70154,
+      "sha256": "75370592a45938c77f7c637dd9110af600926b67bf80ae51be2edb5cc86adc88",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/README.md",
+      "mode": "100644",
+      "bytes": 1239,
+      "sha256": "984fdfa2c5f56dcf5512bd30ebf217f1cdbb30c396dd0cef23dbdccca850a687",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/RELEASE_NOTES.md",
+      "mode": "100644",
+      "bytes": 5080,
+      "sha256": "36b8a425ae2efa917463c53edbeef6b59ab8dc46adadc21024a342150e7d4dcb",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/REPRODUCTION_REPORT_TEMPLATE.json",
+      "mode": "100644",
+      "bytes": 910,
+      "sha256": "19ca3edb83787ae2f0e4f2e5484e4acb765825c814dd0af527ac802aeb990f49",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/SOURCE_RECIPE.md",
+      "mode": "100644",
+      "bytes": 3046,
+      "sha256": "0ae25fdea6d7ede9244d180fa8a78a71a6557af0b7f8de53b9bda64e484d3dab",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/build-source-archive.py",
+      "mode": "100644",
+      "bytes": 4696,
+      "sha256": "07beabc1105ad42c348aa0a43e1121ffdb6486b33068c301ea00f83e7e9d6309",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/test_verify_mode_policy.py",
+      "mode": "100644",
+      "bytes": 2099,
+      "sha256": "e1b2c136af80c5e54a325d0596d7be757c0d06e994d77ca97464d236356472df",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/update-release-manifests.py",
+      "mode": "100644",
+      "bytes": 9927,
+      "sha256": "9311a31ca703108c4e9477208993c85c73783e3e368d19fc1e6cf10b3e608d0d",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/verify.py",
+      "mode": "100644",
+      "bytes": 28653,
+      "sha256": "43021052130eb72e3c3392735ec59ba31d29fc00a4f14c7fb399711e598b94ed",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.0/verify_dependency_update_policy.py",
+      "mode": "100644",
+      "bytes": 2725,
+      "sha256": "8e5cc52eb5f1805c005e5fc6cf7f56ca2a89e256b430adf9d9cd42f7dcfbf73e",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "mode": "100644",
+      "bytes": 132,
+      "sha256": "f916f94b730fd30a48f79eaec8cb093c2f1ef3f05ba1dbcd3c3e5c624826e466",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/.gitignore",
+      "mode": "100644",
+      "bytes": 36,
+      "sha256": "dd484c67aa15a555066f1a316139b0992d25c6676d720d789b937859c3f36a10",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/README.md",
+      "mode": "100644",
+      "bytes": 3601,
+      "sha256": "fc5149e0b4bb98dca40b187af3d3b716480b87767ec79ffd4d83ddd535628e79",
+      "role": "documentation"
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/Cargo.lock",
+      "mode": "100644",
+      "bytes": 16826,
+      "sha256": "c6761b6c6ff73a9668b14ec5dfac293f1768f2086426ff7b05cf378b073d9f9b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/Cargo.toml",
+      "mode": "100644",
+      "bytes": 192,
+      "sha256": "2e765effb36e705a5be5a5bacb48d68afb80627934d4856e1f1f029e1d6c09f9",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/common/src/lib.rs",
+      "mode": "100644",
+      "bytes": 10600,
+      "sha256": "249469d617b25174f34c26fd2833c542b120b46c01122840189c30a590f3c946",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/identity/README.md",
+      "mode": "100644",
+      "bytes": 2175,
+      "sha256": "be767f96d4ca97124d1afe618371af4e62916852512de6687d895f12fa37da9f",
+      "role": "documentation"
+    },
+    {
+      "path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-change-v1.json",
+      "mode": "100644",
+      "bytes": 4961,
+      "sha256": "09887dd7d33131d6455d72f101f334182f7bbbb7ce9f4095cbbd780e88b8b716",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.json",
+      "mode": "100644",
+      "bytes": 1946,
+      "sha256": "ce4b2c4a79755ce30369fd367029f6853698e24cfe87a07df44e94d49ef10333",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/Dockerfile",
+      "mode": "100644",
+      "bytes": 2227,
+      "sha256": "a3ffcfe992e0a2a033862cb0deb51d68cf267204b9412ffeb56555fab64a7161",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/README.md",
+      "mode": "100644",
+      "bytes": 2476,
+      "sha256": "e8fc362652eb3ce312e65e119fc9f54844df9040ae896da05b47d6bc827e9b87",
+      "role": "documentation"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/build-guest.sh",
+      "mode": "100644",
+      "bytes": 15810,
+      "sha256": "ad979c71bd8873ba8ccbb38c68407153743a4a1dd1ddbea02046a47bb4c9ed9d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/toolchain-checksums.txt",
+      "mode": "100644",
+      "bytes": 1562,
+      "sha256": "bb93def57a2cab7bb7f5e4ed3294cb56e654f71baae8668bf7175ca76dabd9ad",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/toolchain-payload-profile-v1.json",
+      "mode": "100644",
+      "bytes": 12156,
+      "sha256": "42a8d2786f78e3a2a15139dd701d137da2228db6e823ae879a54aa31b6d0ec29",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/validate-toolchain-payload-v1.py",
+      "mode": "100644",
+      "bytes": 17922,
+      "sha256": "ca5caa7cb06cc37d3d45ab2b4a73f805113029bb0c74cb28685eb33dea8ee661",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/reproducible/risc0-route-b/verify-two-clean-builds.sh",
+      "mode": "100644",
+      "bytes": 33406,
+      "sha256": "601573ce981b535fe4d95f1525fb34d6c2611c8e1cbd304d19ca21d085bc0375",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/Cargo.lock",
+      "mode": "100644",
+      "bytes": 73890,
+      "sha256": "c030936ed7810cb2fbf1e037a365a5d9aa37b44ec00e7be3cb2c70cae7fe7715",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/Cargo.toml",
+      "mode": "100644",
+      "bytes": 506,
+      "sha256": "f461bec122d3673bab70ab465d5d1b538ff0db15439e6f179590dca9d1eb3633",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-host/src/main.rs",
+      "mode": "100644",
+      "bytes": 20331,
+      "sha256": "b580b857cfcf8866a2af53b4674a789e42de2d1d12fae17405e33ed8a586bc89",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/Cargo.toml",
+      "mode": "100644",
+      "bytes": 205,
+      "sha256": "ca2002c101eefd7b12d05885f92bebb9c94ba91bdbe760a6d01b77ce6a4cbdaf",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/build.rs",
+      "mode": "100644",
+      "bytes": 48,
+      "sha256": "d3d0aa4add6d6294b4cd9199c9b7162187b7383980cda986051fe94497334f75",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/Cargo.lock",
+      "mode": "100644",
+      "bytes": 48115,
+      "sha256": "be809dbac9425af0f84c70ef322a122ade9957820434c7644b83f109504f8eb0",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/Cargo.toml",
+      "mode": "100644",
+      "bytes": 352,
+      "sha256": "e8cccc9256fe20701dd6b25fb89b43f9b18dbeb091bb3dab4630d733c04024e2",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/src/diagnostic.rs",
+      "mode": "100644",
+      "bytes": 1435,
+      "sha256": "5e856a3b1a1077f52382d1ed0fc5a123382f2d2027dcd71e5a64a417c84284f1",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/guest/src/main.rs",
+      "mode": "100644",
+      "bytes": 506,
+      "sha256": "91cbc12286999f7e138bf3a19043696458d447e19392846386c2a86db9557a5f",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-methods/src/lib.rs",
+      "mode": "100644",
+      "bytes": 51,
+      "sha256": "902d56d952004dd42e65c148a4b537710f869054556528b25ed3e67d050bb255",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-proof-verify/Cargo.lock",
+      "mode": "100644",
+      "bytes": 65209,
+      "sha256": "712be2b3a4fc01b7e6bd6b7388e57a61d94c1b512222db887515125d257e3b7f",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-proof-verify/Cargo.toml",
+      "mode": "100644",
+      "bytes": 305,
+      "sha256": "29f8b0a02a7cff17d23fbf6b85be985bcc51be5a48e67629bf165eabe9d61ef8",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "spikes/zkvm-wrap/risc0-proof-verify/src/main.rs",
+      "mode": "100644",
+      "bytes": 9186,
+      "sha256": "a489f1a5cafa8e8ca879cce4b44e2b4c32dbf79b6a2b957268ee1e77d49a087e",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/bin/measure.rs",
+      "mode": "100644",
+      "bytes": 22383,
+      "sha256": "354574f57cd2670851bf36c3ba858a05e8716c47f2008e891a76f12a0d1a5f39",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/bin/profile.rs",
+      "mode": "100644",
+      "bytes": 17047,
+      "sha256": "ac26fc7991771e5955f0844a9c72042efe63211c13ce86f7c5efb1e780de770d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/bin/proof_digest.rs",
+      "mode": "100644",
+      "bytes": 6192,
+      "sha256": "37b7d66f349186a86a39cdc5342ce1f0361b0c14c3ed4b0bbce991fa748ed4fb",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/config.rs",
+      "mode": "100644",
+      "bytes": 137,
+      "sha256": "bb7ce76ce9ac7bf17e690423d16291dd39f7745ead7fc39505cab3369401965b",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/lib.rs",
+      "mode": "100644",
+      "bytes": 23589,
+      "sha256": "a8a43d4687ecda6e57fac6ba9bb0509a5425e532263d9f8a36e51ea7b2e96475",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "src/oss_interface.rs",
+      "mode": "100644",
+      "bytes": 1504,
+      "sha256": "7686e8b00e5de5cf46453c645c2fc3db9cdef960e7909b8382fbb1ac2cf8b64f",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "tests/batch_v02.rs",
+      "mode": "100644",
+      "bytes": 15087,
+      "sha256": "9d717bde3bdcd57eb9072760b809048c879b49f71edb6236d1455832b9cd906d",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/compiler_soundness_adversarial.rs",
+      "mode": "100644",
+      "bytes": 13331,
+      "sha256": "944e02c4764decd9fba9b886a4b14a334aee9fa8301e4067ccea6c38e1a4a2b0",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/compiler_soundness_extended.rs",
+      "mode": "100644",
+      "bytes": 13788,
+      "sha256": "da265f4668e4a68297dc3026ef6b10cc35226341b2de5335cbe881e71d9dab32",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/e2e.rs",
+      "mode": "100644",
+      "bytes": 12694,
+      "sha256": "346393b64ecbcc0bf2b6f727660a8e1e72a2c63e9e7f30fca456989e6ccdf3d5",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/encoding_v03.rs",
+      "mode": "100644",
+      "bytes": 23985,
+      "sha256": "1d6afdad98fee56184c23c026962ccc2bd8f4f89e38e8ef035d97f8c5e6754c7",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/hash_binding_adversarial.rs",
+      "mode": "100644",
+      "bytes": 16585,
+      "sha256": "a821917d3b698a2c8b8eb9999323972e11c3a42e19d254eef271fff7b54b3850",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/hash_binding_extended.rs",
+      "mode": "100644",
+      "bytes": 18161,
+      "sha256": "495abba945641d99d06efcfc4d55c29b2dae5121f93fe7b30e1c8a51968e6b15",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/prepared_material_adapter.rs",
+      "mode": "100644",
+      "bytes": 17046,
+      "sha256": "32d534ea6b82c2e28bfb883e32fcdbabcf18d3f30edfea96136acbbedf45983e",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/receipt_gated_transition_v1.rs",
+      "mode": "100644",
+      "bytes": 12837,
+      "sha256": "8dddedb3b71f782c09fb5fe3608bffa09ce0ef4e69c7a600d7a800c4d1995463",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/reference/receipt_gated_local_transition_v1.py",
+      "mode": "100644",
+      "bytes": 8123,
+      "sha256": "32088d60e7bb01e35bd987c024c43a47fe1a9367075defbfc5305c8a08fb4408",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/reference/risc0_route_b_manifest_v1.py",
+      "mode": "100644",
+      "bytes": 20315,
+      "sha256": "d3ac3ca7ab8443c47ea7d24db233e89b6322e5f99380c4fe6ba575539530f347",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/risc0_destination_policy_v1.rs",
+      "mode": "100644",
+      "bytes": 21663,
+      "sha256": "dab3412ce44df9fcd6fd36106ed0685a3a7313118701ebc0db3aa9bb8350674f",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/risc0_route_b_manifest_v1.rs",
+      "mode": "100644",
+      "bytes": 10394,
+      "sha256": "1d3a5cb033838fe1d6520680fb72e9b0f1720405de79d2c8c3d92fa671efdb84",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/settlement_encoding.rs",
+      "mode": "100644",
+      "bytes": 26948,
+      "sha256": "c0778a58643cc19a0a86106da1a547574e7a77a618c4ec6ccf980911eb660ae2",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/smoke.rs",
+      "mode": "100644",
+      "bytes": 10951,
+      "sha256": "74c1104f13acfa439ec8931059c61a78a57aa2d923364f8f70cd94213e76765a",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/membership-d24.bin",
+      "mode": "100644",
+      "bytes": 176948,
+      "sha256": "35f9ccd12be12a1e4edee206b88fedfa9aa4bf4971757bff60667ecf02a09587",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/nonmembership-d24.bin",
+      "mode": "100644",
+      "bytes": 181646,
+      "sha256": "1873091159ec39569a49090dc209a675cd9373ac2bfee69e04c62411de99f1fa",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/inner-proof-v1/update-d24.bin",
+      "mode": "100644",
+      "bytes": 186992,
+      "sha256": "aa4b5d5844e2fdeb70b04601f42383d7ff72d920bdf0ba0e2ba0acfb29cb8a20",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/receipt-gated-local-transition-v1.json",
+      "mode": "100644",
+      "bytes": 5540,
+      "sha256": "ce65f3cadebf4a2b5857c8872dde0c298875913feaa6bca35e97d492e0d6b02a",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-destination-policy-v1.json",
+      "mode": "100644",
+      "bytes": 28429,
+      "sha256": "29a4528629d471ab9d3efcefec4a494477a93b5866e689fbeb3010b1e7627141",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-final-identity-candidate-v1.json",
+      "mode": "100644",
+      "bytes": 4511,
+      "sha256": "6b14abdedf7c13c233b8f218d1792da04c7994ad3f41d154d562463d3eba172f",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-final-identity-candidate-v1.transcript.txt",
+      "mode": "100644",
+      "bytes": 2422,
+      "sha256": "8da1b233da0a6820ac95b7052fcd07c558b9136dfa7169b4fdca0b13c281be8f",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-manifest-v1.json",
+      "mode": "100644",
+      "bytes": 4511,
+      "sha256": "ddf44d08cab57821d7f6726abd74ba90f7d021160b96c2d3634a0c93e2b39b28",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-manifest-v1.transcript.txt",
+      "mode": "100644",
+      "bytes": 2422,
+      "sha256": "3c13d27792f59d4039a847fdb3742fe9eaece71c4904d34b01e9014ae5cf28d0",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.json",
+      "mode": "100644",
+      "bytes": 4511,
+      "sha256": "0fa1531f62bf1f9a6a4bc7c02cb4c5a452ba06fa47ff9b0dc35a5ca04b8d619b",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.transcript.txt",
+      "mode": "100644",
+      "bytes": 2422,
+      "sha256": "2d5eba1e2e34e8270faacf161ecb91be877c634660b3fed6b02541c4cc31da95",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/vectors/wrap-settlement-v1-codec.txt",
+      "mode": "100644",
+      "bytes": 1562,
+      "sha256": "56e5da8cb35742f10bc633e9117e61ad82e0095d8628d4d1fdc9a90f8b1f8b0c",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "tests/verify_succinct.rs",
+      "mode": "100644",
+      "bytes": 14329,
+      "sha256": "91d4ac23de1234826be32a90c227cf8d6af620fc5bfe2be4990e3dfca7ad60e2",
+      "role": "test-vector-or-example"
+    },
+    {
+      "path": "verif/README.md",
+      "mode": "100644",
+      "bytes": 569,
+      "sha256": "4fb491aa6c221b3d3c19061afdf74a6f0b35311fdbb3d99db7773256a388fc03",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/affine/proof.json",
+      "mode": "100644",
+      "bytes": 1734,
+      "sha256": "9c12c278d54d914a9fbda450accb0d88c32c51a3c718c8768fd3ae61d7f19fec",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/build/proof.json",
+      "mode": "100644",
+      "bytes": 187,
+      "sha256": "0b3c52565d67b6fe49defb3bd7326f188377bfe4f9162d702bd6282c4c1a8896",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/combine/proof.json",
+      "mode": "100644",
+      "bytes": 1759,
+      "sha256": "f8469a73c034550ba2524b64ff3ea3c5eb665670889bc399865ec96fb475716c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/constant/proof.json",
+      "mode": "100644",
+      "bytes": 303,
+      "sha256": "e8f835cd141eedf3a22f866c2e11a6a69b7dc243dfa6a4624198608da03e6dc0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/input/proof.json",
+      "mode": "100644",
+      "bytes": 615,
+      "sha256": "7ef0c305bce09a0aa16f5d3c5d6e31f3d0dcfb5300eedf55f1ee731db1ad6e7c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/lift/proof.json",
+      "mode": "100644",
+      "bytes": 500,
+      "sha256": "f70a3297c51a1fa1667c8ef546236b5500078783afe274b9c6b3f19f3df249d9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/mul/proof.json",
+      "mode": "100644",
+      "bytes": 675,
+      "sha256": "1d526bfe39d5960be1bc2a3eb836dce51d5ba55ebfd0fcf2ac766b51e7f2a343",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/new/proof.json",
+      "mode": "100644",
+      "bytes": 277,
+      "sha256": "263bbe953ce9172e1772967957d215867734efff4d54ceac198e7aecf242ae15",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/pow3/proof.json",
+      "mode": "100644",
+      "bytes": 593,
+      "sha256": "5c54ff2173f5efff74f8da03a10891fbb0bb6519a22e9804a074effaa44b852e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/push/proof.json",
+      "mode": "100644",
+      "bytes": 181,
+      "sha256": "78bcb644a2febfe072f1a908baffe091d2f045855798b6fa69c3405241cf2991",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/push_tagged/proof.json",
+      "mode": "100644",
+      "bytes": 383,
+      "sha256": "1016f2c6f34bb2ec5215a1a115d6f9a08264cebdb81711a68d0f62b50954861b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/scope/proof.json",
+      "mode": "100644",
+      "bytes": 110,
+      "sha256": "945be27c20a13b1dafc2d6ac735e10d7c71027fbd84ae5751e1607b8b7dbfd8c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/sub/proof.json",
+      "mode": "100644",
+      "bytes": 60,
+      "sha256": "4e06b067fc6fd7efbae4e33610e423336ddc74b11ab2a9a6642dc96fc5b3c1c6",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/sum/proof.json",
+      "mode": "100644",
+      "bytes": 951,
+      "sha256": "cb06fb4151d112a184a6e609d09f69a766af0e50436bcea8d78539666b390456",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Builder/unscope/proof.json",
+      "mode": "100644",
+      "bytes": 109,
+      "sha256": "e08a89f0919792155c5ed9be1fbda2123706e9558c8c5e08ac28c7d05c73dd19",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Clone_for_NodeId/clone/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "dfec483110f8a49749f54fdcc40c81201e7e30d9df649310cfa014b473216617",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Clone_for_TapKind/clone/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "d9ca7b2cd0dcec3159f956e05fb836195af4b1cfe8b2d61d39363371550a5d4c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Debug_for_NodeId/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 201,
+      "sha256": "0794a1a090b7f45b1769ccd04b7bcca3faa6e80afc3acbc8a23fac53fb9bed15",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Debug_for_TapKind/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 186,
+      "sha256": "f1c7baa8189e7956a0e0eaf618747c6d507a001b2e8fd93eafb2138690753689",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Eq_for_NodeId/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 161,
+      "sha256": "de5e03ed0d56f4864e99782e887af87df3ede57ed66d83225939de3c8e6a68f1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Eq_for_TapKind/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 162,
+      "sha256": "7baa16f642b867adc1180bc3c04ba36ec183e710dea20542f887435a83736317",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_Hash_for_NodeId/hash/proof.json",
+      "mode": "100644",
+      "bytes": 296,
+      "sha256": "6fa7710c12aa57f40f23baca52ff4831db130465ca2951326f087f24a72a3f3c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_PartialEq_for_NodeId/eq/proof.json",
+      "mode": "100644",
+      "bytes": 111,
+      "sha256": "e1467b5320e18775682abf38e2ceb18e293a12eb21021610dac54e12209fb936",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_PartialEq_for_NodeId/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_PartialEq_for_TapKind/eq/proof.json",
+      "mode": "100644",
+      "bytes": 67,
+      "sha256": "9945e5268fa40bf3b8302842427f9cd03c24a4ff36361f5a41bba4b833b9eabb",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/impl_PartialEq_for_TapKind/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/builder/width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 150,
+      "sha256": "130e3aae8c458afcec15fbe947c1d1c7a3e29746e62cb0fb23c1df8f0cf025f4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/build_mux/proof.json",
+      "mode": "100644",
+      "bytes": 2797,
+      "sha256": "94f98c42ce8e83873937059ebdce6573c136ad3ab57c97f697620332885968fc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/build_node_hash/proof.json",
+      "mode": "100644",
+      "bytes": 72,
+      "sha256": "25eb601f0a284185bb09bafa09447d97899c3c7ab46b0a00bb928b0cc8100034",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/build_path/proof.json",
+      "mode": "100644",
+      "bytes": 20631,
+      "sha256": "efa34a634a8ce79ca94005a6be8121c937da0e5ddc25e9957c706b6f431c4848",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/compile/proof.json",
+      "mode": "100644",
+      "bytes": 940,
+      "sha256": "b450d94785c9bae07e330dea73de7dffd858e69df842c654164ba57143943358",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/compile_with_hints/proof.json",
+      "mode": "100644",
+      "bytes": 10674,
+      "sha256": "dfb2149a2d8c79f01b93df31a7ef7997359364c04e6af8bdd26ee91951e10ea9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/creusot_specs/extern_spec_T_E_Result_T_E_map_body/proof.json",
+      "mode": "100644",
+      "bytes": 358,
+      "sha256": "828b795b446a753a92ccde26a33030f19e3e61337197de842085a722e3e20d5e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/emit_permutation/proof.json",
+      "mode": "100644",
+      "bytes": 970,
+      "sha256": "e572412af93c1ed80973edeb00ecbea6146d2b45b2db901b4699b3346038e58c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/fused_round/proof.json",
+      "mode": "100644",
+      "bytes": 296,
+      "sha256": "d010f336f611c24b3e3615c6a98e53670d7d9926349f7ae65c9e3390a0e08db7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_Clone_for_CompileError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 471,
+      "sha256": "11a29be6f3eb53b2af566bb7675b4b02e68a0ba760549f0cb05983bb595be535",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_Clone_for_InputLayout/clone/proof.json",
+      "mode": "100644",
+      "bytes": 129,
+      "sha256": "9e8b9f782723d33d879fcbd173b7d7c2a98684f730cd0d52630f36e267777755",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_Debug_for_CompileError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 478,
+      "sha256": "06c395e6e06e59e316c76994d31a8a9380858815f86c05c7e713f416b37b8fa5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_Debug_for_InputLayout/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 229,
+      "sha256": "b234e1be65cd7c0a7cc08dd5feedbc69894ce3a35e57896551ff222dbf700721",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_Eq_for_CompileError/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 167,
+      "sha256": "612426be177ada2fc192e6b1a319e2582e2f479d9b5a9c8aa62456c936d4ce5f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/acc/proof.json",
+      "mode": "100644",
+      "bytes": 176,
+      "sha256": "7caa0a7e7cf556267068f4be2d85a093ce2ef01974118eaeed0af8f1d2237e51",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/acc2/proof.json",
+      "mode": "100644",
+      "bytes": 177,
+      "sha256": "c0e860f7ccf300042d94b74af6814b141a5e596b9e6018475d77634797f5d04e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/has_second/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "e6925cc25ae2a403808bd1be9ea4af94bb4a3b14012443902227b565377bbcb9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/key_bit/proof.json",
+      "mode": "100644",
+      "bytes": 109,
+      "sha256": "b4048e383ccdb5498916c37b2031f330394cafaa4d1028a6cb3a47d6548d10c4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/leaf_lanes/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "8cf281b3811055a8edb94f86a2eb7cf45276c0d9a7baab739c568e5d555df013",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/leaf_pre/proof.json",
+      "mode": "100644",
+      "bytes": 112,
+      "sha256": "82a0b52e72d2364ca19a2db1600b408caedd0c8b841ad382f0615322384c0964",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/leaf_pre2/proof.json",
+      "mode": "100644",
+      "bytes": 113,
+      "sha256": "4000c3552cdb851585da52aca2c2e5bd2459c4dff2535b08a2d36ba3c706a77f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/new/proof.json",
+      "mode": "100644",
+      "bytes": 236,
+      "sha256": "889b7678f9e9571662ca83af03ad6c0019a81c591e44569380bd4de729622e07",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/root/proof.json",
+      "mode": "100644",
+      "bytes": 108,
+      "sha256": "a2d6a80ee822856460bfbc00d0b7549c42f36602d469a3cfe057bc6511220ad2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/root2/proof.json",
+      "mode": "100644",
+      "bytes": 109,
+      "sha256": "c173f56c40c3215823671b4bd883da5a0caa6953155eb71f338bc5f6b97f0efc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/sib/proof.json",
+      "mode": "100644",
+      "bytes": 176,
+      "sha256": "b5469e96e25b50cc4919936fb5e63e026d92e943116f0884adc68ade2a75ec69",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_InputLayout_0/value_digest/proof.json",
+      "mode": "100644",
+      "bytes": 116,
+      "sha256": "374a6569319a9e9506f55ce8d229706fde85b7db048d0e98cc971b4988754a35",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_PartialEq_for_CompileError/eq/proof.json",
+      "mode": "100644",
+      "bytes": 72,
+      "sha256": "31542fe8564861c7f4d83404338d255a0a3a753f08f567337ed546c6ed65232e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/impl_PartialEq_for_CompileError/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/lane0_rc/proof.json",
+      "mode": "100644",
+      "bytes": 214,
+      "sha256": "368b82b72109817c65e1f001a837017773d1e0dc4603c59659ddf26cbad15747",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/linear_layer/proof.json",
+      "mode": "100644",
+      "bytes": 297,
+      "sha256": "4f8766839a61992d2726e28f0517b334aa653bc6cb6d6418c92fb09808923371",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/compile/validate_unary_gates/proof.json",
+      "mode": "100644",
+      "bytes": 2884,
+      "sha256": "731552990407e26cefcf2b5eb0e89c63b1cc25360d3db871e544de492cd9291f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/is_accepting/proof.json",
+      "mode": "100644",
+      "bytes": 1826,
+      "sha256": "808959bad105db79da36a8f7568ec8a325ee92ed98009b7a189a8db9f2fd3962",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Clone_for_LayerStrategy/clone/proof.json",
+      "mode": "100644",
+      "bytes": 131,
+      "sha256": "edf7257e612b2152463b8d1a715629e169fa491802cdcda5b714dde81159cf92",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Clone_for_SmtParams/clone/proof.json",
+      "mode": "100644",
+      "bytes": 117,
+      "sha256": "ea22965cbaf7865eec3df9701e420e4db57959b01a7f79de9bf8c7d1d5f725ce",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Debug_for_LayerStrategy/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 354,
+      "sha256": "0c023ab4b34b7645f4921b811a4888c8d621cac413a61f1cd2e6d518059c509c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Debug_for_SmtParams/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "2c31b22238a9cd292f814676e3d60f5259150fe656ccb0de7651f1dd8e6b0f15",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Default_for_LayerStrategy/default/proof.json",
+      "mode": "100644",
+      "bytes": 133,
+      "sha256": "05cf7db2f80f2d224247461c6df21ee9031aea13ff59a941a0843c32228928fe",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Default_for_SmtParams/default/proof.json",
+      "mode": "100644",
+      "bytes": 128,
+      "sha256": "a754f03b06d744ff7538ad1b19942050a237802076759d902311f5b198c74ec3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Eq_for_LayerStrategy/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 167,
+      "sha256": "85befe3e2e4bf664fe38c4b924b54414db62bb03f2038b9a0244a6a6bca6a4cc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_Eq_for_SmtParams/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 164,
+      "sha256": "55ee8e39f5c2c46809cd9d32a299bcaf16123c6139f64eb3650879ff6451302c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_PartialEq_for_LayerStrategy/eq/proof.json",
+      "mode": "100644",
+      "bytes": 73,
+      "sha256": "12d74f6df045a7d2395f6ef4d5598087a7afe82c062c359ebda8c2ee46ccd022",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_PartialEq_for_LayerStrategy/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_PartialEq_for_SmtParams/eq/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "943d410bc994a2f531f05d2778c31aa72109401823ada2880db2c35cac2b41d0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/params/impl_PartialEq_for_SmtParams/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_AssetId/clone/proof.json",
+      "mode": "100644",
+      "bytes": 115,
+      "sha256": "5f2db7941221b11dbe9666e60fa50cf7eca7ea55e80b01b533735f7ca11c4564",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_LeafPayload/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "bae6b26b6eb501f6c59b9ba65d25a4a84e3f4cb283c0f1afde479fb614a170a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_LeafState/clone/proof.json",
+      "mode": "100644",
+      "bytes": 265,
+      "sha256": "2bb53533ae348056ada4bd844ae1dad29d3de208de83fd0a7e82660ec42819c3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_LeafState/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_MerklePath/clone/proof.json",
+      "mode": "100644",
+      "bytes": 381,
+      "sha256": "29e3f6526c56733401a988fc8cf0620edc80a4b2c0c9ce4b997662ce994d9a31",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_MerklePath/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "dbe6fdb6daf4a4e94e587a52d56479d6d765c249dd74f4af8c0bf54936264e58",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 610,
+      "sha256": "2186e6799788b80b163ba54f83ad58b7a934d786568e69f0a48709c6ffa2849a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtOpKind/clone/proof.json",
+      "mode": "100644",
+      "bytes": 117,
+      "sha256": "c5e0749f419613c4cc05981549c93edc2dc153b6df492637fdc228b6be668e6b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtOperation/clone/proof.json",
+      "mode": "100644",
+      "bytes": 543,
+      "sha256": "006540cafd56345db3031fec8ec224229c85b41d833162d591e360644add162a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtOperation/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "72315148ac27faf8bbdf52ad28843093a8e2cd2678c7b7ca1e18feb3835b5199",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtWitness/clone/proof.json",
+      "mode": "100644",
+      "bytes": 267,
+      "sha256": "002fcbbdb1556152eb5059c450924a54b4ed94b47c3b15bedbd778b817e78b98",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Clone_for_SmtWitness/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_AssetId/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 202,
+      "sha256": "b0cfaf4e921bdb7a14225e1833288bbf29a90ea07e80600a1c886b5cdae3eb67",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_LeafPayload/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 206,
+      "sha256": "70d7e0f0a880749db65fe23b9e72dce5656e69c6cacdb482314fd200d8c1087e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_LeafState/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 332,
+      "sha256": "e14e2e4b2ac4d708de3287a3f78b32053c8cfd68c13ad2f9d3bb138d0b2e29a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_MerklePath/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "76095633c71af2a32602c8d6ef592a9afe15b56488625e799c13cec079631781",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_SmtError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 501,
+      "sha256": "81ab32593c800ed413c2b7138453996dec25e157daa9dba62fb699759f0f8205",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_SmtOpKind/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 187,
+      "sha256": "894c885e23b4ab614f276060bb282634e2dcf6dc81fbbf196217d9a0fb9fd281",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_SmtOperation/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 640,
+      "sha256": "2138f2671f283026128b645d77a15826a72a9b916084669d859e79abde9366d4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Debug_for_SmtWitness/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "1cc470af7bf223cb0679f208700e00a768bae66134ad43c29b54c836e674b396",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Default_for_LeafState/default/proof.json",
+      "mode": "100644",
+      "bytes": 129,
+      "sha256": "a241b831b2f9153644faef5c284f53134b44801ee0023195d51aebdbdfe5f430",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Default_for_LeafState/default__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "95ecc8ea6a0f4776d9076cf1451f49f98ce9c021b3f92de7a0e5532cce112ec5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_AssetId/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 162,
+      "sha256": "bc332d10914a41e19037a506fc3f9930b4997cccb5868567e6f0d79d7d4c8fd2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_MerklePath/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 165,
+      "sha256": "55d68ab242d3e7846111bfd9c65d5bed1708d8c128771113a6a4dcd504055591",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_SmtError/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 163,
+      "sha256": "2635b4fd053d0f226ea563710ab0ed8be0e38dbbbae41a220c03a360fdf44326",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_SmtOpKind/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 164,
+      "sha256": "f5d2aacf755b0d1288bcdbb43609f494bdabb570df5f8bbaa71ef43b93d2a495",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_SmtOperation/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 167,
+      "sha256": "cf19fda69ddbcd567572e9759560a877fa2b93e11cdfcac5aabe2d7c3a87aa9a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Eq_for_SmtWitness/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 165,
+      "sha256": "bf157546502dbaa13b172d38bf68d5c60a77ec5e75b24ba9c5b38c6f0d71c013",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_From_for_SmtError/from/proof.json",
+      "mode": "100644",
+      "bytes": 115,
+      "sha256": "7375d1672807ff21c3063e1f094c744948df6b282439a138f896657aa1f44bfa",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Hash_for_AssetId/hash/proof.json",
+      "mode": "100644",
+      "bytes": 297,
+      "sha256": "77d9069795d7fd2d173de376f102a638f0577746ce9bc732ff92a64dc47b5b3f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Hash_for_SmtOpKind/hash/proof.json",
+      "mode": "100644",
+      "bytes": 71,
+      "sha256": "f1743a95c6bd40ad614a327b5319d9f8b28014ae60a1f66ea0b94e457a6cbc4b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_MerklePath/compute_root/proof.json",
+      "mode": "100644",
+      "bytes": 3690,
+      "sha256": "0e989cfe299522f6ee0ea347fafa9d02db2d4cfac003ca25b2d43fea0793c3cc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Ord_for_AssetId/cmp/proof.json",
+      "mode": "100644",
+      "bytes": 184,
+      "sha256": "c82e74a35a25f68f1518d68de31b87d4e78afc578756180396fe68f41fdcca52",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_Ord_for_AssetId/cmp__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_AssetId/eq/proof.json",
+      "mode": "100644",
+      "bytes": 112,
+      "sha256": "d33783963e80b7250d85d921ff7125ec10c52ae1514c0c571e8f90860cb2ba6c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_AssetId/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_LeafPayload/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "dbe6fdb6daf4a4e94e587a52d56479d6d765c249dd74f4af8c0bf54936264e58",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_LeafState/eq/proof.json",
+      "mode": "100644",
+      "bytes": 261,
+      "sha256": "af60a1b1262395f42105e61a0eaaeae61b5a238f18328347bf197d25b4e8c3ee",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_LeafState/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "72315148ac27faf8bbdf52ad28843093a8e2cd2678c7b7ca1e18feb3835b5199",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_MerklePath/eq/proof.json",
+      "mode": "100644",
+      "bytes": 254,
+      "sha256": "816a29b08f74373f9b831f55ec72ddbe843c7e57132a1e24821f0e63a40d1a26",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_MerklePath/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 404,
+      "sha256": "ec19c21c986c88d72eead61811c5425073623a10abd368584646f41a63c6e276",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtError/eq/proof.json",
+      "mode": "100644",
+      "bytes": 68,
+      "sha256": "b593518e1ebaffe648b5ad23a5e77814da6d0683ffbda7e2a07397897f0f9fc0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtError/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtOpKind/eq/proof.json",
+      "mode": "100644",
+      "bytes": 69,
+      "sha256": "babbe9e5ad98fcd719eb0c68373cfdc9995af7e60c3887101f2912167df42452",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtOpKind/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtOperation/eq/proof.json",
+      "mode": "100644",
+      "bytes": 72,
+      "sha256": "ae37fcc506805f4cf335b5d9f6dbd210e031e93f88b5e9473637676f7732f01f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtOperation/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 623,
+      "sha256": "a5e16572ee8c6bb77679848a850aea60fee7743ca2b949c478850121130cbc46",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtWitness/eq/proof.json",
+      "mode": "100644",
+      "bytes": 258,
+      "sha256": "42f2f3fb402860ac234ff7b619b7799afb58965ad82896f71a60459803a3e104",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialEq_for_SmtWitness/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 513,
+      "sha256": "44100d75e95981173c2a22930871854b4029db3ec47b478c247e9f5a2fa43b97",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialOrd_for_AssetId/partial_cmp/proof.json",
+      "mode": "100644",
+      "bytes": 196,
+      "sha256": "2dabbcb766152d8716ffc3c66d3b40be919709044471d0335798f7912d513a24",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_PartialOrd_for_AssetId/partial_cmp__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/impl_SmtOperation/kind/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "ea9c7cefe510e16ec0e0fe772c177e1bb2b998f9497d08ba28cb8cd2af2fdca9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/pack_keccak_digest/proof.json",
+      "mode": "100644",
+      "bytes": 216,
+      "sha256": "884c8c01e87a8ca3106eccd3019105140dcd4d4ae26beaff89057015af996f8d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/path_root_from/proof.json",
+      "mode": "100644",
+      "bytes": 128,
+      "sha256": "73d7076b6d1f35806731334e299e3f112f69a5f4a602fc5732712dfb87a7fab3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/smt_valid_native/proof.json",
+      "mode": "100644",
+      "bytes": 5000,
+      "sha256": "dc314bfffd1f8fff736f1d56248ab939827b104c7cb3fc2040d12a0598cfdec7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/smt_valid_native/why3session.xml",
+      "mode": "100644",
+      "bytes": 16041,
+      "sha256": "d4012bbbaacff1cdb1428a8958c9140ac100cc6ec6604c721080e2fa3614767e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/smt/smt_valid_native/why3shapes.gz",
+      "mode": "100644",
+      "bytes": 4330,
+      "sha256": "752f98aa508b08013efbf535f8fcc8beb1e4e4cbd588b4ef9d78eaa6dbffe316",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/acc_chain/proof.json",
+      "mode": "100644",
+      "bytes": 3560,
+      "sha256": "85cbea0167447966b1dbe7592910d66fa94739ee18351af05c1373cd8e0e06f3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/build_input_vector/proof.json",
+      "mode": "100644",
+      "bytes": 4372,
+      "sha256": "b3de4872093119936a1ef3fb95a11bbc886587348262ad99132b9a5a41a1565e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/creusot_specs/extern_spec_T_E_Result_T_E_map_err_body/proof.json",
+      "mode": "100644",
+      "bytes": 362,
+      "sha256": "05d7563bc76dfb0251f31d8ffda70d874308c1d83e6bf06df6f4b2a3d4d94d96",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/generate_witness/proof.json",
+      "mode": "100644",
+      "bytes": 1248,
+      "sha256": "b58fdb0de9fcaea849ec146be63d81a35bf07e5b5e3b81009344fd4d40352032",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_Clone_for_PublicInputs/clone/proof.json",
+      "mode": "100644",
+      "bytes": 380,
+      "sha256": "f7bdbdced3518b5f1e21378075bd24b7c1a4c9af4a2392f449ae03ea78cb7f30",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_Clone_for_PublicInputs/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "cd5032cb3def7d80cef391da9cd7128af62c81b225411941336f65dd5b75f08e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_Debug_for_PublicInputs/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 206,
+      "sha256": "3e2fcecc59cbe89f01f2c48dc6d66a9dbf28a74d61772a3b69d901d311086558",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_Eq_for_PublicInputs/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 167,
+      "sha256": "d63032faf64aa8e25768977c27daf2b6f6e94c1d19b4ad52e774ca87177d5e00",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_PartialEq_for_PublicInputs/eq/proof.json",
+      "mode": "100644",
+      "bytes": 307,
+      "sha256": "893ed7585dea75843ab5892e9f81ea142556edec67ce900194d42cc3551582cc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_PartialEq_for_PublicInputs/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 623,
+      "sha256": "9c48357cc351817c46ea2eb7c838dbd66b2d84be744f3044d3dcfee4aad12c93",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/impl_PublicInputs/kind_tag/proof.json",
+      "mode": "100644",
+      "bytes": 109,
+      "sha256": "06455a24dfef3aa10e56d9abc6d9ed95324bdc30b9f02403ce88acca72a3416a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/op_key/proof.json",
+      "mode": "100644",
+      "bytes": 324,
+      "sha256": "bfb26815933c183d5b272040ab70fdbef752ade11ce40cede94d5f6cb2db43e9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_compiler_rlib/witness/put_digest/proof.json",
+      "mode": "100644",
+      "bytes": 1792,
+      "sha256": "564be0232250c2943b6c9336b35061cc880a20e5ec1df1094749940dd1872039",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_primitives_rlib/hash/leaf_fold/proof.json",
+      "mode": "100644",
+      "bytes": 1251,
+      "sha256": "ed633e933a9d6b8dc5d575f5734e66705c58386b9843663b7e06777a402205a9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_primitives_rlib/hash/leaf_fold/why3session.xml",
+      "mode": "100644",
+      "bytes": 4094,
+      "sha256": "ee581548af3b076cb5e33c477aae227db6f9a46e3ea46723d08d94bce924afd6",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_primitives_rlib/hash/leaf_fold/why3shapes.gz",
+      "mode": "100644",
+      "bytes": 574,
+      "sha256": "52ffa8a1a2da6208dd62d39f6b35be7ef718ad14cd71add18132c2e7bf16058d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_primitives_rlib/hash/leaf_pre_width/proof.json",
+      "mode": "100644",
+      "bytes": 785,
+      "sha256": "4bad1d88caa1d9052d56f39c8135ae56f7b7ddd0bf0a0a1d74348cc51274e7e9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/gate_semantics/proof.json",
+      "mode": "100644",
+      "bytes": 187,
+      "sha256": "290157b2114c485f176e1e1751a5cb3d701c655af4c8d8f7b7d3c2752ce8f996",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_CircuitError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 343,
+      "sha256": "35248ef277895ef53d1bd07cea363771e0539ee80e35635e93f922c17d478965",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_CircuitWitness_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 372,
+      "sha256": "2dcd3cd0e53adc3688d14fbf654cb8ba9fe9395f60223b2401aa4b1dc73760da",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_CircuitWitness_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 98,
+      "sha256": "1fda6b948ab1cccdb3edd147ea12fc33fcec244ebdd989d531d0f8a35203d791",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_GateKind/clone/proof.json",
+      "mode": "100644",
+      "bytes": 116,
+      "sha256": "dad98ad96a0c40bab693f8e3809dffc0bb5d0ec1461de23d6e9a0e78ed5816ec",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_Gate_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 316,
+      "sha256": "bd3b8b758c19f880353055f6be7d14f9d9c4a8d52f2518ed478527ef6c2fd11b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_Gate_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 99,
+      "sha256": "4307907b955b45ba76e5b6943e6f568cd3eb209db9c32890fd08efd116154ad2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_Layer_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 506,
+      "sha256": "79ef6cd790467502d7b5d5d15475d4945217226a6ccca3325a771f23421ee8d2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_Layer_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "95ecc8ea6a0f4776d9076cf1451f49f98ce9c021b3f92de7a0e5532cce112ec5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_LayeredCircuit_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 344,
+      "sha256": "d2156381e95af7a01df8620e6d2a64d772ec0cd5dfdf0d523e724f625b63e170",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Clone_for_LayeredCircuit_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "1efc19b22b4be42a014cc57548fa76283d0f95d6f5b0b628bf6d2e52b7fc2f66",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_CircuitError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 436,
+      "sha256": "b1a3c309e71e81f0ce5c93cc0f6ea6b37a3848e4a92b9e9e98f4637fbac6c933",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_CircuitWitness_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 234,
+      "sha256": "40ad248ebdd219d1f4633200b19a9f7b262e4176d49bd26da336e5026be8efca",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_GateKind/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 186,
+      "sha256": "a1bbe96210e1780b21bd25164443dee2cf57362a0d083efbf454b9edcf7202b5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_Gate_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 224,
+      "sha256": "4bb24156d7f8f3d6e815954784b406b580dde3b7cd0a5220e87ad033b0f1b2b4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_Layer_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 225,
+      "sha256": "cb0148d937804d9680caa1127997b04317a2f6c96c9367d731c2a7c2152e66ec",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Debug_for_LayeredCircuit_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 234,
+      "sha256": "dd4e8d2e23a4dd7f5a19819e38ca9a3feeb8347d291376d6ea64a5fc7e331ca2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Eq_for_GateKind/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 163,
+      "sha256": "61b308289cec2910c17e712dfdb9aa633b76678dc6bdd25c4e74fcfff58de418",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Hash_for_GateKind/hash/proof.json",
+      "mode": "100644",
+      "bytes": 70,
+      "sha256": "53af1c1cc5975375a63b47401d0a252e1cf5310ee4b12e5d6d48461da6dbd44d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_Layer_F/width/proof.json",
+      "mode": "100644",
+      "bytes": 493,
+      "sha256": "bf09fc428fd9ae8faf22a9beb9683ab9392523410230f7708f053b4272da5e9c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_LayeredCircuit_F/depth/proof.json",
+      "mode": "100644",
+      "bytes": 184,
+      "sha256": "b65d1235e8ef9bd1dc9a649bf99987a5310b2c2fd6acf3a4572618856d648b92",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_PartialEq_for_GateKind/eq/proof.json",
+      "mode": "100644",
+      "bytes": 68,
+      "sha256": "afb323b6cc9b019f1eb9b1bb83a59a12a7898d541befda1677d9bb209c880437",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/circuit/impl_PartialEq_for_GateKind/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_GkrError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 408,
+      "sha256": "c4a2eb1f8801c6901cfcc0c0e1e9a6185369f42eb2ec70cfc0cc8699c79deeb5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_GkrProof/clone/proof.json",
+      "mode": "100644",
+      "bytes": 299,
+      "sha256": "527ea16b737bf953ac2768b32a5ec36687b6fab151f62966c7788983fb8d08ec",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_GkrProof/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "fe1a34773273f2628ab75a9f7dbf6a9847254670fdd4783a6079465d4617fe7d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_InputClaim/clone/proof.json",
+      "mode": "100644",
+      "bytes": 479,
+      "sha256": "f5e61907e7b3f5e46a66ce91ff5cdb326d2bbeb2093b0eb44c5e8ce7027e90e4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_InputClaim/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_LayerProof/clone/proof.json",
+      "mode": "100644",
+      "bytes": 482,
+      "sha256": "67a29108460a0d678c13311522610efd14ea8b185e4bd5d4ea787e0d40e74b90",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Clone_for_LayerProof/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Debug_for_GkrError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 534,
+      "sha256": "a6ddb9349007dc748ba80793b929ac48b852efaaa698233707d7751dd35cbc95",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Debug_for_GkrProof/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 225,
+      "sha256": "c25c80367a911f939ad7fb9b5c227f8c1201566f4f01c20c6e023593cea461dd",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Debug_for_InputClaim/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "2eabb6f391b132ab9ddf40de6bea10d998fde7fe7a390204352a6f2dbbbf9091",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/impl_Debug_for_LayerProof/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "6d7b69ab20d212361ec67f3382d8ba4e1d87b1ec6a48da62fe2c7c894c750a60",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/cf_u64/proof.json",
+      "mode": "100644",
+      "bytes": 63,
+      "sha256": "7a564fbc3e73675daf4687f4b7899d6d3eac9e99a39d6574eae974ec603a68b4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/embed/proof.json",
+      "mode": "100644",
+      "bytes": 286,
+      "sha256": "dd058c520361733f168b9a8eb5e07293962fcc99b15ab929243a8befcf444379",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/eq3_points/proof.json",
+      "mode": "100644",
+      "bytes": 1109,
+      "sha256": "945a1a354fa64dc0add0cffddb9ca046356d67801e79bf255f59225e3a5bac78",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/eq_point_index/proof.json",
+      "mode": "100644",
+      "bytes": 1272,
+      "sha256": "71fc78fc2c4dd6f7900da7920424f07c11730f3c0b0a6351baa55d1f9693075b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/eq_points/proof.json",
+      "mode": "100644",
+      "bytes": 1308,
+      "sha256": "17fb13dfed1542a21445ed4cae47a91ce07812aa56b4162b8eb4135525d5eafc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/fold_point/proof.json",
+      "mode": "100644",
+      "bytes": 4147,
+      "sha256": "025236a717cfe7d780b542ff951aa02d733a528fd5640952b91f18637329acf7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/mle_eval_base/proof.json",
+      "mode": "100644",
+      "bytes": 2132,
+      "sha256": "e3ea19eb9e739b4a81e5dc5f86b2e46aa0de848589646c784823fe8dea64489c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/mle/mle_eval_ext/proof.json",
+      "mode": "100644",
+      "bytes": 1482,
+      "sha256": "9a6620136f70be8dbcf795e4aa91234b4b0627c4845be5f163f184fd5be250ff",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/prove/proof.json",
+      "mode": "100644",
+      "bytes": 178,
+      "sha256": "cc75ed65ad6cc1108b3a2b768672abb8e4d22ae46b3efe26869edd53441602e0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/beta_eval/proof.json",
+      "mode": "100644",
+      "bytes": 463,
+      "sha256": "40ebd547cff51dce4b9815911e3b9c773c92acbcec087c64558ce22c22994389",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/draw_point/proof.json",
+      "mode": "100644",
+      "bytes": 725,
+      "sha256": "95e2f70a4cab926402047fd24e5055d4cb829c5fd0baf34aa2bc1a4e028d3784",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/extrap/proof.json",
+      "mode": "100644",
+      "bytes": 1204,
+      "sha256": "d478d66780e1f31a494bba5539ad2c9c1c6020a32c8a536eb2b0a2112749eb3d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SparseLayerOracle/build_phase2/proof.json",
+      "mode": "100644",
+      "bytes": 1983,
+      "sha256": "c3f099ec0eae9b5104bcba7edae3e64dc573257d35c4675469e7d1923caa568e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SparseLayerOracle/new/proof.json",
+      "mode": "100644",
+      "bytes": 5139,
+      "sha256": "e24110da335ad95e518e2503a54f189e6c6c89dcaba88507e8b8e6c36728638e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/bind/proof.json",
+      "mode": "100644",
+      "bytes": 8176,
+      "sha256": "679eccdab5d4f8173b4fcd1258f74a8800b6dd99a2779a1afc41cbf04754f31d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/bind__refines/proof.json",
+      "mode": "100644",
+      "bytes": 1792,
+      "sha256": "1b08bd322e38db7a3dc6809ca11d4ac09bb5c2cabc7520b12a15b32c88323d06",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/degree_bound/proof.json",
+      "mode": "100644",
+      "bytes": 164,
+      "sha256": "57e97cc22602e01b71a01780f768d1f70a5cec390d927a06e71dacdfde376225",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/degree_bound__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "bae6b26b6eb501f6c59b9ba65d25a4a84e3f4cb283c0f1afde479fb614a170a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/num_vars/proof.json",
+      "mode": "100644",
+      "bytes": 160,
+      "sha256": "cbd1425e67805e10bc0728af257475eb7afc3950ca279b028807ede2d2c89222",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/num_vars__refines/proof.json",
+      "mode": "100644",
+      "bytes": 116,
+      "sha256": "13053ffb58189d2960fa708220b30174f6898b4ae03ccc413f309b762b0c4b8b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/round_poly/proof.json",
+      "mode": "100644",
+      "bytes": 2046,
+      "sha256": "3e8dbc0dcd525b40180081b32f81b494103f61dea969914568d9f2c0c80edc58",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/impl_SumcheckOracle_for_SparseLayerOracle/round_poly__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/lagrange_interpolate/proof.json",
+      "mode": "100644",
+      "bytes": 1722,
+      "sha256": "43f3f64aba4940b724c53341180aec215d694c341125bdda1fed91880d73ddd2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/prove/proof.json",
+      "mode": "100644",
+      "bytes": 278,
+      "sha256": "3ba4988369403e5ca671df619e1835a49697f367f9d05df59a4182df4ac6e4e0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/reduce/prove_impl/proof.json",
+      "mode": "100644",
+      "bytes": 1056,
+      "sha256": "b0430007f3b30008634c9de3247b3684392d340c3a88722cb615b4e488f1812e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/verify/proof.json",
+      "mode": "100644",
+      "bytes": 184,
+      "sha256": "dea8a45828143b78446e4743417be90bab591de413c69d0cc5b6e5d7f894d767",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/eq_table/proof.json",
+      "mode": "100644",
+      "bytes": 65,
+      "sha256": "2afad91661a086e84b1631764da3c8d20e30b6365980698bea7f9b361f0a627b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_ConstGroup/clone/proof.json",
+      "mode": "100644",
+      "bytes": 512,
+      "sha256": "3668cb718cd619aa1b3d215d80b953d9eb8054b0ad68ce8bb52e4111425c03b8",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_ConstGroup/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "e8031987c6be3c696edb1fb39674b0f46283f2ac77f40cdeeb727b3334cdf62b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_DerivedLayer/clone/proof.json",
+      "mode": "100644",
+      "bytes": 1045,
+      "sha256": "1cfe2680a97efd36fd8866ff53776944da772351558523a29723de5c1818673e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_DerivedLayer/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "72315148ac27faf8bbdf52ad28843093a8e2cd2678c7b7ca1e18feb3835b5199",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_DerivedRegularWiring/clone/proof.json",
+      "mode": "100644",
+      "bytes": 337,
+      "sha256": "97eb3a4e6c5466bc7a5a502c146a5a64c39a23e4baead2733fe7b354709d95f7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_DerivedRegularWiring/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_DerivedStats/clone/proof.json",
+      "mode": "100644",
+      "bytes": 129,
+      "sha256": "8c36451f91d19ed5f6e4dc12aea3094086cfd96785e066a9d0cd0e494b7dd06b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_FamilyTag/clone/proof.json",
+      "mode": "100644",
+      "bytes": 117,
+      "sha256": "028743f4020f344281b0e5b058eea562a52b96be0808c8e39eab22b76e025be3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_GateGroup/clone/proof.json",
+      "mode": "100644",
+      "bytes": 792,
+      "sha256": "39113772594925ff874831efc75beeba3cb39bf2f4ccf7d168abfe11c6cacf1b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_GateGroup/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "1efc19b22b4be42a014cc57548fa76283d0f95d6f5b0b628bf6d2e52b7fc2f66",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_LayerHints/clone/proof.json",
+      "mode": "100644",
+      "bytes": 381,
+      "sha256": "8fea85d5231792e34930723c06c65fed3477dc097543a30f0ee475fad1a5f0da",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_LocalGate/clone/proof.json",
+      "mode": "100644",
+      "bytes": 117,
+      "sha256": "547efeffd9bd83601361f440a84c222fac2becdba7f5d2b0a0f92ce3011521ba",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_LocalGate/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 99,
+      "sha256": "4307907b955b45ba76e5b6943e6f568cd3eb209db9c32890fd08efd116154ad2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_RegularLayer/clone/proof.json",
+      "mode": "100644",
+      "bytes": 623,
+      "sha256": "0eb191b51999438c392ffe863a67fb1e92067b9f76ac144524232dbf909650d5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_RegularLayer/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "bae6b26b6eb501f6c59b9ba65d25a4a84e3f4cb283c0f1afde479fb614a170a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_RegularWiring/clone/proof.json",
+      "mode": "100644",
+      "bytes": 308,
+      "sha256": "a67c7806dd0255394335a82d8ff7b59b7c656ff9ddd6c66f86a5dd426c867ee5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_RegularWiring/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "95ecc8ea6a0f4776d9076cf1451f49f98ce9c021b3f92de7a0e5532cce112ec5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_Side/clone/proof.json",
+      "mode": "100644",
+      "bytes": 112,
+      "sha256": "f93058db4f31f67f80a12d39a9336027efcd17a6b1d3328c02d8097d14c90788",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Clone_for_WiringHints/clone/proof.json",
+      "mode": "100644",
+      "bytes": 301,
+      "sha256": "a47d3f00bd24215128d74a83aac2746a2706115d13088c3a758116d936c0488f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_ConstGroup/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "110de1fda2040c17d0b00a93fac3cd97c556b6e516a2a8e13bb4b29250ae132f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_DerivedLayer/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 230,
+      "sha256": "925abb7fbd16f4b4615d33848a8a02e33dba98ce2ad2e627e4eb72b754d60834",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_DerivedRegularWiring/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 238,
+      "sha256": "b19a874cd88c7d5e36031687d408e0c6b094015de8ba753287370b10f0141db9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_DerivedStats/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 230,
+      "sha256": "318f64a9eada2cc0c5667bc6acb67cb8251666b5f4a1437a5176d62152a93790",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_FamilyTag/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "73ddd09e0a4fefc463e8e1b1b6567f3a70182126f3e1772202516f00d047c88f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_GateGroup/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "82eb68f39ae4183c998fcf68a789d9474d9bb4bb0ffd9c3146a89371715c4e71",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_LayerHints/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "c1ff4b0ad42bf4a7b71a5e7c282bb60f289365e27065eca6e2a7a346ad33ccf6",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_LocalGate/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "bcc76269fc1dfff7cc7d0ba841f7356945500e8e6564df15f4b635e2e66f4865",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_RegularLayer/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 230,
+      "sha256": "ec44ef8787caad731af94281e1ea6a7fc26f0e91d863eac3aa297a9307fdbe7e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_RegularWiring/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 231,
+      "sha256": "95e67141ae72317625ce1d50e098e051b467eff96a72d24c08598662a19f2008",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_Side/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 451,
+      "sha256": "22b3cc9df934c3a6ec1c63936273e21a71d6323d345495349b2e7d2f21604d55",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Debug_for_WiringHints/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 206,
+      "sha256": "411517b74ed72eb1a441be49e961531af745d77afedafe1bf7dcd62a29f7be91",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Default_for_DerivedStats/default/proof.json",
+      "mode": "100644",
+      "bytes": 198,
+      "sha256": "875b585effda306fbcfd69c017f73095711ae88c5b878098ba766e7d41fe51f1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Default_for_LayerHints/default/proof.json",
+      "mode": "100644",
+      "bytes": 241,
+      "sha256": "0a33cff15b69eb6cb4fb27c6959a6c3a1f3133f8656ce0d64b32669daf8f08d1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Default_for_WiringHints/default/proof.json",
+      "mode": "100644",
+      "bytes": 236,
+      "sha256": "79ce848929d6321feed07a52717e5a2a266be09a4212bcb092810f9900b9d575",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_DerivedRegularWiring/derive/proof.json",
+      "mode": "100644",
+      "bytes": 3248,
+      "sha256": "10a3d21d75b676d84f2115faf05d51e9ba7d15c106c809bacaf9711b9dedb7ff",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_DerivedRegularWiring/expand_consts/proof.json",
+      "mode": "100644",
+      "bytes": 4130,
+      "sha256": "da02d90fbca4ce6b2b82a7ccc29a3942197c7aa57b2ee5a645155a0950dd1a23",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_DerivedRegularWiring/expand_gates/proof.json",
+      "mode": "100644",
+      "bytes": 6211,
+      "sha256": "5bb101abc4f92ef9eb1281b716098508226dfae83ebbc6ee58e13ed4d87d23a3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_DerivedRegularWiring/stats/proof.json",
+      "mode": "100644",
+      "bytes": 4119,
+      "sha256": "2275bcd66aac2f0a550a8c2a838f1f9fd7fec5b659511d7d80206d0824d5eefe",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Eq_for_FamilyTag/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 164,
+      "sha256": "7cca811f1b2d4a95e927026ba694e4299567ae278ec748ededde69a75f6ca9af",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Eq_for_Side/assert_fields_are_eq/proof.json",
+      "mode": "100644",
+      "bytes": 137,
+      "sha256": "5eeec012382a016496cbf1f3450103209df9f366e882edb4eaa31bb870f93e6e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Ord_for_Side/cmp/proof.json",
+      "mode": "100644",
+      "bytes": 65,
+      "sha256": "228b2ccadc2692a9ff21cdb573070cdd84b53efb0791ba9daea227653543ad58",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Ord_for_Side/cmp__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialEq_for_FamilyTag/eq/proof.json",
+      "mode": "100644",
+      "bytes": 114,
+      "sha256": "6162dd8a78f7e1080bdc0ab798ea130e1a0d046ea2082beb538c28164ddb1af0",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialEq_for_FamilyTag/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialEq_for_Side/eq/proof.json",
+      "mode": "100644",
+      "bytes": 64,
+      "sha256": "98dc9901461c70cc43434b447bc66ed75912b0b13d5189385a3fdbefdbfa3d35",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialEq_for_Side/eq__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialOrd_for_Side/partial_cmp/proof.json",
+      "mode": "100644",
+      "bytes": 190,
+      "sha256": "159690d720a761e50729c8746ed8960f3c6d680ba84406a8baa7d6b67d3324de",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_PartialOrd_for_Side/partial_cmp__refines/proof.json",
+      "mode": "100644",
+      "bytes": 61,
+      "sha256": "9393e59124c1b22f79062571fd16a07208ac2c99b945a6ecd87f1439c63e38c2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_RegularWiring/materialize/proof.json",
+      "mode": "100644",
+      "bytes": 6917,
+      "sha256": "52ac0e3f97bb4e1f83a4a6fb7b14e66d45e78984fcaa0921f5cfaea9fea5eb69",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Side/lb/proof.json",
+      "mode": "100644",
+      "bytes": 177,
+      "sha256": "09bc7dcde8d33986efc7cd09047e82cafe81af3fa2ca825d91a91b399b545204",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_Side/wire/proof.json",
+      "mode": "100644",
+      "bytes": 591,
+      "sha256": "fba5712199d831a078929f4879f76436c3c32aa28680bad8651b642788ca957c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_TableWiring/new/proof.json",
+      "mode": "100644",
+      "bytes": 99,
+      "sha256": "a39e89c1bfd938d673a8592ef2640596fb24d2d32453774b4d51f17b33a0a148",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/eval_const_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "675ef8484dc5361edaea6b8a42b60eaad298cb872ccb435d532cc2f12169a1d8",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/eval_predicate_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "675ef8484dc5361edaea6b8a42b60eaad298cb872ccb435d532cc2f12169a1d8",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/in_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 625,
+      "sha256": "42a9b1ed9ed8abc493b363f7aedf0d9a58ea3680512f28c3f0ebff12f4b2fa60",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/in_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 99,
+      "sha256": "47452c3d0a33255b74bf37dcaacd8ae7425cbaa1cab63945d6985db7e8bfe658",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/out_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 626,
+      "sha256": "b7f6a61445bbb310f2ae4fe0353bbb729b8cea83c911bf7fcaca6e53e7db5cf9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_DerivedRegularWiring/out_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 99,
+      "sha256": "47452c3d0a33255b74bf37dcaacd8ae7425cbaa1cab63945d6985db7e8bfe658",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/eval_const_mle/proof.json",
+      "mode": "100644",
+      "bytes": 1074,
+      "sha256": "038fff353263233d225df8538d1534aa117aeef70777224b3f995bccb14af89e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/eval_const_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "72315148ac27faf8bbdf52ad28843093a8e2cd2678c7b7ca1e18feb3835b5199",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/eval_predicate_mle/proof.json",
+      "mode": "100644",
+      "bytes": 1182,
+      "sha256": "e4a176a6b7fc6fe6b31b720a369cdf62cf27744d157ef3be9a0d85d8c415dab5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/eval_predicate_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "bae6b26b6eb501f6c59b9ba65d25a4a84e3f4cb283c0f1afde479fb614a170a1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/in_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 638,
+      "sha256": "807fd8abe33cb6d67d607c3dabca0c147ebdfaaa92b40fb60b77c619647b9d7f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/in_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "cd5032cb3def7d80cef391da9cd7128af62c81b225411941336f65dd5b75f08e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/out_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 639,
+      "sha256": "7bef04b7fd3f327ed4dcb62d46944c1cdd942d6d081f894286c88ec7bd435c8d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_RegularWiring/out_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "cd5032cb3def7d80cef391da9cd7128af62c81b225411941336f65dd5b75f08e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/eval_const_mle/proof.json",
+      "mode": "100644",
+      "bytes": 923,
+      "sha256": "59c4952f962ec63fd34555f584e90f136c8b37903692b6302031aba560900991",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/eval_const_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/eval_predicate_mle/proof.json",
+      "mode": "100644",
+      "bytes": 984,
+      "sha256": "e9c35fea542ae56129d8796c31cf98fd7e71054bcf78cf9feefe5a43b3f9586c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/eval_predicate_mle__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "cd5032cb3def7d80cef391da9cd7128af62c81b225411941336f65dd5b75f08e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/in_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 744,
+      "sha256": "2ac3457a75789691538ad1e5d7a226015d41dd49f69c9bbc1cdd870de6ddb80a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/in_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "fe1a34773273f2628ab75a9f7dbf6a9847254670fdd4783a6079465d4617fe7d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/out_width_bits/proof.json",
+      "mode": "100644",
+      "bytes": 643,
+      "sha256": "d7611251efb47953571b9e94d5ee41773fcf0a08d213f356583bede34b820e32",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/impl_WiringOracle_for_TableWiring/out_width_bits__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "fe1a34773273f2628ab75a9f7dbf6a9847254670fdd4783a6079465d4617fe7d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_protocol_rlib/wiring/split_side/proof.json",
+      "mode": "100644",
+      "bytes": 1130,
+      "sha256": "78a17632ac2306fc64c2fc23305bbbafae30e0855aa3963b0e2363a54d9816d4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_ChallengeSource_for_Transcript/draw_challenge/proof.json",
+      "mode": "100644",
+      "bytes": 207,
+      "sha256": "aa5876e24b822ab2ff34ac5fb4a39fa16369b951f2ccf94693d7c3dc0b60cfc2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_ChallengeSource_for_Transcript/draw_challenge__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_ChallengeSource_for_Transcript/observe_round_poly/proof.json",
+      "mode": "100644",
+      "bytes": 819,
+      "sha256": "abd644048b88d445a520e08a517ec4256abf077035e9b00fb2213af0909a2ec4",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_ChallengeSource_for_Transcript/observe_round_poly__refines/proof.json",
+      "mode": "100644",
+      "bytes": 98,
+      "sha256": "1fda6b948ab1cccdb3edd147ea12fc33fcec244ebdd989d531d0f8a35203d791",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_Subclaim_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 261,
+      "sha256": "472e4222bcc0b470c651d44b0bc4e4964b4473678ca3312ee8a7b559d1988ddb",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_Subclaim_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_SumcheckError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 413,
+      "sha256": "e1fdd9ae5796c95da3b5de7169e154a41cab0e97b322594dbfce7fbee7548b15",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_SumcheckInstance_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 262,
+      "sha256": "8bdd6bc5a0ac9151b559742066e7f2320be8a77a9b02dab7acb7b3f6cad78a7f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_SumcheckInstance_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_SumcheckProof_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 305,
+      "sha256": "93f58ddc1f3bfce3485172d4f756a32800cc6cf1a23946f5bedd7c7a1be2d78c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Clone_for_SumcheckProof_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Debug_for_Subclaim_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 204,
+      "sha256": "230518751ebcb9fae3990416bcd6379355875a3ac5dfa91e3dc45a4dc1e9b4e3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Debug_for_SumcheckError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 550,
+      "sha256": "b2521a66eabe9219547c891380dc72ed8d27bba8ec52543922358faf02509d5a",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Debug_for_SumcheckInstance_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 213,
+      "sha256": "31f32a02e032a7ed8498af67f402ba62351d49c723b597850bbef6c3a7d7a843",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/impl_Debug_for_SumcheckProof_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 231,
+      "sha256": "b0cc1113e9c9bd93b03fc5b06155c98504675d1342ba81d12123ff0614047896",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Clone_for_MultilinearPoly_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 333,
+      "sha256": "6beb55ea12eadc6b4873ffdf932c5078971943120c4702f414701f7ec85da8f3",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Clone_for_MultilinearPoly_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "3fa921fb8beb397864e109eaa2c83806baf01e2405807fbf283c5b3b11e0edb9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Clone_for_PolyError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 264,
+      "sha256": "682bd55a17b755d88cd06297e3e8ecc611eeacfb47c64411f1e9adc89a7faea2",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Clone_for_RoundPoly_F/clone/proof.json",
+      "mode": "100644",
+      "bytes": 262,
+      "sha256": "a7f13a3af4152efee93af243c68e1f3557bd2c6454ece3fdd5aa89d5bfbdc2d7",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Clone_for_RoundPoly_F/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "a30712eb8b02abef5622283d194bc22305ca589763f25fe31e5af4f20b295512",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Debug_for_MultilinearPoly_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 211,
+      "sha256": "07a223fa2ab2d5cb9486e547420569bfa4859426cf391477641d199e2d0f4994",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Debug_for_PolyError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 299,
+      "sha256": "ed1c8949ec32476a43fc92010db153ec5f306f1fc31b1fc309a7c319e412ccea",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_Debug_for_RoundPoly_F/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 227,
+      "sha256": "1d0f237451d20e3f310a77cdc4e332caf20534ca4f0bb6fbdef6dd7363d0d589",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_MultilinearPoly_F_0/evals/proof.json",
+      "mode": "100644",
+      "bytes": 191,
+      "sha256": "09f17479ed4c55d21005484227d708ba79dc5693b9cd1c97e41ca9aefd550ded",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_MultilinearPoly_F_0/evaluate/proof.json",
+      "mode": "100644",
+      "bytes": 4415,
+      "sha256": "f21451e5f8c7508eb3e65b8ab6f2be8d69e58edaeb97f51e963bca59784fad0f",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_MultilinearPoly_F_0/fix_first_var/proof.json",
+      "mode": "100644",
+      "bytes": 2522,
+      "sha256": "80961b4265e06cc2d709e4bd7f5ebde331a3c40094ccb4d2c5ae7a0e28d255d9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_MultilinearPoly_F_0/from_evals/proof.json",
+      "mode": "100644",
+      "bytes": 383,
+      "sha256": "6391954f70ab1850c19e374f88129728595e29074151f8e8c6cfddcc8b06983e",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_MultilinearPoly_F_0/num_vars/proof.json",
+      "mode": "100644",
+      "bytes": 112,
+      "sha256": "de0ffa64ea2cd46b4ac0151e1ec3be7f0eecb31f4b2803ce7f6254ee79c8150b",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_RoundPoly_F_0/coeffs/proof.json",
+      "mode": "100644",
+      "bytes": 192,
+      "sha256": "6871470ca2b92c1525fb0657377181fefff96a4aa5ea696f879a3e022b44b949",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_RoundPoly_F_0/degree/proof.json",
+      "mode": "100644",
+      "bytes": 247,
+      "sha256": "965056e3c4fdb1c568f68e605e78edd4a1cd6118ccebcda491b2e73c1bdc6335",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_RoundPoly_F_0/eval_at/proof.json",
+      "mode": "100644",
+      "bytes": 2111,
+      "sha256": "23d6ac6c9e0fa04da0486d94deab4a7b094c4888043dc310f179d40b494ea163",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/poly/impl_RoundPoly_F_0/from_coeffs/proof.json",
+      "mode": "100644",
+      "bytes": 115,
+      "sha256": "819888ff6536d503083b51fbde667ba946e3726b0f6e69a3bef0f236159a68fe",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_sumcheck_rlib/prove/proof.json",
+      "mode": "100644",
+      "bytes": 3150,
+      "sha256": "a6a401fa68a583f5991d720be42f4444b4e4ca54db2ca75e52e4d3004b5482e5",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/config/impl_Clone_for_StateSyncGkrConfig/clone/proof.json",
+      "mode": "100644",
+      "bytes": 349,
+      "sha256": "8c70382c96d39f78f62723c667d7214b0e98fd9cbc6c1baf11bd2e5f088543da",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/config/impl_Clone_for_StateSyncGkrConfig/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "d69abc96f82d8b2587339313b51a5942cee8c0afd0ec8c87c1f2026edabd09ce",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/config/impl_Debug_for_StateSyncGkrConfig/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 236,
+      "sha256": "4a8e56f39aba3a20e3ec9a0d5f9cb277c1ec38992eee253ab2947053b87f98a9",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/config/impl_Default_for_StateSyncGkrConfig/default/proof.json",
+      "mode": "100644",
+      "bytes": 379,
+      "sha256": "45e31da01a2604118b776353f8d651ed145d31515aa0c93446099678ba593f7c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/config/impl_Default_for_StateSyncGkrConfig/default__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "8f594e74d009552cf40a16c09d3dc70cff75b7f30a4d33b9aaa8f2ea91dfb951",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/impl_Clone_for_SyncError/clone/proof.json",
+      "mode": "100644",
+      "bytes": 398,
+      "sha256": "fc6dba2ee8d8174e89b0ab8fe66934143d42702ac82a8fbe0072a264b6ded82d",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/impl_Debug_for_SyncError/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 336,
+      "sha256": "f5df659094fa824dbd6cc09e75b1301e958189eca7d36d887a6ed0e11b470491",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/op_key/proof.json",
+      "mode": "100644",
+      "bytes": 322,
+      "sha256": "e8da4f4ddb2ec449057403d981e4094ca3ebb8579d6097988c6c09fc8d5fe764",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Clone_for_SyncRequest/clone/proof.json",
+      "mode": "100644",
+      "bytes": 343,
+      "sha256": "ac3b7f58708546c35aa5ae603231dd9dbe790f153f44ec1bbcc7ea34d8b6edab",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Clone_for_SyncRequest/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "de7a59a04bc31b5d887708ccd1b444f62799c0933cfa1e2c8df39d9de3205736",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Clone_for_SyncResult/clone/proof.json",
+      "mode": "100644",
+      "bytes": 268,
+      "sha256": "9041c3628e7d8c8ab0e1e69a6993d0d580c3bd04b7665661e1a2f852b32062e1",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Clone_for_SyncResult/clone__refines/proof.json",
+      "mode": "100644",
+      "bytes": 106,
+      "sha256": "ce742f58f5311e63387ea848dbdd251bc63ab5f3de8a165d26085cef612267cc",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Debug_for_SyncRequest/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 229,
+      "sha256": "a34e8dad2c8a2552ed74590fff4e2e9cbd48ad95511a155268b3c875db642d64",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/types/impl_Debug_for_SyncResult/fmt/proof.json",
+      "mode": "100644",
+      "bytes": 228,
+      "sha256": "9eca843d4ac29bc80599f4d80b6e3aea169c8d440987c0aaa36fbf85c690755c",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/verify_sync_op/proof.json",
+      "mode": "100644",
+      "bytes": 1640,
+      "sha256": "ead4efa462d8c1fc9081548f12c390b706846ee225fa2f1bd62a85b4cfaf7134",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "verif/ssgkr_verification_rlib/verify_sync_op_reference/proof.json",
+      "mode": "100644",
+      "bytes": 1247,
+      "sha256": "49b53872a1bff2599dedf33dd6fb485e678b039293d5ab8bfe20aac7558baeea",
+      "role": "formal-source-or-replay-metadata"
+    },
+    {
+      "path": "why3find.json",
+      "mode": "100644",
+      "bytes": 479,
+      "sha256": "80e22e33d612aa049f17b9d72e641873a6887e31371e3556d3f5dfc9e3c98c2b",
+      "role": "repository-source-or-metadata"
+    }
+  ]
+}

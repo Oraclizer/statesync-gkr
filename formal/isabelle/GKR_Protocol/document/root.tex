@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{isabelle,isabellesym}
+
+\usepackage{a4wide}
+\usepackage{amssymb}
+
+% this should be the last package used
+\usepackage{pdfsetup}
+
+% urls in roman style, theory text in math-similar italics
+\urlstyle{rm}
+\isabellestyle{it}
+
+\begin{document}
+
+\title{Soundness of the GKR Protocol Assembly}
+\author{Jinwook Kim}
+
+\maketitle
+
+\begin{abstract}
+The GKR protocol (Goldwasser, Kalai and Rothblum~\cite{gkr2015}) proves
+the correct evaluation of a layered arithmetic circuit by reducing each
+layer to a sumcheck instance and chaining the reductions down to the
+circuit inputs.  This entry mechanizes the soundness of such an
+assembly over the existing AFP formalization of the sumcheck protocol
+by Garvia, Sprenger and Bootle~\cite{Sumcheck_Protocol-AFP}.
+
+The development covers: a layered circuit intermediate representation
+with a weighted gate family of algebraic degree at most three and its
+evaluation semantics; multilinear extensions of value tables over the
+boolean hypercube and the associated Lagrange weights; the per-layer
+sumcheck identity connecting a layer's wiring predicates to the values
+of the layer below; the consumption of the AFP sumcheck soundness and
+completeness theorems for one layer reduction, via an explicit
+multivariate-polynomial representative of the layer integrand; a
+union-bound soundness theorem for the full layer-reduction chain,
+including the two-point claim carry between layers; the equality of a
+derived closed-form wiring oracle with the defining table oracle under
+repartition completeness; and the correctness of proof batching as a
+map over an abstract single-proof pipeline.
+
+The protocol model is interactive and public-coin, with challenges
+drawn uniformly from a finite field, matching the AFP sumcheck
+formalization; the Fiat--Shamir transformation is outside the model.
+The chain soundness bound is
+$(s_{\mathit{out}} + \sum_i (2 s_i d + 1))/|\mathbb{F}|$ for layer
+widths $2^{s_i}$ and a per-round degree bound $d$.  Related
+mechanization efforts in other proof assistants include
+ArkLib~\cite{arklib} in Lean; an expository account of the GKR
+protocol and sumcheck-based proof systems is given by
+Thaler~\cite{thaler2022}.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+% sane default for proof documents
+\parindent 0pt\parskip 0.5ex
+
+% generated text of all theories
+\input{session}
+
+% optional bibliography
+\bibliographystyle{abbrv}
+\bibliography{root}
+
+\end{document}

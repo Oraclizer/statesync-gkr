@@ -1,0 +1,10 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_lane0_rc": null,
+      "vc_set_MONTY_ZERO": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.01 }
+    }
+  }
+}

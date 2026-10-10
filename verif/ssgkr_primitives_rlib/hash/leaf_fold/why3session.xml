@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"https://www.why3.org/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="CVC4" version="" timelimit="0.016217" memlimit="1000"/>
+<prover id="1" name="CVC5" version="" timelimit="0.02752" memlimit="1000"/>
+<prover id="2" name="Z3" version="" timelimit="0.943125" memlimit="1000"/>
+<prover id="3" name="Alt-Ergo" version="" timelimit="0.979684" memlimit="1000"/>
+<file format="coma">
+<path name=".."/><path name="leaf_fold.coma"/>
+<theory name="Coma">
+ <goal name="vc_is_empty_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.008360" steps="0"/></proof>
+ </goal>
+ <goal name="vc_len_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.013860" steps="0"/></proof>
+ </goal>
+ <goal name="vc_leaf_pre_width" proved="true">
+ <proof prover="3"><result status="valid" time="0.004121" steps="0"/></proof>
+ </goal>
+ <goal name="vc_set_MONTY_ZERO" proved="true">
+ <proof prover="3"><result status="valid" time="0.011265" steps="0"/></proof>
+ </goal>
+ <goal name="vc_set_ZERO" proved="true">
+ <proof prover="3"><result status="valid" time="0.020534" steps="0"/></proof>
+ </goal>
+ <goal name="vc_from_elem_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.015571" steps="0"/></proof>
+ </goal>
+ <goal name="vc_index_mut_Vec_MontyField31_KoalaBearParameters_Global" proved="true">
+ <proof prover="3"><result status="valid" time="0.009019" steps="0"/></proof>
+ </goal>
+ <goal name="vc_from_u32_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.019236" steps="0"/></proof>
+ </goal>
+ <goal name="vc_index_mut_Vec_MontyField31_KoalaBearParameters_Global&#39;0" proved="true">
+ <proof prover="3"><result status="valid" time="0.007757" steps="0"/></proof>
+ </goal>
+ <goal name="vc_index_slice_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.016363" steps="0"/></proof>
+ </goal>
+ <goal name="vc_copy_from_slice_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.008366" steps="0"/></proof>
+ </goal>
+ <goal name="vc_leaf_fold">
+ <proof prover="0" timelimit="0.014579"><result status="unknown" time="0.014579" steps="0"/></proof>
+ <proof prover="1"><result status="unknown" time="0.027520" steps="0"/></proof>
+ <proof prover="2"><result status="timeout" time="0.943125" steps="0"/></proof>
+ <proof prover="3"><result status="timeout" time="0.979684" steps="0"/></proof>
+ <transf name="compute_specified" >
+  <goal name="vc_leaf_fold.0">
+  <proof prover="0" timelimit="0.016196"><result status="unknown" time="0.016196" steps="0"/></proof>
+  <proof prover="1" timelimit="0.027932"><result status="unknown" time="0.027932" steps="0"/></proof>
+  <proof prover="2"><result status="timeout" time="0.943125" steps="0"/></proof>
+  <proof prover="3"><result status="timeout" time="0.979684" steps="0"/></proof>
+  <transf name="split_vc" >
+   <goal name="vc_leaf_fold.0.0">
+   <proof prover="0" timelimit="0.015283"><result status="unknown" time="0.015283" steps="0"/></proof>
+   <proof prover="1" timelimit="0.026694"><result status="unknown" time="0.026694" steps="0"/></proof>
+   <proof prover="2"><result status="timeout" time="0.943125" steps="0"/></proof>
+   <proof prover="3"><result status="timeout" time="0.979684" steps="0"/></proof>
+   <transf name="split_vc" >
+    <goal name="vc_leaf_fold.0.0.0">
+    <proof prover="0"><result status="unknown" time="0.016217" steps="0"/></proof>
+    <proof prover="1" timelimit="0.027727"><result status="unknown" time="0.027727" steps="0"/></proof>
+    <proof prover="2" timelimit="1.88625"><result status="timeout" time="1.886249" steps="0"/></proof>
+    <proof prover="3" timelimit="1.95937"><result status="timeout" time="1.959367" steps="0"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>

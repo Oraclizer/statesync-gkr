@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_struct_field1_finish": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_elim_B": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_fmt_LayerStrategy": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_write_str": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

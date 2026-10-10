@@ -1,0 +1,23 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_closure0": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_collect_Map_Range_usize_closure0": {
+        "prover": "alt-ergo",
+        "time": 0.012
+      },
+      "vc_draw_point": { "prover": "alt-ergo", "time": 0.067 },
+      "vc_from_iter_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_into_iter_Map_Range_usize_closure0": {
+        "prover": "alt-ergo",
+        "time": 0.004
+      },
+      "vc_map_Range_usize": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_sample_challenge": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

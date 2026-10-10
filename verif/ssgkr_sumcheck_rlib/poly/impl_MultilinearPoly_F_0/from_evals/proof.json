@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_from_evals_F": { "prover": "alt-ergo", "time": 0.03 },
+      "vc_is_empty_F": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_is_power_of_two": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_len_F": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_trailing_zeros": { "prover": "alt-ergo", "time": 0.006 }
+    }
+  }
+}

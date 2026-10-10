@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_pack_keccak_digest": null,
+      "vc_with_capacity_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_F": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_clone_GateKind": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_clone_Gate_F": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_clone_u32": { "prover": "alt-ergo", "time": 0.004 }
+    }
+  }
+}

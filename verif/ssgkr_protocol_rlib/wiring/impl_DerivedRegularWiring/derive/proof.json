@@ -1,0 +1,89 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_default_LayerHints": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_deref_Vec_LayerHints_Global": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_deref_Vec_Layer_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_derive": {
+        "tactic": "compute_specified",
+        "children": [
+          {
+            "tactic": "split_vc",
+            "children": [
+              { "prover": "alt-ergo", "time": 0.014 },
+              { "prover": "alt-ergo", "time": 0.022 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              {
+                "tactic": "split_vc",
+                "children": [
+                  { "prover": "alt-ergo", "time": 0.022 },
+                  { "prover": "alt-ergo", "time": 0.024 },
+                  null
+                ]
+              },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.023 },
+              { "prover": "alt-ergo", "time": 0.023 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.035 },
+              { "prover": "alt-ergo", "time": 0.024 },
+              { "prover": "alt-ergo", "time": 0.029 },
+              { "prover": "alt-ergo", "time": 0.034 },
+              { "prover": "alt-ergo", "time": 0.017 },
+              { "prover": "alt-ergo", "time": 0.013 },
+              { "prover": "alt-ergo", "time": 0.018 },
+              { "prover": "alt-ergo", "time": 0.022 },
+              { "prover": "alt-ergo", "time": 0.022 },
+              { "prover": "alt-ergo", "time": 0.023 },
+              { "prover": "alt-ergo", "time": 0.025 },
+              { "prover": "alt-ergo", "time": 0.019 },
+              { "prover": "alt-ergo", "time": 0.024 },
+              { "prover": "alt-ergo", "time": 0.021 },
+              { "prover": "alt-ergo", "time": 0.029 }
+            ]
+          }
+        ]
+      },
+      "vc_derive_layer": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_enumerate_Iter_Layer_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_get_LayerHints": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_index_Vec_Layer_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_into_iter_Enumerate_Iter_Layer_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_iter_Layer_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_len_Layer_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_next_Enumerate_Iter_Layer_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_push_DerivedLayer": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_unwrap_or_ref_LayerHints": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_with_capacity_DerivedLayer": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      }
+    }
+  }
+}

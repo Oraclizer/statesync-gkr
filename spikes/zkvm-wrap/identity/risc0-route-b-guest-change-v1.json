@@ -1,0 +1,87 @@
+{
+  "schema": "statesync-gkr.risc0-route-b-guest-identity.change.v1",
+  "change_kind": "source-rebind",
+  "reason": "Rebind A13 provenance after the A11 destination-policy source change: the policy remains behind the host-only feature boundary, while two clean locked/offline builds reproduce the previously stabilized guest and host artifact identity byte-exactly.",
+  "base_expected_file": {
+    "status": "present",
+    "role": "git-base-comparison",
+    "expected_file_sha256": "56b26ae9a0ff8da2dd071ce2e35947a6b06ce8c3d228a53af14c4657aa1875d6"
+  },
+  "old": {
+    "expected_file_sha256": "56b26ae9a0ff8da2dd071ce2e35947a6b06ce8c3d228a53af14c4657aa1875d6",
+    "measured_source_commit": "ace996f23072dc9024f7dd1951ae9c1411b7b88a",
+    "canonical_source_path": "/workspace/source",
+    "measured_input_image": "sha256:ee1f3964463fb5e955c3e8edf49db0b42db71d99a0f46a0c4a5969da62f99cd1",
+    "source_manifest_sha256": "57ecef059bccb631ba952dd5ca5505dc31cf260d3e526b2fd9999166011117df",
+    "evidence_manifest_sha256": "0be5201df4c8b3dbe7c477664302790f664581779fca016291e98c9f3967717e",
+    "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+    "program_binary_size_bytes": 706152,
+    "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+    "raw_guest_elf_sha256": "ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81",
+    "methods_rs_sha256": "a749506bb1c68a13b718f4678af3884fc43cc1fb7e2fa16cae177a191186b5db",
+    "host_binary_sha256": "5e6e8969b3dc12a49972ef79f577af10fa642e2b0e394e802174abfaa415fdf8",
+    "diagnostic_program_binary_sha256": "99bc2a68e6ca656cbd69e949c1489ff4b6b8f227c6fdc37d0dc18c211d18a7cf",
+    "diagnostic_raw_guest_elf_sha256": "cadb6596855987ef6a7a2b19ab7c5e7f2330cc841ffe4da9c9cccb23ce99ca8b"
+  },
+  "new": {
+    "expected_file_sha256": "ce4b2c4a79755ce30369fd367029f6853698e24cfe87a07df44e94d49ef10333",
+    "measured_source_commit": "03530f3062c28048c11afe96c37a39ca9b8019b8",
+    "canonical_source_path": "/workspace/source",
+    "measured_input_image": "sha256:0e7b14ed7f44fb54534184081513f30a0dfb6693f81c79d34f88ae48dfb5f88d",
+    "source_manifest_sha256": "b9c9c2813d9d58ab0d7f8240df32efd7bead587e172da53556273490d6d0b4c1",
+    "evidence_manifest_sha256": "eb1480e000f3496dfaf79c8815153634c1f97ecb0aecf9b4f48fb8a2ea002819",
+    "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+    "program_binary_size_bytes": 706152,
+    "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+    "raw_guest_elf_sha256": "ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81",
+    "methods_rs_sha256": "a749506bb1c68a13b718f4678af3884fc43cc1fb7e2fa16cae177a191186b5db",
+    "host_binary_sha256": "5e6e8969b3dc12a49972ef79f577af10fa642e2b0e394e802174abfaa415fdf8",
+    "diagnostic_program_binary_sha256": "99bc2a68e6ca656cbd69e949c1489ff4b6b8f227c6fdc37d0dc18c211d18a7cf",
+    "diagnostic_raw_guest_elf_sha256": "cadb6596855987ef6a7a2b19ab7c5e7f2330cc841ffe4da9c9cccb23ce99ca8b"
+  },
+  "measured_recipe_snapshot": {
+    "Dockerfile": "a3ffcfe992e0a2a033862cb0deb51d68cf267204b9412ffeb56555fab64a7161",
+    "build-guest.sh": "ad979c71bd8873ba8ccbb38c68407153743a4a1dd1ddbea02046a47bb4c9ed9d",
+    "verify-two-clean-builds.sh": "84d60696285bd93b1666e852f8d714f2ff011f598f99e4990d2779ed093e51f7",
+    "toolchain-checksums.txt": "d97e8eb6cc28480653a78b9c183958d345f40216e0f0adb995cee874714a582a",
+    "README.md": "fcaeee9e481650eed083e5044eae9216da5d4fd2255e5d732a251c6a3dc09df3"
+  },
+  "source_rebind": {
+    "subject": "A11 host-only destination policy provenance rebind",
+    "approved_candidate_commit": "03530f3062c28048c11afe96c37a39ca9b8019b8",
+    "guest_artifact_identity": "byte-exact-unchanged",
+    "guest_dependency_closure": "unchanged",
+    "secure_proof_regenerated": false,
+    "aws_rerun": false,
+    "chain_submission": false
+  },
+  "affected_gates": [
+    "A2",
+    "A3",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A13"
+  ],
+  "downstream_gate": "A10",
+  "proof_coverage": {
+    "secure_proof_regenerated": false,
+    "w0_secure_proof_reused": true,
+    "proof_covers_current_artifact_identity": true,
+    "proof_covers_different_identity": false,
+    "status": "exact-stabilized-identity-reuse"
+  },
+  "proof_reuse": {
+    "tracked_path": "spikes/zkvm-wrap/logs/risc0-v3.0.4-final-identity-cuda-secure-proof-2026-08-13.json",
+    "file_sha256": "eb730934de31372b5d31e9371e154e4a2bef2625cadc761b3d0665a1a4159e2d",
+    "secure_proof_regenerated": false,
+    "identity": {
+      "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+      "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+      "raw192_sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+      "statement_leaf": "b4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492"
+    }
+  }
+}

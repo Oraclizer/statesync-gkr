@@ -1,0 +1,24 @@
+/target
+**/*.rs.bk
+**/*.bak
+**/__pycache__/
+*.py[cod]
+**/*.log
+**/*.tsv
+*.pdb
+# Isabelle build artifacts
+formal/isabelle/output/
+formal/isabelle/.isabelle/
+# Creusot verification artifacts (`cargo creusot`):
+# coma translations and the why3find cache are regenerated on every run;
+# the tracked pieces are why3find.json (project config) and
+# verif/**/proof.json (proof replay metadata) - same split as the
+# `cargo creusot new` template.
+*.coma
+.why3find/
+_creusot_erasure/
+# Release proof attachments are external objects and are never tracked
+release/*/artifacts/
+# Editable manuscript assets are maintained separately from the review PDF
+/paper/TEX/
+/paper/Figures/

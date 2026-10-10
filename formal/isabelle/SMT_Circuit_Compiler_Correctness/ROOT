@@ -1,0 +1,24 @@
+chapter AFP
+
+session SMT_Circuit_Compiler_Correctness (AFP) = "GKR_Protocol" +
+  description \<open>
+    Correctness of the SMT verification-circuit compiler: the compiled
+    layered circuit accepts a witness iff the SMT operation semantics
+    holds (Theorem A), composed with the GKR assembly soundness of the
+    GKR_Protocol session (Theorem C).
+  \<close>
+  options [timeout = 3600]
+  sessions
+    "HOL-Library"
+    "HOL-Computational_Algebra"
+  theories
+    SMT_Semantics
+    Leaf_Fold
+    Compiler_Model
+    Compiler_Correctness
+    Composition
+    KoalaBear_Field
+    Compiler_Instance
+    Composition_Instance
+  document_files
+    "root.tex"

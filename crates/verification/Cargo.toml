@@ -1,0 +1,23 @@
+[package]
+name = "ssgkr-verification"
+description = "Normative StateSync-GKR R3 circuit, prove, verify, transcript, and host value-type owner"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+ssgkr-commitment.workspace = true
+ssgkr-batching.workspace = true
+ssgkr-compiler.workspace = true
+ssgkr-protocol.workspace = true
+ssgkr-primitives.workspace = true
+
+[target.'cfg(creusot)'.dependencies]
+creusot-std.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,145 @@
+name: ci
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    name: format, lint, tests, and public surface
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install pinned toolchain
+        run: rustup show
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Lint
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Test
+        run: cargo test --workspace --release --locked
+      - name: Route manifest codec equality
+        run: |
+          cargo run --release --locked -p ssgkr-wrap --example risc0-route-b-manifest-v1 -- tests/vectors/risc0-route-b-manifest-v1.json > "$RUNNER_TEMP/route-rust.txt"
+          python3 tests/reference/risc0_route_b_manifest_v1.py tests/vectors/risc0-route-b-manifest-v1.json > "$RUNNER_TEMP/route-python.txt"
+          diff -u tests/vectors/risc0-route-b-manifest-v1.transcript.txt "$RUNNER_TEMP/route-rust.txt"
+          diff -u tests/vectors/risc0-route-b-manifest-v1.transcript.txt "$RUNNER_TEMP/route-python.txt"
+      - name: Receipt transition codec equality
+        run: |
+          cargo run --release --locked --example receipt_gated_transition_v1 -- tests/vectors/risc0-route-b-volta-2.0.0-runtime-rebind-v1.json tests/vectors/risc0-route-b-destination-policy-v1.json > "$RUNNER_TEMP/receipt-rust.txt"
+          python3 tests/reference/receipt_gated_local_transition_v1.py tests/vectors/receipt-gated-local-transition-v1.json > "$RUNNER_TEMP/receipt-python.txt"
+          diff -u "$RUNNER_TEMP/receipt-rust.txt" "$RUNNER_TEMP/receipt-python.txt"
+      - name: Dependency update policy
+        run: python3 release/v1.1/verify_dependency_update_policy.py
+      - name: Git file-mode policy fixtures
+        run: python3 release/v1.1/test_verify_mode_policy.py
+      - name: Documentation consistency
+        run: python3 release/v1.1/test_documentation_consistency.py
+      - name: Controlled identity packaging fixtures
+        run: python3 spikes/zkvm-wrap/reproducible/risc0-route-b/test_validate_toolchain_payload_packaging.py
+      - name: Licensing and source-policy rejection fixtures
+        run: python3 release/v1.1/test_license_distribution.py
+      - name: Public surface
+        # A pull request executes the base wrapper, verifier and helper.
+        # The exact reviewed empty root permits the first distribution only.
+        env:
+          SOURCE_POLICY_EVENT: ${{ github.event_name }}
+          SOURCE_POLICY_BASE: ${{ github.base_ref }}
+          SOURCE_POLICY_REPOSITORY: ${{ github.repository }}
+          SOURCE_POLICY_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          SOURCE_POLICY_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          python3 - <<'PY'
+          # BEGIN source-authority-launcher
+          import os, pathlib, subprocess, sys, tempfile
+          root = pathlib.Path(os.environ["GITHUB_WORKSPACE"]).resolve()
+          event = os.environ["SOURCE_POLICY_EVENT"]
+          base_ref = os.environ.get("SOURCE_POLICY_BASE") or "main"
+          repository = os.environ["SOURCE_POLICY_REPOSITORY"]
+          head_repository = os.environ.get("SOURCE_POLICY_HEAD_REPOSITORY", "")
+          head_ref = os.environ.get("SOURCE_POLICY_HEAD_REF", "")
+          wrapper = "release/v1.1/run_source_policy.py"
+          def git(*args):
+              return subprocess.run(["git", "-C", str(root), *args], capture_output=True)
+          with tempfile.TemporaryDirectory(prefix="source-base-wrapper-") as folder:
+              selected = root / wrapper
+              if event == "pull_request":
+                  fetched = git("fetch", "--depth=1", "origin", base_ref)
+                  if fetched.returncode:
+                      raise SystemExit("base fetch failed")
+                  base = git("rev-parse", "FETCH_HEAD").stdout.decode().strip()
+                  source = git("show", f"{base}:{wrapper}")
+                  if source.returncode == 0:
+                      selected = pathlib.Path(folder) / "run_source_policy.py"
+                      selected.write_bytes(source.stdout)
+                  else:
+                      parents = git("rev-list", "--parents", "-n", "1", base).stdout.decode().split()
+                      tree = git("ls-tree", "-r", "--name-only", base)
+                      partial = any(git("show", f"{base}:{name}").returncode == 0 for name in
+                                    ("release/v1.1/verify.py", "release/v1.1/license_distribution.py"))
+                      if (base != "16754254c52a42f2444f1ff2ed7115a23a6c84f1" or
+                              parents != [base] or tree.returncode or tree.stdout.strip() or partial or
+                              repository != head_repository or head_ref != "release/bsl-distribution"):
+                          raise SystemExit("base wrapper unavailable outside the exact initial bootstrap")
+              result = subprocess.run([sys.executable, "-B", str(selected), "--root", str(root),
+                                       "--event", event, "--base-ref", base_ref,
+                                       "--repository", repository, "--head-repository", head_repository,
+                                       "--head-ref", head_ref], cwd=root)
+              raise SystemExit(result.returncode)
+          # END source-authority-launcher
+          PY
+
+  determinism:
+    name: proof digest equality across CPU backends
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install pinned toolchain
+        run: rustup show
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - name: Baseline digest
+        env:
+          CARGO_TARGET_DIR: ${{ runner.temp }}/proof-digest-baseline
+        run: cargo run --release --locked --target x86_64-unknown-linux-gnu --bin proof_digest > "$RUNNER_TEMP/digest-baseline.txt"
+      - name: Native digest
+        env:
+          CARGO_TARGET_DIR: ${{ runner.temp }}/proof-digest-native
+          CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS: -Ctarget-cpu=native
+        run: cargo run --release --locked --target x86_64-unknown-linux-gnu --bin proof_digest > "$RUNNER_TEMP/digest-native.txt"
+      - name: Compare digests
+        run: diff -u "$RUNNER_TEMP/digest-baseline.txt" "$RUNNER_TEMP/digest-native.txt"
+
+  required:
+    name: required
+    if: ${{ always() }}
+    needs:
+      - check
+      - determinism
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every release check
+        env:
+          CHECK_RESULT: ${{ needs.check.result }}
+          DETERMINISM_RESULT: ${{ needs.determinism.result }}
+        run: |
+          test "$CHECK_RESULT" = "success"
+          test "$DETERMINISM_RESULT" = "success"

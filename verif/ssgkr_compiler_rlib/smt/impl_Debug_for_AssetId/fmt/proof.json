@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_tuple_field1_finish": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_fmt_AssetId": { "prover": "alt-ergo", "time": 0.012 }
+    }
+  }
+}

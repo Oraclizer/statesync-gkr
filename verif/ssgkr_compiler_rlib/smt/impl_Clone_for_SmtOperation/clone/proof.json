@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_AssetId": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_clone_LeafPayload": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_clone_LeafState": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_clone_SmtOperation": { "prover": "alt-ergo", "time": 0.026 },
+      "vc_elim_Membership": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_elim_NonMembership": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_elim_Update": { "prover": "alt-ergo", "time": 0.008 }
+    }
+  }
+}

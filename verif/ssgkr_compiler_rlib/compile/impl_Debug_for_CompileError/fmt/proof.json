@@ -1,0 +1,18 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_struct_field1_finish": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_debug_struct_field2_finish": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_elim_NonUnaryGate": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_elim_UnsupportedConfig": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_fmt_CompileError": { "prover": "alt-ergo", "time": 0.019 }
+    }
+  }
+}

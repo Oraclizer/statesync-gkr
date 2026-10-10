@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_GkrProof": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_clone_LayerProof": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_clone_Vec_LayerProof_Global": {
+        "prover": "alt-ergo",
+        "time": 0.004
+      }
+    }
+  }
+}

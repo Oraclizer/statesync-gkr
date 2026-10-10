@@ -1,0 +1,97 @@
+{
+  "vector_version": 1,
+  "manifest": {
+    "manifest_version": 1,
+    "route_family": "risc0-native-zkverify",
+    "proof_system": "risc0-receipt-v3",
+    "source_network": {
+      "network_name": "zkVerify Volta",
+      "genesis_hash": "0xff7fe5a610f15fe7a0c52f94f86313fb7db7d3786e7f8acf2b66c11d5be7c242",
+      "runtime_spec_name": "tzkv-runtime",
+      "runtime_spec_version": 1006002,
+      "runtime_transaction_version": 1,
+      "runtime_state_version": 1,
+      "runtime_source_tag": "rt-volta-1.6.2",
+      "runtime_source_commit": "0xa4761768f1360c1d1f8db1f3aecb9a2df6ea7808"
+    },
+    "verifier": {
+      "risc0_release": "v3.0.4",
+      "risc0_source_commit": "0xd7ee368e59ce6d9f94ecaeb6fc845e39ec5e9366",
+      "guest_toolchain": "r0.1.88.0",
+      "guest_elf_sha256": "0x7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+      "verification_context": "risc0",
+      "verifier_version_preimage": "risc0:v3.0",
+      "verifier_version_hash": "0xaa24368f9ce9025f58596d966209fc3f322c8cac37dae753bb9b0367d273700d",
+      "image_id": "0xdd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+      "image_id_encoding": "eight-le-u32-words-concatenated-in-word-order",
+      "zkverify_vk_semantics": "image-id-bytes32"
+    },
+    "statement": {
+      "application_statement_version": 1,
+      "raw_statement_encoding": "wrap-statement-v1-six-bn254-le32",
+      "raw_statement_bytes": 192,
+      "public_values_semantics": "unframed-exact-raw192",
+      "circuit_commitment_binding": "raw192-bytes-32-63-le32",
+      "native_statement_formula": "keccak256(context-keccak256||image-id||verifier-version-hash||raw192-keccak256)"
+    },
+    "aggregation_domain_id": 2,
+    "destination": {
+      "network_name": "Base Sepolia",
+      "chain_id": 84532,
+      "gateway_proxy": "0x0807c544d38ae7729f8798388d89be6502a1e8a8",
+      "gateway_proxy_code_hash": "0x514b3810e962f850c014b1e2d138ade358edb749d37432076e06dcb9abe702b8",
+      "gateway_implementation": "0x312468ebf274f1f584d93d0cca8458cc91460fc0",
+      "gateway_implementation_code_hash": "0x9c21402a65c986f1cfd3caa032eb381b27dde951bd79266852845d7a839021a1"
+    },
+    "trust": {
+      "role_model": "capability-only",
+      "observed_publisher": "0x162845dae4317ffbbd9d5db3a2d7d7a895fe4f8e",
+      "observed_publisher_capability": "OPERATOR",
+      "upgrader_capability": "UPGRADER",
+      "default_admin_capability": "DEFAULT_ADMIN",
+      "upgrader_principal_pinned": false,
+      "default_admin_principal_pinned": false,
+      "proxy_is_upgradeable": true,
+      "proxy_and_implementation_are_tcb": true
+    },
+    "transport": {
+      "authentication": "operator-authenticated",
+      "destination_verifies_volta_grandpa_finality": false,
+      "source_finality_policy": "not-enforced-by-destination"
+    },
+    "conflict": {
+      "same_coordinate_overwrite_possible": true,
+      "conflict_rejection": "not-enforced",
+      "enforcement_owner": "destination-receiver"
+    },
+    "settlement_key": {
+      "domain": "ssgkr/settlement-key/v1",
+      "hash_algorithm": "sha256",
+      "preimage_order": "domain||primary-transition-id||destination-chain-id-le64||destination-consumer-bytes32||action-kind-u8",
+      "primary_transition_id_bytes": 32,
+      "destination_chain_id_encoding": "u64-le",
+      "destination_consumer_bytes": 32,
+      "action_kind_encoding": "u8",
+      "includes_route_id": false
+    },
+    "receipt_tuple": {
+      "domain_id_encoding": "u32-le",
+      "aggregation_id_encoding": "u64-le",
+      "leaf_count_encoding": "u32-le",
+      "leaf_index_encoding": "u32-le",
+      "merkle_path_node_bytes": 32,
+      "canonical_relation_required": true,
+      "live_enforcement": "not-enforced",
+      "enforcement_owner": "destination-receiver"
+    }
+  },
+  "statement_sample": {
+    "raw192": "0x01000100010001001f0000001800000000000000000000000000000000000000abde249a257cd4e6c3ed34f2749a7d8be66fd418f5a5d8595bffc956b45f0e0088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320088957f2aa94f0f483d11f6bbc00b37db9fedd7911eee56e15c1661e14845320005000000000000000000000000000000000000000000000000000000000000004cc6356134cfb0dcefee384334580a10c3f82929f64a9f8833dd47ebc2cdbf00"
+  },
+  "settlement_key_sample": {
+    "primary_transition_id": "0x959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "intended_destination_chain_id": 84532,
+    "intended_destination_consumer": "0x0000000000000000000000000807c544d38ae7729f8798388d89be6502a1e8a8",
+    "action_kind": 2
+  }
+}

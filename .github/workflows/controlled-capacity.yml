@@ -1,0 +1,33 @@
+name: controlled capacity replay
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: controlled-capacity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  small-replay:
+    name: bounded benchmark caller and memory controls
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CARGO_BUILD_JOBS: 2
+      PYTHONDONTWRITEBYTECODE: 1
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install the pinned toolchain
+        run: rustup show
+      - name: Build replay callers and run small real controls
+        run: python3 benches/controlled-capacity-2026-10-07/linux-small-smoke.py --out "$RUNNER_TEMP/ssgkr-capacity-small-check"
+      - name: Show the actual bounded check receipt
+        run: cat "$RUNNER_TEMP/ssgkr-capacity-small-check/linux-small-smoke-receipt.json"

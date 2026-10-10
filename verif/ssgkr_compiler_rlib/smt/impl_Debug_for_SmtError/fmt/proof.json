@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_debug_struct_field2_finish": { "prover": "alt-ergo", "time": 0.0 },
+      "vc_debug_tuple_field1_finish": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_elim_KeyOutOfRange": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_elim_LeafEncoding": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_elim_PathLengthMismatch": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_fmt_SmtError": { "prover": "alt-ergo", "time": 0.021 }
+    }
+  }
+}

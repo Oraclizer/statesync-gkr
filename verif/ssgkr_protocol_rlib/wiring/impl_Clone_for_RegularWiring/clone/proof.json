@@ -1,0 +1,13 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_RegularLayer": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_clone_RegularWiring": { "prover": "alt-ergo", "time": 0.019 },
+      "vc_clone_Vec_RegularLayer_Global": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      }
+    }
+  }
+}

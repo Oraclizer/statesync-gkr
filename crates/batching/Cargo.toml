@@ -1,0 +1,18 @@
+[package]
+name = "ssgkr-batching"
+description = "Module 3: deadline-aware batching prover loop (queue, batch-size policy, batch prover, result distribution)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+ssgkr-primitives.workspace = true
+ssgkr-protocol.workspace = true
+ssgkr-compiler.workspace = true
+
+[lints]
+workspace = true

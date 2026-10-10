@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oraclizer/statesync-gkr/blob/main/docs/encoding/risc0-route-b-manifest-v1.schema.json",
+  "title": "RISC Zero Route B manifest vector version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["vector_version", "manifest", "statement_sample", "settlement_key_sample"],
+  "properties": {
+    "vector_version": { "const": 1 },
+    "manifest": { "$ref": "#/$defs/manifest" },
+    "statement_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw192"],
+      "properties": {
+        "raw192": { "type": "string", "pattern": "^0x[0-9a-f]{384}$" }
+      }
+    },
+    "settlement_key_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_transition_id",
+        "intended_destination_chain_id",
+        "intended_destination_consumer",
+        "action_kind"
+      ],
+      "properties": {
+        "primary_transition_id": { "$ref": "#/$defs/hex32" },
+        "intended_destination_chain_id": { "$ref": "#/$defs/u64" },
+        "intended_destination_consumer": { "$ref": "#/$defs/hex32" },
+        "action_kind": { "type": "integer", "minimum": 0, "maximum": 2 }
+      }
+    }
+  },
+  "$defs": {
+    "hex20": { "type": "string", "pattern": "^0x[0-9a-f]{40}$" },
+    "hex32": { "type": "string", "pattern": "^0x[0-9a-f]{64}$" },
+    "u8": { "type": "integer", "minimum": 0, "maximum": 255 },
+    "u16": { "type": "integer", "minimum": 0, "maximum": 65535 },
+    "u32": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "u64": { "type": "integer", "minimum": 0, "maximum": 18446744073709551615 },
+    "nonemptyString": { "type": "string", "minLength": 1, "maxLength": 65535 },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_version",
+        "route_family",
+        "proof_system",
+        "source_network",
+        "verifier",
+        "statement",
+        "aggregation_domain_id",
+        "destination",
+        "trust",
+        "transport",
+        "conflict",
+        "settlement_key",
+        "receipt_tuple"
+      ],
+      "properties": {
+        "manifest_version": { "const": 1 },
+        "route_family": { "const": "risc0-native-zkverify" },
+        "proof_system": { "const": "risc0-receipt-v3" },
+        "source_network": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "network_name",
+            "genesis_hash",
+            "runtime_spec_name",
+            "runtime_spec_version",
+            "runtime_transaction_version",
+            "runtime_state_version",
+            "runtime_source_tag",
+            "runtime_source_commit"
+          ],
+          "properties": {
+            "network_name": { "$ref": "#/$defs/nonemptyString" },
+            "genesis_hash": { "$ref": "#/$defs/hex32" },
+            "runtime_spec_name": { "$ref": "#/$defs/nonemptyString" },
+            "runtime_spec_version": { "$ref": "#/$defs/u32" },
+            "runtime_transaction_version": { "$ref": "#/$defs/u32" },
+            "runtime_state_version": { "$ref": "#/$defs/u8" },
+            "runtime_source_tag": { "$ref": "#/$defs/nonemptyString" },
+            "runtime_source_commit": { "$ref": "#/$defs/hex20" }
+          }
+        },
+        "verifier": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "risc0_release",
+            "risc0_source_commit",
+            "guest_toolchain",
+            "guest_elf_sha256",
+            "verification_context",
+            "verifier_version_preimage",
+            "verifier_version_hash",
+            "image_id",
+            "image_id_encoding",
+            "zkverify_vk_semantics"
+          ],
+          "properties": {
+            "risc0_release": { "$ref": "#/$defs/nonemptyString" },
+            "risc0_source_commit": { "$ref": "#/$defs/hex20" },
+            "guest_toolchain": { "$ref": "#/$defs/nonemptyString" },
+            "guest_elf_sha256": { "$ref": "#/$defs/hex32" },
+            "verification_context": { "const": "risc0" },
+            "verifier_version_preimage": { "$ref": "#/$defs/nonemptyString" },
+            "verifier_version_hash": { "$ref": "#/$defs/hex32" },
+            "image_id": { "$ref": "#/$defs/hex32" },
+            "image_id_encoding": { "const": "eight-le-u32-words-concatenated-in-word-order" },
+            "zkverify_vk_semantics": { "const": "image-id-bytes32" }
+          }
+        },
+        "statement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "application_statement_version",
+            "raw_statement_encoding",
+            "raw_statement_bytes",
+            "public_values_semantics",
+            "circuit_commitment_binding",
+            "native_statement_formula"
+          ],
+          "properties": {
+            "application_statement_version": { "const": 1 },
+            "raw_statement_encoding": { "const": "wrap-statement-v1-six-bn254-le32" },
+            "raw_statement_bytes": { "const": 192 },
+            "public_values_semantics": { "const": "unframed-exact-raw192" },
+            "circuit_commitment_binding": { "const": "raw192-bytes-32-63-le32" },
+            "native_statement_formula": { "const": "keccak256(context-keccak256||image-id||verifier-version-hash||raw192-keccak256)" }
+          }
+        },
+        "aggregation_domain_id": { "$ref": "#/$defs/u32" },
+        "destination": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "network_name",
+            "chain_id",
+            "gateway_proxy",
+            "gateway_proxy_code_hash",
+            "gateway_implementation",
+            "gateway_implementation_code_hash"
+          ],
+          "properties": {
+            "network_name": { "$ref": "#/$defs/nonemptyString" },
+            "chain_id": { "$ref": "#/$defs/u64" },
+            "gateway_proxy": { "$ref": "#/$defs/hex20" },
+            "gateway_proxy_code_hash": { "$ref": "#/$defs/hex32" },
+            "gateway_implementation": { "$ref": "#/$defs/hex20" },
+            "gateway_implementation_code_hash": { "$ref": "#/$defs/hex32" }
+          }
+        },
+        "trust": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "role_model",
+            "observed_publisher",
+            "observed_publisher_capability",
+            "upgrader_capability",
+            "default_admin_capability",
+            "upgrader_principal_pinned",
+            "default_admin_principal_pinned",
+            "proxy_is_upgradeable",
+            "proxy_and_implementation_are_tcb"
+          ],
+          "properties": {
+            "role_model": { "const": "capability-only" },
+            "observed_publisher": { "$ref": "#/$defs/hex20" },
+            "observed_publisher_capability": { "const": "OPERATOR" },
+            "upgrader_capability": { "const": "UPGRADER" },
+            "default_admin_capability": { "const": "DEFAULT_ADMIN" },
+            "upgrader_principal_pinned": { "type": "boolean" },
+            "default_admin_principal_pinned": { "type": "boolean" },
+            "proxy_is_upgradeable": { "type": "boolean" },
+            "proxy_and_implementation_are_tcb": { "type": "boolean" }
+          }
+        },
+        "transport": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["authentication", "destination_verifies_volta_grandpa_finality", "source_finality_policy"],
+          "properties": {
+            "authentication": { "const": "operator-authenticated" },
+            "destination_verifies_volta_grandpa_finality": { "type": "boolean" },
+            "source_finality_policy": { "const": "not-enforced-by-destination" }
+          }
+        },
+        "conflict": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["same_coordinate_overwrite_possible", "conflict_rejection", "enforcement_owner"],
+          "properties": {
+            "same_coordinate_overwrite_possible": { "type": "boolean" },
+            "conflict_rejection": { "const": "not-enforced" },
+            "enforcement_owner": { "const": "destination-receiver" }
+          }
+        },
+        "settlement_key": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "domain",
+            "hash_algorithm",
+            "preimage_order",
+            "primary_transition_id_bytes",
+            "destination_chain_id_encoding",
+            "destination_consumer_bytes",
+            "action_kind_encoding",
+            "includes_route_id"
+          ],
+          "properties": {
+            "domain": { "const": "ssgkr/settlement-key/v1" },
+            "hash_algorithm": { "const": "sha256" },
+            "preimage_order": { "const": "domain||primary-transition-id||destination-chain-id-le64||destination-consumer-bytes32||action-kind-u8" },
+            "primary_transition_id_bytes": { "const": 32 },
+            "destination_chain_id_encoding": { "const": "u64-le" },
+            "destination_consumer_bytes": { "const": 32 },
+            "action_kind_encoding": { "const": "u8" },
+            "includes_route_id": { "const": false }
+          }
+        },
+        "receipt_tuple": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "domain_id_encoding",
+            "aggregation_id_encoding",
+            "leaf_count_encoding",
+            "leaf_index_encoding",
+            "merkle_path_node_bytes",
+            "canonical_relation_required",
+            "live_enforcement",
+            "enforcement_owner"
+          ],
+          "properties": {
+            "domain_id_encoding": { "const": "u32-le" },
+            "aggregation_id_encoding": { "const": "u64-le" },
+            "leaf_count_encoding": { "const": "u32-le" },
+            "leaf_index_encoding": { "const": "u32-le" },
+            "merkle_path_node_bytes": { "const": 32 },
+            "canonical_relation_required": { "type": "boolean" },
+            "live_enforcement": { "const": "not-enforced" },
+            "enforcement_owner": { "const": "destination-receiver" }
+          }
+        }
+      }
+    }
+  }
+}

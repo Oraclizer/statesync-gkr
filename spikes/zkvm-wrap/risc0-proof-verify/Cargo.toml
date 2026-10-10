@@ -1,0 +1,15 @@
+[package]
+name = "ssgkr-risc0-proof-verify"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+anyhow = "1.0"
+ciborium = "0.2.2"
+hex = "0.4.3"
+risc0-zkvm = { version = "=3.0.4", default-features = false, features = ["client", "disable-dev-mode"] }
+sha2 = "0.10"
+sha3 = "0.10"

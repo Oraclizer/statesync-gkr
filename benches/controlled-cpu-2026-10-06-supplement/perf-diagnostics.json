@@ -1,0 +1,210 @@
+{
+  "schema": "statesync-gkr.optional-perf-diagnostics.v1",
+  "scope": "whole process including preparation, controls, warmups, both B output modes, I/O; no phase or output-mode counter attribution",
+  "source_sha": "d22e2200378e21a40c254eab8df4d44dfea81f2806f02f0c9030636300d489e9",
+  "driver_sha": "5b80fa26d86da00dfcc3f49c2917fc19ab92bad180e9f4bc784562f109550d02",
+  "binary_sha": "56dc3697757ac3f834330c3bbc3998665bafd68ef29204179e1471303a16b66a",
+  "diagnostic_script_sha256": "b9a24bda15dda9cf3a48685e7aba2495a37fea83d94de27c258d625902942c26",
+  "counter_scope": "cycles/instructions/cache-misses:u are user-space hardware events; migration/fault counters are software events.",
+  "cases": [
+    {
+      "suite": "A",
+      "kind": "membership",
+      "depth": 24,
+      "batch": 1,
+      "workers": 1,
+      "samples": 3,
+      "warmup": 1,
+      "counters": [
+        {
+          "event": "cycles:u",
+          "count": 4851506048,
+          "event_running_ns": 1076585994,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "instructions:u",
+          "count": 10925974814,
+          "event_running_ns": 1076585994,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cache-misses:u",
+          "count": 1195955,
+          "event_running_ns": 1076585994,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cpu-migrations",
+          "count": 0,
+          "event_running_ns": 1076585994,
+          "running_percent": 100.0,
+          "scope": "software event"
+        },
+        {
+          "event": "page-faults",
+          "count": 7613,
+          "event_running_ns": 1076585994,
+          "running_percent": 100.0,
+          "scope": "software event"
+        }
+      ],
+      "original_counter_sha256": "850086ec8f0b8319a2ceb6f7ae29d823cff2111699a90826b69e52967bc4e843",
+      "exit_code": 0
+    },
+    {
+      "suite": "A",
+      "kind": "update",
+      "depth": 32,
+      "batch": 1,
+      "workers": 1,
+      "samples": 3,
+      "warmup": 1,
+      "counters": [
+        {
+          "event": "cycles:u",
+          "count": 12055291288,
+          "event_running_ns": 2688106194,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "instructions:u",
+          "count": 26821727466,
+          "event_running_ns": 2688106194,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cache-misses:u",
+          "count": 3527050,
+          "event_running_ns": 2688106194,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cpu-migrations",
+          "count": 0,
+          "event_running_ns": 2688106194,
+          "running_percent": 100.0,
+          "scope": "software event"
+        },
+        {
+          "event": "page-faults",
+          "count": 30070,
+          "event_running_ns": 2688106194,
+          "running_percent": 100.0,
+          "scope": "software event"
+        }
+      ],
+      "original_counter_sha256": "d50f90a87878da286ad4f65505a4ec65c83cb356e4e080ed88a80cc729c2c266",
+      "exit_code": 0
+    },
+    {
+      "suite": "B",
+      "kind": "membership",
+      "depth": 24,
+      "batch": 768,
+      "workers": 48,
+      "samples": 1,
+      "warmup": 1,
+      "counters": [
+        {
+          "event": "cycles:u",
+          "count": 677565213724,
+          "event_running_ns": 158105293070,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "instructions:u",
+          "count": 1676476248816,
+          "event_running_ns": 158105293070,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cache-misses:u",
+          "count": 72870250,
+          "event_running_ns": 158105293070,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cpu-migrations",
+          "count": 70,
+          "event_running_ns": 158105293070,
+          "running_percent": 100.0,
+          "scope": "software event"
+        },
+        {
+          "event": "page-faults",
+          "count": 490652,
+          "event_running_ns": 158105293070,
+          "running_percent": 100.0,
+          "scope": "software event"
+        }
+      ],
+      "original_counter_sha256": "1521e7a27386cb653f98af71b4ce675902d2ffdf84b16becc0fe547054914e99",
+      "exit_code": 0
+    },
+    {
+      "suite": "B",
+      "kind": "membership",
+      "depth": 24,
+      "batch": 768,
+      "workers": 192,
+      "samples": 1,
+      "warmup": 1,
+      "counters": [
+        {
+          "event": "cycles:u",
+          "count": 699845130887,
+          "event_running_ns": 230076889806,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "instructions:u",
+          "count": 1680444924012,
+          "event_running_ns": 230076889806,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cache-misses:u",
+          "count": 551851351,
+          "event_running_ns": 230076889806,
+          "running_percent": 100.0,
+          "scope": "user-space hardware event"
+        },
+        {
+          "event": "cpu-migrations",
+          "count": 978,
+          "event_running_ns": 230076889806,
+          "running_percent": 100.0,
+          "scope": "software event"
+        },
+        {
+          "event": "page-faults",
+          "count": 980162,
+          "event_running_ns": 230076889806,
+          "running_percent": 100.0,
+          "scope": "software event"
+        }
+      ],
+      "original_counter_sha256": "570213dd96dacd91ff77b8d1da97ddfb64040632a23ccb118a125af165da2f8e",
+      "exit_code": 0
+    }
+  ],
+  "status": "PASS",
+  "source_driver_binary_unchanged": true,
+  "separate_from_primary_175": true,
+  "recording_window_utc": {
+    "start": "2026-10-06T14:36:01.661947+00:00",
+    "finish": "2026-10-06T14:36:31.861211+00:00"
+  }
+}

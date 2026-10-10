@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_GkrError": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_clone_SumcheckError": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_elim_LayerClaimMismatch": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_elim_Sumcheck": { "prover": "alt-ergo", "time": 0.014 }
+    }
+  }
+}

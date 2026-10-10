@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "case_count": 9,
+  "fixture_count_per_case": 768,
+  "native_portable_hashes_equal": true,
+  "representative_bytes_equal": true,
+  "cases": [
+    {
+      "kind": "membership",
+      "depth": 24,
+      "fixture_count": 768,
+      "all_hashes_sha256": "4c46db4535ec500f75fc62bd78b02ff73231455e2982df98ca10e85e27d15346",
+      "encoded_proof_bytes_min": 176948,
+      "encoded_proof_bytes_max": 176948,
+      "encoded_proof_bytes_median": 176948.0
+    },
+    {
+      "kind": "nonmembership",
+      "depth": 24,
+      "fixture_count": 768,
+      "all_hashes_sha256": "27d520c9835b11bda845414f15dbc4a5873781795ff98638edfd61b9981cc7eb",
+      "encoded_proof_bytes_min": 181646,
+      "encoded_proof_bytes_max": 181646,
+      "encoded_proof_bytes_median": 181646.0
+    },
+    {
+      "kind": "update",
+      "depth": 24,
+      "fixture_count": 768,
+      "all_hashes_sha256": "49191b9b572f51e35e1d78fc68acfc791e3306246af8777e8eedb66bd185cbbc",
+      "encoded_proof_bytes_min": 186992,
+      "encoded_proof_bytes_max": 186992,
+      "encoded_proof_bytes_median": 186992.0
+    },
+    {
+      "kind": "membership",
+      "depth": 28,
+      "fixture_count": 768,
+      "all_hashes_sha256": "fb1c06f56539fc1ab9b78855a2443582ca580645a857c194e37238c7b1e7b17f",
+      "encoded_proof_bytes_min": 181970,
+      "encoded_proof_bytes_max": 181970,
+      "encoded_proof_bytes_median": 181970.0
+    },
+    {
+      "kind": "nonmembership",
+      "depth": 28,
+      "fixture_count": 768,
+      "all_hashes_sha256": "7e6cce9fd79c86c3ebc0055ba8dbad80fad71496a097df03202780f69f5b97bb",
+      "encoded_proof_bytes_min": 181970,
+      "encoded_proof_bytes_max": 181970,
+      "encoded_proof_bytes_median": 181970.0
+    },
+    {
+      "kind": "update",
+      "depth": 28,
+      "fixture_count": 768,
+      "all_hashes_sha256": "0266324edb76dc813f6b9bf7546e56174b7906be082cedcdb536d9041866d56f",
+      "encoded_proof_bytes_min": 200762,
+      "encoded_proof_bytes_max": 200762,
+      "encoded_proof_bytes_median": 200762.0
+    },
+    {
+      "kind": "membership",
+      "depth": 32,
+      "fixture_count": 768,
+      "all_hashes_sha256": "b0454a4fb31442e32de09de5e958bbdd73a81452a1039cf5ac9227d497ca1f53",
+      "encoded_proof_bytes_min": 182132,
+      "encoded_proof_bytes_max": 182132,
+      "encoded_proof_bytes_median": 182132.0
+    },
+    {
+      "kind": "nonmembership",
+      "depth": 32,
+      "fixture_count": 768,
+      "all_hashes_sha256": "85a5fa3ffeef61ee55400213a73690d19b12507d848a72f647cd03cbdf46387f",
+      "encoded_proof_bytes_min": 182132,
+      "encoded_proof_bytes_max": 182132,
+      "encoded_proof_bytes_median": 182132.0
+    },
+    {
+      "kind": "update",
+      "depth": 32,
+      "fixture_count": 768,
+      "all_hashes_sha256": "5067765f3693b55a1b6d6658b10e1dd79fe623e526b5bb7f89f4b4cc69e595a3",
+      "encoded_proof_bytes_min": 201086,
+      "encoded_proof_bytes_max": 201086,
+      "encoded_proof_bytes_median": 201086.0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_coeffs_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.004
+      },
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_into_iter_ref_slice_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_next_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_observe_ext": { "prover": "alt-ergo", "time": 0.006 },
+      "vc_observe_round_poly_Transcript": {
+        "prover": "alt-ergo",
+        "time": 0.019
+      }
+    }
+  }
+}

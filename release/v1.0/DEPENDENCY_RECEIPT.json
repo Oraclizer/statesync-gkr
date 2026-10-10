@@ -1,0 +1,32 @@
+{
+  "schema": "statesync-gkr.dependency-receipt.v1",
+  "status": "PASS_FULL_LOCKED_METADATA",
+  "lockfile": {
+    "path": "Cargo.lock",
+    "bytes": 26105,
+    "sha256": "547c7d1c98aa2c95be22a4328cb0f5da77005ea7eaa538fffb87cf87042fb450",
+    "package_records": 112
+  },
+  "full_locked_metadata": {
+    "command": "cargo metadata --locked --format-version 1",
+    "status": "PASS",
+    "package_count": 112,
+    "resolve_node_count": 112,
+    "workspace_package_count": 9,
+    "evidence": {
+      "bytes": 485387,
+      "sha256": "2b2ee01a6059a12e43b51e73e899e3d256a7bf5cb22ed6374dcb43fb3bcfb13d"
+    }
+  },
+  "active_normal_build_dev_graph": {
+    "status": "PASS",
+    "unique_package_count": 92,
+    "definition": "union of packages reachable through normal, build, and development dependency edges for the release workspace",
+    "evidence": {
+      "bytes": 1676,
+      "sha256": "a4db079a8103b80c2005de09d367a14211e3327dbf650a0e9bfa62a2b290ca9d"
+    }
+  },
+  "network_used_by_package_finalization": false,
+  "conclusion": "The exact lock inventory, full resolved metadata graph, and 92-package active graph are complete for this candidate."
+}

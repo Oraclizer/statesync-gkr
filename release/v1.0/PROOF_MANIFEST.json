@@ -1,0 +1,54 @@
+{
+  "schema": "statesync-gkr.public-proof-manifest.v1",
+  "status": "LOCAL_ATTACHMENT_HASH_VERIFIED_NOT_PUBLISHED",
+  "program_identity": {
+    "program_binary_bytes": 706152,
+    "program_binary_sha256": "7dcb6d1ddd47618f65a250361a4b9e3fdb77be1104f51c66225b78e114c7a9ba",
+    "image_id": "dd947fec1fe270c41bc0457912e1e77427c16797ac47dc6a1c825a9323648643",
+    "raw_guest_elf_sha256": "ab6fcf8796d12bddec6eb3fb3a6115272eaada997a40014e3a984384b1897f81",
+    "methods_source_sha256": "a749506bb1c68a13b718f4678af3884fc43cc1fb7e2fa16cae177a191186b5db",
+    "host_binary_sha256": "5e6e8969b3dc12a49972ef79f577af10fa642e2b0e394e802174abfaa415fdf8",
+    "diagnostic_program_binary_sha256": "99bc2a68e6ca656cbd69e949c1489ff4b6b8f227c6fdc37d0dc18c211d18a7cf",
+    "diagnostic_raw_guest_elf_sha256": "cadb6596855987ef6a7a2b19ab7c5e7f2330cc841ffe4da9c9cccb23ce99ca8b"
+  },
+  "proof": {
+    "asset_name": "statesync-gkr-v1.0-proof.cbor",
+    "format": "RISC Zero v3 inner-only CBOR",
+    "bytes": 279130,
+    "sha256": "2ed107368d0e3cc2f23b4c8366ac7f5992115fa37a2abbd33953fbb78330582a",
+    "tracked_in_source_tree": false,
+    "current_check": "SIZE_AND_SHA256_PASS",
+    "cryptographic_local_verification": "RECORDED_PRIOR_NOT_RERUN_IN_THIS_PACKAGE"
+  },
+  "public_statement": {
+    "raw192_bytes": 192,
+    "raw192_sha256": "959550f3847e15ae2d69ab027d8ef59621282eeb758746262205fa3f61b38721",
+    "statement_leaf": "b4b058ae36bcc8357241b0c308630d7ba203bd47726edbad5ed16b04afeb8492",
+    "route_id": "27b40b99a41976f061e94124b84cc8c43ee4e5ed6bad2e94267057e1d375f2ef"
+  },
+  "public_verifier_observation": {
+    "network": "zkVerify Volta",
+    "runtime_spec_version": 2000000,
+    "submission_extrinsic": "#6726328-3",
+    "submission_hash": "0x40f6def8c52f2b86fb5ca6321d5f0a6fe9f6ee0b39d7eee629ea8a514d5ec68c",
+    "finalized_block": 6726328,
+    "aggregation_domain_id": 2,
+    "aggregation_id": 53668,
+    "result": "RECORDED_SUCCESS_NOT_REPLAYED_IN_THIS_PACKAGE"
+  },
+  "receipt_observation": {
+    "event": "#6726351-31",
+    "block": 6726351,
+    "root": "7c609ffcf63004e1203188d6fbed6f5431fa344d6f90990c2c45a6db3bbc466e",
+    "leaf_count": 1,
+    "leaf_index": 0,
+    "merkle_path": [],
+    "independent_root_equality": true
+  },
+  "claim_ceiling": {
+    "production_activated": false,
+    "destination_consensus_verified": false,
+    "secondary_finalized": false,
+    "custody_restore_pass": true
+  }
+}

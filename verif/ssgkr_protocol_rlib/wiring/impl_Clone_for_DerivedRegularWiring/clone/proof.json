@@ -1,0 +1,16 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_DerivedLayer": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_clone_DerivedRegularWiring": {
+        "prover": "alt-ergo",
+        "time": 0.016
+      },
+      "vc_clone_Vec_DerivedLayer_Global": {
+        "prover": "alt-ergo",
+        "time": 0.016
+      }
+    }
+  }
+}

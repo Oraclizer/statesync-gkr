@@ -1,0 +1,21 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_emit_permutation": null,
+      "vc_external_final_rc": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_external_initial_rc": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_external_matrix": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_fused_round": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_internal_matrix": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_internal_rc": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_into_iter_Range_usize": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_lane0_rc": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_linear_layer": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_next_Range_usize": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_set_MONTY_ZERO": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

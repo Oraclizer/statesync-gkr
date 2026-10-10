@@ -1,0 +1,65 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_accepts": { "prover": "alt-ergo", "time": 0.018 },
+      "vc_build_input_vector": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_call_closure0": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_clone_LeafPayload": { "prover": "alt-ergo", "time": 0.018 },
+      "vc_closure0": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_deref_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_elim_Membership": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_elim_Ok": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_elim_Ok'0": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_elim_Update": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_encode": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_eq_AssetId": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_eq_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_eq_Result_Digest_MontyField31_KoalaBearParameters_HashError": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_eq_ref_LeafState": { "prover": "alt-ergo", "time": 0.022 },
+      "vc_from_elem_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_hash_leaf_Poseidon2Gadget": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_index_Vec_Layer_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.004
+      },
+      "vc_is_ok_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.021
+      },
+      "vc_is_zero_claim": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_kind": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_kind_tag": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_new": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_new'0": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_observe_circuit_digest": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_observe_final_mle_trace": { "prover": "alt-ergo", "time": 0.018 },
+      "vc_observe_many": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_observe_protocol_trace": { "prover": "alt-ergo", "time": 0.021 },
+      "vc_observe_public_inputs": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_op_key": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_public_inputs_match": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_set_AllZeroVector": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_set_DOMAIN_TAG_V01": { "prover": "alt-ergo", "time": 0.022 },
+      "vc_set_MONTY_ZERO": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.019 },
+      "vc_verify_DerivedRegularWiring": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_verify_sync_op_with_derived_body": null
+    }
+  }
+}

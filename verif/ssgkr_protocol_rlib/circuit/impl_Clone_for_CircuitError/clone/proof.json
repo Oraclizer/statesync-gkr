@@ -1,0 +1,11 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_clone_CircuitError": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_clone_usize": { "prover": "alt-ergo", "time": 0.0 },
+      "vc_elim_InputWidthMismatch": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_elim_WireOutOfRange": { "prover": "alt-ergo", "time": 0.004 }
+    }
+  }
+}

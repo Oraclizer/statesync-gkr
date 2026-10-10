@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"https://www.why3.org/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="CVC4" version="" timelimit="0.048177" memlimit="1000"/>
+<prover id="1" name="CVC5" version="" timelimit="0.072333" memlimit="1000"/>
+<prover id="2" name="Z3" version="" timelimit="1.09312" memlimit="1000"/>
+<prover id="3" name="Alt-Ergo" version="" timelimit="0.959206" memlimit="1000"/>
+<file format="coma">
+<path name=".."/><path name="smt_valid_native.coma"/>
+<theory name="Coma">
+ <goal name="vc_elim_Update" proved="true">
+ <proof prover="3"><result status="valid" time="0.010635" steps="0"/></proof>
+ </goal>
+ <goal name="vc_eq_LeafState" proved="true">
+ <proof prover="3"><result status="valid" time="0.019452" steps="5"/></proof>
+ </goal>
+ <goal name="vc_compute_root_H" proved="true">
+ <proof prover="3"><result status="valid" time="0.006963" steps="7"/></proof>
+ </goal>
+ <goal name="vc_branch_Result_Digest_MontyField31_KoalaBearParameters_SmtError" proved="true">
+ <proof prover="3"><result status="valid" time="0.013852" steps="7"/></proof>
+ </goal>
+ <goal name="vc_elim_Break" proved="true">
+ <proof prover="3"><result status="valid" time="0.013256" steps="7"/></proof>
+ </goal>
+ <goal name="vc_from_SmtError" proved="true">
+ <proof prover="3"><result status="valid" time="0.019214" steps="7"/></proof>
+ </goal>
+ <goal name="vc_from_residual_Result_bool_SmtError" proved="true">
+ <proof prover="3"><result status="valid" time="0.016493" steps="7"/></proof>
+ </goal>
+ <goal name="vc_elim_Continue" proved="true">
+ <proof prover="3"><result status="valid" time="0.017112" steps="7"/></proof>
+ </goal>
+ <goal name="vc_eq_Digest_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.021100" steps="7"/></proof>
+ </goal>
+ <goal name="vc_elim_NonMembership" proved="true">
+ <proof prover="3"><result status="valid" time="0.020648" steps="7"/></proof>
+ </goal>
+ <goal name="vc_eq_ref_Digest_MontyField31_KoalaBearParameters" proved="true">
+ <proof prover="3"><result status="valid" time="0.017689" steps="7"/></proof>
+ </goal>
+ <goal name="vc_elim_Membership" proved="true">
+ <proof prover="3"><result status="valid" time="0.011183" steps="7"/></proof>
+ </goal>
+ <goal name="vc_clone_LeafPayload" proved="true">
+ <proof prover="3"><result status="valid" time="0.021862" steps="7"/></proof>
+ </goal>
+ <goal name="vc_smt_valid_native_H">
+ <transf name="compute_specified" >
+  <goal name="vc_smt_valid_native_H.0">
+  <transf name="split_vc" >
+   <goal name="vc_smt_valid_native_H.0.0" expl="clone &#39;self&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.017882" steps="63"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.1" expl="eq_LeafState requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.022357" steps="33"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.2" expl="compute_root_H requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.008978" steps="33"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.3" expl="branch &#39;self_&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.012272" steps="35"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.4" expl="eq_ref_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.016494" steps="32"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.5" expl="eq_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.017282" steps="107"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.6" expl="smt_valid_native ensures">
+   <transf name="split_vc" >
+    <goal name="vc_smt_valid_native_H.0.6.0" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.012277" steps="44"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.6.1" expl="smt_valid_native ensures">
+    <proof prover="0" timelimit="0.042033"><result status="unknown" time="0.042033" steps="0"/></proof>
+    <proof prover="1"><result status="unknown" time="0.072333" steps="0"/></proof>
+    <proof prover="2" timelimit="0.15493"><result status="unknown" time="0.154930" steps="0"/></proof>
+    <proof prover="3"><result status="timeout" time="0.959206" steps="0"/></proof>
+    <transf name="split_vc" >
+     <goal name="vc_smt_valid_native_H.0.6.1.0" expl="smt_valid_native ensures">
+     <proof prover="0" timelimit="0.044219"><result status="unknown" time="0.044219" steps="0"/></proof>
+     <proof prover="1" timelimit="0.061278"><result status="unknown" time="0.061278" steps="0"/></proof>
+     <proof prover="2" timelimit="2.18625"><result status="timeout" time="2.186247" steps="0"/></proof>
+     <proof prover="3" timelimit="1.91841"><result status="timeout" time="1.918413" steps="0"/></proof>
+     </goal>
+    </transf>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.6.2" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.012426" steps="44"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.6.3" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.010031" steps="51"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.6.4" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.009232" steps="56"/></proof>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.7" expl="elim Continue" proved="true">
+   <proof prover="3"><result status="valid" time="0.016778" steps="41"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.8" expl="from_residual &#39;residual&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.022575" steps="131"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.9" expl="smt_valid_native ensures" proved="true">
+   <proof prover="3"><result status="valid" time="0.085791" steps="1607"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.10" expl="elim Break" proved="true">
+   <proof prover="3"><result status="valid" time="0.007687" steps="41"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.11" expl="type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.014419" steps="24"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.12" expl="elim Membership" proved="true">
+   <proof prover="3"><result status="valid" time="0.014992" steps="91"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.13" expl="elim Membership" proved="true">
+   <proof prover="3"><result status="valid" time="0.009017" steps="73"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.14" expl="elim NonMembership" proved="true">
+   <proof prover="3"><result status="valid" time="0.011215" steps="65"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.15" expl="eq_LeafState requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.024331" steps="186"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.16" expl="compute_root_H requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.012734" steps="133"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.17" expl="branch &#39;self_&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.018982" steps="36"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.18" expl="compute_root_H requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.019843" steps="161"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.19" expl="branch &#39;self_&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.016516" steps="41"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.20" expl="eq_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.015046" steps="154"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.21" expl="eq_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.014682" steps="157"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.22" expl="smt_valid_native ensures">
+   <transf name="split_vc" >
+    <goal name="vc_smt_valid_native_H.0.22.0" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.011363" steps="59"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.22.1" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.018164" steps="66"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.22.2" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.013926" steps="59"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.22.3" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.011096" steps="59"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.22.4" expl="smt_valid_native ensures">
+    <proof prover="0" timelimit="0.047214"><result status="unknown" time="0.047214" steps="0"/></proof>
+    <proof prover="1" timelimit="0.075495"><result status="unknown" time="0.075495" steps="0"/></proof>
+    <proof prover="2"><result status="timeout" time="1.093124" steps="0"/></proof>
+    <proof prover="3"><result status="timeout" time="0.959206" steps="0"/></proof>
+    <transf name="compute_specified" >
+     <goal name="vc_smt_valid_native_H.0.22.4.0" expl="smt_valid_native ensures">
+     <proof prover="0" timelimit="0.043144"><result status="unknown" time="0.043144" steps="0"/></proof>
+     <proof prover="1" timelimit="0.079419"><result status="unknown" time="0.079419" steps="0"/></proof>
+     <proof prover="2"><result status="timeout" time="1.093124" steps="0"/></proof>
+     <proof prover="3"><result status="timeout" time="0.959206" steps="0"/></proof>
+     <transf name="split_vc" >
+      <goal name="vc_smt_valid_native_H.0.22.4.0.0" expl="smt_valid_native ensures">
+      <proof prover="0"><result status="unknown" time="0.048177" steps="0"/></proof>
+      <proof prover="1" timelimit="0.069902"><result status="unknown" time="0.069902" steps="0"/></proof>
+      <proof prover="2" timelimit="2.18625"><result status="timeout" time="2.186247" steps="0"/></proof>
+      <proof prover="3" timelimit="1.91841"><result status="timeout" time="1.918413" steps="0"/></proof>
+      </goal>
+     </transf>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.23" expl="elim Continue" proved="true">
+   <proof prover="3"><result status="valid" time="0.011525" steps="50"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.24" expl="from_residual &#39;residual&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.012724" steps="183"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.25" expl="smt_valid_native ensures" proved="true">
+   <proof prover="3"><result status="valid" time="0.135675" steps="3400"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.26" expl="elim Break" proved="true">
+   <proof prover="3"><result status="valid" time="0.013846" steps="49"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.27" expl="elim Continue" proved="true">
+   <proof prover="3"><result status="valid" time="0.016122" steps="43"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.28" expl="from_residual &#39;residual&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.021690" steps="151"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.29" expl="smt_valid_native ensures" proved="true">
+   <proof prover="3"><result status="valid" time="0.101798" steps="2393"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.30" expl="elim Break" proved="true">
+   <proof prover="3"><result status="valid" time="0.017497" steps="42"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.31" expl="elim Update" proved="true">
+   <proof prover="3"><result status="valid" time="0.007584" steps="131"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.32" expl="elim Update" proved="true">
+   <proof prover="3"><result status="valid" time="0.014755" steps="107"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.33" expl="elim Update" proved="true">
+   <proof prover="3"><result status="valid" time="0.010566" steps="83"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.34" expl="compute_root_H requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.018161" steps="27"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.35" expl="branch &#39;self_&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.014874" steps="30"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.36" expl="eq_ref_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.012230" steps="24"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.37" expl="eq_Digest_MontyField31_KoalaBearParameters requires" proved="true">
+   <proof prover="3"><result status="valid" time="0.017903" steps="95"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.38" expl="smt_valid_native ensures" proved="true">
+   <transf name="split_vc" proved="true" >
+    <goal name="vc_smt_valid_native_H.0.38.0" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.009418" steps="36"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.38.1" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.014391" steps="49"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.38.2" expl="smt_valid_native ensures" proved="true">
+    <transf name="split_vc" proved="true" >
+     <goal name="vc_smt_valid_native_H.0.38.2.0" expl="smt_valid_native ensures" proved="true">
+     <proof prover="3"><result status="valid" time="0.013108" steps="40"/></proof>
+     </goal>
+     <goal name="vc_smt_valid_native_H.0.38.2.1" expl="smt_valid_native ensures" proved="true">
+     <proof prover="3"><result status="valid" time="0.014639" steps="34"/></proof>
+     </goal>
+     <goal name="vc_smt_valid_native_H.0.38.2.2" expl="smt_valid_native ensures" proved="true">
+     <proof prover="3"><result status="valid" time="0.014418" steps="40"/></proof>
+     </goal>
+    </transf>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.38.3" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.008135" steps="42"/></proof>
+    </goal>
+    <goal name="vc_smt_valid_native_H.0.38.4" expl="smt_valid_native ensures" proved="true">
+    <proof prover="3"><result status="valid" time="0.017820" steps="48"/></proof>
+    </goal>
+   </transf>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.39" expl="elim Continue" proved="true">
+   <proof prover="3"><result status="valid" time="0.015107" steps="34"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.40" expl="from_residual &#39;residual&#39; type invariant" proved="true">
+   <proof prover="3"><result status="valid" time="0.019535" steps="90"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.41" expl="smt_valid_native ensures" proved="true">
+   <proof prover="3"><result status="valid" time="0.083754" steps="1299"/></proof>
+   </goal>
+   <goal name="vc_smt_valid_native_H.0.42" expl="elim Break" proved="true">
+   <proof prover="3"><result status="valid" time="0.016922" steps="33"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>

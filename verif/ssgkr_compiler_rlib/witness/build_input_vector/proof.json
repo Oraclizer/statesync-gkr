@@ -1,0 +1,112 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_acc": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_acc2": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_acc_chain": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_branch_Result_Vec_Digest_MontyField31_KoalaBearParameters_Global_SmtError": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_branch_Result_Vec_MontyField31_KoalaBearParameters_Global_HashError": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_build_input_vector": null,
+      "vc_deref_Vec_Digest_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_deref_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_deref_mut_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.01
+      },
+      "vc_elim_Break": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_elim_Break'0": { "prover": "alt-ergo", "time": 0.018 },
+      "vc_elim_Continue": { "prover": "alt-ergo", "time": 0.008 },
+      "vc_elim_Continue'0": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_elim_Some": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_elim_Some'0": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_elim_Update": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_encode": { "prover": "alt-ergo", "time": 0.013 },
+      "vc_enumerate_IntoIter_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.018
+      },
+      "vc_enumerate_Iter_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_from_SmtError": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_from_SmtError'0": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_from_elem_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.011
+      },
+      "vc_from_residual_Result_Vec_MontyField31_KoalaBearParameters_Global_SmtError": {
+        "prover": "alt-ergo",
+        "time": 0.014
+      },
+      "vc_from_residual_Result_Vec_MontyField31_KoalaBearParameters_Global_SmtError'0": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_from_u32_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.018
+      },
+      "vc_index_mut_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_into_iter_Enumerate_IntoIter_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.013
+      },
+      "vc_into_iter_Enumerate_Iter_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.008
+      },
+      "vc_into_iter_Vec_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.009
+      },
+      "vc_iter_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_key_bit": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_kind": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_leaf_fold": { "prover": "alt-ergo", "time": 0.012 },
+      "vc_leaf_pre": { "prover": "alt-ergo", "time": 0.014 },
+      "vc_leaf_pre2": { "prover": "alt-ergo", "time": 0.019 },
+      "vc_len_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.007
+      },
+      "vc_new": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_new'0": { "prover": "alt-ergo", "time": 0.007 },
+      "vc_next_Enumerate_IntoIter_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.016
+      },
+      "vc_next_Enumerate_Iter_Digest_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.017
+      },
+      "vc_op_key": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_put_digest": { "prover": "alt-ergo", "time": 0.015 },
+      "vc_root": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_root2": { "prover": "alt-ergo", "time": 0.019 },
+      "vc_set_MONTY_ZERO": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.01 },
+      "vc_sib": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_value_digest'0": { "prover": "alt-ergo", "time": 0.011 }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_len_Op": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_push_Op": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_push_Option_FamilyTag": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_push_tagged": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_push_usize": { "prover": "alt-ergo", "time": 0.016 }
+    }
+  }
+}

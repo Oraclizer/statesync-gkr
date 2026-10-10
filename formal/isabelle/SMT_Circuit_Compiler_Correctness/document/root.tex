@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{isabelle,isabellesym}
+
+\usepackage{a4wide}
+\usepackage{amssymb}
+
+% this should be the last package used
+\usepackage{pdfsetup}
+
+% urls in roman style, theory text in math-similar italics
+\urlstyle{rm}
+\isabellestyle{it}
+
+\begin{document}
+
+\title{Correctness of a Sparse-Merkle-Tree Verification-Circuit Compiler}
+\author{Jinwook Kim}
+
+\maketitle
+
+\begin{abstract}
+A verification-circuit compiler turns sparse-Merkle-tree operations
+(membership, non-membership, single-leaf update) into layered
+arithmetic circuits whose acceptance is meant to coincide with the
+native semantics of the operation: the circuit accepts a witness
+encoding exactly when the operation holds between the claimed roots.
+This entry mechanizes that claim and its composition with the GKR
+protocol assembly of the parent session.
+
+The development covers: the native semantics of sparse-Merkle-tree
+operations (path verification against abstract leaf and node hashes);
+a deep-embedded model of the compiler emitting one residual output
+layer (equality, booleanity and tag residuals) over an evaluation
+stack computing the in-circuit hash images and key-bit multiplexers;
+Theorem A, the deterministic equivalence between circuit acceptance
+and the native semantics, split into an acceptance-to-constraint stage
+and a constraint-to-semantics stage, packaged as soundness and
+completeness of a verifier model that mirrors the public-input checks
+of the surrounding verifier; an injectivity lemma for the fixed-width
+leaf pre-image encoding, reducing leaf-hash collisions to collisions
+of the underlying sponge; and Theorem C, the composition bounding the
+probability that the GKR chain accepts a semantically invalid
+operation, for any adversary, by
+$(r + \sum_i (2 s_i d + 1))/|\mathbb{F}|$.
+
+No collision resistance or injectivity of the hashes is assumed
+anywhere in Theorem A: the equivalence is deterministic, with the
+hashes as abstract parameters.  The hash sub-circuits of the
+evaluation stack are specified by a generator-correctness assumption
+and remain otherwise abstract.
+
+Every locale of the development is inhabited by a concrete instance, so
+none of the theorems is vacuously true.  In particular the compiler
+model is interpreted over the KoalaBear prime field
+$\mathrm{GF}(2^{31} - 2^{24} + 1)$, the wire field of the production
+prover, with an explicit gate list whose evaluation provably equals the
+specification vectors; Theorem A is exercised there on a concrete
+membership operation, and Theorem C fires with each of its premises
+discharged for a concrete, semantically unsatisfiable update, the
+representative degree bound being supplied by the polynomial
+interpolation of the parent session.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+% sane default for proof documents
+\parindent 0pt\parskip 0.5ex
+
+% generated text of all theories
+\input{session}
+
+\end{document}

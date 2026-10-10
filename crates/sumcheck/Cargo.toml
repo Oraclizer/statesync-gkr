@@ -1,0 +1,25 @@
+[package]
+name = "ssgkr-sumcheck"
+description = "Multilinear sumcheck prover/verifier, structured to refine the AFP Sumcheck_Protocol abstraction"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+# Field traits + transcript come through the adapter; this crate must not
+# name p3-* directly and MUST NOT depend on ssgkr-compiler (no workload
+# assumptions in the generic layer).
+ssgkr-primitives.workspace = true
+
+# Creusot contracts (FV refinement track, R2 sumcheck anchors, seal S-2).
+# cfg(creusot)-gated: compiled only under `cargo creusot`, invisible to
+# normal builds on every platform (see the workspace manifest note).
+[target.'cfg(creusot)'.dependencies]
+creusot-std.workspace = true
+
+[lints]
+workspace = true

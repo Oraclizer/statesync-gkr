@@ -1,0 +1,72 @@
+{
+  "schema": "statesync-gkr.advisory-receipt.v1",
+  "status": "PASS_WITH_REVIEWED_PROFILE_NOT_AFFECTED_AND_INFORMATIONAL_WARNING",
+  "tools": {
+    "cargo_audit": {
+      "version": "0.22.2",
+      "official_artifact_sha256_prefix": "ab28a1bd",
+      "full_artifact_sha256_status": "NOT_PROVIDED_TO_PACKAGE_WRITER"
+    },
+    "osv_scanner": {
+      "version": "2.4.0",
+      "source_commit_prefix": "b56b519",
+      "official_artifact_sha256_prefix": "15314940",
+      "full_artifact_identity_status": "PREFIX_ONLY_PROVIDED_TO_PACKAGE_WRITER"
+    }
+  },
+  "rustsec": {
+    "database_commit": "42ead52aed439b170e1b8c8f9eab6735a93061d7",
+    "database_commit_timestamp": "2026-08-20T17:52:09+02:00",
+    "lock_dependency_count": 112,
+    "vulnerability_count": 0,
+    "informational_warnings": [
+      {
+        "id": "RUSTSEC-2024-0436",
+        "package": "paste 1.0.15",
+        "kind": "unmaintained",
+        "disposition": "INFORMATIONAL_OPEN"
+      }
+    ],
+    "ignore_rules": [],
+    "evidence": {
+      "bytes": 1733,
+      "sha256": "4dc1e1cc20c6a0290d4991f4a77d845fe6a4768e4ac198c8d21be6ca5506d570"
+    }
+  },
+  "osv": {
+    "findings": [
+      {
+        "id": "GHSA-3g92-f9ch-qjcm",
+        "package": "p3-symmetric 0.4.3",
+        "severity": "LOW",
+        "cvss_v4": 2.9,
+        "scanner_disposition": "REVIEWED_APPLICABILITY",
+        "application_profile_disposition": "PROFILE_NOT_AFFECTED",
+        "claimed_path": "HashGadget::hash_leaf",
+        "reason": [
+          "The claimed production path calls leaf_fold before hash_leaf_pre.",
+          "leaf_fold emits leaf_pre_width, which is fixed by the configured bound and is a multiple of sponge rate 8.",
+          "The original encoding length is bound in lane 1 and oversized encodings reject.",
+          "Production compiler and witness call sites use the HashGadget path.",
+          "Existing structural, injectivity, and state-separation tests pass for this profile."
+        ],
+        "residual_limitation": "Poseidon2Gadget::hash_leaf_pre is a direct public low-level API with a documented fixed-width/rate-multiple precondition enforced only by debug assertions. It is outside the claimed HashGadget path; callers that violate the precondition are not covered by PROFILE_NOT_AFFECTED.",
+        "suppressed_or_ignored": false
+      },
+      {
+        "id": "RUSTSEC-2024-0436",
+        "package": "paste 1.0.15",
+        "severity": "INFORMATIONAL",
+        "disposition": "UNMAINTAINED_OPEN",
+        "suppressed_or_ignored": false
+      }
+    ],
+    "evidence": {
+      "bytes": 9497,
+      "sha256": "2bd2fb81f05628c6c391f4713a49cd499ac9735603abcee621b55ec1883e1b8d"
+    }
+  },
+  "network_used_by_package_finalization": false,
+  "package_wide_vulnerability_absence_claim": false,
+  "conclusion": "RustSec reports zero vulnerabilities and one unmaintained warning. OSV reports one low advisory whose variable-length condition is outside the claimed fixed-width HashGadget profile, plus the same unmaintained package. The low-level public API precondition remains documented; no ignore or suppression was used."
+}

@@ -1,0 +1,14 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_call_once_F": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_elim_Err": { "prover": "alt-ergo", "time": 0.017 },
+      "vc_elim_Ok": { "prover": "alt-ergo", "time": 0.016 },
+      "vc_extern_spec_T_E_Result_T_E_map_body_T": {
+        "prover": "alt-ergo",
+        "time": 0.02
+      }
+    }
+  }
+}

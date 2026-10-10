@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1450" viewBox="0 0 600 1450" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet">
+  <title id="title">Theorem composition in StateSync-GKR for narrow screens</title>
+  <desc id="desc">Compiler correctness and reduction soundness join and compose into one bound on the full state-to-proof path, discharged on a concrete non-vacuous instance. Batching is a pointwise identity across that path.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061513"/><stop offset="1" stop-color="#12312d"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#75e3b0"/></marker>
+    <style>.stage{fill:#091d1b;stroke:#2b5753;stroke-width:2}.card{fill:#0a2224;stroke:#3d7669;stroke-width:2}.blue{fill:#0b232b;stroke:#398097;stroke-width:2}.compose{fill:#12312d;stroke:#75e3b0;stroke-width:2}.title{font:750 28px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.label{font:700 20px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.text{font:17px Inter,Segoe UI,Arial,sans-serif;fill:#d5e4e0}.small{font:14px Inter,Segoe UI,Arial,sans-serif;fill:#9db6b2}.eyebrow{font:700 13px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1.6px;fill:#75e3b0}.flow{fill:none;stroke:#75e3b0;stroke-width:3;marker-end:url(#arrow)}.link{fill:none;stroke:#66b8d2;stroke-width:3}</style>
+  </defs>
+  <rect width="600" height="1450" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="598" height="1448" rx="23" fill="none" stroke="#2b5753" stroke-width="2"/>
+  <text class="title" x="30" y="52">Theorem composition</text>
+  <text class="small" x="30" y="82">Four results carry the state-to-proof component</text>
+
+  <rect class="stage" x="24" y="112" width="552" height="908" rx="22"/>
+  <text class="eyebrow" x="48" y="150">COMPOSITION PATH</text>
+  <rect class="card" x="48" y="174" width="504" height="170" rx="16"/>
+  <text class="eyebrow" x="72" y="208">THEOREM A · COMPILER CORRECTNESS</text>
+  <text class="label" x="72" y="244">Compiler correctness, both directions</text>
+  <text class="text" x="72" y="276">A witness is accepted exactly when</text><text class="text" x="72" y="302">the modeled semantics hold.</text>
+  <text class="small" x="72" y="328">theorem_A_soundness · theorem_A_completeness</text>
+
+  <rect class="blue" x="48" y="374" width="504" height="180" rx="16"/>
+  <text class="eyebrow" x="72" y="408" fill="#66b8d2">THEOREM B · REDUCTION SOUNDNESS</text>
+  <text class="label" x="72" y="444">A wrong output survives only within the bound</text>
+  <text class="text" x="72" y="476">The claim holds against an arbitrary prover;</text><text class="text" x="72" y="502">the bound is derived, not assumed.</text>
+  <text class="small" x="72" y="530">Sumcheck_Instance · Wiring_MLE · GKR_Assembly</text>
+
+  <path class="link" d="M552 259h18v363H340M552 464h18"/>
+  <polygon points="300,582 340,622 300,662 260,622" fill="#0b232b" stroke="#66b8d2" stroke-width="2"/>
+  <text class="small" x="300" y="627" text-anchor="middle">A + B</text>
+  <path class="flow" d="M300 662v38"/>
+  <rect class="compose" x="48" y="704" width="504" height="190" rx="16"/>
+  <text class="eyebrow" x="72" y="738">THEOREM C · FULL STATE-TO-PROOF PATH</text>
+  <text class="label" x="72" y="776">One bound on the whole path</text>
+  <text class="text" x="72" y="810">Compiler correctness and reduction soundness</text><text class="text" x="72" y="836">compose into one bound, exercised where no</text><text class="text" x="72" y="862">witness can satisfy the operation.</text>
+  <path class="flow" d="M300 894v42"/>
+  <rect class="blue" x="48" y="940" width="504" height="60" rx="14"/><text class="text" x="300" y="977" text-anchor="middle">Concrete non-vacuous instances discharge every premise</text>
+
+  <rect class="stage" x="24" y="1064" width="552" height="224" rx="22"/>
+  <text class="eyebrow" x="48" y="1104">THEOREM D · BATCHING</text>
+  <text class="label" x="48" y="1142">Pointwise identity across the whole path</text>
+  <text class="text" x="48" y="1178">Every proof from the independent-job batch path</text><text class="text" x="48" y="1204">equals the single-job proof for the same job.</text>
+  <text class="small" x="48" y="1242">GKR_Batching.thy · session GKR_Protocol</text>
+
+  <rect x="24" y="1332" width="552" height="82" rx="16" fill="#12312d" stroke="#2b5753" stroke-width="2"/>
+  <circle cx="48" cy="1360" r="6" fill="#75e3b0"/><text class="small" x="66" y="1366">Non-vacuity is witnessed with concrete KoalaBear instances.</text>
+  <circle cx="48" cy="1390" r="6" fill="#66b8d2"/><text class="small" x="66" y="1396">Results hold in their models under stated assumptions.</text>
+</svg>

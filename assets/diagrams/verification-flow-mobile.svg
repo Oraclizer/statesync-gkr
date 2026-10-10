@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1940" viewBox="0 0 600 1940" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet">
+  <title id="title">StateSync-GKR verification evidence flow for narrow screens</title>
+  <desc id="desc">A vertical evidence architecture connecting Isabelle models through a documented partial mapping to Rust contracts and Creusot replay evidence. Executable tests and external proof, receipt, and bounded CDK L2 evidence remain separate lanes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061513"/><stop offset="1" stop-color="#12312d"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#75e3b0"/></marker>
+    <style>.stage{fill:#091d1b;stroke:#2b5753;stroke-width:2}.card{fill:#0a2224;stroke:#3d7669;stroke-width:2}.model{fill:#102927;stroke:#4f9d84;stroke-width:2}.evidence{fill:#0b232b;stroke:#398097;stroke-width:2}.external{fill:#261e13;stroke:#f4b85f;stroke-width:2;stroke-dasharray:8 6}.nonclaim{fill:#2a1715;stroke:#b65f52;stroke-width:2}.title{font:750 28px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.label{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#f3f7f4}.text{font:16px Inter,Segoe UI,Arial,sans-serif;fill:#d5e4e0}.small{font:14px Inter,Segoe UI,Arial,sans-serif;fill:#9db6b2}.eyebrow{font:700 13px Inter,Segoe UI,Arial,sans-serif;letter-spacing:1.5px;fill:#75e3b0}.flow{fill:none;stroke:#75e3b0;stroke-width:3;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="600" height="1940" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="598" height="1938" rx="23" fill="none" stroke="#2b5753" stroke-width="2"/>
+  <text class="title" x="30" y="52">Verification evidence flow</text>
+  <text class="small" x="30" y="82">Mechanized model · mapped contracts · separate evidence lanes</text>
+
+  <rect class="stage" x="24" y="112" width="552" height="840" rx="22"/>
+  <text class="eyebrow" x="48" y="152">FORMAL MODEL AND MAPPED REFINEMENT LANE</text>
+  <rect class="model" x="84" y="180" width="432" height="96" rx="14"/><text class="label" x="300" y="214" text-anchor="middle">Isabelle model</text><text class="small" x="300" y="241" text-anchor="middle">GKR_Protocol · SMT_Circuit_Compiler_Correctness</text><text class="small" x="300" y="263" text-anchor="middle">machine-checked model results</text>
+  <path class="flow" d="M300 276v38"/>
+  <rect class="model" x="84" y="318" width="432" height="88" rx="14"/><text class="label" x="300" y="351" text-anchor="middle">Documented mapping</text><text class="small" x="300" y="379" text-anchor="middle">model → Rust anchors · scope + trusted boundary</text>
+  <path class="flow" d="M300 406v38"/>
+  <rect class="model" x="84" y="448" width="432" height="88" rx="14"/><text class="label" x="300" y="481" text-anchor="middle">Mapped contracts</text><text class="small" x="300" y="509" text-anchor="middle">cfg(creusot) · selected Rust surfaces</text>
+  <path class="flow" d="M300 536v38"/>
+  <rect class="evidence" x="84" y="578" width="432" height="110" rx="14"/><text class="label" x="300" y="612" text-anchor="middle">Creusot / Why3 evidence</text><text class="small" x="300" y="639" text-anchor="middle">verification-condition discharge</text><text class="small" x="300" y="663" text-anchor="middle">proof.json replay metadata · explicit tool limits</text>
+
+  <rect class="external" x="48" y="732" width="504" height="82" rx="14"/><text class="label" x="72" y="766">AFP Sumcheck_Protocol</text><text class="small" x="72" y="792">external dependency; digest-pinned input</text>
+  <rect class="card" x="48" y="832" width="504" height="90" rx="14"/><text class="label" x="72" y="866">Claim rule</text><text class="small" x="72" y="894">A proof claim names exact sources, assumptions, tools,</text><text class="small" x="72" y="914">and the trusted-computing-base boundary.</text>
+
+  <rect class="stage" x="24" y="1000" width="552" height="230" rx="22"/>
+  <text class="eyebrow" x="48" y="1040">EXECUTABLE EVIDENCE LANE</text>
+  <rect class="evidence" x="48" y="1066" width="504" height="120" rx="14"/><text class="label" x="300" y="1102" text-anchor="middle">Rust test suites</text><text class="small" x="300" y="1130" text-anchor="middle">unit · adversarial · differential · deterministic proof bytes</text><text class="small" x="300" y="1156" text-anchor="middle">runtime conformance and regression evidence</text>
+
+  <rect class="external" x="24" y="1278" width="552" height="230" rx="22"/>
+  <text x="48" y="1318" fill="#f4b85f" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">SEPARATE PROCESS LANE</text>
+  <rect class="external" x="48" y="1344" width="504" height="120" rx="14"/><text class="label" x="300" y="1380" text-anchor="middle">External proof + receipt + CDK L2</text><text class="small" x="300" y="1408" text-anchor="middle">identity, receipt, transition, compatibility evidence</text><text x="300" y="1434" text-anchor="middle" fill="#f4b85f" font-size="14">outside the Isabelle-to-Rust refinement relation</text>
+
+  <rect class="stage" x="24" y="1556" width="552" height="298" rx="22"/>
+  <text class="eyebrow" x="48" y="1596">THIS EVIDENCE DOES NOT ESTABLISH</text>
+  <rect class="nonclaim" x="48" y="1622" width="504" height="48" rx="13"/><circle cx="68" cy="1646" r="6" fill="#db7868"/><text class="text" x="86" y="1652">Poseidon2 or Fiat-Shamir cryptographic security</text>
+  <rect class="nonclaim" x="48" y="1682" width="504" height="48" rx="13"/><circle cx="68" cy="1706" r="6" fill="#db7868"/><text class="text" x="86" y="1712">Whole-current-repository refinement</text>
+  <rect class="nonclaim" x="48" y="1742" width="504" height="48" rx="13"/><circle cx="68" cy="1766" r="6" fill="#db7868"/><text class="text" x="86" y="1772">External backend or network soundness</text>
+  <rect class="nonclaim" x="48" y="1802" width="504" height="48" rx="13"/><circle cx="68" cy="1826" r="6" fill="#db7868"/><text class="text" x="86" y="1832">L3 proof, Base settlement, or production readiness</text>
+  <text class="small" x="30" y="1900">Evidence lanes are complementary. They are not interchangeable proof claims.</text>
+</svg>

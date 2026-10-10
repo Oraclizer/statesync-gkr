@@ -1,0 +1,850 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Oraclizer/statesync-gkr/blob/main/docs/encoding/risc0-route-b-destination-policy-v1.schema.json",
+  "title": "RISC Zero Route B destination receipt policy vector v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "vector_version",
+    "hash_algorithm",
+    "integer_encoding",
+    "source_identity",
+    "authorization",
+    "configured_signers",
+    "threshold",
+    "attesting_signers",
+    "attesting_signatures",
+    "receipt_fixture",
+    "pfr_only_digest",
+    "pfr_only_signer",
+    "pfr_only_signature",
+    "settlement_claim_fixture",
+    "negative_cases",
+    "expected"
+  ],
+  "properties": {
+    "vector_version": {
+      "const": 1
+    },
+    "hash_algorithm": {
+      "const": "keccak256"
+    },
+    "integer_encoding": {
+      "const": "fixed-width-big-endian"
+    },
+    "source_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "network_name",
+        "genesis_hash",
+        "runtime_spec_name",
+        "runtime_spec_version",
+        "runtime_transaction_version",
+        "runtime_state_version",
+        "runtime_code_hash"
+      ],
+      "properties": {
+        "network_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "genesis_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "runtime_spec_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 65535
+        },
+        "runtime_spec_version": {
+          "$ref": "#/$defs/u32"
+        },
+        "runtime_transaction_version": {
+          "$ref": "#/$defs/u32"
+        },
+        "runtime_state_version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "runtime_code_hash": {
+          "$ref": "#/$defs/hex32"
+        }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signer_set_epoch",
+        "source_network_id",
+        "source_genesis_hash",
+        "source_runtime_id",
+        "verification_context_hash",
+        "domain_id",
+        "source_block_number",
+        "source_block_hash",
+        "aggregation_id",
+        "root",
+        "leaf_count",
+        "authorization_nonce"
+      ],
+      "properties": {
+        "signer_set_epoch": {
+          "const": 1
+        },
+        "source_network_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "source_genesis_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "source_runtime_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "verification_context_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "domain_id": {
+          "$ref": "#/$defs/u32"
+        },
+        "source_block_number": {
+          "$ref": "#/$defs/u64"
+        },
+        "source_block_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "aggregation_id": {
+          "$ref": "#/$defs/u64"
+        },
+        "root": {
+          "$ref": "#/$defs/hex32"
+        },
+        "leaf_count": {
+          "const": 1
+        },
+        "authorization_nonce": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "configured_signers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/hex20"
+      }
+    },
+    "threshold": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "attesting_signers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/hex20"
+      }
+    },
+    "attesting_signatures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/hex65"
+      }
+    },
+    "receipt_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "leaf_index",
+        "merkle_path"
+      ],
+      "properties": {
+        "statement": {
+          "$ref": "#/$defs/hex32"
+        },
+        "leaf_index": {
+          "const": 0
+        },
+        "merkle_path": {
+          "type": "array",
+          "maxItems": 0,
+          "items": {
+            "$ref": "#/$defs/hex32"
+          }
+        }
+      }
+    },
+    "pfr_only_digest": {
+      "$ref": "#/$defs/hex32"
+    },
+    "pfr_only_signer": {
+      "$ref": "#/$defs/hex20"
+    },
+    "pfr_only_signature": {
+      "$ref": "#/$defs/hex65"
+    },
+    "negative_cases": {
+      "type": "array",
+      "minItems": 33,
+      "maxItems": 33,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "initial_state",
+          "operation",
+          "field",
+          "value",
+          "expected_error",
+          "before_state_digest",
+          "after_state_digest"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "initial_state": {
+            "enum": [
+              "empty",
+              "registered",
+              "consumed"
+            ]
+          },
+          "operation": {
+            "enum": [
+              "construct_policy",
+              "register_recovered",
+              "register_evm_call",
+              "recover_signature",
+              "register_authorization",
+              "validate_attachment",
+              "consume_replay",
+              "register_overflow",
+              "consume_overflow",
+              "validate_settlement_fixture"
+            ]
+          },
+          "field": {
+            "enum": [
+              "configured_signers",
+              "threshold",
+              "attesting_signers",
+            "signatures",
+            "authorization",
+            "signer_set_epoch",
+            "source_network_id",
+            "leaf_count",
+            "authorization_nonce",
+            "receipt_attachment",
+              "replay_keys",
+              "root_counters",
+              "replay_counter",
+              "accepted_root"
+            ]
+          },
+          "value": {
+            "$ref": "#/$defs/mutationValue"
+          },
+          "expected_error": {
+            "type": "string",
+            "minLength": 1
+          },
+          "before_state_digest": {
+            "$ref": "#/$defs/hex32"
+          },
+          "after_state_digest": {
+            "$ref": "#/$defs/hex32"
+          }
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_preimage",
+        "signing_digest",
+        "coordinate_id",
+        "registration_result",
+        "authorization_replay_error",
+        "coordinate_conflict_error",
+        "root_registry_before",
+        "root_registry_after",
+        "root_transition_count_before",
+        "root_transition_count_after",
+        "next_nonce_before",
+        "next_nonce_after",
+        "replay_claim_error",
+        "replay_settlement_error",
+        "replay_claims_before",
+        "replay_claims_after",
+        "replay_settlements_before",
+        "replay_settlements_after",
+        "replay_transition_count_before",
+        "replay_transition_count_after",
+        "raw_statement_sha256",
+        "preclaim_hash",
+        "primary_finality_record_id",
+        "claim_id",
+        "settlement_key",
+        "raw_accepted_root"
+      ],
+      "properties": {
+        "canonical_preimage": {
+          "type": "string",
+          "pattern": "^0x[0-9a-f]{520}$"
+        },
+        "signing_digest": {
+          "$ref": "#/$defs/hex32"
+        },
+        "coordinate_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "registration_result": {
+          "const": "Registered"
+        },
+        "authorization_replay_error": {
+          "const": "AuthorizationReplay"
+        },
+        "coordinate_conflict_error": {
+          "const": "RootConflict"
+        },
+        "root_registry_before": {
+          "const": 0
+        },
+        "root_registry_after": {
+          "const": 1
+        },
+        "root_transition_count_before": {
+          "const": 0
+        },
+        "root_transition_count_after": {
+          "const": 1
+        },
+        "next_nonce_before": {
+          "const": 1
+        },
+        "next_nonce_after": {
+          "const": 2
+        },
+        "replay_claim_error": {
+          "const": "ClaimReplay"
+        },
+        "replay_settlement_error": {
+          "const": "SettlementReplay"
+        },
+        "replay_claims_before": {
+          "const": 0
+        },
+        "replay_claims_after": {
+          "const": 1
+        },
+        "replay_settlements_before": {
+          "const": 0
+        },
+        "replay_settlements_after": {
+          "const": 1
+        },
+        "replay_transition_count_before": {
+          "const": 0
+        },
+        "replay_transition_count_after": {
+          "const": 1
+        },
+        "raw_statement_sha256": {
+          "$ref": "#/$defs/hex32"
+        },
+        "preclaim_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "primary_finality_record_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "claim_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "settlement_key": {
+          "$ref": "#/$defs/hex32"
+        },
+        "raw_accepted_root": {
+          "$ref": "#/$defs/hex32"
+        }
+      }
+    },
+    "settlement_claim_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_statement",
+        "route_id",
+        "primary_transition_id",
+        "source",
+        "destination_chain_id",
+        "destination_consumer",
+        "action_kind",
+        "checkpoint",
+        "session_id",
+        "bvc_id",
+        "accepted_root",
+        "state",
+        "signer_set_epoch",
+        "issuance_height",
+        "supersedes_record_id"
+      ],
+      "properties": {
+        "raw_statement": {
+          "$ref": "#/$defs/hex192"
+        },
+        "route_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "primary_transition_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "source": {
+          "$ref": "#/$defs/hex32"
+        },
+        "destination_chain_id": {
+          "$ref": "#/$defs/u64"
+        },
+        "destination_consumer": {
+          "$ref": "#/$defs/hex32"
+        },
+        "action_kind": {
+          "const": "membership"
+        },
+        "checkpoint": {
+          "$ref": "#/$defs/u64"
+        },
+        "session_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "bvc_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "accepted_root": {
+          "$ref": "#/$defs/hex32"
+        },
+        "state": {
+          "const": "committed"
+        },
+        "signer_set_epoch": {
+          "$ref": "#/$defs/u64"
+        },
+        "issuance_height": {
+          "$ref": "#/$defs/u64"
+        },
+        "supersedes_record_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/hex32"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hex20": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{40}$"
+    },
+    "hex32": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "hex65": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{130}$"
+    },
+    "u32": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "u64": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "hex192": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{384}$"
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signer_set_epoch",
+        "source_network_id",
+        "source_genesis_hash",
+        "source_runtime_id",
+        "verification_context_hash",
+        "domain_id",
+        "source_block_number",
+        "source_block_hash",
+        "aggregation_id",
+        "root",
+        "leaf_count",
+        "authorization_nonce"
+      ],
+      "properties": {
+        "signer_set_epoch": {
+          "const": 1
+        },
+        "source_network_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "source_genesis_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "source_runtime_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "verification_context_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "domain_id": {
+          "$ref": "#/$defs/u32"
+        },
+        "source_block_number": {
+          "$ref": "#/$defs/u64"
+        },
+        "source_block_hash": {
+          "$ref": "#/$defs/hex32"
+        },
+        "aggregation_id": {
+          "$ref": "#/$defs/u64"
+        },
+        "root": {
+          "$ref": "#/$defs/hex32"
+        },
+        "leaf_count": {
+          "const": 1
+        },
+        "authorization_nonce": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        }
+      }
+    },
+    "attachment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "authenticated_root",
+        "leaf_count",
+        "leaf_index",
+        "merkle_path"
+      ],
+      "properties": {
+        "statement": {
+          "$ref": "#/$defs/hex32"
+        },
+        "authenticated_root": {
+          "$ref": "#/$defs/hex32"
+        },
+        "leaf_count": {
+          "$ref": "#/$defs/u32"
+        },
+        "leaf_index": {
+          "$ref": "#/$defs/u32"
+        },
+        "merkle_path": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hex32"
+          }
+        }
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "settlement_key"
+      ],
+      "properties": {
+        "claim_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "settlement_key": {
+          "$ref": "#/$defs/hex32"
+        }
+      }
+    },
+    "rootOverflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "next_authorization_nonce",
+        "root_transition_count",
+        "authorization",
+        "attesting_signers"
+      ],
+      "properties": {
+        "next_authorization_nonce": {
+          "$ref": "#/$defs/u64"
+        },
+        "root_transition_count": {
+          "$ref": "#/$defs/u64"
+        },
+        "authorization": {
+          "$ref": "#/$defs/authorization"
+        },
+        "attesting_signers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hex20"
+          }
+        }
+      }
+    },
+    "replayOverflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "replay_transition_count",
+        "claim_id",
+        "settlement_key"
+      ],
+      "properties": {
+        "replay_transition_count": {
+          "$ref": "#/$defs/u64"
+        },
+        "claim_id": {
+          "$ref": "#/$defs/hex32"
+        },
+        "settlement_key": {
+          "$ref": "#/$defs/hex32"
+        }
+      }
+    },
+    "mutationValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "signer_array"
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/hex20"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "signature_array"
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/hex65"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "u16"
+            },
+            "data": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "u32"
+            },
+            "data": {
+              "$ref": "#/$defs/u32"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "u64"
+            },
+            "data": {
+              "$ref": "#/$defs/u64"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "hex32"
+            },
+            "data": {
+              "$ref": "#/$defs/hex32"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "preset"
+            },
+            "data": {
+              "enum": [
+                "exact_authorization",
+                "conflicting_root_authorization",
+                "reused_next_coordinate_nonce",
+                "skipped_next_coordinate_nonce"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "authorization"
+            },
+            "data": {
+              "$ref": "#/$defs/authorization"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "attachment"
+            },
+            "data": {
+              "$ref": "#/$defs/attachment"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "replay"
+            },
+            "data": {
+              "$ref": "#/$defs/replay"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "root_overflow"
+            },
+            "data": {
+              "$ref": "#/$defs/rootOverflow"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "data"
+          ],
+          "properties": {
+            "kind": {
+              "const": "replay_overflow"
+            },
+            "data": {
+              "$ref": "#/$defs/replayOverflow"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
