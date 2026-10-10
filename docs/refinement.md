@@ -22,13 +22,13 @@ the conjunction of seven observations, namely public-input binding, request
 guards, the zero-output construction, sumcheck consistency and carry
 consistency (both of which record the protocol verifier's result) and the two
 final input-MLE observations. Populating those observations from the actual
-checks happens in the facade body, which exists in test and Creusot
-configurations and whose recorded obligation remains open; ordinary builds
+checks happens in the facade body's test and Creusot form, whose recorded
+obligation remains open; ordinary builds
 retain the short-circuit rejection form.
 
 The sumcheck and per-layer verifier bodies no longer opt out of translation
 as whole functions. The opt-outs are narrowed to explicit foreign-field
-equality seams that are claim-free: they compare field values without stating
+equality seams that are claim-free: they compute and compare field values without stating
 any proof postcondition. Round counts, degrees, rejection branches, transcript
 observation order, carry construction and final claims remain available to
 translation and review. Production wiring-oracle evaluations, transcript
@@ -69,7 +69,7 @@ or an independent security-audit endorsement.
 | Sumcheck control flow | [Sumcheck verifier](../crates/sumcheck/src/lib.rs) | [Recorded verify proof](../verif/ssgkr_sumcheck_rlib/verify/proof.json); foreign-field equality seam remains explicit |
 | Layer sequencing and carry construction | [Layer verifier](../crates/protocol/src/reduce.rs) | [Recorded layer-verifier obligations](../verif/ssgkr_protocol_rlib/reduce/verify/proof.json), including an open `null` leaf |
 | Selected compiler-domain and leaf-width contracts | [Compiler](../crates/compiler/src/compile.rs), [hash layout](../crates/primitives/src/hash.rs) | [Compile proof](../verif/ssgkr_compiler_rlib/compile/compile/proof.json) (relies on the `compile_with_hints` contract, whose record has open obligations), [leaf_pre_width proof](../verif/ssgkr_primitives_rlib/hash/leaf_pre_width/proof.json) |
-| Selected open obligations | [Verification owner](../crates/verification/src/lib.rs), [protocol](../crates/protocol/src/reduce.rs), [compiler](../crates/compiler/src/compile.rs) | [Facade body](../verif/ssgkr_verification_rlib/verify_sync_op_with/proof.json), [derived body](../verif/ssgkr_verification_rlib/verify_sync_op_with_derived_body/proof.json), [leaf fold](../verif/ssgkr_primitives_rlib/hash/leaf_fold/proof.json), [compiler with hints](../verif/ssgkr_compiler_rlib/compile/compile_with_hints/proof.json), [MLE evaluation](../verif/ssgkr_protocol_rlib/mle/mle_eval_base/proof.json), [beta evaluation](../verif/ssgkr_protocol_rlib/reduce/beta_eval/proof.json), [public-input equality refinement](../verif/ssgkr_compiler_rlib/witness/impl_PartialEq_for_PublicInputs/eq__refines/proof.json) |
+| Selected open obligations | [Verification owner](../crates/verification/src/lib.rs), [layer verifier](../crates/protocol/src/reduce.rs), [MLE](../crates/protocol/src/mle.rs), [compiler](../crates/compiler/src/compile.rs), [witness types](../crates/compiler/src/witness.rs) | [Facade body](../verif/ssgkr_verification_rlib/verify_sync_op_with/proof.json), [derived body](../verif/ssgkr_verification_rlib/verify_sync_op_with_derived_body/proof.json), [leaf fold](../verif/ssgkr_primitives_rlib/hash/leaf_fold/proof.json), [compiler with hints](../verif/ssgkr_compiler_rlib/compile/compile_with_hints/proof.json), [MLE evaluation](../verif/ssgkr_protocol_rlib/mle/mle_eval_base/proof.json), [beta evaluation](../verif/ssgkr_protocol_rlib/reduce/beta_eval/proof.json), [public-input equality refinement](../verif/ssgkr_compiler_rlib/witness/impl_PartialEq_for_PublicInputs/eq__refines/proof.json) |
 | Executable acceptance and rejection controls | [Refinement tests](../tests/verifier_acceptance_refinement.rs), [in-crate tests](../crates/verification/src/lib.rs) | Honest acceptance and public-input, sumcheck, carry and final-input rejection controls; separate from theorem and contract evidence |
 
 The source map names results and selected open records rather than adding

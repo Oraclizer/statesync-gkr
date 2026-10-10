@@ -377,7 +377,7 @@ and the finish-evaluation part of the Rust/model value relation. Recorded
 Creusot proofs establish selected public-input and acceptance-classifier
 contracts. Narrowing whole-verifier translation opt-outs to foreign-field
 equality seams exposes the surrounding round, rejection, carry and final-input
-logic to contract translation, while wiring-oracle evaluations, transcript
+logic to contract translation, while production wiring-oracle evaluations, transcript
 operations and the circuit and public-input observation helpers remain trusted
 translation boundaries. These artifacts let developers trace and re-check the
 acceptance rules and reuse that review basis for integration and maintenance.

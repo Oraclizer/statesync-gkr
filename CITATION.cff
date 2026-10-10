@@ -6,7 +6,7 @@ abstract: >-
   transitions with a layered GKR protocol, compiling membership,
   non-membership, and single-leaf update operations into a layered arithmetic
   circuit and reducing that circuit through sumcheck. The operation semantics,
-  the verification-circuit compiler, the layer reduction, and their
+  a model of the verification-circuit compiler, the layer reduction, and their
   composition are mechanized in Isabelle/HOL across six registered sessions
   that build with no admitted proof, including soundness for the exact
   degree-four KoalaBear extension field the implementation uses. The Rust
@@ -28,7 +28,7 @@ repository-code: "https://github.com/Oraclizer/statesync-gkr"
 url: "https://github.com/Oraclizer/statesync-gkr"
 license: BUSL-1.1
 keywords:
-  - "zero-knowledge proof"
+  - "zkVM proof wrapping"
   - "GKR protocol"
   - "sumcheck"
   - "sparse Merkle tree"
