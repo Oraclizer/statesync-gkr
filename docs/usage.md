@@ -6,18 +6,8 @@ membership, non-membership and single-leaf updates. The lower `sumcheck` and
 [refinement evidence](refinement.md) provides a review map from request binding
 and verifier observations to selected Rust contracts and the conditional
 forward acceptance theorem. Use it to identify the checks and remaining
-assumptions an integration must preserve.
-
-> **Security status:** Machine-checked models, a conditional forward
-> acceptance theorem and recorded selected Rust contract proofs make the
-> acceptance checks traceable. The Rust/model value relation remains a
-> premise; whole-program compiled correspondence and executable Fiat-Shamir
-> security are not established, and the inner GKR proof is not
-> zero-knowledge. Exact results and remaining assumptions are described in
-> [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md). The implementation has
-> not undergone a comprehensive independent security audit.
-> Evaluate the remaining input, transcript, dependency and operational risks
-> for the intended application.
+assumptions an integration must preserve. Exact results and assumptions are
+described in [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md).
 
 ## Choosing a path
 

@@ -151,8 +151,8 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "bytes": 7148,
-      "sha256": "14f8a44734e977e868990a603bc79965ffc3e5f7378d26f70fe194f599530070",
+      "bytes": 7150,
+      "sha256": "6354c191eb96b6517271c12c1a0b0f25e50d0ed3943a3bb911826dd7c657c4ed",
       "role": "documentation"
     },
     {
@@ -200,8 +200,8 @@
     {
       "path": "DISCLAIMER.md",
       "mode": "100644",
-      "bytes": 3988,
-      "sha256": "ea2debbfb38955a82068687fc46188031014308ecef0c3f41d68b0dc650a7b24",
+      "bytes": 3856,
+      "sha256": "fbadae1d7c483e794a0881c5a7476749b2bb57f9c119fffb9343f32974a86a46",
       "role": "documentation"
     },
     {
@@ -242,8 +242,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 31435,
-      "sha256": "c0904ee297360bd6b32408a4d3425c5389d623514be7c52bbbe8713be887c349",
+      "bytes": 30328,
+      "sha256": "42215550f0bd932f414136210a4070452fb44598355eefad4e682f89cf9462d6",
       "role": "documentation"
     },
     {
@@ -256,15 +256,15 @@
     {
       "path": "SECURITY.md",
       "mode": "100644",
-      "bytes": 2242,
-      "sha256": "81ff4b08afdec09c8a1b22d00c3b39c09382b0d238b3d0f6c5b27dfcd820e061",
+      "bytes": 1721,
+      "sha256": "85d870b61e56e5e43f1cc62f8bddd529afed36a8cd39339f3a56ab20ce05c0bb",
       "role": "documentation"
     },
     {
       "path": "SUPPORT.md",
       "mode": "100644",
-      "bytes": 1811,
-      "sha256": "4200111be64166c7175e12d2ed37f500bbad7680c3d09dc65f627dd7b2c7a132",
+      "bytes": 1745,
+      "sha256": "1639ed521832f07902592564bba7452a9ac600c6c98516db8a3783543e2623e8",
       "role": "documentation"
     },
     {
@@ -578,8 +578,8 @@
     {
       "path": "benches/controlled-cpu-2026-10-06-supplement/README.md",
       "mode": "100644",
-      "bytes": 11959,
-      "sha256": "3cf05483775246d8456882b5a4b734fac1db8eee7a23ebfc60a1e0bc2bae5acf",
+      "bytes": 11806,
+      "sha256": "b8cc947befdb33e18c6a8f1d96cf74bb34a6dd67623fc03be2f2cb446c55ea18",
       "role": "documentation"
     },
     {
@@ -3259,8 +3259,8 @@
     {
       "path": "docs/architecture.md",
       "mode": "100644",
-      "bytes": 10724,
-      "sha256": "bdd0727978752920a8d4b6d5b4f8bbc1200712697d5d3e7724ba5aae4591696b",
+      "bytes": 10666,
+      "sha256": "699958fa7a69a48a70d643e41a63a9273104755a6f24f49ea4dbef6ead53c1b9",
       "role": "documentation"
     },
     {
@@ -3329,8 +3329,8 @@
     {
       "path": "docs/refinement.md",
       "mode": "100644",
-      "bytes": 8756,
-      "sha256": "1038c4f7322e690f292779f0c2a9de1180b00ba62ce8d3736e79fc1af19c9e37",
+      "bytes": 8579,
+      "sha256": "7b08a02d1fe6cee3d9154efc55f56fa557dcb3e81d586c4c37caedca93e38a1d",
       "role": "documentation"
     },
     {
@@ -3343,8 +3343,8 @@
     {
       "path": "docs/usage.md",
       "mode": "100644",
-      "bytes": 19323,
-      "sha256": "177267c03dd0a6d5db966ab3e740ddc812860a6fb9761bd7e43fe15c2cefb7ed",
+      "bytes": 18748,
+      "sha256": "f4eea687698651dcee551d169b9018533752e3770688ebce7a8f7ebe0e8f38d8",
       "role": "documentation"
     },
     {
@@ -3770,15 +3770,15 @@
     {
       "path": "release/v1.1/README.md",
       "mode": "100644",
-      "bytes": 2781,
-      "sha256": "3d11bd47b67745ecea813330cab07bdf3a9e5dd07fce65cd7431744d337408d5",
+      "bytes": 2686,
+      "sha256": "7510ea0dd76cb184d4a1fcddabeadfcad0e3d89df75a96b999eb29472f553a03",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/RELEASE_NOTES.md",
       "mode": "100644",
-      "bytes": 8439,
-      "sha256": "0c0824f81f797345a67a8e6664a5be9696469c0ce27af968594ed8e786ec11de",
+      "bytes": 8284,
+      "sha256": "328d5220794564faef689edd210f2733370f9d6cc973cc9fbeb83f41a5545dbf",
       "role": "release-evidence-or-tooling"
     },
     {

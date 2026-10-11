@@ -1,9 +1,9 @@
 # Support
 
-The security evidence and the remaining implementation-review boundaries are
-described in [SECURITY.md](SECURITY.md). This public repository provides
-best-effort community support. Commercial licensing for production use is
-arranged with Oraclizer Labs, Inc. through [oraclizer.io](https://oraclizer.io).
+This public repository provides best-effort community support. Commercial
+licensing for production use is arranged with Oraclizer Labs, Inc. through
+[oraclizer.io](https://oraclizer.io). Security reports follow
+[SECURITY.md](SECURITY.md).
 
 ## Public issues
 

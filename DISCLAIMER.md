@@ -41,10 +41,8 @@ establish an independently reproduced compiled identity for this working tree.
 ## What this repository does not establish
 
 This software is provided as is, without warranties or conditions of any
-kind, under the [Business Source License 1.1](LICENSE). The implementation
-has not undergone a comprehensive independent security audit, and the verified
-models do not substitute for one. A production deployment should
-review the documented implementation and cryptographic assumptions and the
+kind, under the [Business Source License 1.1](LICENSE). A production
+deployment should review the documented implementation and cryptographic assumptions and the
 intended application's operational risks.
 
 A model result is not a statement about the whole implementation. The

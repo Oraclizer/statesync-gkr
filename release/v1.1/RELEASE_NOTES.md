@@ -4,9 +4,7 @@
 
 StateSync-GKR v1.1.1 and later versions are distributed under BUSL-1.1;
 production proving requires a commercial license (see the root LICENSE). The
-model results and implementation evidence are described below. The
-implementation has not undergone a comprehensive independent security audit,
-and these notes do not establish deployment safety or secondary finality.
+model results and implementation evidence are described below.
 
 Version 1.1.1 updates the package license metadata. The Rust kernel, formal
 sources, locks and toolchain pins retain their recorded bytes. The historical

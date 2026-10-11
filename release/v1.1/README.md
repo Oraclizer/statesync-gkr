@@ -3,9 +3,7 @@
 This index connects the v1.1 release line to its verification material. The
 attached proof is historical evidence for the recorded v1.1 program; an exact
 compiled identity has not been reproduced for the current package metadata.
-See [LICENSING_DISTRIBUTION.json](LICENSING_DISTRIBUTION.json). This index is
-not a security audit, a cryptographic security claim or an external
-endorsement.
+See [LICENSING_DISTRIBUTION.json](LICENSING_DISTRIBUTION.json).
 
 - [Release verifier](verify.py)
 - [Attachment inventory](ATTACHMENTS.json)

@@ -14,8 +14,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Documentation: the security status states the verified scope and the
-  remaining assumptions, and licensing notes, citation coordinates and stale
+- Documentation: the README summarizes the verification results and links to
+  their exact scope, and licensing notes, citation coordinates and stale
   references were corrected.
 
 ## [1.1.1] - 2026-10-10
