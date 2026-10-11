@@ -1,7 +1,7 @@
 # Reproducing the current StateSync-GKR distribution
 
 This guide separates the short source-level reproduction from the exact
-release-asset verification. Neither path is a security audit or endorsement.
+release-asset verification.
 
 The Rust kernel and formal sources retain their recorded contents. The
 [distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
