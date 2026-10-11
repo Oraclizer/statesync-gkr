@@ -31,7 +31,7 @@
 
   <rect class="blue" x="48" y="786" width="240" height="108" rx="14"/><text class="label" x="168" y="822" text-anchor="middle">ssgkr-batching</text><text class="small" x="168" y="850" text-anchor="middle">independent proof jobs</text><text class="small" x="168" y="874" text-anchor="middle">one ordinary proof each</text>
   <rect class="blue" x="312" y="786" width="240" height="108" rx="14"/><text class="label" x="432" y="822" text-anchor="middle">ssgkr-wrap</text><text class="small" x="432" y="850" text-anchor="middle">canonical encoding</text><text class="small" x="432" y="874" text-anchor="middle">external route relation</text>
-  <path class="bflow" d="M552 694h16v273h-48"/>
+  <path class="bflow" d="M324 748v18h-24v158"/>
   <rect class="blue" x="84" y="926" width="432" height="82" rx="14"/><text class="label" x="300" y="958" text-anchor="middle">ssgkr-commitment</text><text class="small" x="300" y="984" text-anchor="middle">circuit + strategy identity</text>
   <path class="bflow" d="M552 840h16v239h-12"/>
   <rect class="open" x="312" y="1040" width="240" height="78" rx="14"/><text class="label" x="432" y="1072" text-anchor="middle">WrapBackend</text><text x="432" y="1098" text-anchor="middle" fill="#f4b85f" font-size="14">external boundary</text>
@@ -55,5 +55,6 @@
   <text class="small" x="68" y="1938">facade → primitives, sumcheck, protocol, compiler,</text><text class="small" x="68" y="1964">batching, verification, wrap</text>
   <rect class="card" x="48" y="2008" width="504" height="82" rx="14"/>
   <text class="small" x="68" y="2036">verification → primitives, protocol, compiler, batching, commitment</text><text class="small" x="68" y="2062">wrap → primitives, sumcheck, protocol, compiler, commitment</text>
-  <text class="small" x="30" y="2160">Batching is pointwise. Route B evidence is selected; production deployment is not.</text>
+  <text class="small" x="30" y="2150">Batching is pointwise.</text>
+  <text class="small" x="30" y="2174">Route B evidence is selected; production deployment is not.</text>
 </svg>

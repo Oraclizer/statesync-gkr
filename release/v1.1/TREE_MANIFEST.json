@@ -6,7 +6,7 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
-    "source_manifest_sha256": "c71d29000dd951e4aaa55383625c3b3929a239bc5e3b212ae6847d389fa3fc6d"
+    "source_manifest_sha256": "f64cbd98e0c58b0432ecd87e5b4cff8dd8f565f626214dd3691e2bd3fe8b0e89"
   },
   "self_exclusion": "release/v1.1/TREE_MANIFEST.json",
   "path_count": 958,
@@ -302,15 +302,15 @@
     {
       "path": "assets/diagrams/architecture-overview-mobile.svg",
       "mode": "100644",
-      "bytes": 7603,
-      "sha256": "c382b5f4a1793fd0a701d299e0809ed29dd85a5901b7b2cc3690a111e4f097ec",
+      "bytes": 7648,
+      "sha256": "55c0bb24073795a099baea7e3d4bfd0f77809859ca2b84f19fddcbe27b0d85f0",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/diagrams/architecture-overview.svg",
       "mode": "100644",
-      "bytes": 10104,
-      "sha256": "a50601050d83cec98ffd9623b942a3aa07a1f8d6201f8db52f5b11be206a3061",
+      "bytes": 10214,
+      "sha256": "d3f340f38e8cf6f0b1a5b63c10f68a794ada081d45dc55a38c27a6e2eaab1cac",
       "role": "repository-source-or-metadata"
     },
     {
@@ -3712,7 +3712,7 @@
       "path": "release/v1.1/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 4133,
-      "sha256": "ab107fcd47833afc3726632d840ab4644e32a0e62b8f775d43fbe205423f271d",
+      "sha256": "07165298bdf549f4db70d53c4802a22df7e9192e8691b6184c3cae33ee5916cb",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3754,7 +3754,7 @@
       "path": "release/v1.1/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 4596,
-      "sha256": "b8b135645c38551ea97a4f37c178413fa94fcfb5f851910dafa02bd40c39ee5b",
+      "sha256": "5407d7892f2e469d01c8f6c74292cb2985fc7a8690f05544763916cd0024670e",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3789,21 +3789,21 @@
       "path": "release/v1.1/SBOM.spdx.json",
       "mode": "100644",
       "bytes": 780657,
-      "sha256": "05ae813b03985e36d740aec8b9d00dccc4ddfb12fa7d1b1366107a350922f254",
+      "sha256": "7998eba7d3358ec5a4856293c53a8f3120fd2bdb367437ba2f65c916837f6456",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SHA256SUMS",
       "mode": "100644",
       "bytes": 1276,
-      "sha256": "70a8c4597f8f1c37cc66c456f881428b31a6b2983e7e30dd3477a16fb3831cd0",
+      "sha256": "a29824c4f9bb25e0e130054f55b04770e5d2831345e3a60db45bdf7047794207",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SOURCE_MANIFEST.json",
       "mode": "100644",
       "bytes": 264742,
-      "sha256": "c71d29000dd951e4aaa55383625c3b3929a239bc5e3b212ae6847d389fa3fc6d",
+      "sha256": "f64cbd98e0c58b0432ecd87e5b4cff8dd8f565f626214dd3691e2bd3fe8b0e89",
       "role": "release-evidence-or-tooling"
     },
     {
