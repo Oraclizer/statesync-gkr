@@ -5,6 +5,16 @@ verified results and their assumptions are described in
 [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) and the
 [refinement guide](docs/refinement.md).
 
+## Supported versions
+
+| Version | Security fixes |
+| --- | --- |
+| `main` and the current release, v1.1.1 | Yes |
+| v1.1.0 and earlier | No |
+
+Fixes are published in a new release. Published releases and their tags are
+immutable.
+
 ## Reporting a vulnerability
 
 Report suspected vulnerabilities privately by email to
@@ -22,9 +32,9 @@ credentials, private keys, personal information, or private infrastructure
 locations. Do not test systems or accounts you do not own or lack explicit
 permission to assess.
 
-Reports are evaluated as capacity permits. This policy does not promise a
-response time, remediation deadline, bounty, safe-harbor agreement,
-compensation, or production support.
+Reports are triaged by severity. Bounty, safe-harbor and compensation terms
+are not part of this public policy. Production support is arranged under a
+commercial license; see [SUPPORT.md](SUPPORT.md).
 
 ## Scope
 
@@ -38,6 +48,3 @@ Security-sensitive surfaces include:
 - resource exhaustion, side channels, and dependency integrity; and
 - external proof and destination integrations where this repository directly
   owns code.
-
-Formal proofs and passing tests are scoped evidence, not a guarantee that these
-surfaces are free from vulnerabilities.

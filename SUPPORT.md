@@ -28,13 +28,12 @@ service levels, or support for arbitrary forks.
 
 ## What to expect
 
-StateSync-GKR is maintained by one person alongside other work, so issues are
-triaged in batches rather than continuously. If a thread has gone quiet, a
-comment on it is welcome and is the fastest way to get it picked back up.
+Issues are triaged in batches. If a thread has gone quiet, a comment on it is
+welcome and is the fastest way to get it picked back up.
 
 Reproducible defects and concrete documentation errors are handled first.
 Broad questions and large proposals may take longer, or may be answered with a
 pointer to the relevant boundary document rather than a full discussion.
 
-None of this is a service-level commitment. Maintenance is best-effort and may
-pause without notice.
+Community support in this repository is best-effort. Production support is
+arranged with Oraclizer Labs, Inc. under a commercial license.

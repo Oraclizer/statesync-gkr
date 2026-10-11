@@ -33,6 +33,10 @@ jobs:
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: Test
         run: cargo test --workspace --release --locked
+      - name: Quick start example
+        run: |
+          cargo run --release --locked --example state_sync_prove_verify > "$RUNNER_TEMP/quickstart.txt"
+          printf 'honest-proof=PASS\ntampered-proof=REJECTED\nsecondary-finalized=false\n' | diff -u - "$RUNNER_TEMP/quickstart.txt"
       - name: Route manifest codec equality
         run: |
           cargo run --release --locked -p ssgkr-wrap --example risc0-route-b-manifest-v1 -- tests/vectors/risc0-route-b-manifest-v1.json > "$RUNNER_TEMP/route-rust.txt"
@@ -46,6 +50,8 @@ jobs:
           diff -u "$RUNNER_TEMP/receipt-rust.txt" "$RUNNER_TEMP/receipt-python.txt"
       - name: Dependency update policy
         run: python3 release/v1.1/verify_dependency_update_policy.py
+      - name: Theory command scan
+        run: python3 release/v1.1/verify_theory_commands.py
       - name: Git file-mode policy fixtures
         run: python3 release/v1.1/test_verify_mode_policy.py
       - name: Documentation consistency

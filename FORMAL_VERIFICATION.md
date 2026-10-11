@@ -210,9 +210,11 @@ conditions above.
 
 ## Building the Isabelle sessions
 
-The sessions require **Isabelle2025-2** and a local checkout of the Archive
-of Formal Proofs containing the `Sumcheck_Protocol` entry, which
-`GKR_Protocol` extends. Point `isabelle build` at both trees:
+The sessions require **Isabelle2025-2** and the Archive of Formal Proofs
+release `afp-2026-08-05`, which contains the `Sumcheck_Protocol` entry that
+`GKR_Protocol` extends. The hosted Proofs lane downloads both and checks the
+SHA-256 digests recorded in [`proofs.yml`](.github/workflows/proofs.yml).
+Point `isabelle build` at both trees:
 
 ```sh
 isabelle build -d /path/to/afp/thys -d formal/isabelle \
@@ -242,8 +244,10 @@ whether a proof input changed, so a green result cannot come from a silently
 omitted session.
 
 The pinned Isabelle2025-2 build rejects `sorry` with the default
-`quick_and_dirty=false`, as its release notes specify. Direct source scans
-provide an additional check for admitted or abandoned proofs. The Proofs
+`quick_and_dirty=false`, as its release notes specify. The ci workflow also
+runs [`verify_theory_commands.py`](release/v1.1/verify_theory_commands.py),
+which fails if a theory source contains `sorry`, `oops`, `axiomatization` or
+an `oracle` declaration outside comments and text. The Proofs
 workflow does not rebuild Isabelle sessions on release events; the separate
 source-identity workflow checks the released source and proof attachment.
 Treat the Proofs lane as the standing theorem check on the maintained branch.
