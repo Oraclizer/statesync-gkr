@@ -482,7 +482,7 @@ maintains destination receipt consumption and lifecycle authorities with its
 own toolchain, tests, and release cadence. Its
 [relationship and compatibility map](https://github.com/Oraclizer/statesync-gkr-settlement-evm/blob/main/docs/REPOSITORY_RELATIONSHIP.md)
 separates source compatibility from historical execution evidence. The V2
-reference is unaudited and non-deployed; historical V1 addresses must remain
+reference is not deployed, and historical V1 addresses must remain
 abandoned. This prover release contains proving and verification artifacts
 and does not distribute destination contracts or claim a production deployment.
 
