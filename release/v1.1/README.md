@@ -1,14 +1,11 @@
 # StateSync-GKR v1.1 release evidence
 
-The current v1.1.1 distribution aligns licensing metadata with BUSL-1.1.
-The historical v1.1 program/proof records below retain their original scope.
-The current root Cargo license field differs, and an exact compiled identity
-comparison for this metadata revision has not completed. See
-[LICENSING_DISTRIBUTION.json](LICENSING_DISTRIBUTION.json).
-
-This index connects the exact component release to its verification material.
-The repository remains unaudited research software and this index does not
-claim production readiness, cryptographic security, or external endorsement.
+This index connects the v1.1 release line to its verification material. The
+attached proof is historical evidence for the recorded v1.1 program; an exact
+compiled identity has not been reproduced for the current package metadata.
+See [LICENSING_DISTRIBUTION.json](LICENSING_DISTRIBUTION.json). This index is
+not a security audit, a cryptographic security claim or an external
+endorsement.
 
 - [Release verifier](verify.py)
 - [Attachment inventory](ATTACHMENTS.json)
@@ -25,13 +22,13 @@ claim production readiness, cryptographic security, or external endorsement.
 - [Source reproduction recipe](SOURCE_RECIPE.md)
 - [Reproduce v1.1](../../REPRODUCING.md)
 
-The historical v1.1.0 version was published on 2026-10-04;
-attachment filenames retain the documented `v1.1` prefix. The
-historical release retained with the separately preserved source history
-is the publication record. The complete tracked source at that tag is archived
-at [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
-The Release assets remain pinned to the tag. Manifests on the maintained branch
-describe the current branch source tree; use the current BSL release package for current source reproduction, and keep historical proof observations separately scoped.
+v1.1.0 was published on 2026-10-04; its complete tracked source is archived at
+[DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385). The
+current release is v1.1.1, archived at
+[DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552); its
+assets are attached to the signed `v1.1.1` release and retain the documented
+`v1.1` filename prefix. Manifests on the main branch describe the current
+branch source tree. Keep historical proof observations separately scoped.
 Unpublished manuscript drafts are excluded from the current source package;
 this release does not submit or publish a paper.
 

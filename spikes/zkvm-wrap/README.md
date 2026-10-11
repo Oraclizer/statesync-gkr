@@ -26,7 +26,8 @@ scripts, and machine paths are not public release interfaces.
 
 ## Fixed identity
 
-The current release line is v1.1. Its expected record is
+The recorded historical program belongs to the v1.1 line. The current source
+has no independently reproduced compiled identity. Its historical expected record is
 [`identity/risc0-route-b-guest-expected-v1.1.json`](identity/risc0-route-b-guest-expected-v1.1.json).
 
 | Layer | Content address |

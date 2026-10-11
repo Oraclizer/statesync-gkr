@@ -3,19 +3,16 @@
 This guide separates the short source-level reproduction from the exact
 release-asset verification. Neither path is a security audit or endorsement.
 
-Version 1.1.1 is a BSL distribution and package-metadata revision. The Rust
-kernel and formal sources retain their recorded contents. The root Cargo
-license field is the sole change in the identity-source selection. The
-[licensing distribution record](release/v1.1/LICENSING_DISTRIBUTION.json)
-separates that source comparison from the historical v1.1 executable and
-proof. The current metadata revision has not completed an exact compiled
-identity reproduction; the historical proof is evidence of its recorded
-program only.
+The Rust kernel and formal sources retain their recorded contents. The
+[distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
+current source consistency from the historical v1.1 executable and proof: an
+exact compiled identity has not been reproduced for the current package
+metadata, so the attached proof is evidence for its recorded program only.
 
-The [historical software DOI](https://doi.org/10.5281/zenodo.23136385) identifies
-v1.1.0 and its original rights. Current official source is distributed under
-[BSL-1.1](LICENSE); research and non-production reproduction are permitted.
-The previous source history is preserved separately from this public tree.
+The measurements and the historical proof refer to v1.1.0, archived as
+[DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
+Research and other non-production reproduction are permitted under
+[LICENSE](LICENSE).
 
 ## Profile 1: source quick start
 
@@ -27,8 +24,7 @@ cargo run --release --locked --example state_sync_prove_verify
 ```
 
 Pin a specific commit instead of the branch tip when you want a fixed subject
-to report against. Record the selected current commit and its licensing
-revision in every reproduction report.
+to report against. Record the selected commit in every reproduction report.
 
 Expected output:
 
@@ -47,7 +43,7 @@ report template below.
 
 ## Profile 2: exact release package
 
-Download **every** asset from the current BSL release on the
+Download **every** asset of the v1.1.1 release from the
 [Releases page](https://github.com/Oraclizer/statesync-gkr/releases) into one empty directory. `statesync-gkr-v1.1-sha256sums.txt` covers all of them and
 `sha256sum -c` fails on any that is missing, so a partial download cannot pass
 this step. The four the rest of this profile uses directly are:

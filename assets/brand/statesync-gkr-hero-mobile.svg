@@ -19,7 +19,7 @@
     <path d="M216 50h28M216 61h22M216 72h28" stroke="#75e3b0" stroke-width="3" stroke-linecap="round"/>
   </g>
   <g font-family="Inter,Segoe UI,Arial,sans-serif">
-    <text x="324" y="82" fill="#75e3b0" font-size="13" font-weight="700" letter-spacing="2">EXPERIMENTAL RUST PROVER</text>
+    <text x="324" y="82" fill="#75e3b0" font-size="13" font-weight="700" letter-spacing="2">RUST PROVER</text>
     <text x="314" y="150" fill="#f3f7f4" font-size="38" font-weight="800" letter-spacing=".7">STATESYNC-GKR</text>
     <rect x="318" y="171" width="72" height="5" rx="2.5" fill="#75e3b0"/>
     <text x="314" y="218" fill="#d5e4e0" font-size="16" font-weight="650">GKR PROVING FOR SPARSE-MERKLE</text>

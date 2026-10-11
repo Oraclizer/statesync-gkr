@@ -17,19 +17,35 @@ agrees with the modeled sparse-Merkle semantics, that a false claim survives
 the reduction only with a proved probability bound, that these results compose,
 that batching preserves each single-job proof, and that the soundness statement
 transfers to the exact degree-four extension field the implementation uses. A
-further result relates a successful acceptance trace of the shipped verifier to
-the model, and it carries an explicit premise that is not discharged against
-the compiled program. The exact statements, assumptions, and their limits are
+further forward theorem connects related acceptance traces to the GKR
+reduction-chain event and derives the former local-bridge premise from the
+concrete round checks and the finish-evaluation part of the value relation. Recorded Creusot proofs cover selected public-input
+equality and acceptance-classifier contracts. Narrowed foreign-field equality
+seams expose the surrounding verifier control flow to contract translation.
+These artifacts give developers a review map for the checks that determine
+acceptance and a reusable basis for integration and maintenance.
+
+The Rust/model value and off-cube representation relation remains an explicit
+premise that is not discharged against the compiled program. Translation
+coverage does not give proof credit to the recorded open contract obligations.
+[Refinement evidence and reuse](docs/refinement.md) identifies both the
+completed and open records. The exact statements, assumptions, and their limits are
 in [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md).
 
-Each of these claims is reproducible from this repository. The commands are
-in [README.md](README.md) and [REPRODUCING.md](REPRODUCING.md).
+The source-level test and model commands are in [README.md](README.md) and
+[REPRODUCING.md](REPRODUCING.md). The external proof applies to its recorded
+historical program, whose exact identity reproduction also requires its
+original controlled-build materials. The current source checks do not
+establish an independently reproduced compiled identity for this working tree.
 
 ## What this repository does not establish
 
 This software is provided as is, without warranties or conditions of any
-kind, under the [Business Source License 1.1](LICENSE). In addition, StateSync-GKR is research software: it has received no external
-security audit and is not ready for production use.
+kind, under the [Business Source License 1.1](LICENSE). The implementation
+has not undergone a comprehensive independent security audit, and the verified
+models do not substitute for one. A production deployment should
+review the documented implementation and cryptographic assumptions and the
+intended application's operational risks.
 
 A model result is not a statement about the whole implementation. The
 mechanized theorems do not establish whole-repository refinement,

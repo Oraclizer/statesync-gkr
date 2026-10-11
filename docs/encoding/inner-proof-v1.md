@@ -132,8 +132,12 @@ Field order = the frozen public-input observation order: `old_root`, `new_root`,
 `op_kind_tag`, `asset_id`, `value_digest`.
 
 - digests: 8 base-field elements, 4 bytes each
-- `asset_id`: u64 as two u32 limbs (low, high) - the injective split
-  the transcript already uses
+- `asset_id`: u64 encoded as two u32 limbs (low, high), a lossless wire
+  representation. Transcript absorption separately converts both limbs
+  using `BaseField::from_u32`, reducing them modulo the field order.
+  That field mapping is not injective over all u64 keys; see the
+  [recorded challenge-generation review](../challenge-generation-review.md)
+  for the admitted-key ranges and the separate input checks.
 - the statement's `op_kind_tag` MUST equal the identity section's
   (the order is frozen and self-contained; the identity section stands
   alone; the decoder rejects disagreement)

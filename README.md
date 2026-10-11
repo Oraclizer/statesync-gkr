@@ -11,28 +11,45 @@
   <a href="https://github.com/Oraclizer/statesync-gkr/actions/workflows/proofs.yml"><img alt="Proofs" src="https://github.com/Oraclizer/statesync-gkr/actions/workflows/proofs.yml/badge.svg?branch=main"></a>
   <a href="LICENSE"><img alt="License: BUSL-1.1" src="https://img.shields.io/badge/license-BUSL--1.1-0b5cad"></a>
   <a href="Cargo.toml"><img alt="MSRV 1.85" src="https://img.shields.io/badge/rustc-1.85+-284a76"></a>
-  <a href="https://doi.org/10.5281/zenodo.23136384"><img alt="DOI" src="assets/brand/zenodo-doi.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.23280552" title="StateSync-GKR v1.1.1 software DOI"><img alt="DOI: 10.5281/zenodo.23280552" src="assets/brand/zenodo-doi.svg"></a>
   <a href="https://arxiv.org/abs/2610.05335"><img alt="arXiv: 2610.05335" src="https://img.shields.io/badge/arXiv-2610.05335-b31b1b"></a>
 </p>
 
 # StateSync-GKR
 
-A Rust GKR and sumcheck engine, specialized for sparse-Merkle state transitions.
+A Rust GKR and sumcheck engine for sparse-Merkle state transitions, with its
+protocol and compiler models machine-checked in Isabelle/HOL.
 
-[Quick start](#quick-start) · [API guide](docs/usage.md) · [Measured profiles](docs/performance.md) · [Formal boundary](FORMAL_VERIFICATION.md)
+[Quick start](#quick-start) · [API guide](docs/usage.md) · [Measured profiles](docs/performance.md) · [Formal verification](FORMAL_VERIFICATION.md) · [Refinement evidence](docs/refinement.md)
 
 Its SMT frontend proves membership, non-membership and single-leaf updates.
-The compiler and protocol models are machine-checked in Isabelle/HOL, with
-a partial, conditional connection to the Rust implementation.
+Models of the SMT circuit compiler and of the GKR and sumcheck protocol, and
+their composition, are machine-checked in Isabelle/HOL, building on the
+Archive of Formal Proofs `Sumcheck_Protocol` entry and including the exact
+degree-four KoalaBear extension field that the implementation uses. A
+conditional, mechanized forward acceptance theorem and recorded proofs for
+selected Rust contracts relate the model to the shipped verifier: the checks
+that turn a request into an acceptance verdict (public-input binding,
+sumcheck rounds, carry construction and final input evaluations) can be traced
+across model and code. The theorem keeps an explicit Rust-to-model value
+relation as a premise; see [Refinement evidence and reuse](docs/refinement.md).
 
 Prepare a circuit once, reuse its proving and verification material, and run
 independent CPU proving jobs in parallel. The protocol and sumcheck crates
 have no dependency on the SMT compiler, so other arithmetic-circuit frontends
-can build on the same engine.
+can build on the same engine and use its
+[acceptance-check review map](docs/refinement.md) when reviewing an integration.
 
-> **WARNING:** This is a research project. It has not been audited and may
-> contain bugs and security flaws. This implementation is NOT ready for
-> production use.
+> **Security status:** The protocol and compiler models are machine-checked,
+> and the verifier's acceptance checks are related to them through a
+> conditional forward refinement theorem, selected Rust contract proofs and
+> executable rejection tests. Whole-program compiled correspondence and
+> executable Fiat-Shamir security are not established, the inner GKR proof is
+> not zero-knowledge, and the implementation has not undergone a comprehensive
+> independent security audit. Production proving is available under a
+> commercial license; a production deployment should review the documented
+> [implementation and cryptographic assumptions](FORMAL_VERIFICATION.md) and
+> its application's [operational risks](SECURITY.md).
 
 ## Implementation benefits
 
@@ -46,13 +63,13 @@ can build on the same engine.
 <p align="center">
   <picture>
     <source media="(max-width: 900px)" srcset="assets/brand/statesync-gkr-benefits-map-mobile.svg">
-    <img src="assets/brand/statesync-gkr-benefits-map.svg" width="1200" alt="Nine benefits in three groups. Use resources well: sparse reduction, cube and affine fusion, parallel Merkle constraints. Repeat efficiently: derived wiring, prepared reuse, independent jobs. Keep the meaning: three-state lifecycle, strict codec and request binding, reusable sumcheck/GKR core and formal models.">
+    <img src="assets/brand/statesync-gkr-benefits-map.svg" width="1200" alt="Nine benefits in three groups. Use resources well: sparse reduction, cube and affine fusion, parallel Merkle constraints. Repeat efficiently: derived wiring, prepared reuse, independent jobs. Keep the meaning: three-state lifecycle, strict codec and request binding, reusable sumcheck/GKR core, selected Rust contracts and a conditional forward acceptance theorem.">
   </picture>
 </p>
 
 - **Use resources well:** sparse reduction, cube/affine fusion and parallel Merkle constraints.
 - **Repeat efficiently:** derived wiring, prepared reuse and independent proof jobs.
-- **Keep the meaning:** three-state lifecycle, strict codec/request binding and a reusable core with formal models.
+- **Keep the meaning:** three-state lifecycle, strict codec/request binding and a reusable core with traceable acceptance evidence.
 
 [See the implementation](docs/architecture.md) · [Read the evidence conditions](benches/controlled-capacity-2026-10-07/FEATURES.md) · [Inspect the measurements](docs/performance.md)
 
@@ -77,7 +94,7 @@ StateSync-GKR used **about 89 times less peak process RAM** and achieved
 | Independent proof jobs | Parallel CPU work with one result per original request |
 | Empty, occupied and tombstone leaves | Distinct absence, insertion, update, deletion and restoration semantics |
 | Strict encoding and request binding | Rejection of malformed or mismatched proof material |
-| Reusable core and formal models | A separate sumcheck/GKR engine for other arithmetic frontends |
+| Reusable core and refinement evidence | Build another arithmetic frontend on the same engine and use the model and the acceptance-check review map |
 
 The RAM result is whole-process RSS for a two-layer mixed circuit of width
 4,096: production Sparse versus this engine's test-only Dense reference.
@@ -97,8 +114,11 @@ measured speed multiplier, and a cube gate is an IR operation, not a CPU instruc
 
 These mechanisms draw on measurements, source structure, rejection controls
 and formal models, rather than nine independently isolated causal experiments.
-The compiler-to-protocol model is mechanized; the Rust connection remains
-partial and conditional. Licensing is described under [License and citation](#license-and-citation).
+The compiler-to-protocol model is mechanized. Selected Rust contract proofs
+and a conditional forward acceptance theorem provide a review map for the
+actual verifier checks; the Rust/model value relation remains a premise.
+[Refinement evidence](docs/refinement.md) describes the reusable checks and
+remaining obligations. Licensing is described under [License and citation](#license-and-citation).
 
 The [implementation architecture](docs/architecture.md) connects these mechanisms
 to their source and application conditions. [Performance and operating
@@ -212,7 +232,7 @@ shows how to apply the observed settings.
 
 ## Quick start
 
-Use the current BSL-licensed source distribution for this local example.
+Clone the repository for this local example.
 Research, development and other non-production use are permitted by
 [LICENSE](LICENSE). Pin a specific current commit when recording a replay.
 
@@ -350,10 +370,22 @@ acceptance and GKR assembly soundness, and mechanizes batching preservation
 and the exact degree-four KoalaBear extension. Registered concrete instances
 establish that the model assumptions can be satisfied.
 
-The Rust connection consists of recorded contracts, tests and a conditional
-acceptance-to-model result. Whole-program value correspondence, the executable
-challenge distribution and the multi-round Fiat-Shamir security argument
-remain outside the established result. The inner proof is not a zero-knowledge
+The verifier acceptance work proves the forward implication from related
+acceptance traces to the GKR reduction-chain event. The former local-bridge
+premise is no longer assumed: it is derived from the concrete round checks
+and the finish-evaluation part of the Rust/model value relation. Recorded
+Creusot proofs establish selected public-input and acceptance-classifier
+contracts. Narrowing whole-verifier translation opt-outs to foreign-field
+equality seams exposes the surrounding round, rejection, carry and final-input
+logic to contract translation, while production wiring-oracle evaluations, transcript
+operations and the circuit and public-input observation helpers remain trusted
+translation boundaries. These artifacts let developers trace and re-check the
+acceptance rules and reuse that review basis for integration and maintenance.
+
+The Rust/model value and off-cube representation relation remains a stated
+premise. Whole-program compiled correspondence, the executable challenge
+distribution and the multi-round Fiat-Shamir security argument remain outside
+the established result. The inner proof is not a zero-knowledge
 proof. See [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) for the full
 statement, assumptions and non-claims.
 
@@ -443,6 +475,7 @@ roles, or endorsements; every one of them is defined in
 
 - [Architecture](ARCHITECTURE.md)
 - [Formal verification](FORMAL_VERIFICATION.md)
+- [Refinement evidence and reuse](docs/refinement.md)
 - [GKR base-session document snapshot (2026-08-29)](docs/GKR_Protocol.pdf)
 - [Compiler document snapshot (2026-08-29)](docs/SMT_Circuit_Compiler_Correctness.pdf)
 - [Frozen source identifiers](docs/frozen-source-identifiers.md)
@@ -478,9 +511,10 @@ never in a public issue.
 [CONTRIBUTING.md](CONTRIBUTING.md) describes the contributions that help most
 and exactly which checks a pull request must pass.
 [SUPPORT.md](SUPPORT.md) describes what help is available and how triage
-works. [GOVERNANCE.md](GOVERNANCE.md) describes how decisions are made. This
-is a research project with best-effort maintenance; there is no bounty and no
-production support programme.
+works. [GOVERNANCE.md](GOVERNANCE.md) describes how decisions are made.
+Community maintenance is best-effort, and there is no bug bounty. Commercial
+licensing for production use is arranged with Oraclizer Labs, Inc. through
+[oraclizer.io](https://oraclizer.io).
 
 ## Acknowledgments
 
@@ -490,31 +524,28 @@ We thank Bernhard Müller ([@muellerberndt](https://github.com/muellerberndt)) f
 
 ## License and citation
 
-From 2026-10-09 the maintained branch and every version after v1.1.0 are
-licensed under the [Business Source License 1.1](LICENSE). Research,
-development, evaluation, auditing, benchmarking and other non-production use
-are free, and production use solely to verify proofs is granted. Production
-use that generates proofs, embeds or redistributes proving functionality in a
-product or service, or offers proof generation to third parties requires a
-commercial license from
+StateSync-GKR v1.1.1 and later versions are licensed under the
+[Business Source License 1.1](LICENSE). Research, development, evaluation,
+auditing, benchmarking and other non-production use are free, and production
+use solely to verify proofs is granted. Production use that generates proofs,
+embeds or redistributes proving functionality in a product or service, or
+offers proof generation to third parties requires a commercial license from
 Oraclizer Labs, Inc.; see [oraclizer.io](https://oraclizer.io) for the
-licensing contact. Each version converts to Apache-2.0 three years after its
-first public distribution. The Business Source License is source-available
-and is not an Open Source license in the OSI sense.
+licensing contact. Each version licensed under BSL converts to Apache-2.0
+three years after it is first publicly distributed under BSL. The Business
+Source License is source-available and is not an Open Source license in the
+OSI sense.
 
-Earlier copies through v1.1.0 were distributed under Apache-2.0 or MIT.
-Rights already granted to their recipients remain valid. The maintained
-repository and its current official distribution use BSL-1.1; the former
-source history is preserved separately and is not an alternative public
-download route. [NOTICE](NOTICE) retains the required contribution and
-third-party notices.
+Versions up to and including v1.1.0 were released under MIT OR Apache-2.0.
+[NOTICE](NOTICE) records the contribution notices, and dependency licenses are
+listed in the [software bill of materials](release/v1.1/SBOM.spdx.json).
 
-[CITATION.cff](CITATION.cff) describes the current v1.1.1 licensing revision.
-The earlier software record, [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385),
-identifies the historical v1.1.0 artifact. The current v1.1.1 software record is
-[DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552). See
-[reproduction guidance](REPRODUCING.md) for current source checks and the
-scope of historical proof evidence.
+To cite this software, use [CITATION.cff](CITATION.cff) or
+[DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552) (v1.1.1).
+The measurements and the attached historical proof refer to v1.1.0, archived as
+[DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385). The
+[reproduction guidance](REPRODUCING.md) separates current source checks from
+the scope of the historical proof evidence.
 
 The companion paper, *StateSync-GKR: Machine-Checking the Trust Chain from
 Sparse-Merkle State Transitions to GKR Verification*, is available as

@@ -1,11 +1,9 @@
-Scope: previously accepted review contributions only.
+Scope: the accepted review contribution only.
 
-This notice retains the MIT option for the review contributions attributed to
-Bernhard Mueller in NOTICE: docs/challenge-generation-review.md,
-docs/challenge-sampling-review.md, and the corresponding review-derived
-passages in FORMAL_VERIFICATION.md. The following text is copied unchanged
-from the license supplied with that historical source. The current complete
-StateSync-GKR distribution is governed by the root LICENSE (BUSL-1.1).
+This permission notice covers Bernhard Mueller's
+docs/challenge-generation-review.md and the related review-derived passages
+in FORMAL_VERIFICATION.md. The full source distribution is governed by the
+root LICENSE. The permission text below is preserved verbatim.
 
 MIT License
 

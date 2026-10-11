@@ -1,13 +1,11 @@
 # Implementation architecture and application benefits
 
-Version 1.1.1 is a BSL distribution and package-metadata revision. The Rust
-kernel and formal sources retain their recorded contents. The root Cargo
-license field is the sole change in the identity-source selection. The
-[licensing distribution record](../release/v1.1/LICENSING_DISTRIBUTION.json)
-separates that source comparison from the historical v1.1 executable and
-proof. The current metadata revision has not completed an exact compiled
-identity reproduction; the historical proof is evidence of its recorded
-program only.
+StateSync-GKR combines a reusable sumcheck/GKR core with a traceable
+acceptance-check review map: machine-checked models, a forward acceptance
+theorem and recorded proofs for selected Rust contracts. Integrators can
+inspect the request binding, round and carry checks, and final input
+evaluations that a frontend must preserve. The theorem's Rust/model value
+relation remains an explicit premise; see [refinement evidence](refinement.md).
 
 StateSync-GKR separates a reusable sumcheck/GKR engine from its sparse-Merkle
 frontend. The engine reduces a layered arithmetic circuit; the frontend defines
@@ -156,13 +154,22 @@ own circuit, witness, output claim, transcript conventions and the consumption
 of both residual input MLE claims. Arbitrary Rust-program compilation and a
 runtime field/hash-selection service are not bundled interfaces.
 
-The measured v1.1.0 source was released under MIT or Apache-2.0. The maintained
-branch and later versions use [BSL 1.1](../LICENSE), with free non-production
-use and the verification-only production grant; [NOTICE](../NOTICE) preserves
-the version history. Reuse of the maintained engine follows those terms. Six
+Reuse of the current source (v1.1.1 and later) follows [BSL 1.1](../LICENSE), with free non-production
+use and the verification-only production grant. [NOTICE](../NOTICE) records
+the contribution notices. Six
 Isabelle sessions with twenty theories provide the compiler equivalence, GKR
 assembly model, composition, batching and supporting results described in
 [formal verification](../FORMAL_VERIFICATION.md) and
-[the paper](https://arxiv.org/abs/2610.05335). Performance and differential proof
-observations strengthen the engineering account without adding a new theorem,
-whole-program verification, Fiat–Shamir reduction or security-audit grade.
+[the paper](https://arxiv.org/abs/2610.05335). The refinement work also
+supplies a conditional forward acceptance theorem whose former local bridge
+is derived from concrete round checks and the finish part of the value
+relation, selected public-input and acceptance-classifier contract
+proofs, and ordinary translation of the main verifier control flow around
+explicit foreign-field seams. A new frontend can reuse this
+[review map](refinement.md) while establishing its own input binding and
+residual-claim consumption.
+
+The Rust/model value and off-cube representation relation is still a premise,
+and recorded open contract obligations remain visible. Performance and
+differential proof observations are separate engineering evidence; they add
+no whole-program verification, Fiat-Shamir reduction or security-audit grade.
