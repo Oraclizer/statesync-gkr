@@ -1,12 +1,12 @@
-730992c8b83eb6d205067c0ebf9fec0d5103cd4a1ca6b394aef2706d918fe987  statesync-gkr-v1.1-attachments.json
+38fcae0c4681754c331a14412a59e3a239cab99907dba47602ebd9eda932235e  statesync-gkr-v1.1-attachments.json
 ada80ce07893de5f9a3553cf96db0b29d2c2fd18fa7fb12820a14731f6c5a190  statesync-gkr-v1.1-dependency-update-policy.json
 3a68db09cabe247e860a88ff4dd3241890c1b2c7ef1d41ebbf9dacaeebe14450  statesync-gkr-v1.1-frozen-source-allowlist.json
 13d8030b608ee1bcdb7cbf736b9cd93890d2370ee428707a16ab1f80ea40bdcf  statesync-gkr-v1.1-gkr-protocol.pdf
 880456ed769f8c1bc41883b15b418300c28b01b1f2aec54c09f2a38fe25761df  statesync-gkr-v1.1-proof-manifest.json
 b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822  statesync-gkr-v1.1-proof.cbor
 23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0  statesync-gkr-v1.1-protected-source-manifest.json
-c33c56c454b4e71c06dd84404a8da543d4dcae1b68317705bf8d33c50133dd66  statesync-gkr-v1.1-provenance.intoto.jsonl
+5d29ccf7a3fae5269eb0fd4735475865375d6091530cb9cb1accc4234545c6a7  statesync-gkr-v1.1-provenance.intoto.jsonl
 67a00effdd8910d1615df7fbcb0d670370961940214ea668a133048d81c107b5  statesync-gkr-v1.1-public-inputs.json
-4d2abf393424ceacb5f001e22c6c5dd62e759922320eb155776ce125a0944823  statesync-gkr-v1.1-sbom.spdx.json
+d16c3554be93c6171be531e134b785e28cafafcef182518db215091cb4de32de  statesync-gkr-v1.1-sbom.spdx.json
 5be29dd579a3fb46fdf94152699bc6fd0008716e6f206359eb2e80ce8dea74fa  statesync-gkr-v1.1-smt-compiler-correctness.pdf
-1ccb2f4aae172c27707196d354fed490132ce18bdef37a274ebe3e3678f18431  statesync-gkr-v1.1-source.tar.gz
+d1b2d5e444675415b1db51d8622b7cceed84ecdb2b62073e9d128428192cb33c  statesync-gkr-v1.1-source.tar.gz

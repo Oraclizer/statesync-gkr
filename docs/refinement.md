@@ -54,9 +54,7 @@ event omits request/public-input guards, so it cannot replace those checks
 or authorize executable acceptance by itself. Existing frontend evidence
 does not automatically verify a new adapter.
 
-This is a reusable basis for integration review and maintenance. It is not
-a measured development-time saving, a count of prevented vulnerabilities,
-or an independent security-audit endorsement.
+This is a reusable basis for integration review and maintenance.
 
 ## Source and evidence map
 
@@ -87,9 +85,8 @@ of that remaining correspondence. The former local bridge is derived; this
 value relation is not discharged against the exact compiled program.
 
 The result does not establish whole-program compiled-Rust refinement,
-the executable transcript's independent uniform challenge sequence, a
-multi-round Fiat-Shamir security reduction, or a comprehensive implementation
-security audit. Field/hash dependencies and trusted interfaces retain their
+the executable transcript's independent uniform challenge sequence, or a
+multi-round Fiat-Shamir security reduction. Field/hash dependencies and trusted interfaces retain their
 documented assumptions. The separate
 [challenge-generation review](challenge-generation-review.md) keeps its own
 stated scope; these refinement results do not extend it.

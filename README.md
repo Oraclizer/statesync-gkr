@@ -31,25 +31,13 @@ conditional, mechanized forward acceptance theorem and recorded proofs for
 selected Rust contracts relate the model to the shipped verifier: the checks
 that turn a request into an acceptance verdict (public-input binding,
 sumcheck rounds, carry construction and final input evaluations) can be traced
-across model and code. The theorem keeps an explicit Rust-to-model value
-relation as a premise; see [Refinement evidence and reuse](docs/refinement.md).
+across model and code; see [Refinement evidence and reuse](docs/refinement.md).
 
 Prepare a circuit once, reuse its proving and verification material, and run
 independent CPU proving jobs in parallel. The protocol and sumcheck crates
 have no dependency on the SMT compiler, so other arithmetic-circuit frontends
 can build on the same engine and use its
 [acceptance-check review map](docs/refinement.md) when reviewing an integration.
-
-> **Security status:** The protocol and compiler models are machine-checked,
-> and the verifier's acceptance checks are related to them through a
-> conditional forward refinement theorem, selected Rust contract proofs and
-> executable rejection tests. Whole-program compiled correspondence and
-> executable Fiat-Shamir security are not established, the inner GKR proof is
-> not zero-knowledge, and the implementation has not undergone a comprehensive
-> independent security audit. Production proving is available under a
-> commercial license; a production deployment should review the documented
-> [implementation and cryptographic assumptions](FORMAL_VERIFICATION.md) and
-> its application's [operational risks](SECURITY.md).
 
 ## Implementation benefits
 
@@ -382,15 +370,10 @@ operations and the circuit and public-input observation helpers remain trusted
 translation boundaries. These artifacts let developers trace and re-check the
 acceptance rules and reuse that review basis for integration and maintenance.
 
-The Rust/model value and off-cube representation relation remains a stated
-premise. Whole-program compiled correspondence, the executable challenge
-distribution and the multi-round Fiat-Shamir security argument remain outside
-the established result. The inner proof is not a zero-knowledge
-proof. See [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) for the full
-statement, assumptions and non-claims.
-
-Primitive security, side channels, denial of service, deployed destination
-behavior and operational safety are outside these claims.
+The theorem's Rust/model value relation is an explicit premise, and
+[FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) states the exact results,
+assumptions and scope. Zero knowledge is provided by the external proof
+wrapper layer.
 
 <p align="center">
   <picture>

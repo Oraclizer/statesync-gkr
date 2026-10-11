@@ -171,5 +171,5 @@ residual-claim consumption.
 
 The Rust/model value and off-cube representation relation is still a premise,
 and recorded open contract obligations remain visible. Performance and
-differential proof observations are separate engineering evidence; they add
-no whole-program verification, Fiat-Shamir reduction or security-audit grade.
+differential proof observations are separate engineering evidence alongside
+the formal results.

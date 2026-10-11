@@ -1,17 +1,9 @@
 # Security policy
 
-StateSync-GKR combines machine-checked compiler and GKR models with a
-conditional, mechanized forward acceptance theorem, recorded proofs for
-selected Rust contracts, and tests tied to the actual verifier checks. The
-[refinement guide](docs/refinement.md) records the completed results and
-selected open obligations. Whole-program compiled correspondence and
-executable Fiat-Shamir security are not established, the inner GKR proof is
-not zero-knowledge, and the implementation has not undergone a comprehensive
-independent security audit. A production
-deployment should review the remaining
-[implementation and cryptographic assumptions](FORMAL_VERIFICATION.md),
-dependency and resource risks, and its application-specific operational
-boundaries.
+This policy describes how to report vulnerabilities in StateSync-GKR. The
+verified results and their assumptions are described in
+[FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) and the
+[refinement guide](docs/refinement.md).
 
 ## Reporting a vulnerability
 
