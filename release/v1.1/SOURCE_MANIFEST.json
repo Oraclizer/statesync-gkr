@@ -249,8 +249,8 @@
     {
       "path": "REPRODUCING.md",
       "mode": "100644",
-      "bytes": 3917,
-      "sha256": "281b682e8496b9aed01c3884756b274754bef2ffd23f429f98546472cbc37434",
+      "bytes": 3868,
+      "sha256": "b03528f3d933ca4804e15c37ab0f0f2561980df8ee524916c37af20694a101df",
       "role": "documentation"
     },
     {
@@ -3777,8 +3777,8 @@
     {
       "path": "release/v1.1/RELEASE_NOTES.md",
       "mode": "100644",
-      "bytes": 8284,
-      "sha256": "328d5220794564faef689edd210f2733370f9d6cc973cc9fbeb83f41a5545dbf",
+      "bytes": 8217,
+      "sha256": "1a4cb26b26fe2edd2a27d931f06a1a347be6ea29e11e8cccb7ad9ed91c1cbc3c",
       "role": "release-evidence-or-tooling"
     },
     {

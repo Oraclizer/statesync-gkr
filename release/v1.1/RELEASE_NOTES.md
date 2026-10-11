@@ -139,14 +139,12 @@ checks still apply to both.
 
 ## Non-claims
 
-This release does not claim a security audit, absence of vulnerabilities,
-deployment safety for a particular application, zero knowledge beyond the
-documented proof profile, aggregate-proof batching, production performance
-guarantees, deployed contracts,
-native rollup proving, parent-chain confirmation, legal compliance, or
-operational support commitments. It does not claim compiled-Rust semantics,
+This release does not claim zero knowledge beyond the documented proof
+profile, aggregate-proof batching, deployed contracts, native rollup proving or
+parent-chain confirmation. It does not claim compiled-Rust semantics,
 Fiat-Shamir soundness, whole-program refinement, or the converse of the
-verifier acceptance refinement.
+verifier acceptance refinement. Warranty and liability terms are those of the
+[license](../../LICENSE) and the [disclaimer](../../DISCLAIMER.md).
 
 The separate [controlled studies](../../docs/performance.md) contain limited
 self-measured results for their stated hardware, workloads and timing
