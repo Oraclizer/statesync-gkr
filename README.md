@@ -134,6 +134,69 @@ provides the small Linux caller/memory check and the separate dataset layout.
 
 For direct SMT checks and the GKR boundary, see [Choosing a path](#choosing-a-path).
 
+## Quick start
+
+Clone the repository for this local example.
+Research, development and other non-production use are permitted by
+[LICENSE](LICENSE). Pin a specific current commit when recording a replay.
+
+```sh
+git clone --depth 1 https://github.com/Oraclizer/statesync-gkr.git
+cd statesync-gkr
+rustup show
+cargo run --release --locked --example state_sync_prove_verify
+```
+
+Expected output:
+
+```text
+honest-proof=PASS
+tampered-proof=REJECTED
+secondary-finalized=false
+```
+
+The example builds one synthetic membership request, proves it, verifies the
+honest result and rejects a modified proof. It uses the pinned Rust toolchain
+and the release lock file. The packages are distributed as source; pin a Git
+tag or commit when integrating them into another application.
+
+| Requirement | Version |
+| --- | --- |
+| Rust | 1.96.1, pinned in `rust-toolchain.toml`; declared minimum 1.85 (`rust-version`) |
+| Hosted CI | Linux x86_64 |
+| Isabelle sessions | Isabelle2025-2 with the AFP release `afp-2026-08-05` |
+
+## Minimal Rust integration
+
+The facade consumes an operation, its private Merkle witness and the public
+inputs that the caller expects. A checked call handles both construction
+errors and a rejected verifier result:
+
+```rust
+use statesync_gkr::{StateSyncProver, SyncRequest, SyncResult};
+
+pub fn prove_checked(
+    prover: &StateSyncProver,
+    request: &SyncRequest,
+) -> Result<SyncResult, String> {
+    let result = prover
+        .prove_sync_op(request)
+        .map_err(|error| format!("proving failed: {error:?}"))?;
+    if !prover.verify_sync_op(request, &result) {
+        return Err("the proof or its request binding was rejected".to_owned());
+    }
+    Ok(result)
+}
+```
+
+[Usage and API boundary](docs/usage.md) contains a complete application,
+dependency pin, supported input format, prepared execution and error handling.
+The caller obtains trusted roots and witnesses from its own state store; the
+library does not authenticate an external database or establish consensus.
+
+The current verifier reconstructs the circuit input from that witness,
+including the leaf hash and the complete old/new Merkle paths.
+
 ## CPU measurements
 
 Self-measured on two AMD EPYC 9R45 sockets: 192 physical CPU cores, SMT off,
@@ -217,63 +280,6 @@ Requested allocation, owned Vec capacity and whole-process RSS have separate
 plots and definitions. The [profile guide](docs/performance.md) explains the
 comparison and the [usage guide](docs/usage.md#choosing-worker-and-batch-settings)
 shows how to apply the observed settings.
-
-## Quick start
-
-Clone the repository for this local example.
-Research, development and other non-production use are permitted by
-[LICENSE](LICENSE). Pin a specific current commit when recording a replay.
-
-```sh
-git clone --depth 1 https://github.com/Oraclizer/statesync-gkr.git
-cd statesync-gkr
-rustup show
-cargo run --release --locked --example state_sync_prove_verify
-```
-
-Expected output:
-
-```text
-honest-proof=PASS
-tampered-proof=REJECTED
-secondary-finalized=false
-```
-
-The example builds one synthetic membership request, proves it, verifies the
-honest result and rejects a modified proof. It uses the pinned Rust toolchain
-and the release lock file. The packages are distributed as source; pin a Git
-tag or commit when integrating them into another application.
-
-## Minimal Rust integration
-
-The facade consumes an operation, its private Merkle witness and the public
-inputs that the caller expects. A checked call handles both construction
-errors and a rejected verifier result:
-
-```rust
-use statesync_gkr::{StateSyncProver, SyncRequest, SyncResult};
-
-pub fn prove_checked(
-    prover: &StateSyncProver,
-    request: &SyncRequest,
-) -> Result<SyncResult, String> {
-    let result = prover
-        .prove_sync_op(request)
-        .map_err(|error| format!("proving failed: {error:?}"))?;
-    if !prover.verify_sync_op(request, &result) {
-        return Err("the proof or its request binding was rejected".to_owned());
-    }
-    Ok(result)
-}
-```
-
-[Usage and API boundary](docs/usage.md) contains a complete application,
-dependency pin, supported input format, prepared execution and error handling.
-The caller obtains trusted roots and witnesses from its own state store; the
-library does not authenticate an external database or establish consensus.
-
-The current verifier reconstructs the circuit input from that witness,
-including the leaf hash and the complete old/new Merkle paths.
 
 ## Choosing a path
 
@@ -407,11 +413,6 @@ machine, and the records ship in this tree:
   exact-identity reproduction, and
   [`release/v1.1/verify.py`](release/v1.1/verify.py) replays the recorded
   hashes.
-- The exact v1.0 release artifacts were placed in AWS durable object storage
-  under a version-bound retention lock and restored bit for bit in a separate
-  project-operated custody check. The redacted public record of that check,
-  including the restore result and what it does not claim, ships in
-  [`release/v1.0/AWS_CUSTODY_RECEIPT.json`](release/v1.0/AWS_CUSTODY_RECEIPT.json).
 
 ## Proof-bound source
 

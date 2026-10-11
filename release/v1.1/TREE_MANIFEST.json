@@ -6,11 +6,11 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
-    "source_manifest_sha256": "f64cbd98e0c58b0432ecd87e5b4cff8dd8f565f626214dd3691e2bd3fe8b0e89"
+    "source_manifest_sha256": "7c7e24d23b1d8e989cfd192f14388f5695c8c95d99b17c8994a221a1b082a8a3"
   },
   "self_exclusion": "release/v1.1/TREE_MANIFEST.json",
-  "path_count": 958,
-  "candidate_path_count_including_self": 959,
+  "path_count": 959,
+  "candidate_path_count_including_self": 960,
   "entries": [
     {
       "path": ".gitattributes",
@@ -57,8 +57,8 @@
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.yml",
       "mode": "100644",
-      "bytes": 2371,
-      "sha256": "b5cdeca11c6bda3a9e091d28c1ae30b9df528ef12cb3129b76f106c8a6933d69",
+      "bytes": 2373,
+      "sha256": "0340b97babf497fda4accf31cd7944c488d04b32c549a7f267866a33632edb54",
       "role": "repository-automation-or-community"
     },
     {
@@ -78,8 +78,8 @@
     {
       "path": ".github/workflows/ci.yml",
       "mode": "100644",
-      "bytes": 7243,
-      "sha256": "b8a064bfd453d7f44eba60220fbda76e032da7f0e6c817173e1f071cd066d237",
+      "bytes": 7624,
+      "sha256": "4272474bfc9112b6f5223eaa14cff2f580661414cb47378e12653b2b911a12fc",
       "role": "repository-automation-or-community"
     },
     {
@@ -127,8 +127,8 @@
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "bytes": 1623,
-      "sha256": "e0979419351e7a3e4185972bb9bb65a441ed136589203e46a610c85bc161a7ec",
+      "bytes": 1651,
+      "sha256": "006c44129afa335309b6cd67a1ffaa0ae51ff7f82b52631ed0b916f8d6099aaa",
       "role": "repository-source-or-metadata"
     },
     {
@@ -141,8 +141,8 @@
     {
       "path": "CONTRIBUTING.md",
       "mode": "100644",
-      "bytes": 12178,
-      "sha256": "965496d73185e09a175394d4aba799a20ca439f3c8de3a897f1dc1d0e09fd09b",
+      "bytes": 12317,
+      "sha256": "4d88aa828bb016c2ca30d96f8d98713425c1621764d2ac1b5f4b335df1cb1a62",
       "role": "documentation"
     },
     {
@@ -176,15 +176,15 @@
     {
       "path": "FORMAL_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 15618,
-      "sha256": "4c4ef92c9f5485588862ab500d79e7aad5e3a64f96604829b53e253cf69d7021",
+      "bytes": 15896,
+      "sha256": "d997a5cb6b8eb0ef1635daec30c284070d0419c5572e93c89cac964dcb1c10d0",
       "role": "documentation"
     },
     {
       "path": "GOVERNANCE.md",
       "mode": "100644",
-      "bytes": 2934,
-      "sha256": "d62ea1c0087d42aa3aab3a42f218c4a94cf9797645f94ec133dd2526dada88f7",
+      "bytes": 2694,
+      "sha256": "e9bf2f08985d31ab479fbb5ebf275ed5fa5777bf57a0bb962f2d1d12b460bfd0",
       "role": "documentation"
     },
     {
@@ -211,8 +211,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 30318,
-      "sha256": "154db19c2529a709cf497c0d8de2ae157cb976fdc72f240ae3647e4b0b72dc77",
+      "bytes": 30173,
+      "sha256": "491e490be4f5260e22cd4dc7145be1b49f3d000fa6a7a0f565738f8febff8db9",
       "role": "documentation"
     },
     {
@@ -225,15 +225,15 @@
     {
       "path": "SECURITY.md",
       "mode": "100644",
-      "bytes": 1721,
-      "sha256": "85d870b61e56e5e43f1cc62f8bddd529afed36a8cd39339f3a56ab20ce05c0bb",
+      "bytes": 1854,
+      "sha256": "933f327f91e1ff2debf32693eb7032175c58abb08914ec6626985c1ac6699bf7",
       "role": "documentation"
     },
     {
       "path": "SUPPORT.md",
       "mode": "100644",
-      "bytes": 1745,
-      "sha256": "1639ed521832f07902592564bba7452a9ac600c6c98516db8a3783543e2623e8",
+      "bytes": 1690,
+      "sha256": "aba8ebe01503030aec2932301ece3a6aa8e5dda2740a093f1792c8d1198b5afa",
       "role": "documentation"
     },
     {
@@ -281,8 +281,8 @@
     {
       "path": "assets/brand/statesync-gkr-social-preview.png",
       "mode": "100644",
-      "bytes": 66264,
-      "sha256": "96c28cf76522dfb6f43d7ed7d3ab2026939603dbd4cb218537acac8cf04e3a2d",
+      "bytes": 224222,
+      "sha256": "2e953a7a2867f933e44fc9918324e10ac1d8f32d610a2f460e92dbef884037cf",
       "role": "repository-source-or-metadata"
     },
     {
@@ -3712,7 +3712,7 @@
       "path": "release/v1.1/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 4133,
-      "sha256": "07165298bdf549f4db70d53c4802a22df7e9192e8691b6184c3cae33ee5916cb",
+      "sha256": "68f77f0dc79542c7cf7b76efd63ade6150575ecc156b8e7c9e14c8bae214c233",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3754,7 +3754,7 @@
       "path": "release/v1.1/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 4596,
-      "sha256": "5407d7892f2e469d01c8f6c74292cb2985fc7a8690f05544763916cd0024670e",
+      "sha256": "465169cfd96bfb173c982d8fb91011e57b95124c9f0397cf0fdea3ec3cb85e22",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3788,22 +3788,22 @@
     {
       "path": "release/v1.1/SBOM.spdx.json",
       "mode": "100644",
-      "bytes": 780657,
-      "sha256": "7998eba7d3358ec5a4856293c53a8f3120fd2bdb367437ba2f65c916837f6456",
+      "bytes": 781320,
+      "sha256": "b2eb515ef45357c2f7cf82cedac4134a9a911c722cddeef77d978dfaa5ffcbdc",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SHA256SUMS",
       "mode": "100644",
       "bytes": 1276,
-      "sha256": "a29824c4f9bb25e0e130054f55b04770e5d2831345e3a60db45bdf7047794207",
+      "sha256": "2e65e29c8fefc88eef33b4fc15a60849c7825ff6b0497bff9e424c5564628bf1",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SOURCE_MANIFEST.json",
       "mode": "100644",
-      "bytes": 264742,
-      "sha256": "f64cbd98e0c58b0432ecd87e5b4cff8dd8f565f626214dd3691e2bd3fe8b0e89",
+      "bytes": 264985,
+      "sha256": "7c7e24d23b1d8e989cfd192f14388f5695c8c95d99b17c8994a221a1b082a8a3",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3874,6 +3874,13 @@
       "mode": "100644",
       "bytes": 2725,
       "sha256": "362c44242c5a13b9ac1b2e56220ecc2e5361682b0bfa4199b33b066093c2b5a9",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.1/verify_theory_commands.py",
+      "mode": "100644",
+      "bytes": 3558,
+      "sha256": "66377b2c8e58629ae6232fa90314635c51347c19522cbf3c7c900d9983898ad5",
       "role": "release-evidence-or-tooling"
     },
     {

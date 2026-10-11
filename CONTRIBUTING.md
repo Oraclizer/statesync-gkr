@@ -20,9 +20,9 @@ The contributions that help most right now:
 - **Documentation that was wrong or unclear on first read.** If you had to
   work something out yourself, the docs should have told you.
 
-Because one person reviews everything, please open an issue before starting a
-large change so we can agree on the approach before you spend the time. Small
-fixes can go straight to a pull request.
+Please open an issue before starting a large change so we can agree on the
+approach before you spend the time. Small fixes can go straight to a pull
+request.
 
 ## Where to start
 
@@ -64,6 +64,9 @@ cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --release --locked
 
+# The README quick start must print exactly its documented result.
+cargo run --release --locked --example state_sync_prove_verify
+
 # Rust and Python must agree byte-for-byte on the canonical encodings.
 cargo run --release --locked -p ssgkr-wrap --example risc0-route-b-manifest-v1 -- \
   tests/vectors/risc0-route-b-manifest-v1.json > /tmp/route-rust.txt
@@ -85,6 +88,7 @@ cargo run --release --locked --bin proof_digest
 
 # Policy and public-surface checks.
 python3 release/v1.1/verify_dependency_update_policy.py
+python3 release/v1.1/verify_theory_commands.py
 python3 release/v1.1/test_verify_mode_policy.py
 python3 release/v1.1/test_documentation_consistency.py
 python3 release/v1.1/test_license_distribution.py
