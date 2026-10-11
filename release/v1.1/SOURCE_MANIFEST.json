@@ -333,15 +333,15 @@
     {
       "path": "assets/diagrams/architecture-overview-mobile.svg",
       "mode": "100644",
-      "bytes": 7603,
-      "sha256": "c382b5f4a1793fd0a701d299e0809ed29dd85a5901b7b2cc3690a111e4f097ec",
+      "bytes": 7648,
+      "sha256": "55c0bb24073795a099baea7e3d4bfd0f77809859ca2b84f19fddcbe27b0d85f0",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/diagrams/architecture-overview.svg",
       "mode": "100644",
-      "bytes": 10104,
-      "sha256": "a50601050d83cec98ffd9623b942a3aa07a1f8d6201f8db52f5b11be206a3061",
+      "bytes": 10214,
+      "sha256": "d3f340f38e8cf6f0b1a5b63c10f68a794ada081d45dc55a38c27a6e2eaab1cac",
       "role": "repository-source-or-metadata"
     },
     {
