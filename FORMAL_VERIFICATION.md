@@ -157,8 +157,9 @@ contain open `null` obligations, including verifier-path helpers such as
 that the public-input contract relies on. These open records are preserved
 without proof credit. See the [source and evidence map](docs/refinement.md#source-and-evidence-map).
 Explanatory comments inside the theory sources were written with the proofs
-and are not revised for documentation-only changes; the current security
-status is stated in [SECURITY.md](SECURITY.md).
+and are not revised for documentation-only changes. Where such a comment
+describes the repository's status, the README and this document take
+precedence.
 
 ## Trusted and assumed boundaries
 

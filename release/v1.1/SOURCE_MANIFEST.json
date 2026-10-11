@@ -207,8 +207,8 @@
     {
       "path": "FORMAL_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 15585,
-      "sha256": "cf3e246f00aae6860ba4e308b94b3ceba723e214447c1934e61a6948cc3f3bdb",
+      "bytes": 15618,
+      "sha256": "4c4ef92c9f5485588862ab500d79e7aad5e3a64f96604829b53e253cf69d7021",
       "role": "documentation"
     },
     {
@@ -242,8 +242,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 30328,
-      "sha256": "42215550f0bd932f414136210a4070452fb44598355eefad4e682f89cf9462d6",
+      "bytes": 30318,
+      "sha256": "154db19c2529a709cf497c0d8de2ae157cb976fdc72f240ae3647e4b0b72dc77",
       "role": "documentation"
     },
     {
@@ -291,8 +291,8 @@
     {
       "path": "assets/brand/statesync-gkr-hero.svg",
       "mode": "100644",
-      "bytes": 4733,
-      "sha256": "8d86648002275e940dca66dcfd435b6d7a61ac74f33aaadecb4088ae2dbcb3d8",
+      "bytes": 4720,
+      "sha256": "27f71913e105249b8f6cf383d51dc6bb62db280b099c71372186948ecc40d731",
       "role": "repository-source-or-metadata"
     },
     {
@@ -340,8 +340,8 @@
     {
       "path": "assets/diagrams/architecture-overview.svg",
       "mode": "100644",
-      "bytes": 10121,
-      "sha256": "cadae2622f818949234054200238495c3d79612f4b24e3161b4f039fa5878cdc",
+      "bytes": 10104,
+      "sha256": "a50601050d83cec98ffd9623b942a3aa07a1f8d6201f8db52f5b11be206a3061",
       "role": "repository-source-or-metadata"
     },
     {

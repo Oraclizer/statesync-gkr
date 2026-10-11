@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300"
      role="img" aria-labelledby="hero-title hero-desc" preserveAspectRatio="xMidYMid meet">
-  <title id="hero-title">StateSync-GKR experimental Rust prover component</title>
+  <title id="hero-title">StateSync-GKR Rust prover component</title>
   <desc id="hero-desc">Sparse state cells flow through layered reductions into a compact claim beside the StateSync-GKR project name.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
