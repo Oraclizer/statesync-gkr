@@ -2,7 +2,7 @@
 
 The caller in `Load` reproduces prepared independent proof jobs, local batching, actual TCP transport, and final encoded-proof acceptance against the original request. It uses the production implementation and the same deterministic corpus constructor as the measured driver. The portable caller uses a repository-relative dependency path and the current BUSL-1.1 license. Its Cargo declaration and bundled LICENSE agree with the repository root. `PORTABLE_SOURCE.json` distinguishes the historical driver identity from the portable file hashes. A new binary records its own source/binary/environment identity.
 
-The separate dataset holds the exact condition/process tables, full memory curves, actual arrival envelopes and raw observations described by `DATASET_LOCATOR.json`. This repository distributes the replay code and methodological guide. The controlled memory comparison uses production Sparse and a test-only Dense reference in one driver; requested allocation, Vec capacity and whole-process RSS remain separate. Counter/stage overhead stays in both memory timers, and CPU0 single-job measurements do not measure 48-core throughput. The companion package and engineering manuscript are prepared for review; no new dataset DOI, public download URL or engineering-paper arXiv identifier is asserted. Data and figure publication rights await the final review described in `DATA_RIGHTS.md`.
+The separate dataset holds the exact condition/process tables, full memory curves, actual arrival envelopes and raw observations described by `DATASET_LOCATOR.json`. This repository distributes the replay code and methodological guide. The controlled memory comparison uses production Sparse and a test-only Dense reference in one driver; requested allocation, Vec capacity and whole-process RSS remain separate. Counter/stage overhead stays in both memory timers, and CPU0 single-job measurements do not measure 48-core throughput. The engineering paper, *StateSync-GKR: Design and Evaluation of a Reusable Sparse GKR Engine*, is available as [arXiv:2610.14849](https://arxiv.org/abs/2610.14849). The separate companion dataset remains prepared for review; its dataset DOI and public download URL are still unassigned. Data and figure publication rights await the final review described in `DATA_RIGHTS.md`.
 
 The existing 243-process and 175-process studies remain at `../controlled-cpu-2026-10-06` and `../controlled-cpu-2026-10-06-supplement`. The new memory study contains 264 independent processes; the additional limit/load studies contain 17 + 38 + 12 + 57 + 47 executions. These denominators are different experimental units and are not added into one throughput sample population.
 
@@ -35,7 +35,9 @@ commercial license. Versions through v1.1.0 retain their original terms.
 
 Cite the existing [v1.1.0 software record](https://doi.org/10.5281/zenodo.23136385)
 for that software identity. [arXiv:2610.05335](https://arxiv.org/abs/2610.05335)
-is the formal study. Neither is a new dataset or engineering-paper record.
+is the formal study. Cite [arXiv:2610.14849](https://arxiv.org/abs/2610.14849)
+for the engine design and evaluation. These software and paper identifiers
+are separate from the pending dataset record.
 
 For a complete small Linux check including a build, CLI rejection, nine localhost requests and the smallest mixed Memory cells, use Python 3.12+ and a clean checkout of the current BSL distribution:
 

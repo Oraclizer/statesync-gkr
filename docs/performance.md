@@ -9,10 +9,14 @@ describes their application conditions.
 The [replay guide](../benches/controlled-capacity-2026-10-07/README.md) contains
 actual small-control commands. The [dataset locator](../benches/controlled-capacity-2026-10-07/DATASET_LOCATOR.json)
 defines the complete raw/table/figure layout and its current preparation status.
-The separate engineering manuscript and new dataset are prepared for review,
-not newly published records. The locator's publication URL, dataset DOI and
-archive digest remain null; the existing software DOI and formal-paper arXiv
-identifier do not identify this new dataset or engineering manuscript.
+The engineering paper, *StateSync-GKR: Design and Evaluation of a Reusable
+Sparse GKR Engine*, is available as
+[arXiv:2610.14849](https://arxiv.org/abs/2610.14849). It presents the engine
+design and these controlled measurements. The separate dataset remains
+prepared for review: the locator's publication URL, dataset DOI and archive
+digest remain null. The engineering paper, existing software DOI and
+[formal paper](https://arxiv.org/abs/2610.05335) identify different records;
+none assigns a publication identifier to the new dataset.
 
 All studies use the immutable v1.1.0 kernel. The earlier two C8a baremetal
 campaigns contain 243 and 175 distinct process executions on different hosts.

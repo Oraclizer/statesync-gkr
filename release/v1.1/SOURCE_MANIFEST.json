@@ -242,8 +242,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 30173,
-      "sha256": "491e490be4f5260e22cd4dc7145be1b49f3d000fa6a7a0f565738f8febff8db9",
+      "bytes": 30710,
+      "sha256": "ec432034fb365cbb82be0376e4364ce2587a4d772189310c5cd8b457c202b3ac",
       "role": "documentation"
     },
     {
@@ -550,8 +550,8 @@
     {
       "path": "benches/controlled-capacity-2026-10-07/README.md",
       "mode": "100644",
-      "bytes": 5809,
-      "sha256": "abc81d6b515c705d35a0eeb3d9f488c94e56f6c4e102f37c3994c5a465957b12",
+      "bytes": 6056,
+      "sha256": "7f35bab8c7abe71a6448ec5eb8b287eedd6e965b7e3cc6badfb1538b13c26dfe",
       "role": "documentation"
     },
     {
@@ -3322,8 +3322,8 @@
     {
       "path": "docs/performance.md",
       "mode": "100644",
-      "bytes": 16245,
-      "sha256": "89ed6cb1b082514e7b9cb7ae9ebfcfc68fe68208e6b839690b1eb7dfaf11cb16",
+      "bytes": 16483,
+      "sha256": "28de86032891b4df60acfa6d28bbdbde23aad467535a806d17dd5f481392b397",
       "role": "documentation"
     },
     {
