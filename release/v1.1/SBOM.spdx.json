@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "StateSync-GKR v1.1.1 BSL source distribution SBOM",
-  "documentNamespace": "https://oraclizer.io/spdx/statesync-gkr-v1.1/050a5318ab92d0cfe74c996498bc2a0dffa5488f329a3116759e5dca84da9218",
+  "documentNamespace": "https://oraclizer.io/spdx/statesync-gkr-v1.1/6ec53f0522cda2fa96fa9c78b8f413b74bb6e02cad590093308d3fcd6c356fa8",
   "creationInfo": {
-    "created": "2026-10-11T08:18:36Z",
+    "created": "2026-10-14T05:12:37Z",
     "creators": [
       "Tool: statesync-gkr-release-packager-v1"
     ],
@@ -27,7 +27,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "050a5318ab92d0cfe74c996498bc2a0dffa5488f329a3116759e5dca84da9218"
+          "checksumValue": "6ec53f0522cda2fa96fa9c78b8f413b74bb6e02cad590093308d3fcd6c356fa8"
         }
       ],
       "comment": "Deterministic repository source archive candidate."
@@ -2504,7 +2504,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "491e490be4f5260e22cd4dc7145be1b49f3d000fa6a7a0f565738f8febff8db9"
+          "checksumValue": "ec432034fb365cbb82be0376e4364ce2587a4d772189310c5cd8b457c202b3ac"
         }
       ],
       "licenseConcluded": "NOASSERTION",
@@ -3208,7 +3208,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "abc81d6b515c705d35a0eeb3d9f488c94e56f6c4e102f37c3994c5a465957b12"
+          "checksumValue": "7f35bab8c7abe71a6448ec5eb8b287eedd6e965b7e3cc6badfb1538b13c26dfe"
         }
       ],
       "licenseConcluded": "NOASSERTION",
@@ -9544,7 +9544,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "89ed6cb1b082514e7b9cb7ae9ebfcfc68fe68208e6b839690b1eb7dfaf11cb16"
+          "checksumValue": "28de86032891b4df60acfa6d28bbdbde23aad467535a806d17dd5f481392b397"
         }
       ],
       "licenseConcluded": "NOASSERTION",
@@ -10616,7 +10616,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "9a409a68426d83578fb21940d5bfa54836b2cb71cf8a84e8c436ad563010a5d6"
+          "checksumValue": "d085ce50c735f5ed730463291a7962c889d0bb06bdc2a7a7c989337cbb917509"
         }
       ],
       "licenseConcluded": "NOASSERTION",

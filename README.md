@@ -12,7 +12,8 @@
   <a href="LICENSE"><img alt="License: BUSL-1.1" src="https://img.shields.io/badge/license-BUSL--1.1-0b5cad"></a>
   <a href="Cargo.toml"><img alt="MSRV 1.85" src="https://img.shields.io/badge/rustc-1.85+-284a76"></a>
   <a href="https://doi.org/10.5281/zenodo.23280552" title="StateSync-GKR v1.1.1 software DOI"><img alt="DOI: 10.5281/zenodo.23280552" src="assets/brand/zenodo-doi.svg"></a>
-  <a href="https://arxiv.org/abs/2610.05335"><img alt="arXiv: 2610.05335" src="https://img.shields.io/badge/arXiv-2610.05335-b31b1b"></a>
+  <a href="https://arxiv.org/abs/2610.14849" title="Engine design and evaluation paper"><img alt="Engine paper: arXiv 2610.14849" src="https://img.shields.io/badge/arXiv%20Engine-2610.14849-b31b1b"></a>
+  <a href="https://arxiv.org/abs/2610.05335" title="Formal verification paper"><img alt="Formal paper: arXiv 2610.05335" src="https://img.shields.io/badge/arXiv%20Formal-2610.05335-b31b1b"></a>
 </p>
 
 # StateSync-GKR
@@ -535,7 +536,12 @@ The companion paper, *StateSync-GKR: Machine-Checking the Trust Chain from
 Sparse-Merkle State Transitions to GKR Verification*, is available as
 [arXiv:2610.05335](https://arxiv.org/abs/2610.05335). The paper uses the
 arXiv non-exclusive distribution license. This identifier names the formal
-study, not the separate engineering evaluation. The engineering manuscript and
-its new dataset are prepared for review; no new arXiv identifier, dataset DOI
-or public download URL is assigned here. The current state is recorded in the
+study. The separate engineering paper, *StateSync-GKR: Design and Evaluation
+of a Reusable Sparse GKR Engine*, is available as
+[arXiv:2610.14849](https://arxiv.org/abs/2610.14849) under the arXiv
+non-exclusive distribution license. It connects the engine design to the
+controlled memory, repeated-request and full-proof delivery measurements.
+The separate dataset remains prepared for review; its dataset DOI, archive
+digest and public download URL are still unassigned. The current data state
+is recorded in the
 [dataset locator](benches/controlled-capacity-2026-10-07/DATASET_LOCATOR.json).
