@@ -13,6 +13,12 @@ The forward theorem retains an explicit Rust/model value-relation premise.
 [Refinement evidence and reuse](docs/refinement.md) distinguishes the completed
 results, recorded contract proofs and open correspondence obligations.
 
+For a shorter introduction, see the website's
+[formal verification overview](https://oraclizer.io/ss-gkr/formal-verification/)
+and the documentation's
+[assurance summary](https://oraclizer.io/ss-gkr/docs/assurance/formal-verification/).
+This document remains the reference for the exact results, assumptions and scope.
+
 The Rust kernel and formal sources retain their recorded contents. The
 [distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
 current source consistency from the historical v1.1 executable and proof: an
@@ -206,7 +212,8 @@ representation premises still apply. It is not an established error
 probability or bit-security level for the executable Fiat-Shamir verifier.
 [docs/challenge-generation-review.md](docs/challenge-generation-review.md)
 records the reviewed source-to-model path, the transcript schedule, and the
-conditions above.
+conditions above. [Trust boundaries](https://oraclizer.io/ss-gkr/docs/assurance/trust-boundaries/)
+describes what these boundaries leave to an integrating application.
 
 ## Building the Isabelle sessions
 

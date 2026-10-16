@@ -17,6 +17,8 @@ transition.
 It does not own identity providers, source-network governance, receipt-network
 operation, production signing custody, a deployed destination contract, native
 rollup proving, parent-chain settlement, or secondary finality.
+[Trust boundaries](https://oraclizer.io/ss-gkr/docs/assurance/trust-boundaries/)
+describes the responsibilities this leaves to an integrating application.
 
 ## Crate ownership
 
@@ -221,3 +223,6 @@ production incident response require separate evidence.
 - Public vectors: `tests/vectors/`
 - Selected zkVM integration: `spikes/zkvm-wrap/`
 - Release verifier and manifests: `release/v1.1/`
+
+[Project layout](https://oraclizer.io/ss-gkr/docs/get-started/project-layout/)
+names the entry points that application code should use.

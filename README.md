@@ -21,7 +21,7 @@
 A Rust GKR and sumcheck engine for sparse-Merkle state transitions, with its
 protocol and compiler models machine-checked in Isabelle/HOL.
 
-[Quick start](#quick-start) · [API guide](docs/usage.md) · [Measured profiles](docs/performance.md) · [Formal verification](FORMAL_VERIFICATION.md) · [Refinement evidence](docs/refinement.md)
+[Website](https://oraclizer.io/ss-gkr/) · [Documentation](https://oraclizer.io/ss-gkr/docs/) · [Quick start](#quick-start) · [API guide](docs/usage.md) · [Measured profiles](docs/performance.md) · [Formal verification](FORMAL_VERIFICATION.md) · [Refinement evidence](docs/refinement.md)
 
 Its SMT frontend proves membership, non-membership and single-leaf updates.
 Models of the SMT circuit compiler and of the GKR and sumcheck protocol, and
@@ -60,7 +60,7 @@ can build on the same engine and use its
 - **Repeat efficiently:** derived wiring, prepared reuse and independent proof jobs.
 - **Keep the meaning:** three-state lifecycle, strict codec/request binding and a reusable core with traceable acceptance evidence.
 
-[See the implementation](docs/architecture.md) · [Read the evidence conditions](benches/controlled-capacity-2026-10-07/FEATURES.md) · [Inspect the measurements](docs/performance.md)
+[See the implementation](docs/architecture.md) · [Read the evidence conditions](benches/controlled-capacity-2026-10-07/FEATURES.md) · [Inspect the measurements](docs/performance.md) · [Browse the performance overview](https://oraclizer.io/ss-gkr/performance/)
 
 Measurements, structure, controls and model results support different claims.
 The nine mechanisms are not nine independently isolated causal experiments.
@@ -122,18 +122,25 @@ provides the small Linux caller/memory check and the separate dataset layout.
 ## What you can use
 
 - **SMT operation:** use `StateSyncProver` with `SyncRequest` for membership,
-  absence or a single-leaf transition.
+  absence or a single-leaf transition
+  ([guide](https://oraclizer.io/ss-gkr/docs/guides/proving-state-operations/)).
 - **Prepared requests:** call `prepare` once for a kind and configuration,
-  then `prove_sync_op_prepared` and `verify_sync_op_prepared` per request.
+  then `prove_sync_op_prepared` and `verify_sync_op_prepared` per request
+  ([guide](https://oraclizer.io/ss-gkr/docs/guides/prepared-execution/)).
 - **CPU jobs:** construct each witness with `make_job_prepared`, then run
-  independent jobs through `prove_batch_parallel`.
-- **Encoded proof:** use `encode_sync_result` and `verify_encoded_sync_op`.
+  independent jobs through `prove_batch_parallel`
+  ([guide](https://oraclizer.io/ss-gkr/docs/guides/batching-and-parallelism/)).
+- **Encoded proof:** use `encode_sync_result` and `verify_encoded_sync_op`
+  ([guide](https://oraclizer.io/ss-gkr/docs/guides/encoding-and-transport/)).
 - **Another circuit frontend:** use the `sumcheck` and `gkr` modules and supply
-  the frontend's statement and input binding.
+  the frontend's statement and input binding
+  ([guide](https://oraclizer.io/ss-gkr/docs/guides/custom-frontends/)).
 - **Model and implementation boundary:** read [Formal verification](FORMAL_VERIFICATION.md)
   and the [formal study](https://arxiv.org/abs/2610.05335).
 
 For direct SMT checks and the GKR boundary, see [Choosing a path](#choosing-a-path).
+[Use cases](https://oraclizer.io/ss-gkr/use-cases/) describes the
+applications where these operations fit.
 
 ## Quick start
 
@@ -159,7 +166,10 @@ secondary-finalized=false
 The example builds one synthetic membership request, proves it, verifies the
 honest result and rejects a modified proof. It uses the pinned Rust toolchain
 and the release lock file. The packages are distributed as source; pin a Git
-tag or commit when integrating them into another application.
+tag or commit when integrating them into another application. The online
+[Quickstart](https://oraclizer.io/ss-gkr/docs/get-started/quickstart/) reads
+through the example, and [Installation](https://oraclizer.io/ss-gkr/docs/get-started/installation/)
+shows how to add the packages as a dependency.
 
 | Requirement | Version |
 | --- | --- |
@@ -192,8 +202,14 @@ pub fn prove_checked(
 
 [Usage and API boundary](docs/usage.md) contains a complete application,
 dependency pin, supported input format, prepared execution and error handling.
+The [API reference](https://oraclizer.io/ss-gkr/docs/reference/api/) lists
+every public module, and [Errors](https://oraclizer.io/ss-gkr/docs/reference/errors/)
+lists every public error type and how to handle it.
 The caller obtains trusted roots and witnesses from its own state store; the
 library does not authenticate an external database or establish consensus.
+[Trust boundaries](https://oraclizer.io/ss-gkr/docs/assurance/trust-boundaries/)
+separates what a successful verification establishes from the application's
+responsibilities.
 
 The current verifier reconstructs the circuit input from that witness,
 including the leaf hash and the complete old/new Merkle paths.
@@ -280,7 +296,12 @@ disabled, while the internal Dense reference reached a native OOM at width
 Requested allocation, owned Vec capacity and whole-process RSS have separate
 plots and definitions. The [profile guide](docs/performance.md) explains the
 comparison and the [usage guide](docs/usage.md#choosing-worker-and-batch-settings)
-shows how to apply the observed settings.
+shows how to apply the observed settings. The online
+[benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/) and
+[methodology](https://oraclizer.io/ss-gkr/docs/benchmarks/methodology/) pages
+summarize each comparison target and timer boundary, and
+[Performance tuning](https://oraclizer.io/ss-gkr/docs/guides/performance-tuning/)
+relates the measured settings to deployment choices.
 
 ## Choosing a path
 
@@ -300,7 +321,8 @@ This frontend does not offload that Merkle hashing from the verifier.
 `ssgkr-sumcheck` implements multilinear sumcheck. `ssgkr-protocol` provides
 the layered-circuit representation, weighted linear, multiplication and cube
 gates, layer reduction and the GKR proof chain. These crates do not depend on
-`ssgkr-compiler`.
+`ssgkr-compiler`. [How GKR works](https://oraclizer.io/ss-gkr/docs/concepts/how-gkr-works/)
+explains the protocol and where each step lives in these crates.
 
 The SMT frontend supplies operation semantics, the circuit compiler, witness
 layout and the checks that bind a proof to an SMT request. Prepared execution
@@ -353,6 +375,10 @@ compatibility interfaces are described in
 [ARCHITECTURE.md](ARCHITECTURE.md). The separation between the internal proof
 and the external proof role is recorded in
 [ADR-0002](docs/adr/0002-external-proof-role-contract.md).
+[How the engine works](https://oraclizer.io/ss-gkr/engine/) follows one
+request through these stages, and
+[Project layout](https://oraclizer.io/ss-gkr/docs/get-started/project-layout/)
+names the entry points that application code should use.
 
 ## Model verification and implementation boundary
 
@@ -380,7 +406,9 @@ acceptance rules and reuse that review basis for integration and maintenance.
 The theorem's Rust/model value relation is an explicit premise, and
 [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) states the exact results,
 assumptions and scope. Zero knowledge is provided by the external proof
-wrapper layer.
+wrapper layer. The website's
+[formal verification overview](https://oraclizer.io/ss-gkr/formal-verification/)
+summarizes the verification chain from state semantics to the shipped verifier.
 
 <p align="center">
   <picture>
@@ -458,6 +486,10 @@ roles, or endorsements; every one of them is defined in
 
 ## Documentation
 
+The [online documentation](https://oraclizer.io/ss-gkr/docs/) covers
+installation, concepts, guides, the API reference, benchmarks, assurance and
+project policies for the current release line. The repository records are:
+
 - [Architecture](ARCHITECTURE.md)
 - [Formal verification](FORMAL_VERIFICATION.md)
 - [Refinement evidence and reuse](docs/refinement.md)
@@ -499,7 +531,7 @@ and exactly which checks a pull request must pass.
 works. [GOVERNANCE.md](GOVERNANCE.md) describes how decisions are made.
 Community maintenance is best-effort, and there is no bug bounty. Commercial
 licensing for production use is arranged with Oraclizer Labs, Inc. through
-[oraclizer.io](https://oraclizer.io).
+[StateSync-GKR licensing](https://oraclizer.io/ss-gkr/licensing/).
 
 ## Acknowledgments
 
@@ -515,11 +547,12 @@ auditing, benchmarking and other non-production use are free, and production
 use solely to verify proofs is granted. Production use that generates proofs,
 embeds or redistributes proving functionality in a product or service, or
 offers proof generation to third parties requires a commercial license from
-Oraclizer Labs, Inc.; see [oraclizer.io](https://oraclizer.io) for the
-licensing contact. Each version licensed under BSL converts to Apache-2.0
+Oraclizer Labs, Inc.; see [StateSync-GKR licensing](https://oraclizer.io/ss-gkr/licensing/)
+for the licensing contact. Each version licensed under BSL converts to Apache-2.0
 three years after it is first publicly distributed under BSL. The Business
 Source License is source-available and is not an Open Source license in the
-OSI sense.
+OSI sense. The [licensing guide](https://oraclizer.io/ss-gkr/docs/project/licensing/)
+walks through which uses need a commercial license.
 
 Versions up to and including v1.1.0 were released under MIT OR Apache-2.0.
 [NOTICE](NOTICE) records the contribution notices, and dependency licenses are
@@ -527,6 +560,8 @@ listed in the [software bill of materials](release/v1.1/SBOM.spdx.json).
 
 To cite this software, use [CITATION.cff](CITATION.cff) or
 [DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552) (v1.1.1).
+[Citing StateSync-GKR](https://oraclizer.io/ss-gkr/docs/project/citing/)
+gives BibTeX entries for the software and both papers.
 The measurements and the attached historical proof refer to v1.1.0, archived as
 [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385). The
 [reproduction guidance](REPRODUCING.md) separates current source checks from

@@ -3,6 +3,9 @@
 This changelog records user-visible component changes.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+[Versioning](https://oraclizer.io/ss-gkr/docs/project/versioning/) explains how
+component releases, Cargo packages, documentation and proof encodings are
+versioned.
 
 ## [Unreleased]
 

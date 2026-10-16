@@ -9,6 +9,11 @@ forward acceptance theorem. Use it to identify the checks and remaining
 assumptions an integration must preserve. Exact results and assumptions are
 described in [FORMAL_VERIFICATION.md](../FORMAL_VERIFICATION.md).
 
+The [online documentation](https://oraclizer.io/ss-gkr/docs/) expands these
+sections into step-by-step guides, and its
+[API reference](https://oraclizer.io/ss-gkr/docs/reference/api/) lists every
+public module with signatures, errors and feature requirements.
+
 ## Choosing a path
 
 For a direct check of a supplied Merkle path and SMT operation, the public
@@ -63,7 +68,9 @@ Its complete source is
 [`examples/state_sync_prove_verify.rs`](../examples/state_sync_prove_verify.rs).
 This local path requires neither the zkVM build environment nor a network
 submission. The reference transition and external proof routes have separate
-requirements under [Reproducing the release](../REPRODUCING.md).
+requirements under [Reproducing the release](../REPRODUCING.md). The online
+[Quickstart](https://oraclizer.io/ss-gkr/docs/get-started/quickstart/) explains
+the output and suggests a first change to try.
 
 ## Pin the source in an application
 
@@ -101,6 +108,8 @@ The tested host paths are x86-64 Linux in CI and the controlled CPU study,
 and Windows 11 with the x86-64 GNU Rust target. A normal Rust linker/build
 environment is required. Release-surface and codec tools use Python 3.11 or
 later. The selected zkVM identity build has its own documented environment.
+[Installation](https://oraclizer.io/ss-gkr/docs/get-started/installation/)
+covers Git and path dependencies and platform notes.
 
 ## Complete application
 
@@ -242,6 +251,13 @@ return `CompileError::UnsupportedConfig`. A zero depth and a leaf encoding
 bound below 10 also return that error. Choose practical bounds before accepting
 untrusted requests; configuration values are not a resource-limiting service.
 
+[Proving state operations](https://oraclizer.io/ss-gkr/docs/guides/proving-state-operations/)
+builds each operation in a complete program,
+[Sparse Merkle state](https://oraclizer.io/ss-gkr/docs/concepts/sparse-merkle-state/)
+explains leaf states, digests and the slot lifecycle, and
+[Configuration](https://oraclizer.io/ss-gkr/docs/reference/configuration/)
+lists each configuration value with its accepted range and limit error.
+
 ## Field, hash and encoding profile
 
 | Item | Shipped profile |
@@ -285,6 +301,10 @@ The controlled benchmark also measures a separate caller that parallelizes
 `make_job_prepared` before invoking `prove_batch_parallel`. That orchestration
 lives in the benchmark driver and is not a built-in witness-parallel method
 of the released facade. The two stages complete in sequence.
+
+[Prepared execution](https://oraclizer.io/ss-gkr/docs/guides/prepared-execution/)
+and [Batching and parallelism](https://oraclizer.io/ss-gkr/docs/guides/batching-and-parallelism/)
+cover these APIs with complete pipelines, common mistakes and checklists.
 
 ## Choosing worker and batch settings
 
@@ -335,6 +355,9 @@ complete received proof through `verify_encoded_sync_op`; a proof hash alone
 is not verification. Preserve the original request's configuration, roots and
 value digest, and stop on a semantic or identity mismatch. See
 [measured profiles](performance.md) for the complete measurement boundaries.
+[Performance tuning](https://oraclizer.io/ss-gkr/docs/guides/performance-tuning/)
+and [Production integration](https://oraclizer.io/ss-gkr/docs/guides/production-integration/)
+discuss these choices for a long-running service.
 
 ## Errors and rejected proofs
 
@@ -364,6 +387,10 @@ verification result, as the example does. Do not retry malformed input
 indefinitely, discard a `false` result, weaken the verifier or replace an
 expected identity after a mismatch. Record the source revision, configuration
 and error class when diagnosing failures.
+[Errors](https://oraclizer.io/ss-gkr/docs/reference/errors/) lists every public
+error type and its variants, and
+[Troubleshooting](https://oraclizer.io/ss-gkr/docs/guides/troubleshooting/)
+matches common symptoms to their causes.
 
 ## Inner proof transport and generic core
 
@@ -374,6 +401,10 @@ Merkle witness, which the current facade still requires when verifying.
 Field limbs, byte order and strict shape rules are specified in
 [Inner proof encoding](encoding/inner-proof-v1.md). This format is distinct
 from the wrapper's external statement and proof.
+[Encoding and transport](https://oraclizer.io/ss-gkr/docs/guides/encoding-and-transport/)
+shows a complete round trip between processes, and
+[Wire format](https://oraclizer.io/ss-gkr/docs/reference/wire-format/)
+summarizes the byte layout and decoder rules.
 
 The recorded vendor guest is a fixed depth-24 membership example that checks
 one preserved inner proof with its fixed request. The general `wrap_relation`
@@ -392,6 +423,8 @@ finish-evaluation part of the explicit Rust/model value relation, which it
 retains as a premise. A custom frontend reuses this
 [review basis](refinement.md), then establishes its own statement binding and
 residual-claim checks; existing evidence does not automatically cover it.
+[Custom frontends](https://oraclizer.io/ss-gkr/docs/guides/custom-frontends/)
+builds a frontend on the core step by step.
 
 Arbitrary program compilation, alternative field/hash profiles and
 other application adapters are not bundled with this release.

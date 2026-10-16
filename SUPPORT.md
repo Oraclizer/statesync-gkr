@@ -2,8 +2,16 @@
 
 This public repository provides best-effort community support. Commercial
 licensing for production use is arranged with Oraclizer Labs, Inc. through
-[oraclizer.io](https://oraclizer.io). Security reports follow
-[SECURITY.md](SECURITY.md).
+[StateSync-GKR licensing](https://oraclizer.io/ss-gkr/licensing/). Security
+reports follow [SECURITY.md](SECURITY.md).
+
+## Before you ask
+
+The [online documentation](https://oraclizer.io/ss-gkr/docs/) answers many
+questions directly. Its [FAQ](https://oraclizer.io/ss-gkr/docs/project/faq/)
+collects the most common ones, and the
+[troubleshooting guide](https://oraclizer.io/ss-gkr/docs/guides/troubleshooting/)
+matches symptoms to causes.
 
 ## Public issues
 

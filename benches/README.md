@@ -15,6 +15,11 @@ produced for comparative leadership claims and do not establish production
 latency, capacity, resource ceilings, deadline compliance, or behavior under
 network, queue, lock, retry, and overload conditions.
 
+The controlled studies in this directory are summarized online in
+[Benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/), with
+their controls and timer boundaries in
+[Benchmark methodology](https://oraclizer.io/ss-gkr/docs/benchmarks/methodology/).
+
 Reproducing the harness on another machine may be useful for development, but
 hardware, firmware, operating system, compiler flags, thread placement,
 frequency control, background load, and repetition policy must be fixed before

@@ -5,7 +5,9 @@ recorded proofs for selected Rust contracts, and verifier control flow that is
 available to Creusot translation around explicit foreign-field seams. Together with the
 compiler and GKR models, these artifacts let developers trace which checks
 turn an original request into an acceptance verdict and reuse that review
-basis when integrating a frontend or maintaining the engine.
+basis when integrating a frontend or maintaining the engine. The
+documentation's [formal verification page](https://oraclizer.io/ss-gkr/docs/assurance/formal-verification/)
+gives a shorter account of how the Rust code is connected to the model.
 
 ## What the refinement work establishes
 
