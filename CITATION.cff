@@ -26,7 +26,7 @@ authors:
     orcid: "https://orcid.org/0009-0004-4993-8005"
     email: "jay@oraclizer.io"
 repository-code: "https://github.com/Oraclizer/statesync-gkr"
-url: "https://github.com/Oraclizer/statesync-gkr"
+url: "https://oraclizer.io/ss-gkr/"
 license: BUSL-1.1
 keywords:
   - "zkVM proof wrapping"

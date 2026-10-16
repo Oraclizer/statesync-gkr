@@ -67,8 +67,8 @@
     {
       "path": ".github/ISSUE_TEMPLATE/config.yml",
       "mode": "100644",
-      "bytes": 415,
-      "sha256": "376f7212e539c63d2f58e1ec78388e1b1172e28fa2ed88156d80ace392f00da8",
+      "bytes": 578,
+      "sha256": "4415a9a42ec170fd4ba26750b3bac69e08cf5c5951659ded3cd766e8c8ca44bf",
       "role": "repository-automation-or-community"
     },
     {
@@ -151,15 +151,15 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "bytes": 7150,
-      "sha256": "6354c191eb96b6517271c12c1a0b0f25e50d0ed3943a3bb911826dd7c657c4ed",
+      "bytes": 7315,
+      "sha256": "a5f8961806555b911d1b71619be9e7b5f7a5529a8aef046587c06e5a9591e557",
       "role": "documentation"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "bytes": 1651,
-      "sha256": "006c44129afa335309b6cd67a1ffaa0ae51ff7f82b52631ed0b916f8d6099aaa",
+      "bytes": 1637,
+      "sha256": "842998527ca6f871e8e4b6330a04e44dca6e2f7dd2be325767eebf00567190b6",
       "role": "repository-source-or-metadata"
     },
     {
@@ -172,8 +172,8 @@
     {
       "path": "CONTRIBUTING.md",
       "mode": "100644",
-      "bytes": 12317,
-      "sha256": "4d88aa828bb016c2ca30d96f8d98713425c1621764d2ac1b5f4b335df1cb1a62",
+      "bytes": 12610,
+      "sha256": "c0fcc233dcccfb9cd1fe5123ee944ea46c99868b1062a5314d7cd776fee900a6",
       "role": "documentation"
     },
     {
@@ -207,8 +207,8 @@
     {
       "path": "FORMAL_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 15896,
-      "sha256": "d997a5cb6b8eb0ef1635daec30c284070d0419c5572e93c89cac964dcb1c10d0",
+      "bytes": 16124,
+      "sha256": "5fca4040e95e4710e17dc8ed3169e946dc4172cad987e21131939ebc2a1314fb",
       "role": "documentation"
     },
     {
@@ -242,15 +242,15 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 30710,
-      "sha256": "ec432034fb365cbb82be0376e4364ce2587a4d772189310c5cd8b457c202b3ac",
+      "bytes": 32601,
+      "sha256": "7cbc3ef7d231846fa7c4cda0dc0ce8fd14cf3c299bce106d530ba782d4c7d318",
       "role": "documentation"
     },
     {
       "path": "REPRODUCING.md",
       "mode": "100644",
-      "bytes": 3868,
-      "sha256": "b03528f3d933ca4804e15c37ab0f0f2561980df8ee524916c37af20694a101df",
+      "bytes": 3986,
+      "sha256": "1e8a1068d0f30429622e749788280677a4611a0ef72be7497ea985ba4117b02b",
       "role": "documentation"
     },
     {
@@ -263,8 +263,8 @@
     {
       "path": "SUPPORT.md",
       "mode": "100644",
-      "bytes": 1690,
-      "sha256": "aba8ebe01503030aec2932301ece3a6aa8e5dda2740a093f1792c8d1198b5afa",
+      "bytes": 2040,
+      "sha256": "75335ec17b07e2595b593d7751cff82ff573221edae0b942d84302947625d0cb",
       "role": "documentation"
     },
     {
@@ -389,8 +389,8 @@
     {
       "path": "benches/README.md",
       "mode": "100644",
-      "bytes": 962,
-      "sha256": "e5c2b004193d1926bcb105f8a42dce09d02b1f0948d4b0155a05da5fc158dc0e",
+      "bytes": 1231,
+      "sha256": "0488ef0a7d2be9e08dd085b6be65d0a07c40c882a1bf29848f2242db33c57eef",
       "role": "documentation"
     },
     {
@@ -3259,8 +3259,8 @@
     {
       "path": "docs/architecture.md",
       "mode": "100644",
-      "bytes": 10666,
-      "sha256": "699958fa7a69a48a70d643e41a63a9273104755a6f24f49ea4dbef6ead53c1b9",
+      "bytes": 11485,
+      "sha256": "fa7fab7de7a11300f24749226e46ccf6dc863404a9edb383b8cbdd8a510d0cf5",
       "role": "documentation"
     },
     {
@@ -3322,8 +3322,8 @@
     {
       "path": "docs/performance.md",
       "mode": "100644",
-      "bytes": 16483,
-      "sha256": "28de86032891b4df60acfa6d28bbdbde23aad467535a806d17dd5f481392b397",
+      "bytes": 16830,
+      "sha256": "1c8116110f2031df96d89f1535b475cd6478d42d39700e191c46d556c0db28c8",
       "role": "documentation"
     },
     {
@@ -3336,15 +3336,15 @@
     {
       "path": "docs/troubleshooting.md",
       "mode": "100644",
-      "bytes": 2025,
-      "sha256": "dd6b0bcefcf03be77262cccee1902083f2d4023c6ffd2413f300eed4f9e83a4e",
+      "bytes": 2237,
+      "sha256": "533605466450ed054e7273b246d2778826971e7fee5a5c6f535833a05ecfed44",
       "role": "documentation"
     },
     {
       "path": "docs/usage.md",
       "mode": "100644",
-      "bytes": 18748,
-      "sha256": "f4eea687698651dcee551d169b9018533752e3770688ebce7a8f7ebe0e8f38d8",
+      "bytes": 20601,
+      "sha256": "3480cc61864dd05103805301d857f9694ab2b7e46844c7811d600d9a58a6b819",
       "role": "documentation"
     },
     {

@@ -40,6 +40,12 @@ Issues are labelled to show what kind of work they need:
 If you want to work on something, comment on the issue first so two people do
 not build the same thing.
 
+New to the codebase?
+[Project layout](https://oraclizer.io/ss-gkr/docs/get-started/project-layout/)
+walks through the workspace crates and their dependency direction, and
+[How GKR works](https://oraclizer.io/ss-gkr/docs/concepts/how-gkr-works/)
+introduces the protocol the engine implements.
+
 ## Before opening a change
 
 - Use a public issue for ordinary bugs, documentation, or design discussion.

@@ -13,6 +13,10 @@ The forward theorem retains an explicit Rust/model value-relation premise.
 [Refinement evidence and reuse](docs/refinement.md) distinguishes the completed
 results, recorded contract proofs and open correspondence obligations.
 
+For a shorter introduction, see the documentation's
+[formal verification page](https://oraclizer.io/ss-gkr/docs/assurance/formal-verification/).
+This document remains the reference for the exact results, assumptions and scope.
+
 The Rust kernel and formal sources retain their recorded contents. The
 [distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
 current source consistency from the historical v1.1 executable and proof: an

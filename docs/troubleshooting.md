@@ -1,5 +1,10 @@
 # Troubleshooting
 
+The online
+[troubleshooting guide](https://oraclizer.io/ss-gkr/docs/guides/troubleshooting/)
+covers more symptoms in detail, including preparation and proving errors,
+encoding failures and performance problems.
+
 ## The pinned Rust toolchain is missing
 
 Run `rustup show`. Rustup should install the exact version from

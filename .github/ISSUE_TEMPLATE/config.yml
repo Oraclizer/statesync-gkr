@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Documentation
+    url: https://oraclizer.io/ss-gkr/docs/
+    about: Installation, guides, API reference, FAQ and troubleshooting for the current release
   - name: Private security report
     url: https://github.com/Oraclizer/statesync-gkr/blob/main/SECURITY.md
     about: Follow the private reporting policy; do not disclose vulnerabilities in a public issue

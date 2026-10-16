@@ -12,6 +12,8 @@ frontend. The engine reduces a layered arithmetic circuit; the frontend defines
 the statement, compiles its constraints, supplies witnesses and checks the
 residual input claims. This separation lets an application reuse the engine
 without adopting the SMT operation language.
+[How GKR works](https://oraclizer.io/ss-gkr/docs/concepts/how-gkr-works/)
+introduces the protocol and maps each step to its crate.
 
 The measurements refer to the historical v1.1.0 kernel,
 commit `1b8d2f829792172b347dedbfde969016c2c05789`, archived as
@@ -88,6 +90,8 @@ have 118 layers. Membership encoded proof size grows from 176,948 B to 182,132 B
 between depths 24 and 32, about 2.93%. This is a compact schedule and modest
 proof-size growth; witness work, total computation and verification are not
 constant with depth. There is no new unfused-compiler speedup measurement.
+[Circuits and layers](https://oraclizer.io/ss-gkr/docs/concepts/circuits-and-layers/)
+explains the compiled circuit, the cube gates and the layer schedule in more detail.
 
 ## Prepared material and independent jobs
 
@@ -125,7 +129,10 @@ requests. The actual one-worker/two-worker study transferred complete proof
 payloads and ended at frontend cryptographic acceptance. It compares resource
 equivalent deployment configurations whose batch caps scale with worker count,
 not topology in isolation. [Usage](usage.md#choosing-worker-and-batch-settings)
-lists the confirmed settings and their periods.
+lists the confirmed settings and their periods. The guides on
+[prepared execution](https://oraclizer.io/ss-gkr/docs/guides/prepared-execution/)
+and [batching and parallelism](https://oraclizer.io/ss-gkr/docs/guides/batching-and-parallelism/)
+apply these mechanisms in application code.
 
 ## State lifetime and acceptance
 
@@ -136,6 +143,8 @@ replacement, deletion and restoration with their old/new path and root
 conditions. The input-variant study exercises eight concrete lifecycle and
 payload/key cases. It measures cryptographic operation semantics, not a live
 database commit or consensus system.
+[Sparse Merkle state](https://oraclizer.io/ss-gkr/docs/concepts/sparse-merkle-state/)
+describes the slot lifecycle.
 
 `verify_encoded_sync_op` consumes the entire received inner-proof encoding,
 checks shape and circuit/configuration identity, then verifies the statement
@@ -144,6 +153,9 @@ load-bearing checks; trailing bytes and mismatched inputs are rejected. See
 [the strict format](encoding/inner-proof-v1.md). The current SMT verifier also
 recomputes native leaf and path hashes from the private witness. The measured
 full-call gain from derived wiring retains that hashing work.
+[Proof lifecycle](https://oraclizer.io/ss-gkr/docs/concepts/proof-lifecycle/)
+lists each verification step and what an accepted proof does and does not
+establish.
 
 ## Reuse and formal foundation
 

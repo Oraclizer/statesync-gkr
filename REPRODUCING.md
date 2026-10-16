@@ -25,6 +25,8 @@ cargo run --release --locked --example state_sync_prove_verify
 
 Pin a specific commit instead of the branch tip when you want a fixed subject
 to report against. Record the selected commit in every reproduction report.
+[Installation](https://oraclizer.io/ss-gkr/docs/get-started/installation/)
+covers toolchain setup and platform notes.
 
 Expected output:
 
