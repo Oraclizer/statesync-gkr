@@ -6,9 +6,6 @@ boundaries are recorded in [`../../FORMAL_VERIFICATION.md`](../../FORMAL_VERIFIC
 [Refinement evidence and reuse](../../docs/refinement.md) explains how the
 forward acceptance theorem and selected Rust contracts provide a review map,
 including the former local-bridge derivation and remaining value-relation premise.
-The documentation's
-[formal verification page](https://oraclizer.io/ss-gkr/docs/assurance/formal-verification/)
-introduces the verification chain and how to re-run the proofs.
 
 ## Mechanized sessions
 

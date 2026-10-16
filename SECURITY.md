@@ -4,9 +4,6 @@ This policy describes how to report vulnerabilities in StateSync-GKR. The
 verified results and their assumptions are described in
 [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) and the
 [refinement guide](docs/refinement.md).
-[Trust boundaries](https://oraclizer.io/ss-gkr/docs/assurance/trust-boundaries/)
-explains what a successful verification establishes and which checks remain
-the integrating application's responsibility.
 
 ## Supported versions
 

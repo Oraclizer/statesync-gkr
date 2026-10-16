@@ -18,11 +18,9 @@ digest remain null. The engineering paper, existing software DOI and
 [formal paper](https://arxiv.org/abs/2610.05335) identify different records;
 none assigns a publication identifier to the new dataset.
 
-The website's [performance overview](https://oraclizer.io/ss-gkr/performance/)
-summarizes the main results. Its
-[benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/) and
-[methodology](https://oraclizer.io/ss-gkr/docs/benchmarks/methodology/) pages
-pair each result with its comparison target, statistics and timer boundary.
+The documentation's
+[Benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/) page
+lists each result with its comparison target and conditions.
 
 All studies use the immutable v1.1.0 kernel. The earlier two C8a baremetal
 campaigns contain 243 and 175 distinct process executions on different hosts.

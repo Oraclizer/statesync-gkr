@@ -12,8 +12,6 @@ frontend. The engine reduces a layered arithmetic circuit; the frontend defines
 the statement, compiles its constraints, supplies witnesses and checks the
 residual input claims. This separation lets an application reuse the engine
 without adopting the SMT operation language.
-[How the engine works](https://oraclizer.io/ss-gkr/engine/) follows one
-request from compilation to acceptance, and
 [How GKR works](https://oraclizer.io/ss-gkr/docs/concepts/how-gkr-works/)
 introduces the protocol and maps each step to its crate.
 
@@ -146,9 +144,7 @@ conditions. The input-variant study exercises eight concrete lifecycle and
 payload/key cases. It measures cryptographic operation semantics, not a live
 database commit or consensus system.
 [Sparse Merkle state](https://oraclizer.io/ss-gkr/docs/concepts/sparse-merkle-state/)
-describes the slot lifecycle, and
-[Proof lifecycle](https://oraclizer.io/ss-gkr/docs/concepts/proof-lifecycle/)
-follows a request through preparation, proving, encoding and verification.
+describes the slot lifecycle.
 
 `verify_encoded_sync_op` consumes the entire received inner-proof encoding,
 checks shape and circuit/configuration identity, then verifies the statement
@@ -157,6 +153,9 @@ load-bearing checks; trailing bytes and mismatched inputs are rejected. See
 [the strict format](encoding/inner-proof-v1.md). The current SMT verifier also
 recomputes native leaf and path hashes from the private witness. The measured
 full-call gain from derived wiring retains that hashing work.
+[Proof lifecycle](https://oraclizer.io/ss-gkr/docs/concepts/proof-lifecycle/)
+lists each verification step and what an accepted proof does and does not
+establish.
 
 ## Reuse and formal foundation
 

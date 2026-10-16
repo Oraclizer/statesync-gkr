@@ -252,9 +252,7 @@ bound below 10 also return that error. Choose practical bounds before accepting
 untrusted requests; configuration values are not a resource-limiting service.
 
 [Proving state operations](https://oraclizer.io/ss-gkr/docs/guides/proving-state-operations/)
-builds each operation in a complete program,
-[Sparse Merkle state](https://oraclizer.io/ss-gkr/docs/concepts/sparse-merkle-state/)
-explains leaf states, digests and the slot lifecycle, and
+builds each operation in a complete program, and
 [Configuration](https://oraclizer.io/ss-gkr/docs/reference/configuration/)
 lists each configuration value with its accepted range and limit error.
 
@@ -402,9 +400,8 @@ Field limbs, byte order and strict shape rules are specified in
 [Inner proof encoding](encoding/inner-proof-v1.md). This format is distinct
 from the wrapper's external statement and proof.
 [Encoding and transport](https://oraclizer.io/ss-gkr/docs/guides/encoding-and-transport/)
-shows a complete round trip between processes, and
-[Wire format](https://oraclizer.io/ss-gkr/docs/reference/wire-format/)
-summarizes the byte layout and decoder rules.
+shows a complete round trip from encoding a proof to verifying the received
+bytes against the original request.
 
 The recorded vendor guest is a fixed depth-24 membership example that checks
 one preserved inner proof with its fixed request. The general `wrap_relation`

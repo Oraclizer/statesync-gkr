@@ -139,8 +139,6 @@ provides the small Linux caller/memory check and the separate dataset layout.
   and the [formal study](https://arxiv.org/abs/2610.05335).
 
 For direct SMT checks and the GKR boundary, see [Choosing a path](#choosing-a-path).
-[Use cases](https://oraclizer.io/ss-gkr/use-cases/) describes the
-applications where these operations fit.
 
 ## Quick start
 
@@ -203,8 +201,7 @@ pub fn prove_checked(
 [Usage and API boundary](docs/usage.md) contains a complete application,
 dependency pin, supported input format, prepared execution and error handling.
 The [API reference](https://oraclizer.io/ss-gkr/docs/reference/api/) lists
-every public module, and [Errors](https://oraclizer.io/ss-gkr/docs/reference/errors/)
-lists every public error type and how to handle it.
+every public module.
 The caller obtains trusted roots and witnesses from its own state store; the
 library does not authenticate an external database or establish consensus.
 [Trust boundaries](https://oraclizer.io/ss-gkr/docs/assurance/trust-boundaries/)
@@ -296,10 +293,7 @@ disabled, while the internal Dense reference reached a native OOM at width
 Requested allocation, owned Vec capacity and whole-process RSS have separate
 plots and definitions. The [profile guide](docs/performance.md) explains the
 comparison and the [usage guide](docs/usage.md#choosing-worker-and-batch-settings)
-shows how to apply the observed settings. The online
-[benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/) and
-[methodology](https://oraclizer.io/ss-gkr/docs/benchmarks/methodology/) pages
-summarize each comparison target and timer boundary, and
+shows how to apply the observed settings.
 [Performance tuning](https://oraclizer.io/ss-gkr/docs/guides/performance-tuning/)
 relates the measured settings to deployment choices.
 
@@ -375,10 +369,8 @@ compatibility interfaces are described in
 [ARCHITECTURE.md](ARCHITECTURE.md). The separation between the internal proof
 and the external proof role is recorded in
 [ADR-0002](docs/adr/0002-external-proof-role-contract.md).
-[How the engine works](https://oraclizer.io/ss-gkr/engine/) follows one
-request through these stages, and
 [Project layout](https://oraclizer.io/ss-gkr/docs/get-started/project-layout/)
-names the entry points that application code should use.
+shows how each crate is imported through the `statesync-gkr` facade.
 
 ## Model verification and implementation boundary
 
@@ -406,9 +398,7 @@ acceptance rules and reuse that review basis for integration and maintenance.
 The theorem's Rust/model value relation is an explicit premise, and
 [FORMAL_VERIFICATION.md](FORMAL_VERIFICATION.md) states the exact results,
 assumptions and scope. Zero knowledge is provided by the external proof
-wrapper layer. The website's
-[formal verification overview](https://oraclizer.io/ss-gkr/formal-verification/)
-summarizes the verification chain from state semantics to the shipped verifier.
+wrapper layer.
 
 <p align="center">
   <picture>
@@ -551,8 +541,7 @@ Oraclizer Labs, Inc.; see [StateSync-GKR licensing](https://oraclizer.io/ss-gkr/
 for the licensing contact. Each version licensed under BSL converts to Apache-2.0
 three years after it is first publicly distributed under BSL. The Business
 Source License is source-available and is not an Open Source license in the
-OSI sense. The [licensing guide](https://oraclizer.io/ss-gkr/docs/project/licensing/)
-walks through which uses need a commercial license.
+OSI sense.
 
 Versions up to and including v1.1.0 were released under MIT OR Apache-2.0.
 [NOTICE](NOTICE) records the contribution notices, and dependency licenses are

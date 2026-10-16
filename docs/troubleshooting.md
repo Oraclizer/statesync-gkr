@@ -1,9 +1,9 @@
 # Troubleshooting
 
-This page covers repository and release checks. The online
+The online
 [troubleshooting guide](https://oraclizer.io/ss-gkr/docs/guides/troubleshooting/)
-also covers preparation and proving errors, rejected proofs, encoding failures
-and performance problems.
+covers more symptoms in detail, including preparation and proving errors,
+encoding failures and performance problems.
 
 ## The pinned Rust toolchain is missing
 
