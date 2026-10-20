@@ -41,7 +41,7 @@
       "release/v1.1/TREE_MANIFEST.json"
     ]
   },
-  "path_count": 952,
+  "path_count": 953,
   "entries": [
     {
       "path": ".gitattributes",
@@ -242,8 +242,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 32601,
-      "sha256": "7cbc3ef7d231846fa7c4cda0dc0ce8fd14cf3c299bce106d530ba782d4c7d318",
+      "bytes": 32895,
+      "sha256": "99db1cd12462965d7a326561ec61ea6742216279b6db6dcf286044401b535c07",
       "role": "documentation"
     },
     {
@@ -282,17 +282,24 @@
       "role": "repository-source-or-metadata"
     },
     {
+      "path": "assets/brand/statesync-gkr-hero-medium.svg",
+      "mode": "100644",
+      "bytes": 21909,
+      "sha256": "44120fffb94caf0edfca6b1e5d5b6cc946f6709f69a4b47501d315632e32f2ff",
+      "role": "repository-source-or-metadata"
+    },
+    {
       "path": "assets/brand/statesync-gkr-hero-mobile.svg",
       "mode": "100644",
-      "bytes": 2735,
-      "sha256": "5afacf151a3d07a7bde7526b5066ca81da05e7b6963fd1d43ad5de0e9a1a65e6",
+      "bytes": 21827,
+      "sha256": "e20db6c134e2e77106db64184868ba7e0a634cb8e84db91efac7990175c6a9c2",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/brand/statesync-gkr-hero.svg",
       "mode": "100644",
-      "bytes": 4720,
-      "sha256": "27f71913e105249b8f6cf383d51dc6bb62db280b099c71372186948ecc40d731",
+      "bytes": 53130,
+      "sha256": "19b54324de4b046f5262ff6db7768673cca9e341c98f9836ac427273edb07bed",
       "role": "repository-source-or-metadata"
     },
     {
