@@ -284,22 +284,22 @@
     {
       "path": "assets/brand/statesync-gkr-hero-medium.svg",
       "mode": "100644",
-      "bytes": 21909,
-      "sha256": "44120fffb94caf0edfca6b1e5d5b6cc946f6709f69a4b47501d315632e32f2ff",
+      "bytes": 4848,
+      "sha256": "a9d30408112e1b8fabe4832de8155c5fb825db73ac153b05f30317d9c5882e99",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/brand/statesync-gkr-hero-mobile.svg",
       "mode": "100644",
-      "bytes": 21827,
-      "sha256": "e20db6c134e2e77106db64184868ba7e0a634cb8e84db91efac7990175c6a9c2",
+      "bytes": 4128,
+      "sha256": "3e76d8aac3bc5e4ebb05dcf89de5bfdfe2c61bdc0d6dc1321804941c315307bc",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/brand/statesync-gkr-hero.svg",
       "mode": "100644",
-      "bytes": 53130,
-      "sha256": "19b54324de4b046f5262ff6db7768673cca9e341c98f9836ac427273edb07bed",
+      "bytes": 4701,
+      "sha256": "ce29c22985681f465665135ee742d840020d12e3efe065def3dad7218e3f7b12",
       "role": "repository-source-or-metadata"
     },
     {
