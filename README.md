@@ -1,7 +1,9 @@
+<!-- Hero variants follow the GitHub README column width: mobile below 440 px, medium from 440 to 680 px, desktop above. -->
 <p align="center">
   <picture>
-    <source media="(max-width: 900px)" srcset="assets/brand/statesync-gkr-hero-mobile.svg">
-    <img src="assets/brand/statesync-gkr-hero.svg" width="1200" alt="StateSync-GKR: a Rust prover component for sparse-Merkle state transitions">
+    <source media="(max-width: 505px), (min-width: 768px) and (max-width: 801px)" srcset="assets/brand/statesync-gkr-hero-mobile.svg">
+    <source media="(max-width: 745px), (min-width: 768px) and (max-width: 1121px)" srcset="assets/brand/statesync-gkr-hero-medium.svg">
+    <img src="assets/brand/statesync-gkr-hero.svg" width="1200" alt="StateSync-GKR: sparse GKR proof engine for state synchronization">
   </picture>
 </p>
 
