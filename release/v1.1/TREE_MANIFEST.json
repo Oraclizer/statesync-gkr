@@ -6,7 +6,7 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
-    "source_manifest_sha256": "3eddef70108b716c4d08b0d1e5301bcca5849c807373204db463e34167d4c785"
+    "source_manifest_sha256": "711787693c423762fa5cb034ae70b8cda3b8451d52a3557495679e4378281578"
   },
   "self_exclusion": "release/v1.1/TREE_MANIFEST.json",
   "path_count": 960,
@@ -211,8 +211,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 32895,
-      "sha256": "99db1cd12462965d7a326561ec61ea6742216279b6db6dcf286044401b535c07",
+      "bytes": 32994,
+      "sha256": "76a065868532862263094fb44b26e3d179187c65afd088814b3f9a738648706f",
       "role": "documentation"
     },
     {
@@ -3719,7 +3719,7 @@
       "path": "release/v1.1/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 4133,
-      "sha256": "219cd9a2848efbe8d7677b89813962ad0e55739001a64e7d4f59c81f7a915e8e",
+      "sha256": "9451304378d58f8bf9d83c4bd5ecc8e68968bf3db81889863129d6769f8a1353",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3761,7 +3761,7 @@
       "path": "release/v1.1/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 4596,
-      "sha256": "b37200044b2ea07c794d6af19430dff7e2f71d385afa870c476d23bc36097122",
+      "sha256": "164f70ca722efd4e8143656eb9563b5077c53e827244874aa0b35c95e9802ffa",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3796,21 +3796,21 @@
       "path": "release/v1.1/SBOM.spdx.json",
       "mode": "100644",
       "bytes": 781989,
-      "sha256": "ddfdc49d790379d7fd208c0194a4e4b86f577b0fac1e95221b6d9a83ac588e0c",
+      "sha256": "0f75cbdb1c3425b1d11b42f2addcc0e871dba6ef23be33ec7f6a38b2dd022501",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SHA256SUMS",
       "mode": "100644",
       "bytes": 1276,
-      "sha256": "1ac3b35d7becc3198e2b73b93e79e97dc75eb3f3ec8fa75cf4f793bf27a42b56",
+      "sha256": "b2ab2eded1efe2a06648e693a4279c8a36b52c929ff47eb5561e3a8e63e352db",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SOURCE_MANIFEST.json",
       "mode": "100644",
       "bytes": 265234,
-      "sha256": "3eddef70108b716c4d08b0d1e5301bcca5849c807373204db463e34167d4c785",
+      "sha256": "711787693c423762fa5cb034ae70b8cda3b8451d52a3557495679e4378281578",
       "role": "release-evidence-or-tooling"
     },
     {

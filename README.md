@@ -62,7 +62,7 @@ can build on the same engine and use its
 - **Repeat efficiently:** derived wiring, prepared reuse and independent proof jobs.
 - **Keep the meaning:** three-state lifecycle, strict codec/request binding and a reusable core with traceable acceptance evidence.
 
-[See the implementation](docs/architecture.md) · [Read the evidence conditions](benches/controlled-capacity-2026-10-07/FEATURES.md) · [Inspect the measurements](docs/performance.md) · [Browse the performance overview](https://oraclizer.io/ss-gkr/performance/)
+[See the implementation](docs/architecture.md) · [Read the evidence conditions](benches/controlled-capacity-2026-10-07/FEATURES.md) · [Inspect the measurements](docs/performance.md) · [Browse the performance overview](https://oraclizer.io/ss-gkr/performance/) · [Read the design rationale](https://research.oraclizer.io/statesync-gkr-prover-design-journey/)
 
 Measurements, structure, controls and model results support different claims.
 The nine mechanisms are not nine independently isolated causal experiments.
