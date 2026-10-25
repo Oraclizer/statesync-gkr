@@ -39,6 +39,13 @@ directory. The verifier here additionally compares the whole superseded
 directory against one recorded digest, so the earlier record cannot be edited
 without failing a check.
 
+When a later identity line opens, its own directory under `release/` becomes
+the live gate and this directory becomes a frozen baseline in turn. The pull
+request that opens the line is judged by the new line's verifier only if it
+leaves every existing release directory byte-identical to its base, and a
+direct call of this verifier hands its arguments to the newest line's
+verifier.
+
 Three point-in-time receipts belong to the previous cycle and are published
 with it, in
 [`../v1.0/AWS_CUSTODY_RECEIPT.json`](../v1.0/AWS_CUSTODY_RECEIPT.json),

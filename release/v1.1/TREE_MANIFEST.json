@@ -6,7 +6,7 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
-    "source_manifest_sha256": "24ca9097a1c4ba7d8bb6c3c375fc8eb52cd46c4b7d3561bdcda902ac1ecdd1b1"
+    "source_manifest_sha256": "319b5276235ce213f743a5eb4a645d75fa59372f74d2d5544676db70bc851dcf"
   },
   "self_exclusion": "release/v1.1/TREE_MANIFEST.json",
   "path_count": 979,
@@ -3852,7 +3852,7 @@
       "path": "release/v1.1/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 4133,
-      "sha256": "a2b2bb0f9793adac28df6cdc0035327fce9309c692d42ec33b6dfff693ebd435",
+      "sha256": "d76c97bd09c7ceb345f26c226efbbb66c6ce35cb71f7a7f7a70ccf3a3f8e17de",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3894,7 +3894,7 @@
       "path": "release/v1.1/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 4596,
-      "sha256": "2308b45dc5b7389ae3d5c2c26e0c8e2883f56714df074ca6e4dc11bd9d4bbca8",
+      "sha256": "0b0961aba8e96368d0001aa5a81b66ee097b4a4c504e52cd40d5de8c93f113a0",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3907,8 +3907,8 @@
     {
       "path": "release/v1.1/README.md",
       "mode": "100644",
-      "bytes": 2686,
-      "sha256": "7510ea0dd76cb184d4a1fcddabeadfcad0e3d89df75a96b999eb29472f553a03",
+      "bytes": 3071,
+      "sha256": "9afc4b81d88647ca320bf8793080daf2e6334949dfa1c8360499c8105325e303",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3929,21 +3929,21 @@
       "path": "release/v1.1/SBOM.spdx.json",
       "mode": "100644",
       "bytes": 794525,
-      "sha256": "0bda7c6c037646f9b14335cb7dd6f4156f426013755745ffa9ec15c2110c1f81",
+      "sha256": "0c874c80c43c9fef8f14c334b64747b91e102f5b85b2a7d2b7883dbd913e9c78",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SHA256SUMS",
       "mode": "100644",
       "bytes": 1276,
-      "sha256": "1a501ceef3ba9bef3163959a31dccf0536295018ae726d4d4c7d5abfa38fc685",
+      "sha256": "b95dd3ceb264b317baed340586a14f72748e5236092efce08d910df14d9c69e4",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SOURCE_MANIFEST.json",
       "mode": "100644",
       "bytes": 269775,
-      "sha256": "24ca9097a1c4ba7d8bb6c3c375fc8eb52cd46c4b7d3561bdcda902ac1ecdd1b1",
+      "sha256": "319b5276235ce213f743a5eb4a645d75fa59372f74d2d5544676db70bc851dcf",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3970,8 +3970,8 @@
     {
       "path": "release/v1.1/run_source_policy.py",
       "mode": "100644",
-      "bytes": 3581,
-      "sha256": "bddbc2c9497c2b27ea5cf87a7d0e756c36831f967ca78eea87f440bbab1ae575",
+      "bytes": 6607,
+      "sha256": "f7b231881d9f639b5652e815e13d5cffe0194198b8ed9e59a6b5882464545bfc",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3984,8 +3984,8 @@
     {
       "path": "release/v1.1/test_license_distribution.py",
       "mode": "100644",
-      "bytes": 11547,
-      "sha256": "7fa035665fcca1a51133df86dc2627ab674c4170381a7e631519c9c2ee08b8d2",
+      "bytes": 15985,
+      "sha256": "f410897705aa89efbf8135635df757ce3cf5c9334dc52b47103b6aabf7cdf616",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4005,8 +4005,8 @@
     {
       "path": "release/v1.1/verify.py",
       "mode": "100644",
-      "bytes": 34227,
-      "sha256": "91868c66f01edcb867dac1f78e0faa95e5c98791782291d82d983c7681aa5536",
+      "bytes": 35445,
+      "sha256": "d19ae475d58a492c7c984d8dab0ea2835e0b47fab27aa80c0d8917654304fece",
       "role": "release-evidence-or-tooling"
     },
     {

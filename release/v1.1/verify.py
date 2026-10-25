@@ -4,6 +4,10 @@
 This is the v1.1 baseline. The v1.0 baseline in release/v1.0 stays frozen:
 it is a historical record of the v1.0 identity cycle and it is checked here
 only for byte stability, never regenerated.
+
+When a later identity line exists in release/, its verifier is the live gate
+and holds this directory frozen in turn; this verifier then hands the same
+arguments to it rather than judging a tree it no longer describes.
 """
 
 from __future__ import annotations
@@ -59,6 +63,8 @@ SCANNER_DEFINITION_PATHS = frozenset({
     "release/v1.0/verify.py",
     "release/v1.1/verify.py",
 })
+THIS_LINE = (1, 1)
+LINE_DIRECTORY = re.compile(r"v(\d+)\.(\d+)")
 PAPER_BIBLIOGRAPHY_PATH = "paper/TEX/references.bib"
 SCHOLAR_NAME_COLLISION = "March{\\'e}, " + "Clau" + "de"
 
@@ -103,6 +109,21 @@ def strict_json(path: Path) -> dict[str, Any]:
 
 def repository_root() -> Path:
     return Path(__file__).resolve().parents[2]
+
+
+def successor_verifier(root: Path) -> Path | None:
+    """The verifier of the newest release line after this one, if present."""
+    newest: tuple[tuple[int, int], Path] | None = None
+    release = root / "release"
+    for directory in sorted(release.iterdir()) if release.is_dir() else []:
+        match = LINE_DIRECTORY.fullmatch(directory.name)
+        if not match:
+            continue
+        line = (int(match[1]), int(match[2]))
+        candidate = directory / "verify.py"
+        if line > THIS_LINE and candidate.is_file() and (newest is None or line > newest[0]):
+            newest = (line, candidate)
+    return newest[1] if newest else None
 
 
 def safe_path(root: Path, name: str) -> Path:
@@ -716,6 +737,10 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     root = repository_root()
+    successor = successor_verifier(root)
+    if successor is not None:
+        print(f"release-line-handoff={successor.parent.relative_to(root).as_posix()}", flush=True)
+        return subprocess.run([sys.executable, "-B", str(successor), *sys.argv[1:]], cwd=root).returncode
     has_git = (root / ".git").exists()
     mode = args.mode
     if mode == "auto":

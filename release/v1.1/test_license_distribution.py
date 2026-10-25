@@ -196,5 +196,86 @@ class AuthorityPairTests(unittest.TestCase):
                 authority.run_policy(work, "pull_request", "main", "fixture/repo", "fixture/repo", "topic")
 
 
+class ReleaseLineTests(unittest.TestCase):
+    """A successor line opens only with every existing release directory frozen."""
+
+    @staticmethod
+    def git(path, *args):
+        return subprocess.run(["git", "-C", str(path), *args], check=True, capture_output=True)
+
+    def fixture(self, parent: Path) -> Path:
+        remote, work = parent / "base", parent / "head"
+        remote.mkdir()
+        self.git(remote, "init", "--initial-branch=main")
+        self.git(remote, "config", "user.name", "Policy fixture")
+        self.git(remote, "config", "user.email", "fixture.invalid")
+        self.git(remote, "config", "commit.gpgsign", "false")
+        wrapper = (REPO / "release/v1.1/run_source_policy.py").read_bytes()
+        (remote / "release/v1.0").mkdir(parents=True)
+        (remote / "release/v1.0/record.txt").write_text("earlier line\n", encoding="utf-8")
+        line = remote / "release/v1.1"
+        line.mkdir()
+        (line / "license_distribution.py").write_text("ACCEPTS = False\n", encoding="utf-8")
+        # The earlier line's verifier refuses every tree, so a pass below can
+        # only come from the successor verifier.
+        (line / "verify.py").write_text("raise SystemExit(1)\n", encoding="utf-8")
+        (line / "run_source_policy.py").write_bytes(wrapper)
+        self.git(remote, "add", ".")
+        self.git(remote, "commit", "-m", "Establish the earlier line")
+        subprocess.run(["git", "clone", str(remote), str(work)], check=True, capture_output=True)
+        successor = work / "release/v1.2"
+        successor.mkdir()
+        (successor / "license_distribution.py").write_text("ACCEPTS = True\n", encoding="utf-8")
+        (successor / "verify.py").write_text("raise SystemExit(0)\n", encoding="utf-8")
+        (successor / "run_source_policy.py").write_bytes(wrapper)
+        return work
+
+    def run_pull_request(self, work: Path) -> int:
+        return authority.run_policy(work, "pull_request", "main", "fixture/repo", "fixture/repo", "topic")
+
+    def test_successor_line_judges_itself_only_with_existing_directories_frozen(self):
+        with tempfile.TemporaryDirectory(prefix="ssgkr-line-fixture-") as folder:
+            work = self.fixture(Path(folder))
+            self.assertEqual(self.run_pull_request(work), 0)
+            earlier = work / "release/v1.1/verify.py"
+            with changed(earlier, b"raise SystemExit(0)\n"):
+                with self.assertRaisesRegex(ValueError, "byte-identical"):
+                    self.run_pull_request(work)
+            extra = work / "release/v1.0/extra.txt"
+            extra.write_text("added\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "byte-identical"):
+                self.run_pull_request(work)
+            extra.unlink()
+            (work / "release/v1.2").rename(work / "release/v1.3")
+            with self.assertRaisesRegex(ValueError, "skips"):
+                self.run_pull_request(work)
+
+    def test_push_runs_the_newest_complete_line(self):
+        with tempfile.TemporaryDirectory(prefix="ssgkr-line-fixture-") as folder:
+            work = self.fixture(Path(folder))
+            self.assertEqual(authority.run_policy(work, "push", "main", "", "", ""), 0)
+            (work / "release/v1.2/license_distribution.py").unlink()
+            self.assertEqual(authority.run_policy(work, "push", "main", "", "", ""), 1)
+
+    def test_direct_verifier_call_hands_off_to_a_later_line(self):
+        with tempfile.TemporaryDirectory(prefix="ssgkr-line-fixture-") as folder:
+            root = Path(folder)
+            earlier = root / "release/v1.1"
+            earlier.mkdir(parents=True)
+            for name in ("verify.py", "license_distribution.py"):
+                shutil.copyfile(REPO / "release/v1.1" / name, earlier / name)
+            later = root / "release/v1.2"
+            later.mkdir()
+            (later / "verify.py").write_text(
+                'import sys\nprint("later-line-verifier " + " ".join(sys.argv[1:]))\nraise SystemExit(3)\n',
+                encoding="utf-8",
+            )
+            run = subprocess.run([sys.executable, "-B", str(earlier / "verify.py"), "--mode", "worktree"],
+                                 capture_output=True, text=True, encoding="utf-8")
+            self.assertEqual(run.returncode, 3)
+            self.assertIn("release-line-handoff=release/v1.2", run.stdout)
+            self.assertIn("later-line-verifier --mode worktree", run.stdout)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
