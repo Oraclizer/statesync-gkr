@@ -8,12 +8,12 @@ StateSync-GKR RISC Zero program identity.
 - `Dockerfile` defines the pinned guest build environment.
 - `build-guest.sh` builds the selected guest and host artifacts.
 - `toolchain-checksums.txt` records fixed toolchain material checksums.
-- `toolchain-payload-profile-v1.json` and `toolchain-payload-profile-v1.1.json`
-  describe the exact OCI payload, compiler, dependency cache, locks, and
-  expected outputs, one file per release line. The runtime payload, the
-  dependency cache, and both lock files are shared; the two files differ only in
-  the digest of the allowlisted source selection and the eight outputs that
-  selection produces.
+- `toolchain-payload-profile-v1.json`, `toolchain-payload-profile-v1.1.json`
+  and `toolchain-payload-profile-v1.2.json` describe the exact OCI payload,
+  compiler, dependency cache, locks, and expected outputs, one file per release
+  line. The runtime payload, the dependency cache, and both lock files are
+  shared; the files differ only in the digest of the allowlisted source
+  selection and the eight outputs that selection produces.
 - `validate-toolchain-payload-v1.py` checks the payload and mutation controls.
 - `verify-two-clean-builds.sh` runs the locked, offline, network-disabled
   build and compares all expected outputs. It selects the profile and the
@@ -66,7 +66,7 @@ custody objects and a fresh run that matches every expected identity layer.
 ## Anonymous source reproduction
 
 See
-[`release/v1.1/SOURCE_RECIPE.md`](../../../../release/v1.1/SOURCE_RECIPE.md)
+[`release/v1.2/SOURCE_RECIPE.md`](../../../../release/v1.2/SOURCE_RECIPE.md)
 for public build, test, surface verification, and deterministic source archive
 commands.
 

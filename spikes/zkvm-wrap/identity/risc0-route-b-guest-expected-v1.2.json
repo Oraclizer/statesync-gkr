@@ -1,0 +1,40 @@
+{
+  "schema": "statesync-gkr.risc0-route-b-guest-identity.expected.v1",
+  "release_line": "v1.2",
+  "canonical_source_path": "/workspace/source",
+  "measured_source_commit": "BOUND_BY_SOURCE_MANIFEST",
+  "source_binding_note": "The accepted identity depends on the exact allowlisted source selection, not on a commit identifier. recipe.source_manifest_sha256 is that selection's digest and is recomputed from any clone by the packaging fixtures in spikes/zkvm-wrap/reproducible/risc0-route-b.",
+  "recipe": {
+    "measured_input_image": "sha256:3712206bce461f65e84c0d7258d7e935bcc840cfa85a2cff02d67861df529206",
+    "source_manifest_sha256": "6cd794e7ef393e758f3e04b04b95b6949e7f9a05e46f5483b47151f2d5175ace",
+    "evidence_manifest_sha256": "5a756a44ea7f5ef0315e875390780903953494b3910ab4c4766cfac8f0e54195",
+    "clean_build_count": 2,
+    "packaging_note": "The intermediate build image identifier is builder packaging metadata, not part of the program identity. The second clean build of the same source produced sha256:571f4081d0d67846b20dac8d3bb2ecc2bdb5920d6ac85c3f54bfdb5b3efe77e2 and the identical eight identity outputs."
+  },
+  "superseded_references": [
+    {
+      "label": "v1_1_release_identity",
+      "program_binary_sha256": "9bb3740d9c0e35f55a42adafa5bfd5cc89fe2520e1c391632807c4e33931cb04",
+      "image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
+      "status": "previous-release-line",
+      "covers_current_identity": false
+    }
+  ],
+  "artifacts": {
+    "program_binary": {
+      "sha256": "e552917c28f7030a46171d33fb90661edb0d1be149efabb1b70bde5b63cc4a28",
+      "size_bytes": 699944
+    },
+    "image_id": "1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131",
+    "raw_guest_elf_sha256": "d8dbb98fcde9cd56089db24af8a7f9a7a28220c526a1a3405b60ec6d751995ee",
+    "methods_rs_sha256": "04c2d2af369acc302e22252fe6a2018a73343276a97ae48b844169ebd5620edb",
+    "host_binary_sha256": "3344d9335fcdddfdd4b491ae9d8a8f5139191a136dec57a3d9a154c0288ff90d",
+    "diagnostic_program_binary_sha256": "b5d431e56d338140869e4de717c834cc599d4770de5d8f28ac2a2fdee0f502cb",
+    "diagnostic_raw_guest_elf_sha256": "de2b3a3bd6fb38c00ad2f58f40b32925b454461359a6f0504a0afdcc744bf420"
+  },
+  "claim_boundary": [
+    "These are expected comparison targets for the controlled build recipe.",
+    "A mismatch is a failure; the expected values are never updated to fit a new build.",
+    "Reproducing them is build and identity evidence, not artifact authenticity, dependency safety, or cryptographic security."
+  ]
+}

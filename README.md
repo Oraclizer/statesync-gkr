@@ -428,29 +428,31 @@ machine, and the records ship in this tree:
   with its transcript, and the codec is specified in
   [`docs/encoding/risc0-route-b-manifest-v1.md`](docs/encoding/risc0-route-b-manifest-v1.md).
 - Source reproduction is a first-class interface:
-  [`release/v1.1/SOURCE_RECIPE.md`](release/v1.1/SOURCE_RECIPE.md) separates
+  [`release/v1.2/SOURCE_RECIPE.md`](release/v1.2/SOURCE_RECIPE.md) separates
   anonymous source reproduction, which any machine can run against the pinned
   toolchain and the documented deterministic proof digest, from recorded
   exact-identity reproduction, and
-  [`release/v1.1/verify.py`](release/v1.1/verify.py) replays the recorded
+  [`release/v1.2/verify.py`](release/v1.2/verify.py) replays the recorded
   hashes.
 
 ## Proof-bound source
 
-The historical external proof is bound to its recorded v1.1 program identity.
-The current distribution preserves 78 of the 79 protected files byte for byte;
-the root Cargo license field has the one explicitly checked metadata change.
-The checker compares the current Cargo bytes and Git blob first, then uses an
-in-memory projection solely to compare with the preserved historical baseline.
-It does not assign that historical compiled identity to the current metadata.
-Comments, diagnostics, package descriptions, canonical vectors and field order
-remain checked. The exact difference and the incomplete compiled comparison
-are recorded in [LICENSING_DISTRIBUTION.json](release/v1.1/LICENSING_DISTRIBUTION.json). The image
-ID is `dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530`; the
+The current source has its own recorded program identity: two controlled
+clean builds of the identity source selection produced the same eight
+identity outputs, with image ID
+`1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131`. The
+expected record is
+[`risc0-route-b-guest-expected-v1.2.json`](spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json),
+and [IDENTITY_DISTRIBUTION.json](release/v1.2/IDENTITY_DISTRIBUTION.json)
+states the source, identity and proof boundaries. The historical external
+proof is bound to its recorded v1.1 program identity, image ID
+`dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530`, whose
 remaining content addresses are recorded in
-[`release/v1.1/PROOF_MANIFEST.json`](release/v1.1/PROOF_MANIFEST.json). A
-different build result is a different identity and is never adopted by editing
-an expected hash. The frozen surface also retains a finite list of historical
+[`release/v1.1/PROOF_MANIFEST.json`](release/v1.1/PROOF_MANIFEST.json); it is
+not a proof of the current program. All 79 protected files are checked byte
+for byte, so comments, diagnostics, package descriptions, canonical vectors
+and field order stay checked. A different build result is a different
+identity and is never adopted by editing an expected hash. The frozen surface also retains a finite list of historical
 source annotations, which are not current workflows, approvals, runtime
 roles, or endorsements; every one of them is defined in
 [docs/frozen-source-identifiers.md](docs/frozen-source-identifiers.md).
@@ -470,10 +472,10 @@ roles, or endorsements; every one of them is defined in
   `src/bin/measure.rs`;
 - `docs/` - architecture decisions, encodings, generated proof documents, and
   frozen identifier definitions;
-- `release/v1.1/` - public surface verifier, source recipe, manifests, and
+- `release/v1.2/` - public surface verifier, source recipe, manifests, and
   release evidence;
-- `release/v1.0/` - the frozen record of the previous identity cycle, kept
-  byte for byte and never regenerated;
+- `release/v1.1/` and `release/v1.0/` - the frozen records of the previous
+  identity cycles, kept byte for byte and never regenerated;
 
 
 ## Documentation
@@ -496,9 +498,9 @@ project policies for the current release line. The repository records are:
 - [Development measurements](benches/README.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Reproducing the release](REPRODUCING.md)
-- [Release notes](release/v1.1/RELEASE_NOTES.md)
-- [Release evidence](release/v1.1/README.md)
-- [Source reproduction](release/v1.1/SOURCE_RECIPE.md)
+- [Release notes for v1.1](release/v1.1/RELEASE_NOTES.md)
+- [Release evidence](release/v1.2/README.md)
+- [Source reproduction](release/v1.2/SOURCE_RECIPE.md)
 - [Changelog](CHANGELOG.md)
 
 ## Companion work
@@ -547,7 +549,7 @@ OSI sense.
 
 Versions up to and including v1.1.0 were released under MIT OR Apache-2.0.
 [NOTICE](NOTICE) records the contribution notices, and dependency licenses are
-listed in the [software bill of materials](release/v1.1/SBOM.spdx.json).
+listed in the [software bill of materials](release/v1.2/SBOM.spdx.json).
 
 To cite this software, use [CITATION.cff](CITATION.cff) or
 [DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552) (v1.1.1).

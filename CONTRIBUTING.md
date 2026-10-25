@@ -93,12 +93,12 @@ diff -u /tmp/receipt-rust.txt /tmp/receipt-python.txt
 cargo run --release --locked --bin proof_digest
 
 # Policy and public-surface checks.
-python3 release/v1.1/verify_dependency_update_policy.py
-python3 release/v1.1/verify_theory_commands.py
-python3 release/v1.1/test_verify_mode_policy.py
-python3 release/v1.1/test_documentation_consistency.py
-python3 release/v1.1/test_license_distribution.py
-python3 release/v1.1/verify.py --mode pull-request
+python3 release/v1.2/verify_dependency_update_policy.py
+python3 release/v1.2/verify_theory_commands.py
+python3 release/v1.2/test_verify_mode_policy.py
+python3 release/v1.2/test_documentation_consistency.py
+python3 release/v1.2/test_license_distribution.py
+python3 release/v1.2/verify.py --mode pull-request
 python3 spikes/zkvm-wrap/reproducible/risc0-route-b/test_validate_toolchain_payload_packaging.py
 ```
 
@@ -175,8 +175,8 @@ produced a circuit that verified. Add a domain check and a negative test.
 
 ## Frozen proof-bound source
 
-The published proof is bound to the 79 paths in
-`release/v1.1/PROTECTED_SOURCE_MANIFEST.json`. Do not edit those files,
+The recorded program identity is bound to the 79 paths in
+`release/v1.2/PROTECTED_SOURCE_MANIFEST.json`. Do not edit those files,
 including comments, package descriptions, diagnostics, field names, key order,
 test names, or vectors, as an incidental cleanup.
 
@@ -184,9 +184,10 @@ A protected change is not an ordinary contribution. It requires a new identity
 and a separately authorized proof lifecycle. Expected hashes must never be
 updated simply to make a changed build pass.
 
-`release/v1.0` holds the frozen record of the previous identity cycle. It is
-never regenerated, and the live verifier holds its whole directory to one
-recorded digest, so an edit there fails the required check.
+`release/v1.1` and `release/v1.0` hold the frozen records of the previous
+identity cycles. They are never regenerated, and the live verifier holds each
+whole directory to one recorded digest, so an edit there fails the required
+check.
 
 Historical labels that remain in protected source are governed only by
 [docs/frozen-source-identifiers.md](docs/frozen-source-identifiers.md) and the
@@ -195,15 +196,15 @@ exact allowlist. Do not reuse them in new source.
 ## Dependency updates
 
 The root `Cargo.lock` and the zkVM manifests under `spikes/` are part of the
-frozen proof-bound source, so cargo version updates cannot merge during the
-current identity cycle. Dependabot's cargo version-update pull requests are
-paused until the next identity cycle; security alerts and security updates
-stay enabled, and
-[release/v1.1/DEPENDENCY_UPDATE_POLICY.json](release/v1.1/DEPENDENCY_UPDATE_POLICY.json)
+frozen proof-bound source, so a cargo version update changes the program
+identity and cannot merge as an ordinary change. Dependabot's cargo
+version-update pull requests stay paused; security alerts and security
+updates stay enabled, and
+[release/v1.2/DEPENDENCY_UPDATE_POLICY.json](release/v1.2/DEPENDENCY_UPDATE_POLICY.json)
 records the policy.
 
 GitHub Actions dependency updates do merge. Before merging one, run
-`python3 release/v1.1/update-release-manifests.py` on the pull-request branch
+`python3 release/v1.2/update-release-manifests.py` on the pull-request branch
 and commit the refreshed release manifests. Skipping that step makes the
 post-merge check on the maintained branch fail with a manifest hash mismatch,
 because the release manifests cover every tracked file.

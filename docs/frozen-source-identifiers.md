@@ -1,22 +1,22 @@
 # Frozen source identifiers
 
-StateSync-GKR preserves a finite source surface byte-for-byte. The
-published zkVM proof is bound to the resulting program identity, so changing a
-comment, diagnostic string, package description, field name, or test label in
-that surface can change the identity even when the algorithm appears
-unchanged.
+StateSync-GKR preserves a finite source surface byte-for-byte. A compiled
+program identity is measured from that surface, so changing a comment,
+diagnostic string, package description, field name, or test label in it can
+change the identity even when the algorithm appears unchanged.
 
-The source is byte-preserved because the published zkVM proof is bound to this
-exact program identity. The current line is v1.1. Its identity supersedes the
-v1.0 identity, and the v1.0 record stays frozen under `release/v1.0`. Some
-non-sensitive historical source annotations are retained to preserve the
-identity they are part of. They are documented here and do not
-represent current release gates, runtime roles, or external endorsements.
+The current line is v1.2. Its identity supersedes the v1.1 identity, and the
+v1.1 and v1.0 records stay frozen under `release/v1.1` and `release/v1.0`. The
+newest published zkVM proof is bound to the historical v1.1 program identity,
+not to the v1.2 identity. Some non-sensitive historical source annotations are
+retained to preserve the identity they are part of. They are documented here
+and do not represent current release gates, runtime roles, or external
+endorsements.
 
 The machine-readable owners are
-[`PROTECTED_SOURCE_MANIFEST.json`](../release/v1.1/PROTECTED_SOURCE_MANIFEST.json)
+[`PROTECTED_SOURCE_MANIFEST.json`](../release/v1.2/PROTECTED_SOURCE_MANIFEST.json)
 and
-[`FROZEN_SOURCE_ALLOWLIST.json`](../release/v1.1/FROZEN_SOURCE_ALLOWLIST.json).
+[`FROZEN_SOURCE_ALLOWLIST.json`](../release/v1.2/FROZEN_SOURCE_ALLOWLIST.json).
 The first fixes the protected path set, modes, byte lengths, Git blob objects,
 SHA-256 values, and canonical JSON key order. The second fixes every retained
 legacy occurrence by path, containing-blob hash, byte offset, line hash,
@@ -142,11 +142,11 @@ occurrence ordinal, and count.
 
 ## Public proof-bound legacy annotations
 
-The protected source contains 123 occurrences classified as **PUBLIC
+The protected source contains 131 occurrences classified as **PUBLIC
 PROOF-BOUND LEGACY ANNOTATION**. The finite families include historical phase,
-gate, decision, design-priority, finding, mapping, approval, and broad
-development-coordinate labels, including exact uppercase and lowercase field
-name forms recorded by the allowlist.
+gate, decision, design-priority, finding, mapping, approval, model-boundary,
+review, and broad development-coordinate labels, including exact uppercase and
+lowercase field name forms recorded by the allowlist.
 
 For every such occurrence:
 
@@ -159,19 +159,18 @@ For every such occurrence:
 - reuse in new source is forbidden.
 
 The labels include historical forms such as `1a`, `2a`, `2b`, `2c`, `2d`,
-`3a`, `3b`, `G1`, `G2`, `PG-3`, `N1`, `N2`, `N3`, `D-*`, `mapping #*`,
-`Finding-*`, approval wording, and exact `A*`/`W*` coordinate or schema-key
-forms. Their presence does not approve a release, identify an actor, grant a
+`3a`, `3b`, `G1`, `G2`, `PG-3`, `N1`, `N2`, `N3`, `D-*`, `SD-*`, `mapping #*`,
+`Finding-*`, `decision-*`, approval and `supervisor` review wording, and exact
+`A*`/`W*` coordinate or schema-key forms. Their presence does not approve a release, identify an actor, grant a
 role, or state that an audit is current. Only the exact occurrences in the
 allowlist are permitted. A moved, added, removed, or altered occurrence fails
 verification.
 
-Two further annotation forms in the frozen source predate the allowlist's
-scan patterns: the `SD-*` model-boundary note and the bare
-`supervisor`/`decision-*` review wording. This document catalogues them ahead
-of their allowlist enrollment in the next identity cycle. They are historical
-development annotations with the same meaning and the same restrictions as
-every other legacy label above, and reuse in new source is forbidden.
+Two of these forms predate the scan patterns of the v1.1 allowlist: the `SD-*`
+model-boundary note and the bare `supervisor`/`decision-*` review wording. The
+v1.2 allowlist enrolls them, so each of their occurrences is fixed like every
+other legacy label above. They are historical development annotations with the
+same meaning and the same restrictions, and reuse in new source is forbidden.
 
 Credentials, private keys, personal information, private machine paths,
 artificial-intelligence work attribution, and operational secrets have no
@@ -180,11 +179,12 @@ and vulnerability-reporting tuple recorded in the protected manifest.
 
 ## Verification boundary
 
-Run `python3 release/v1.1/verify.py --mode clean-history --require-proof` on a
+Run `python3 release/v1.2/verify.py --mode clean-history --require-proof` on a
 final clean checkout. The verifier checks the protected path set and bytes,
-canonical JSON key order, all 123 legacy occurrences, the exact public contact
-tuple, the external proof hash, sensitive-data scans, and the absence of new
-legacy identifiers outside these definitions.
+canonical JSON key order, all 131 legacy occurrences and every stable
+identifier occurrence across the whole protected surface, the exact public
+contact tuple, the external proof hash, sensitive-data scans, and the absence
+of new legacy identifiers outside these definitions.
 
 Passing the verifier establishes release-surface integrity only. It does not
 rerun Rust, Isabelle, a zkVM proof, an external verifier, a chain transition,

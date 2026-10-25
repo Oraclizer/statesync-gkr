@@ -3,11 +3,13 @@
 This guide separates the short source-level reproduction from the exact
 release-asset verification.
 
-The Rust kernel and formal sources retain their recorded contents. The
-[distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
-current source consistency from the historical v1.1 executable and proof: an
-exact compiled identity has not been reproduced for the current package
-metadata, so the attached proof is evidence for its recorded program only.
+The main branch carries the v1.2 line. Its
+[identity record](release/v1.2/IDENTITY_DISTRIBUTION.json) records the program
+identity that two controlled clean builds of the current source produced, and
+states that the newest external proof belongs to the historical v1.1 program.
+The latest published release is v1.1.1. Profile 2 below uses its assets, and
+the verifier inside its source archive describes that release, whose attached
+proof is evidence for its recorded program only.
 
 The measurements and the historical proof refer to v1.1.0, archived as
 [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
@@ -101,7 +103,8 @@ for the short source quick start or proof-attachment hash verification.
 
 ## Report a result
 
-Copy `release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json`, fill only observed
+Copy `release/v1.2/REPRODUCTION_REPORT_TEMPLATE.json` (for the v1.1.1
+release assets, `release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json`), fill only observed
 values, and attach it to a reproduction issue created from the repository's
 issue form. Use `PASS`, `PARTIAL`, or `FAIL`; record every deviation instead of
 normalizing it away. Use [SECURITY.md](SECURITY.md) instead when the deviation

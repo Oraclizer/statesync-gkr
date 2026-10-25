@@ -35,9 +35,9 @@ jobs:
           # clean-history run failed every pull request that did not also
           # regenerate the tree manifests.
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            python3 release/v1.1/verify.py --mode pull-request
+            python3 release/v1.2/verify.py --mode pull-request
           else
-            python3 release/v1.1/verify.py --mode clean-history
+            python3 release/v1.2/verify.py --mode clean-history
           fi
 
   release-proof-attachment:
@@ -64,12 +64,12 @@ jobs:
             --dir "$RUNNER_TEMP/proof"
           test -f "$RUNNER_TEMP/proof/$PROOF_ASSET"
           test "$(find "$RUNNER_TEMP/proof" -maxdepth 1 -type f | wc -l)" -eq 1
-          python3 release/v1.1/verify.py \
+          python3 release/v1.2/verify.py \
             --mode clean-history \
             --require-proof \
             --proof "$RUNNER_TEMP/proof/$PROOF_ASSET"
 
-# These jobs check current source/licensing consistency and the historical
-# proof attachment. They do not reproduce or assign a new compiled identity.
-# The exact approved Cargo license field is distinguished from the 78
-# byte-unchanged protected files; the historical program record is preserved.
+# These jobs check source and identity consistency and the historical proof
+# attachment. They do not rebuild the guest: the v1.2 compiled identity is the
+# record of two controlled clean builds, and the attached proof belongs to the
+# historical v1.1 program, as release/v1.2/IDENTITY_DISTRIBUTION.json states.

@@ -1,0 +1,125 @@
+{
+  "schema": "statesync-gkr.release-attachments.v1",
+  "status": "PREPARED_RELEASE_ASSETS",
+  "source_archive_two_run_byte_equality": true,
+  "proof_tracked_in_source_tree": false,
+  "attachment_count": 13,
+  "attachments": [
+    {
+      "asset_name": "statesync-gkr-v1.2-source.tar.gz",
+      "media_type": "application/gzip",
+      "role": "deterministic-source-archive",
+      "bytes": 43363036,
+      "sha256": "90d8a42d7bbb0313d575f797434711c5ea8c832e6178f5a519310cd7d0e2377b",
+      "status": "PREPARED_RELEASE_ASSET"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.1-proof.cbor",
+      "media_type": "application/cbor",
+      "role": "public-proof",
+      "proof_scope": "historical-v1.1-program-only",
+      "bytes": 279128,
+      "sha256": "b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822",
+      "status": "PREPARED_RELEASE_ASSET"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-gkr-protocol.pdf",
+      "media_type": "application/pdf",
+      "role": "formal-document",
+      "bytes": 653337,
+      "sha256": "13d8030b608ee1bcdb7cbf736b9cd93890d2370ee428707a16ab1f80ea40bdcf",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "docs/GKR_Protocol.pdf"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-smt-compiler-correctness.pdf",
+      "media_type": "application/pdf",
+      "role": "formal-document",
+      "bytes": 548792,
+      "sha256": "5be29dd579a3fb46fdf94152699bc6fd0008716e6f206359eb2e80ce8dea74fa",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "docs/SMT_Circuit_Compiler_Correctness.pdf"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-identity-distribution.json",
+      "media_type": "application/json",
+      "role": "identity-distribution-record",
+      "bytes": 2425,
+      "sha256": "6fbab60e1b5c125e002b9384651fb33e42086b7bda2e39d45effb9aefdb6c69a",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/IDENTITY_DISTRIBUTION.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-expected-guest-identity.json",
+      "media_type": "application/json",
+      "role": "expected-guest-identity",
+      "bytes": 2557,
+      "sha256": "df4d95ee7e353d4281419b5bc8adc4860292a3ada32a515d6fd6a52ecc09b261",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.1-proof-manifest.json",
+      "media_type": "application/json",
+      "role": "historical-proof-manifest",
+      "bytes": 3878,
+      "sha256": "880456ed769f8c1bc41883b15b418300c28b01b1f2aec54c09f2a38fe25761df",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.1/PROOF_MANIFEST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.1-public-inputs.json",
+      "media_type": "application/json",
+      "role": "historical-public-inputs",
+      "bytes": 1831,
+      "sha256": "67a00effdd8910d1615df7fbcb0d670370961940214ea668a133048d81c107b5",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.1/PUBLIC_INPUTS.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-sbom.spdx.json",
+      "media_type": "application/spdx+json",
+      "role": "sbom",
+      "bytes": 816869,
+      "sha256": "f752ffa5ed6c7df7c310fe1f9b196e2a0b3a1091c34f52ae0c80e291bdc9c3cf",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/SBOM.spdx.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-provenance.intoto.jsonl",
+      "media_type": "application/jsonl",
+      "role": "provenance",
+      "bytes": 5189,
+      "sha256": "3126adaa46e240ca1cbc5eead8ae75f1f07c405e2182d58f390949b2689ba4c3",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/PROVENANCE.intoto.jsonl"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-protected-source-manifest.json",
+      "media_type": "application/json",
+      "role": "protected-source-manifest",
+      "bytes": 69479,
+      "sha256": "7447ba9d07e71d8b66f426940e012a3a29fbfc30eebef43ff36131782930ec33",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/PROTECTED_SOURCE_MANIFEST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-frozen-source-allowlist.json",
+      "media_type": "application/json",
+      "role": "frozen-source-allowlist",
+      "bytes": 532822,
+      "sha256": "e441ee976d22131a498f59a04ce4c7ed82b8b69b9b2980d5343c4d755a58887b",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/FROZEN_SOURCE_ALLOWLIST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-dependency-update-policy.json",
+      "media_type": "application/json",
+      "role": "dependency-update-policy",
+      "bytes": 1999,
+      "sha256": "34466e5ce04a074c8072f302da21ace72e9118085c0290467d1cfd8d30201d8b",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/DEPENDENCY_UPDATE_POLICY.json"
+    }
+  ]
+}

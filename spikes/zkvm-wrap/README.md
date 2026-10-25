@@ -26,14 +26,19 @@ scripts, and machine paths are not public release interfaces.
 
 ## Fixed identity
 
-The recorded historical program belongs to the v1.1 line. The current source
-has no independently reproduced compiled identity. Its historical expected record is
-[`identity/risc0-route-b-guest-expected-v1.1.json`](identity/risc0-route-b-guest-expected-v1.1.json).
+The current program identity belongs to the v1.2 line. Two controlled clean
+builds of the current source produced it, and its expected record is
+[`identity/risc0-route-b-guest-expected-v1.2.json`](identity/risc0-route-b-guest-expected-v1.2.json).
 
 | Layer | Content address |
 |---|---|
-| Program binary | `9bb3740d9c0e35f55a42adafa5bfd5cc89fe2520e1c391632807c4e33931cb04` |
-| Image ID | `dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530` |
+| Program binary | `e552917c28f7030a46171d33fb90661edb0d1be149efabb1b70bde5b63cc4a28` |
+| Image ID | `1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131` |
+
+The newest external proof belongs to the historical v1.1 program, image ID
+`dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530`, recorded in
+[`identity/risc0-route-b-guest-expected-v1.1.json`](identity/risc0-route-b-guest-expected-v1.1.json).
+It is not a proof of the current program.
 | Raw guest ELF | `38b337c16334226f9dcd2ea319b5e6924aa583ba637126c9d7a8cfacb5cb9a5d` |
 | Generated methods source | `3b8c0c23d5f0ceb84e1224b472428772c1f53bcd5c97b5ff1502acc1a6878e03` |
 | Host binary | `cad5e07c07465c9f8baddbf6364ad52ae8f35529954d742f5a1449c0ee77aab9` |
@@ -62,7 +67,7 @@ See:
 
 - [identity policy](identity/README.md)
 - [controlled-build recipe](reproducible/risc0-route-b/README.md)
-- [public source recipe](../../release/v1.1/SOURCE_RECIPE.md)
+- [public source recipe](../../release/v1.2/SOURCE_RECIPE.md)
 - [frozen source identifiers](../../docs/frozen-source-identifiers.md)
 
 ## External receipt boundary
@@ -94,7 +99,7 @@ cargo run --release --locked \
   --manifest-path spikes/zkvm-wrap/risc0-proof-verify/Cargo.toml -- \
   release/v1.1/artifacts/statesync-gkr-v1.1-proof.cbor
 
-python3 release/v1.1/verify.py --mode clean-history --require-proof
+python3 release/v1.2/verify.py --mode clean-history --require-proof
 ```
 
 The release verifier checks exact protected bytes and the finite historical

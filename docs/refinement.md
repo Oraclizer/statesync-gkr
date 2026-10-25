@@ -105,7 +105,8 @@ together. [Replay metadata](../verif/README.md) identifies the pinned
 configuration and local tool requirements.
 
 A source consistency check, solver record, executable test and historical
-external zkVM proof answer different questions. The source distribution's
-[identity record](../release/v1.1/LICENSING_DISTRIBUTION.json) distinguishes the
-current source from the recorded historical program; the attached historical
-proof does not establish a compiled identity for this tree.
+external zkVM proof answer different questions. The
+[identity record](../release/v1.2/IDENTITY_DISTRIBUTION.json) records the
+compiled identity of the current source and distinguishes it from the recorded
+historical program; the attached historical proof does not cover the current
+identity.

@@ -434,7 +434,7 @@ other application adapters are not bundled with this release.
 cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --release --locked
-python3 release/v1.1/verify.py --mode pull-request
+python3 release/v1.2/verify.py --mode pull-request
 ```
 
 The quickstart is separate from contributor and proof reproduction. Changes to

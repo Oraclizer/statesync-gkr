@@ -25,7 +25,7 @@ The protected vector
 `tests/vectors/receipt-gated-local-transition-v1.json` owns every exact input,
 field name, field order, canonical byte, and expected result. Its raw bytes and
 JSON object-key order are fixed by
-`release/v1.1/PROTECTED_SOURCE_MANIFEST.json`.
+`release/v1.2/PROTECTED_SOURCE_MANIFEST.json`.
 
 The adapter recomputes route identity, raw statement hash, native statement,
 primary-record identity, authenticated one-leaf receipt root, claim identity,

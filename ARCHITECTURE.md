@@ -149,7 +149,7 @@ See [ADR-0002](docs/adr/0002-external-proof-role-contract.md).
 
 ## Frozen interfaces
 
-The recorded historical v1.1 program identity fixes six compatibility
+The recorded program identity fixes six compatibility
 surfaces:
 
 - dependency direction;
@@ -220,4 +220,4 @@ production incident response require separate evidence.
 - Replay metadata: `verif/`
 - Public vectors: `tests/vectors/`
 - Selected zkVM integration: `spikes/zkvm-wrap/`
-- Release verifier and manifests: `release/v1.1/`
+- Release verifier and manifests: `release/v1.2/`
