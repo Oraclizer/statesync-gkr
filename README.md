@@ -13,7 +13,7 @@
   <a href="https://github.com/Oraclizer/statesync-gkr/actions/workflows/proofs.yml"><img alt="Proofs" src="https://github.com/Oraclizer/statesync-gkr/actions/workflows/proofs.yml/badge.svg?branch=main"></a>
   <a href="LICENSE"><img alt="License: BUSL-1.1" src="https://img.shields.io/badge/license-BUSL--1.1-0b5cad"></a>
   <a href="Cargo.toml"><img alt="MSRV 1.85" src="https://img.shields.io/badge/rustc-1.85+-284a76"></a>
-  <a href="https://doi.org/10.5281/zenodo.23280552" title="StateSync-GKR v1.1.1 software DOI"><img alt="DOI: 10.5281/zenodo.23280552" src="assets/brand/zenodo-doi.svg"></a>
+  <a href="https://doi.org/10.5281/zenodo.23643505" title="StateSync-GKR v1.2.0 software DOI"><img alt="DOI: 10.5281/zenodo.23643505" src="assets/brand/zenodo-doi.svg"></a>
   <a href="https://arxiv.org/abs/2610.14849" title="Engine design and evaluation paper"><img alt="Engine paper: arXiv 2610.14849" src="https://img.shields.io/badge/arXiv%20Engine-2610.14849-b31b1b"></a>
   <a href="https://arxiv.org/abs/2610.05335" title="Formal verification paper"><img alt="Formal paper: arXiv 2610.05335" src="https://img.shields.io/badge/arXiv%20Formal-2610.05335-b31b1b"></a>
 </p>
@@ -498,7 +498,7 @@ project policies for the current release line. The repository records are:
 - [Development measurements](benches/README.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Reproducing the release](REPRODUCING.md)
-- [Release notes for v1.1](release/v1.1/RELEASE_NOTES.md)
+- [Release notes](release/v1.2/RELEASE_NOTES.md)
 - [Release evidence](release/v1.2/README.md)
 - [Source reproduction](release/v1.2/SOURCE_RECIPE.md)
 - [Changelog](CHANGELOG.md)
@@ -552,7 +552,7 @@ Versions up to and including v1.1.0 were released under MIT OR Apache-2.0.
 listed in the [software bill of materials](release/v1.2/SBOM.spdx.json).
 
 To cite this software, use [CITATION.cff](CITATION.cff) or
-[DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552) (v1.1.1).
+[DOI 10.5281/zenodo.23643505](https://doi.org/10.5281/zenodo.23643505) (v1.2.0).
 [Citing StateSync-GKR](https://oraclizer.io/ss-gkr/docs/project/citing/)
 gives BibTeX entries for the software and both papers.
 The measurements and the attached historical proof refer to v1.1.0, archived as

@@ -9,19 +9,55 @@ versioned.
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-25
+
+Archived as [DOI 10.5281/zenodo.23643505](https://doi.org/10.5281/zenodo.23643505).
+
 ### Added
 
+- Serving components and a reference proof server in `benches/serving`:
+  bounded admission with explicit rejection reasons, request and frame size
+  limits, a bounded return queue with job and byte budgets and deadline
+  writes, parallel witness and output helpers, per-job stage timing, four
+  scheduling modes, a load frontend and real-TCP checks.
+- `SyncError::KindMismatch`: the prepared prover entry points refuse a request
+  of another operation kind in every build profile.
+- A `release/v1.2` baseline for the new program identity, with its own
+  protected-source manifest, frozen-source allowlist, identity and
+  distribution record and verifier. The verifier holds `release/v1.1` and
+  `release/v1.0` byte frozen and scans every UTF-8 file of the protected
+  surface for legacy and stable identifier occurrences.
+- The expected v1.2 guest identity and its payload profile, recorded from two
+  controlled clean builds that agreed on all eight identity outputs.
 - A refinement evidence guide, `docs/refinement.md`, that maps the forward
   acceptance theorem, the selected Rust contract proofs and selected open
   obligations to their source.
 
 ### Changed
 
+- The sparse layer prover computes the same proofs with less arithmetic: one
+  pass per scaled output-line weight table, round nodes of both sumcheck
+  phases from a single table read, and a fixed inverse Vandermonde matrix
+  for round interpolation. Proof bytes are unchanged.
+- `hash_leaf_pre` panics on a pre-image of the wrong width in every build
+  profile; the check previously held only in debug builds.
+- The program identity is new (image ID
+  `1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131`). The
+  attached external proof stays scoped to the historical v1.1 program.
+- The frozen-source allowlist enrolls the model-boundary and review
+  annotation forms that the glossary announced, for 131 classified
+  occurrences.
+- The public-API transcript and codec regressions run from the root tests;
+  the serving crate keeps the ones that need the raw duplex challenger or its
+  wire profile.
+- The controlled capacity replay job checks out the source it measured.
 - Documentation: the README summarizes the verification results and links to
   their exact scope, and licensing notes, citation coordinates and stale
   references were corrected.
 
 ## [1.1.1] - 2026-10-10
+
+Archived as [DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552).
 
 ### Changed
 

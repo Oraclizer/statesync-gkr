@@ -27,8 +27,8 @@
     "covers_current_identity": false
   },
   "citation": {
-    "version": "1.1.1",
-    "doi": "10.5281/zenodo.23280552",
+    "version": "1.2.0",
+    "doi": "10.5281/zenodo.23643505",
     "status": "LATEST_PUBLISHED_RELEASE"
   },
   "historical_baseline": {
@@ -41,7 +41,7 @@
     "Two controlled clean builds of that selection produced the same eight identity outputs, recorded in the expected identity record.",
     "Proof bytes of the library are unchanged from the previous line; the program identity changed because the compiled guest includes the changed source.",
     "The newest external proof belongs to the historical v1.1 program. It is not a proof of the v1.2 program identity.",
-    "The citation names the latest published release until a published v1.2 release replaces it.",
+    "The citation names this release, v1.2.0, archived at DOI 10.5281/zenodo.23643505.",
     "The v1.1 and v1.0 baselines stay byte-frozen as records of their identity cycles."
   ]
 }

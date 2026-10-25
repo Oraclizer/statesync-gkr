@@ -9,8 +9,8 @@ verified results and their assumptions are described in
 
 | Version | Security fixes |
 | --- | --- |
-| `main` and the current release, v1.1.1 | Yes |
-| v1.1.0 and earlier | No |
+| `main` and the current release, v1.2.0 | Yes |
+| v1.1.1 and earlier | No |
 
 Fixes are published in a new release. Published releases and their tags are
 immutable.
