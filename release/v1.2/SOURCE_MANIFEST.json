@@ -111,8 +111,8 @@
     {
       "path": ".github/workflows/controlled-capacity.yml",
       "mode": "100644",
-      "bytes": 968,
-      "sha256": "0ae5c38183977ed41006fece550d1e164c21d3acd8909d0e9ac4dd8d14dfa072",
+      "bytes": 1329,
+      "sha256": "81e9b84b81b189334b17e855577190915c4391204aeb1cdba946e2175dd65748",
       "role": "repository-automation-or-community"
     },
     {

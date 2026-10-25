@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "StateSync-GKR v1.2.0 BSL source distribution SBOM",
-  "documentNamespace": "https://oraclizer.io/spdx/statesync-gkr-v1.2/90d8a42d7bbb0313d575f797434711c5ea8c832e6178f5a519310cd7d0e2377b",
+  "documentNamespace": "https://oraclizer.io/spdx/statesync-gkr-v1.2/239fa66c097164dfa3425f57df46410a198f3653795ef52d5f99f8a94a980be8",
   "creationInfo": {
-    "created": "2026-10-25T13:47:11Z",
+    "created": "2026-10-25T13:53:58Z",
     "creators": [
       "Tool: statesync-gkr-release-packager-v1"
     ],
@@ -27,7 +27,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "90d8a42d7bbb0313d575f797434711c5ea8c832e6178f5a519310cd7d0e2377b"
+          "checksumValue": "239fa66c097164dfa3425f57df46410a198f3653795ef52d5f99f8a94a980be8"
         }
       ],
       "comment": "Deterministic repository source archive candidate."
@@ -2216,7 +2216,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "0ae5c38183977ed41006fece550d1e164c21d3acd8909d0e9ac4dd8d14dfa072"
+          "checksumValue": "81e9b84b81b189334b17e855577190915c4391204aeb1cdba946e2175dd65748"
         }
       ],
       "licenseConcluded": "NOASSERTION",
@@ -11336,7 +11336,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "d88127e73e735e355c934701ae8c1eddc8e6826d690be1da2b1801d91cfd5074"
+          "checksumValue": "c967031ac2ac6f82e3f5c6e153b869944c4cd8ec47e11f18a0c19dca8cdd5c28"
         }
       ],
       "licenseConcluded": "NOASSERTION",
