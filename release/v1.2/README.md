@@ -18,13 +18,13 @@ proof of the v1.2 program identity.
 - [Frozen-source allowlist](FROZEN_SOURCE_ALLOWLIST.json)
 - [Dependency update policy](DEPENDENCY_UPDATE_POLICY.json)
 - [Reproduction report template](REPRODUCTION_REPORT_TEMPLATE.json)
+- [Release notes](RELEASE_NOTES.md)
 - [Source reproduction recipe](SOURCE_RECIPE.md)
 - [Reproduce the release](../../REPRODUCING.md)
 
-The line is prepared on the main branch and has not been published as a
-release. Until it is, the citation metadata names the latest published
-release, v1.1.1, archived at
-[DOI 10.5281/zenodo.23280552](https://doi.org/10.5281/zenodo.23280552).
+The line is published as release v1.2.0 (signed tag `v1.2.0`), archived at
+[DOI 10.5281/zenodo.23643505](https://doi.org/10.5281/zenodo.23643505), and
+its changes are summarized in the [release notes](RELEASE_NOTES.md).
 Manifests on the main branch describe the current branch source tree.
 
 ## What changed in the protected source

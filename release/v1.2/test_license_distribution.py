@@ -134,7 +134,9 @@ class IdentityRecordTests(unittest.TestCase):
             ("proof-bytes", lambda v: v["proof"].__setitem__("sha256", "0" * 64)),
             ("source", lambda v: v["identity_source"].__setitem__("sha256", "0" * 64)),
             ("baseline", lambda v: v["historical_baseline"].__setitem__("allowlist_sha256", "0" * 64)),
-            ("citation", lambda v: v["citation"].__setitem__("version", "1.2.0")),
+            ("citation-version", lambda v: v["citation"].__setitem__(
+                "version", "1.1.1" if v["citation"]["version"] != "1.1.1" else "1.2.0")),
+            ("citation-status", lambda v: v["citation"].__setitem__("status", "PREPARED")),
         ]
         for label, mutate in mutations:
             candidate = policy.load_record(path)
@@ -166,14 +168,17 @@ class IdentityRecordTests(unittest.TestCase):
     def test_cff_comment_duplicate_and_historical_doi_rejected(self):
         citation = policy.load_record(self.root / policy.IDENTITY_RECORD)["citation"]
         valid = (self.root / "CITATION.cff").read_text(encoding="utf-8")
+        current = citation["doi"]
+        self.assertEqual(valid.count(current), 1)
         candidates = [valid.replace("license: BUSL-1.1", "# license: BUSL-1.1\nlicense: MIT"),
-                      valid + "\nlicense: MIT\n", valid.replace("10.5281/zenodo.23280552", "10.5281/zenodo.23136385"),
-                      valid.replace('doi: "10.5281/zenodo.23280552"', "doi: 10.5281/zenodo.23136385"),
-                      valid.replace("10.5281/zenodo.23280552", "10.5281/zenodo.99999999"),
+                      valid + "\nlicense: MIT\n", valid.replace(current, "10.5281/zenodo.23136385"),
+                      valid.replace(f'doi: "{current}"', "doi: 10.5281/zenodo.23136385"),
+                      valid.replace(current, "10.5281/zenodo.99999999"),
                       valid + '\ndoi: "https://doi.org/10.5281/zenodo.23136385"\n',
                       valid + '\nversion: "1.1.0"\n']
         for candidate in candidates:
             with self.subTest(candidate=candidate[-80:]):
+                self.assertNotEqual(candidate, valid)
                 with self.assertRaises(ValueError):
                     policy.verify_cff(candidate, citation)
         policy.verify_cff(valid.replace("license: BUSL-1.1", 'license: "BUSL-1.1" # current grant'), citation)

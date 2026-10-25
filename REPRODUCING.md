@@ -3,13 +3,11 @@
 This guide separates the short source-level reproduction from the exact
 release-asset verification.
 
-The main branch carries the v1.2 line. Its
+The current release is v1.2.0. Its
 [identity record](release/v1.2/IDENTITY_DISTRIBUTION.json) records the program
-identity that two controlled clean builds of the current source produced, and
-states that the newest external proof belongs to the historical v1.1 program.
-The latest published release is v1.1.1. Profile 2 below uses its assets, and
-the verifier inside its source archive describes that release, whose attached
-proof is evidence for its recorded program only.
+identity that two controlled clean builds of the release source produced, and
+states that the attached external proof belongs to the historical v1.1
+program, not to the v1.2.0 program identity.
 
 The measurements and the historical proof refer to v1.1.0, archived as
 [DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
@@ -47,32 +45,32 @@ report template below.
 
 ## Profile 2: exact release package
 
-Download **every** asset of the v1.1.1 release from the
-[Releases page](https://github.com/Oraclizer/statesync-gkr/releases) into one empty directory. `statesync-gkr-v1.1-sha256sums.txt` covers all of them and
+Download **every** asset of the v1.2.0 release from the
+[Releases page](https://github.com/Oraclizer/statesync-gkr/releases) into one empty directory. `statesync-gkr-v1.2-sha256sums.txt` covers all of them and
 `sha256sum -c` fails on any that is missing, so a partial download cannot pass
 this step. The four the rest of this profile uses directly are:
 
-- `statesync-gkr-v1.1-source.tar.gz`;
+- `statesync-gkr-v1.2-source.tar.gz`;
 - `statesync-gkr-v1.1-proof.cbor`;
-- `statesync-gkr-v1.1-attachments.json`;
-- `statesync-gkr-v1.1-sha256sums.txt`.
+- `statesync-gkr-v1.2-attachments.json`;
+- `statesync-gkr-v1.2-sha256sums.txt`.
 
 Verify the attachment list before extracting the source:
 
 ```sh
-sha256sum -c statesync-gkr-v1.1-sha256sums.txt
-mkdir statesync-gkr-v1.1-source
-tar -xzf statesync-gkr-v1.1-source.tar.gz -C statesync-gkr-v1.1-source
-cd statesync-gkr-v1.1-source
-python3 release/v1.1/verify.py \
+sha256sum -c statesync-gkr-v1.2-sha256sums.txt
+mkdir statesync-gkr-v1.2-source
+tar -xzf statesync-gkr-v1.2-source.tar.gz -C statesync-gkr-v1.2-source
+cd statesync-gkr-v1.2-source
+python3 release/v1.2/verify.py \
   --mode source-archive \
   --require-proof \
   --proof ../statesync-gkr-v1.1-proof.cbor
 ```
 
-This command checks package integrity and the historical proof attachment's
-recorded size and hash. It does not establish that the current licensing
-metadata reproduces the historical guest executable.
+This command checks package integrity and the recorded size and hash of the
+proof attachment. The proof belongs to the historical v1.1 program; the v1.2.0
+program identity is recorded in the identity record named above.
 
 Expected final lines include:
 
@@ -87,7 +85,7 @@ Create a disposable copy and flip one proof byte:
 
 ```sh
 python3 -c "from pathlib import Path; p=Path('../statesync-gkr-v1.1-proof.cbor'); b=bytearray(p.read_bytes()); b[-1] ^= 1; Path('../tampered-proof.cbor').write_bytes(b)"
-python3 release/v1.1/verify.py \
+python3 release/v1.2/verify.py \
   --mode source-archive \
   --require-proof \
   --proof ../tampered-proof.cbor
@@ -103,8 +101,7 @@ for the short source quick start or proof-attachment hash verification.
 
 ## Report a result
 
-Copy `release/v1.2/REPRODUCTION_REPORT_TEMPLATE.json` (for the v1.1.1
-release assets, `release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json`), fill only observed
+Copy `release/v1.2/REPRODUCTION_REPORT_TEMPLATE.json`, fill only observed
 values, and attach it to a reproduction issue created from the repository's
 issue form. Use `PASS`, `PARTIAL`, or `FAIL`; record every deviation instead of
 normalizing it away. Use [SECURITY.md](SECURITY.md) instead when the deviation

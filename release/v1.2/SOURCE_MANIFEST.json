@@ -10,8 +10,8 @@
     "current_git_tree": "BOUND_BY_GIT_TAG",
     "distribution_version": "1.2.0",
     "license": "BUSL-1.1",
-    "citation_version": "1.1.1",
-    "citation_doi": "10.5281/zenodo.23280552",
+    "citation_version": "1.2.0",
+    "citation_doi": "10.5281/zenodo.23643505",
     "identity_source_sha256": "6cd794e7ef393e758f3e04b04b95b6949e7f9a05e46f5483b47151f2d5175ace",
     "previous_line_identity_source_sha256": "13eacaa5bf18f26c8089ec6ddf27a7410bb436f28330e12f1135abf5684cf31c",
     "compiled_identity_reproduced": true,
@@ -36,7 +36,7 @@
       "release/v1.2/TREE_MANIFEST.json"
     ]
   },
-  "path_count": 1005,
+  "path_count": 1006,
   "entries": [
     {
       "path": ".gitattributes",
@@ -84,7 +84,7 @@
       "path": ".github/ISSUE_TEMPLATE/reproduction.yml",
       "mode": "100644",
       "bytes": 2373,
-      "sha256": "a10b0712e13ea71c30f8eba1a6b5022aa05d9f233f95b182829cbd58c9107af7",
+      "sha256": "2685ecd0ca46c2ef9c9fb08ce706e27be8f507c16925f02edbd24c4ecdb7ccb8",
       "role": "repository-automation-or-community"
     },
     {
@@ -146,15 +146,15 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "bytes": 7315,
-      "sha256": "a5f8961806555b911d1b71619be9e7b5f7a5529a8aef046587c06e5a9591e557",
+      "bytes": 9468,
+      "sha256": "f73f427b798b8f8ef5939f1a4dba7e13c13cb404da6a19e4c0d59264a5b3e535",
       "role": "documentation"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
       "bytes": 1637,
-      "sha256": "842998527ca6f871e8e4b6330a04e44dca6e2f7dd2be325767eebf00567190b6",
+      "sha256": "e858f083479f07423cc66eeede7210d954dd0312a60cf8327972bfb2fe0b25bb",
       "role": "repository-source-or-metadata"
     },
     {
@@ -237,22 +237,22 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 33073,
-      "sha256": "8ec7846041ad090b1360ad218d64a92443263ea7e5b295e4c443d573330ca2ab",
+      "bytes": 33064,
+      "sha256": "1685e9aa766c12eb0bb277aa0d745a65e19d4a5be47f0f75aaceed3105dc0c15",
       "role": "documentation"
     },
     {
       "path": "REPRODUCING.md",
       "mode": "100644",
-      "bytes": 4181,
-      "sha256": "ac872b4b782a40e55dc6feb6b483bebc95a3ddb99b4c082f94e53071f5ce7eeb",
+      "bytes": 3943,
+      "sha256": "eae052aaab32eb5dd763fe88a2209680e1c66dc0a9d83c51b9bdae2b0a1c24aa",
       "role": "documentation"
     },
     {
       "path": "SECURITY.md",
       "mode": "100644",
       "bytes": 1854,
-      "sha256": "933f327f91e1ff2debf32693eb7032175c58abb08914ec6626985c1ac6699bf7",
+      "sha256": "6803f71bea7459170a601ab89e5a1d8eb915091ac75063085e509247a4a21bc1",
       "role": "documentation"
     },
     {
@@ -329,7 +329,7 @@
       "path": "assets/brand/zenodo-doi.svg",
       "mode": "100644",
       "bytes": 1217,
-      "sha256": "0ca6b16dfc9fe7facb07d861ba7c32ff81b47c1b436e1b72a7e53bc9ba5e6e6b",
+      "sha256": "70c08fd4577605cabfa48c4331d2914eb7d771ac7278780d2e45844ab7a9b892",
       "role": "repository-source-or-metadata"
     },
     {
@@ -4073,8 +4073,8 @@
     {
       "path": "release/v1.2/IDENTITY_DISTRIBUTION.json",
       "mode": "100644",
-      "bytes": 2425,
-      "sha256": "6fbab60e1b5c125e002b9384651fb33e42086b7bda2e39d45effb9aefdb6c69a",
+      "bytes": 2415,
+      "sha256": "0c2c1278e7c7b034b75f2e2ecc7acdb717b04a61c9d7cf09a1be7865a88e8c14",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4087,8 +4087,15 @@
     {
       "path": "release/v1.2/README.md",
       "mode": "100644",
-      "bytes": 3766,
-      "sha256": "8bc52b86f2ae7777cb7bcbd0c492d8da159de316f2038c7e2cd8cfcb05be0ea5",
+      "bytes": 3778,
+      "sha256": "11a4519bddbcc704f6f26e010d4e9df3eeb679eb3dd52b0694d8c88c87e2c5b4",
+      "role": "release-evidence-or-tooling"
+    },
+    {
+      "path": "release/v1.2/RELEASE_NOTES.md",
+      "mode": "100644",
+      "bytes": 5906,
+      "sha256": "df71400bcd77b145ebc99c5dcb3c9b871aefa8552138b6638b35f6a93e2ed7ed",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4136,8 +4143,8 @@
     {
       "path": "release/v1.2/test_license_distribution.py",
       "mode": "100644",
-      "bytes": 20201,
-      "sha256": "d54c5e6fcf6dcfa9a1b128498a10d70e1cdf2b8e82e9219e84074857e528f203",
+      "bytes": 20459,
+      "sha256": "322e40db63a898d19d12a5d82ae7ab65a176e2a240c48313dc2f45db8622dd24",
       "role": "release-evidence-or-tooling"
     },
     {
