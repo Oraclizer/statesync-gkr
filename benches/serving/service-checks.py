@@ -151,10 +151,15 @@ class Server:
         folder.mkdir()
         self.stderr = (folder / "stderr.txt").open("w", encoding="utf-8")
         self.stdout = (folder / "stdout.txt").open("w", encoding="utf-8")
+        # The run limit is only a safety cap: finish() asks the server to stop
+        # through the stop file once a check is done, so no check depends on
+        # how fast another process starts.
+        self.stop_file = folder / "stop-request"
         options = dict(out=folder / "Raw", listen="127.0.0.1:0", serving_mode=mode, workers=2, depth=3,
-                       batch_max=8, max_wait_us=1000, max_queue=1024, run_ms=3000,
+                       batch_max=8, max_wait_us=1000, max_queue=1024, run_ms=120_000,
                        io_timeout_ms=5000, control_samples=1, telemetry_ms=20, log_flush_every=1,
-                       return_jobs=8, return_bytes=MAX_PROOF, max_connections=16)
+                       return_jobs=8, return_bytes=MAX_PROOF, max_connections=16,
+                       stop_file=self.stop_file)
         if mode == "continuous":
             options["max_in_flight"] = 2
         options.update(overrides)
@@ -202,6 +207,8 @@ class Server:
         return {r["kind"]: r for r in records(self.folder / "Raw/server.jsonl") if r["event"] == "control"}
 
     def finish(self, timeout=60):
+        if self.proc.poll() is None and not self.stop_file.exists():
+            self.stop_file.write_text("stop\n", encoding="utf-8")
         exit_code = self.proc.wait(timeout=timeout)
         self.close()
         assert exit_code == 0, f"server exit {exit_code}: {self.folder}"
@@ -342,7 +349,8 @@ def invalid_cli(binary, out):
              ["--max-in-flight", "0"], ["--workers", "2", "--max-in-flight", "3"],
              ["--depth", "4294967299"], ["--io-timeout-ms", "0"], ["--run-ms", "0"],
              ["--workers", "2", "--workers", "2"], ["--return-jobs"], ["--unknown", "1"],
-             ["--return-bytes", "-1"], ["--host-id", "x" * 257]]
+             ["--return-bytes", "-1"], ["--host-id", "x" * 257],
+             ["--stop-file", str(Path(__file__).resolve())]]
     result = []
     for i, args in enumerate(cases):
         destination = out / f"Invalid-{i}"
@@ -378,7 +386,7 @@ def smoke(args, out):
         finally:
             server.close()
         for mutation in ["proof", "job-id", "run-id"]:
-            server = Server(args.binary, out / f"Mutation-{mode}-{mutation}-server", mode, run_ms=2500)
+            server = Server(args.binary, out / f"Mutation-{mode}-{mutation}-server", mode)
             proxy = Proxy(server.address, mutation)
             try:
                 path = out / f"Mutation-{mode}-{mutation}-load"
@@ -401,9 +409,8 @@ def smoke(args, out):
             finally:
                 proxy.close()
                 server.close()
-        server = Server(args.binary, out / f"Receive-cutoff-{mode}-server", mode, run_ms=2500,
-                        workers=1, max_in_flight=1) if mode == "continuous" else \
-            Server(args.binary, out / f"Receive-cutoff-{mode}-server", mode, run_ms=2500, workers=1)
+        single = {"max_in_flight": 1} if mode == "continuous" else {}
+        server = Server(args.binary, out / f"Receive-cutoff-{mode}-server", mode, workers=1, **single)
         try:
             row["receive_cutoff"] = load(args.binary, out / f"Receive-cutoff-{mode}-load", server.address,
                                          allow_receive_cutoff=True, jobs=256, rate=1_000_000, drain_ms=0)
@@ -492,7 +499,7 @@ def burst(server, jobs, pause_seconds, read_results):
 def metadata(args, out):
     result = {}
     for mode in args.modes:
-        server = Server(args.binary, out / f"Metadata-{mode}-server", mode, run_ms=2500)
+        server = Server(args.binary, out / f"Metadata-{mode}-server", mode)
         observed = []
         try:
             control = server.controls()["membership"]

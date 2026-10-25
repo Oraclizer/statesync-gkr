@@ -90,6 +90,7 @@ overwrite files.
 | `--return-jobs`, `--return-bytes` | 192, 64 MiB | Return budget: resident finished responses and their encoded capacity |
 | `--io-timeout-ms` | 5000 | Deadline for one whole reply frame; a missed deadline closes that connection |
 | `--run-ms` | 600000 | Admission closes at this run limit |
+| `--stop-file` | none | Admission closes as at the run limit as soon as this file exists; it must not exist at start |
 | `--depth` | 24 | Sparse Merkle tree depth of the prepared circuits |
 | `--control-samples` | 2 | Startup controls per kind |
 | `--telemetry-ms` | 100 | Process telemetry period from `/proc` (0 disables) |
@@ -99,9 +100,10 @@ overwrite files.
 Rejections carry one of `server_total_queue_full`, `server_ingress_queue_full`,
 `server_stopping`, `server_run_limit_before_compute`,
 `encoded_response_exceeds_return_budget`, or an `input:`, `witness:` or
-`encode:` reason in the reply's `error` field, with an empty proof. At the run
-limit, admitted jobs that have not started receive
+`encode:` reason in the reply's `error` field, with an empty proof. When
+admission closes, admitted jobs that have not started receive
 `server_run_limit_before_compute`; jobs already computing finish and are sent.
+`terminal.json` records whether the run limit or the stop file closed it.
 
 The return budget counts encoded buffer capacity only. Jobs in progress (one
 batch, or up to `--max-in-flight` jobs), prepared circuits, request frames,

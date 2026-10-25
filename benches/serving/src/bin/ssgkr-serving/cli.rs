@@ -35,6 +35,7 @@ const SERVER: &[&str] = &[
     "--return-jobs",
     "--return-bytes",
     "--max-connections",
+    "--stop-file",
 ];
 
 const LOAD: &[&str] = &[

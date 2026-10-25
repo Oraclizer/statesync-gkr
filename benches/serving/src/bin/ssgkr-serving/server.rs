@@ -30,6 +30,7 @@ use statesync_gkr::{SyncRequest, SyncResult};
 use std::{
     collections::{HashMap, VecDeque},
     net::{Shutdown, TcpListener, TcpStream},
+    path::PathBuf,
     sync::{
         Arc, Mutex,
         atomic::{AtomicBool, AtomicUsize, Ordering},
@@ -397,6 +398,8 @@ struct Config {
     controls: usize,
     telemetry_ms: u64,
     flush: usize,
+    /// When this file appears, admission closes as at the run limit.
+    stop_file: Option<PathBuf>,
 }
 
 impl Config {
@@ -424,7 +427,17 @@ impl Config {
             controls: usize_arg("--control-samples", "2")?,
             telemetry_ms: u64_arg("--telemetry-ms", "100")?,
             flush: usize_arg("--log-flush-every", "256")?,
+            stop_file: match arg("--stop-file", "").as_str() {
+                "" => None,
+                path => Some(PathBuf::from(path)),
+            },
         };
+        if c.stop_file.as_ref().is_some_and(|path| path.exists()) {
+            return Err(
+                "stop-file already exists; choose a path that is created only to stop the server"
+                    .into(),
+            );
+        }
         if !(1..=32).contains(&c.depth)
             || c.workers == 0
             || c.max_in_flight == 0
@@ -1203,6 +1216,7 @@ pub fn run() -> Result<()> {
     meta["max_connections"] = json!(c.max_connections);
     meta["return_jobs"] = json!(c.return_jobs);
     meta["return_bytes"] = json!(c.return_bytes);
+    meta["stop_file"] = json!(c.stop_file.as_ref().map(|path| path.display().to_string()));
     meta["queue_policy"] = json!(c.mode.policy());
     meta["memory_scope"] = json!(
         "return budget excludes computation in progress (one batch, or max-in-flight jobs), prepared state, bounded ingress and connection frames, thread stacks and OS socket buffers; compare measured whole-process RSS separately"
@@ -1246,17 +1260,28 @@ pub fn run() -> Result<()> {
         json!({"status": "SERVER_READY", "ready_unix_ns": ready, "listen": listen, "process_id": std::process::id(), "serving_mode": c.mode.name()})
     );
     let started = Instant::now();
-    let (clock_stop, run_duration) = (stop.clone(), c.run);
-    // Admission stops on time even when compute or the return budget is blocked.
+    let (clock_stop, run_duration, stop_file) = (stop.clone(), c.run, c.stop_file.clone());
+    // Admission stops on time, or when the stop file appears, even when
+    // compute or the return budget is blocked.
     let admission_timer = thread::spawn(move || {
-        while !clock_stop.load(Ordering::Relaxed) && started.elapsed() < run_duration {
+        loop {
+            if clock_stop.load(Ordering::Relaxed) {
+                break "stopped_by_failure";
+            }
+            if started.elapsed() >= run_duration {
+                clock_stop.store(true, Ordering::Relaxed);
+                break "run_limit";
+            }
+            if stop_file.as_ref().is_some_and(|path| path.exists()) {
+                clock_stop.store(true, Ordering::Relaxed);
+                break "stop_file";
+            }
             thread::sleep(
                 run_duration
                     .saturating_sub(started.elapsed())
                     .min(Duration::from_millis(10)),
             );
         }
-        clock_stop.store(true, Ordering::Relaxed);
     });
     let stats = Arc::new(Stats::default());
     let work = match c.mode {
@@ -1267,9 +1292,10 @@ pub fn run() -> Result<()> {
     if let Err(e) = work {
         failures.record(e.to_string());
     }
-    if admission_timer.join().is_err() {
+    let stop_reason = admission_timer.join().unwrap_or_else(|_| {
         failures.record("admission timer panic");
-    }
+        "admission_timer_panic"
+    });
     drop(shared);
     // Each writer stops once the last sender for its connection is gone.
     let writer_handles =
@@ -1298,6 +1324,7 @@ pub fn run() -> Result<()> {
         &json!({
             "status": if failures.is_empty() { "SERVER_STOPPED" } else { "SERVER_FAILED" },
             "serving_mode": c.mode.name(),
+            "stop_reason": stop_reason,
             "processed_jobs": stats.processed.load(Ordering::Relaxed),
             "unprocessed_jobs": stats.unprocessed.load(Ordering::Relaxed),
             "batches": stats.batches.load(Ordering::Relaxed),
@@ -1309,7 +1336,7 @@ pub fn run() -> Result<()> {
             "finish_unix_ns": unix_ns(),
             "failures": failures,
             "logging": log.finish()?,
-            "note": "Admission closes at the run limit. Admitted work that has not started receives explicit failures; computed returns and those failures drain before exit. Frontend strict acceptance defines success.",
+            "note": "Admission closes at the run limit or when the stop file appears. Admitted work that has not started receives explicit failures; computed returns and those failures drain before exit. Frontend strict acceptance defines success.",
         }),
     )?;
     if failures.is_empty() {
