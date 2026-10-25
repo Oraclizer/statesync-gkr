@@ -3910,8 +3910,8 @@
     {
       "path": "release/v1.1/README.md",
       "mode": "100644",
-      "bytes": 2686,
-      "sha256": "7510ea0dd76cb184d4a1fcddabeadfcad0e3d89df75a96b999eb29472f553a03",
+      "bytes": 3071,
+      "sha256": "9afc4b81d88647ca320bf8793080daf2e6334949dfa1c8360499c8105325e303",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3952,8 +3952,8 @@
     {
       "path": "release/v1.1/run_source_policy.py",
       "mode": "100644",
-      "bytes": 3581,
-      "sha256": "bddbc2c9497c2b27ea5cf87a7d0e756c36831f967ca78eea87f440bbab1ae575",
+      "bytes": 6607,
+      "sha256": "f7b231881d9f639b5652e815e13d5cffe0194198b8ed9e59a6b5882464545bfc",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3966,8 +3966,8 @@
     {
       "path": "release/v1.1/test_license_distribution.py",
       "mode": "100644",
-      "bytes": 11547,
-      "sha256": "7fa035665fcca1a51133df86dc2627ab674c4170381a7e631519c9c2ee08b8d2",
+      "bytes": 15985,
+      "sha256": "f410897705aa89efbf8135635df757ce3cf5c9334dc52b47103b6aabf7cdf616",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3987,8 +3987,8 @@
     {
       "path": "release/v1.1/verify.py",
       "mode": "100644",
-      "bytes": 34227,
-      "sha256": "91868c66f01edcb867dac1f78e0faa95e5c98791782291d82d983c7681aa5536",
+      "bytes": 35445,
+      "sha256": "d19ae475d58a492c7c984d8dab0ea2835e0b47fab27aa80c0d8917654304fece",
       "role": "release-evidence-or-tooling"
     },
     {
