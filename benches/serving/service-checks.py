@@ -554,8 +554,16 @@ def slow(args, out):
             assert failures, "socket write deadline was not exercised"
             first = failures[0]
             assert first["error_kind"] == "TimedOut", f"first failure was not a frame timeout: {first}"
-            assert first["progress"]["deadline_expired"], "deadline consumer did not fire"
-            assert first["progress"]["would_block"] + first["progress"]["timed_out"] > 0, "no real kernel backpressure observed"
+            progress = first["progress"]
+            assert progress["deadline_expired"], "deadline consumer did not fire"
+            # Windows reports the stalled send as WouldBlock or TimedOut. Linux
+            # returns a short write when the send timeout expires after partial
+            # progress; with no retries, the elapsed window below was then spent
+            # inside blocked write calls.
+            reported = progress["would_block"] + progress["timed_out"] > 0
+            short_write = progress["calls"] > 0 and progress["bytes_written"] > 0
+            assert reported or short_write, "no real kernel backpressure observed"
+            timeout["backpressure_form"] = "error-result" if reported else "short-write"
             # No early tolerance: an immediate WouldBlock or NotConnected cannot
             # pass. The upper 250 ms is scheduling slack for this local fixture.
             assert 200_000_000 <= first["write_duration_ns"] <= 450_000_000, f"timeout outside 200..450 ms: {first}"

@@ -2965,8 +2965,8 @@
     {
       "path": "benches/serving/service-checks.py",
       "mode": "100644",
-      "bytes": 39606,
-      "sha256": "5a56501829c677a3307a0edd885fcf16d6fe15046f695bc7c8d307bee1ff2851",
+      "bytes": 40121,
+      "sha256": "847d349d1a607695190741be70ab589256215ecb361adeaccf65e23d77bec5e0",
       "role": "repository-source-or-metadata"
     },
     {
