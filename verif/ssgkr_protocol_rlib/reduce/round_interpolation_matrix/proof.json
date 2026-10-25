@@ -1,0 +1,9 @@
+{
+  "profile": [],
+  "proofs": {
+    "Coma": {
+      "vc_cf_u64": { "prover": "alt-ergo", "time": 0.005 },
+      "vc_round_interpolation_matrix": null
+    }
+  }
+}
