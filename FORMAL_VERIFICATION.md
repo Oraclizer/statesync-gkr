@@ -17,11 +17,11 @@ For a shorter introduction, see the documentation's
 [formal verification page](https://oraclizer.io/ss-gkr/docs/assurance/formal-verification/).
 This document remains the reference for the exact results, assumptions and scope.
 
-The Rust kernel and formal sources retain their recorded contents. The
-[distribution record](release/v1.1/LICENSING_DISTRIBUTION.json) separates
-current source consistency from the historical v1.1 executable and proof: an
-exact compiled identity has not been reproduced for the current package
-metadata, so the attached proof is evidence for its recorded program only.
+The formal sources retain their recorded contents, and the Rust prover
+produces the same proof bytes as the previous line. The
+[identity record](release/v1.2/IDENTITY_DISTRIBUTION.json) records the program
+identity of the current source, measured by two controlled clean builds, and
+separates it from the historical v1.1 program that the attached proof covers.
 
 <p align="center">
   <picture>
@@ -249,7 +249,7 @@ omitted session.
 
 The pinned Isabelle2025-2 build rejects `sorry` with the default
 `quick_and_dirty=false`, as its release notes specify. The ci workflow also
-runs [`verify_theory_commands.py`](release/v1.1/verify_theory_commands.py),
+runs [`verify_theory_commands.py`](release/v1.2/verify_theory_commands.py),
 which fails if a theory source contains `sorry`, `oops`, `axiomatization` or
 an `oracle` declaration outside comments and text. The Proofs
 workflow does not rebuild Isabelle sessions on release events; the separate
@@ -297,7 +297,7 @@ identity values are not regenerated to make a changed source pass.
 The release verifier is:
 
 ```sh
-python3 release/v1.1/verify.py --mode clean-history --require-proof \
+python3 release/v1.2/verify.py --mode clean-history --require-proof \
   --proof /path/to/statesync-gkr-v1.1-proof.cbor
 ```
 

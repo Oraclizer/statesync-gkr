@@ -17,7 +17,7 @@ SPEC = importlib.util.spec_from_file_location("route_b_payload_validator", VALID
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 IDENTITY_SOURCE = Path(os.environ.get("SSGKR_IDENTITY_SOURCE", REPO))
-LICENSE_SPEC = importlib.util.spec_from_file_location("licensing_distribution_policy", REPO / "release/v1.1/license_distribution.py")
+LICENSE_SPEC = importlib.util.spec_from_file_location("licensing_distribution_policy", REPO / "release/v1.2/license_distribution.py")
 LICENSE_POLICY = importlib.util.module_from_spec(LICENSE_SPEC)
 LICENSE_SPEC.loader.exec_module(LICENSE_POLICY)
 
@@ -27,7 +27,8 @@ IDENTITY_ALLOWLIST = (
     "spikes/zkvm-wrap/risc0-methods",
     "tests/vectors/inner-proof-v1/membership-d24.bin",
 )
-EXPECTED_IDENTITY_SOURCE_MANIFEST = "13eacaa5bf18f26c8089ec6ddf27a7410bb436f28330e12f1135abf5684cf31c"
+EXPECTED_IDENTITY_SOURCE_MANIFEST = "6cd794e7ef393e758f3e04b04b95b6949e7f9a05e46f5483b47151f2d5175ace"
+PREVIOUS_LINE_IDENTITY_SOURCE_MANIFEST = "13eacaa5bf18f26c8089ec6ddf27a7410bb436f28330e12f1135abf5684cf31c"
 
 
 def digest(character):
@@ -185,45 +186,57 @@ def identity_source_manifest(repo):
 
 
 class PackagingRootTests(unittest.TestCase):
-    def test_current_and_historical_identity_source_boundaries(self):
+    def test_current_and_previous_identity_source_boundaries(self):
         count, manifest_digest = identity_source_manifest(IDENTITY_SOURCE)
         self.assertEqual(count, 64)
-        self.assertEqual(manifest_digest, LICENSE_POLICY.CURRENT_SOURCE_SHA256)
-        manifest = LICENSE_POLICY.load_record(REPO / "release/v1.1/PROTECTED_SOURCE_MANIFEST.json")
-        projected_count, raw_digest, projected_digest = LICENSE_POLICY.identity_source_digests(IDENTITY_SOURCE, manifest)
-        self.assertEqual(projected_count, 64)
-        self.assertEqual(raw_digest, manifest_digest)
-        self.assertEqual(projected_digest, EXPECTED_IDENTITY_SOURCE_MANIFEST)
+        self.assertEqual(manifest_digest, EXPECTED_IDENTITY_SOURCE_MANIFEST)
+        self.assertEqual(manifest_digest, LICENSE_POLICY.IDENTITY_SOURCE_SHA256)
+        manifest = LICENSE_POLICY.load_record(REPO / "release/v1.2/PROTECTED_SOURCE_MANIFEST.json")
+        self.assertEqual(manifest["subject"]["identity_source_manifest_sha256"], manifest_digest)
+        self.assertEqual(LICENSE_POLICY.identity_source_digest(IDENTITY_SOURCE, manifest), (64, manifest_digest))
+        # The previous line's selection is a different, recorded identity.
+        previous = MODULE.load_json_bytes(
+            (REPO / "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.1.json").read_bytes(), "v1.1"
+        )
+        self.assertEqual(previous["recipe"]["source_manifest_sha256"], PREVIOUS_LINE_IDENTITY_SOURCE_MANIFEST)
+        self.assertEqual(LICENSE_POLICY.PREVIOUS_IDENTITY_SOURCE_SHA256, PREVIOUS_LINE_IDENTITY_SOURCE_MANIFEST)
+        self.assertNotEqual(manifest_digest, PREVIOUS_LINE_IDENTITY_SOURCE_MANIFEST)
 
     def test_expected_identity_file_agrees_with_the_recorded_identity(self):
         # The expected-identity file and this test are two independent records
         # of the same accepted build, so a silent edit to either one fails here.
-        path = REPO / "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.1.json"
+        path = REPO / "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json"
         value = MODULE.load_json_bytes(path.read_bytes(), str(path))
         self.assertEqual(
             value["schema"], "statesync-gkr.risc0-route-b-guest-identity.expected.v1"
         )
+        self.assertEqual(value["release_line"], "v1.2")
         self.assertEqual(value["canonical_source_path"], "/workspace/source")
         self.assertEqual(
             value["recipe"]["source_manifest_sha256"], EXPECTED_IDENTITY_SOURCE_MANIFEST
         )
+        self.assertEqual(value["recipe"]["clean_build_count"], 2)
         self.assertEqual(value["artifacts"], {
             "program_binary": {
-                "sha256": "9bb3740d9c0e35f55a42adafa5bfd5cc89fe2520e1c391632807c4e33931cb04",
-                "size_bytes": 699408,
+                "sha256": "e552917c28f7030a46171d33fb90661edb0d1be149efabb1b70bde5b63cc4a28",
+                "size_bytes": 699944,
             },
-            "image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
+            "image_id": "1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131",
             "raw_guest_elf_sha256":
-                "38b337c16334226f9dcd2ea319b5e6924aa583ba637126c9d7a8cfacb5cb9a5d",
+                "d8dbb98fcde9cd56089db24af8a7f9a7a28220c526a1a3405b60ec6d751995ee",
             "methods_rs_sha256":
-                "3b8c0c23d5f0ceb84e1224b472428772c1f53bcd5c97b5ff1502acc1a6878e03",
+                "04c2d2af369acc302e22252fe6a2018a73343276a97ae48b844169ebd5620edb",
             "host_binary_sha256":
-                "cad5e07c07465c9f8baddbf6364ad52ae8f35529954d742f5a1449c0ee77aab9",
+                "3344d9335fcdddfdd4b491ae9d8a8f5139191a136dec57a3d9a154c0288ff90d",
             "diagnostic_program_binary_sha256":
-                "0ea12e7bb8a02b0003aa3b190b0707c6e2ef22df00648ca96896909fb01a4610",
+                "b5d431e56d338140869e4de717c834cc599d4770de5d8f28ac2a2fdee0f502cb",
             "diagnostic_raw_guest_elf_sha256":
-                "ca7cdb1de37397232ae5cd799e0ca09217a08fe90a2556292db8f227cfee4b89",
+                "de2b3a3bd6fb38c00ad2f58f40b32925b454461359a6f0504a0afdcc744bf420",
         })
+        self.assertEqual(
+            [item["image_id"] for item in value["superseded_references"]],
+            ["dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530"],
+        )
 
     def test_every_payload_profile_matches_its_release_line_identity(self):
         # A profile is only ever compared with the expected-identity file the

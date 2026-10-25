@@ -56,17 +56,17 @@ jobs:
           python3 tests/reference/receipt_gated_local_transition_v1.py tests/vectors/receipt-gated-local-transition-v1.json > "$RUNNER_TEMP/receipt-python.txt"
           diff -u "$RUNNER_TEMP/receipt-rust.txt" "$RUNNER_TEMP/receipt-python.txt"
       - name: Dependency update policy
-        run: python3 release/v1.1/verify_dependency_update_policy.py
+        run: python3 release/v1.2/verify_dependency_update_policy.py
       - name: Theory command scan
-        run: python3 release/v1.1/verify_theory_commands.py
+        run: python3 release/v1.2/verify_theory_commands.py
       - name: Git file-mode policy fixtures
-        run: python3 release/v1.1/test_verify_mode_policy.py
+        run: python3 release/v1.2/test_verify_mode_policy.py
       - name: Documentation consistency
-        run: python3 release/v1.1/test_documentation_consistency.py
+        run: python3 release/v1.2/test_documentation_consistency.py
       - name: Controlled identity packaging fixtures
         run: python3 spikes/zkvm-wrap/reproducible/risc0-route-b/test_validate_toolchain_payload_packaging.py
       - name: Licensing and source-policy rejection fixtures
-        run: python3 release/v1.1/test_license_distribution.py
+        run: python3 release/v1.2/test_license_distribution.py
       - name: Public surface
         # A pull request executes the base wrapper, verifier and helper.
         # The exact reviewed empty root permits the first distribution only.

@@ -10,7 +10,7 @@ Usage: verify-two-clean-builds.sh \
   --source-repo ABS_PATH --expected-source-commit 40_HEX \
   --cargo-cache-archive ABS_PATH --cargo-cache-manifest ABS_PATH \
   --evidence-root ABS_PRIVATE_PATH \
-  [--identity-guard ABS_EXPECTED_IDENTITY_JSON] [--release-line v1|v1.1]
+  [--identity-guard ABS_EXPECTED_IDENTITY_JSON] [--release-line v1|v1.1|v1.2]
 
 The release line selects the payload profile and the expected identity
 record. It defaults to the current line and is derived from the identity
@@ -22,8 +22,8 @@ EOF
 SOURCE_REPO= EXPECTED_SOURCE_COMMIT= CACHE_ARCHIVE= CACHE_MANIFEST= EVIDENCE_ROOT=
 IDENTITY_GUARD=
 REQUESTED_RELEASE_LINE=
-CURRENT_RELEASE_LINE=v1.1
-SUPPORTED_RELEASE_LINES=(v1 v1.1)
+CURRENT_RELEASE_LINE=v1.2
+SUPPORTED_RELEASE_LINES=(v1 v1.1 v1.2)
 while (( $# )); do
   case "$1" in
     --source-repo) SOURCE_REPO=${2:-}; shift 2 ;;

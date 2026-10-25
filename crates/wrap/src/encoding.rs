@@ -26,7 +26,7 @@
 //!   26..28   leaf_max_fields         u16
 //!   28..29   layer_strategy_id       u8  = 0 (strategy A)
 //!   29..61   full_circuit_commitment 8 x fe
-//! Statement (frozen S-6 field order, 77 bytes)
+//! Statement (frozen S-6 field order, 105 bytes)
 //!   61..93   old_root                8 x fe
 //!   93..125  new_root                8 x fe
 //!  125..126  op_kind_tag             u8 (MUST equal the identity tag)

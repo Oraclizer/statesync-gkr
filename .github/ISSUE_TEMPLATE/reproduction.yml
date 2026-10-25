@@ -12,7 +12,7 @@ body:
 
         Please follow [REPRODUCING.md](https://github.com/Oraclizer/statesync-gkr/blob/main/REPRODUCING.md)
         and attach a filled copy of
-        [`release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json`](https://github.com/Oraclizer/statesync-gkr/blob/main/release/v1.1/REPRODUCTION_REPORT_TEMPLATE.json).
+        [`release/v1.2/REPRODUCTION_REPORT_TEMPLATE.json`](https://github.com/Oraclizer/statesync-gkr/blob/main/release/v1.2/REPRODUCTION_REPORT_TEMPLATE.json).
         A PARTIAL or FAIL result is as valuable as a PASS. Please report what
         you actually observed rather than adjusting it to match the guide.
   - type: dropdown

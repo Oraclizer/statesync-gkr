@@ -89,6 +89,9 @@ fn beta_eval(point: &[ChallengeField]) -> ChallengeField {
 /// A `None` here would be an internal invariant violation, not a runtime
 /// error path.
 #[allow(clippy::expect_used)]
+// The production oracle interpolates with the fixed round matrix; this general
+// form stays as the reference of the dense test oracle and its contract record.
+#[cfg_attr(not(test), allow(dead_code))]
 fn lagrange_interpolate(
     nodes: &[ChallengeField],
     values: &[ChallengeField],
@@ -130,8 +133,96 @@ fn lagrange_interpolate(
 /// Multilinear extrapolation of a folded table entry to node `x`:
 /// `t(x) = t[i] + x * (t[i+half] - t[i])` (the current variable is the MSB).
 #[inline]
+// Used by the dense test oracle only; the production oracle steps node values.
+#[cfg_attr(not(test), allow(dead_code))]
 fn extrap(t: &[ChallengeField], i: usize, half: usize, x: ChallengeField) -> ChallengeField {
     t[i] + x * (t[i + half] - t[i])
+}
+
+/// `table[o] = c * eq(point, o)` for every index `o < 2^point.len()`, in the
+/// variable order of [`eq_point_index`] (variable 0 is the most significant
+/// index bit).
+///
+/// The table doubles once per variable, starting from the last one: the
+/// entry `v` at index `k` becomes `v * (1 - p)` (bit 0) and its partner at
+/// index `k + len`, with `len` the current length, is `v * p` (bit 1). Each
+/// entry is the product of `c` and the same per-variable factors that
+/// `c * eq_point_index(point, o)` multiplies, only associated in a different
+/// order, so it is the same field element. All `2^n` entries cost about
+/// `2^(n+1)` products instead of `n` products per entry.
+fn scaled_eq_table(point: &[ChallengeField], c: ChallengeField) -> Vec<ChallengeField> {
+    let mut table = Vec::with_capacity(1usize << point.len());
+    table.push(c);
+    for &p in point.iter().rev() {
+        let one_minus_p = ChallengeField::ONE - p;
+        let len = table.len();
+        for k in 0..len {
+            let parent = table[k];
+            table[k] = parent * one_minus_p;
+            table.push(parent * p);
+        }
+    }
+    table
+}
+
+/// Inverse Vandermonde matrix of the round-polynomial nodes `0, 1, 2, 3, 4`.
+///
+/// Entry `(i, k)` is the `X^i` coefficient of the Lagrange basis polynomial
+/// that is 1 at node `k` and 0 at the other four nodes, so the matrix times
+/// the node values gives the ascending coefficients that
+/// [`lagrange_interpolate`] returns for the same nodes and values. The
+/// integers below are 24 times those coefficients (24 clears every basis
+/// denominator); one inversion of 24 recovers the matrix.
+fn round_interpolation_matrix() -> [[ChallengeField; 5]; 5] {
+    let times_24: [[i64; 5]; 5] = [
+        [24, 0, 0, 0, 0],
+        [-50, 96, -72, 32, -6],
+        [35, -104, 114, -56, 11],
+        [-10, 36, -48, 28, -6],
+        [1, -4, 6, -4, 1],
+    ];
+    let inv_24 = cf_u64(24).inverse();
+    let mut matrix = [[ChallengeField::ZERO; 5]; 5];
+    for (row, scaled_row) in matrix.iter_mut().zip(&times_24) {
+        for (entry, &scaled) in row.iter_mut().zip(scaled_row) {
+            let magnitude = cf_u64(scaled.unsigned_abs());
+            let signed = if scaled < 0 { -magnitude } else { magnitude };
+            *entry = signed * inv_24;
+        }
+    }
+    matrix
+}
+
+/// Ascending coefficients of the round polynomial whose values at the nodes
+/// `0..=4` are `vals`, as the product of the fixed interpolation matrix and
+/// `vals`. This is the linear map [`lagrange_interpolate`] computes for these
+/// nodes, so the coefficients (trailing zeros included) are the same field
+/// elements, without per-round inversions or temporary vectors.
+fn interpolate_round_values(
+    matrix: &[[ChallengeField; 5]; 5],
+    vals: &[ChallengeField; 5],
+) -> Vec<ChallengeField> {
+    let mut coeffs = Vec::with_capacity(5);
+    for row in matrix {
+        let mut acc = ChallengeField::ZERO;
+        for (m, v) in row.iter().zip(vals) {
+            acc += *m * *v;
+        }
+        coeffs.push(acc);
+    }
+    coeffs
+}
+
+/// One Phase-1 summand at a node, `lin*vx + amul*vx + pow*vx^3`, evaluated as
+/// `vx * ((lin + amul) + pow * vx^2)`: the same field element with three
+/// products instead of five.
+#[inline]
+fn phase1_summand(
+    lin_amul: ChallengeField,
+    pow: ChallengeField,
+    vx: ChallengeField,
+) -> ChallengeField {
+    vx * (lin_amul + pow * (vx * vx))
 }
 
 /// Prover-side sumcheck oracle for one layer reduction, using Libra-style
@@ -212,6 +303,9 @@ struct SparseLayerOracle {
     pstar: ChallengeField,
     /// `V* = V(x*)` (Phase 2 scalar).
     vstar: ChallengeField,
+    /// Interpolation matrix of the round nodes `0..=4`, built once per layer
+    /// (see [`round_interpolation_matrix`]).
+    interp: [[ChallengeField; 5]; 5],
 }
 
 impl SparseLayerOracle {
@@ -232,9 +326,13 @@ impl SparseLayerOracle {
         // per output wire so the gate loop stays a single pass. (Identical
         // to the dense oracle.)
         let mut w = vec![ChallengeField::ZERO; out_len];
+        // Each incoming point adds its whole `c_k * eq(z_k, .)` table at once
+        // (see `scaled_eq_table`). Every incoming point has `s_out`
+        // coordinates, so its table covers exactly the output wires.
         for (z, c) in incoming {
-            for (o, wo) in w.iter_mut().enumerate() {
-                *wo += *c * eq_point_index(z, o);
+            let table = scaled_eq_table(z, *c);
+            for (wo, t) in w.iter_mut().zip(&table) {
+                *wo += *t;
             }
         }
 
@@ -280,6 +378,7 @@ impl SparseLayerOracle {
             lstar: ChallengeField::ZERO,
             pstar: ChallengeField::ZERO,
             vstar: ChallengeField::ZERO,
+            interp: round_interpolation_matrix(),
         }
     }
 
@@ -351,23 +450,33 @@ impl SumcheckOracle<ChallengeField> for SparseLayerOracle {
     }
 
     fn round_poly(&self) -> RoundPoly<ChallengeField> {
-        let nodes = [cf_u64(0), cf_u64(1), cf_u64(2), cf_u64(3), cf_u64(4)];
         let mut vals = [ChallengeField::ZERO; 5];
         if self.remaining > self.s {
             // Phase 1 (x-round): the y sum is already collapsed - beta -> 1
             // (dropped from lin/pow) and mul -> amul.
             let len = 1usize << (self.remaining - self.s);
             let half = len / 2;
-            for (ni, &t) in nodes.iter().enumerate() {
-                let mut acc = ChallengeField::ZERO;
-                for i in 0..half {
-                    let lin = extrap(&self.lin_x, i, half, t);
-                    let pow = extrap(&self.pow_x, i, half, t);
-                    let vx = extrap(&self.vx, i, half, t);
-                    let amul = extrap(&self.amul_x, i, half, t);
-                    acc += lin * vx + amul * vx + pow * vx * vx * vx;
+            // Every table is affine in the current variable, so its values at
+            // the nodes 0, 1, 2, ... are exactly `lo`, `hi`, `hi + (hi - lo)`,
+            // ...: one pass reads both halves once and reaches the higher
+            // nodes by adding the step, never multiplying by a node.
+            for i in 0..half {
+                let lin_amul_lo = self.lin_x[i] + self.amul_x[i];
+                let lin_amul_hi = self.lin_x[i + half] + self.amul_x[i + half];
+                let (pow_lo, pow_hi) = (self.pow_x[i], self.pow_x[i + half]);
+                let (vx_lo, vx_hi) = (self.vx[i], self.vx[i + half]);
+                let lin_amul_step = lin_amul_hi - lin_amul_lo;
+                let pow_step = pow_hi - pow_lo;
+                let vx_step = vx_hi - vx_lo;
+                vals[0] += phase1_summand(lin_amul_lo, pow_lo, vx_lo);
+                vals[1] += phase1_summand(lin_amul_hi, pow_hi, vx_hi);
+                let (mut lin_amul, mut pow, mut vx) = (lin_amul_hi, pow_hi, vx_hi);
+                for slot in &mut vals[2..] {
+                    lin_amul += lin_amul_step;
+                    pow += pow_step;
+                    vx += vx_step;
+                    *slot += phase1_summand(lin_amul, pow, vx);
                 }
-                vals[ni] = acc;
             }
         } else {
             // Phase 2 (y-round): x is fixed at x*, so the x-only factors are
@@ -377,18 +486,38 @@ impl SumcheckOracle<ChallengeField> for SparseLayerOracle {
             let half = len / 2;
             let c_beta =
                 self.lstar * self.vstar + self.pstar * self.vstar * self.vstar * self.vstar;
-            for (ni, &t) in nodes.iter().enumerate() {
-                let mut acc = ChallengeField::ZERO;
-                for i in 0..half {
-                    let beta = extrap(&self.beta_y, i, half, t);
-                    let mul = extrap(&self.mulx_y, i, half, t);
-                    let vy = extrap(&self.vy, i, half, t);
-                    acc += c_beta * beta + self.vstar * mul * vy;
+            // The scalars factor out of the sum:
+            // `sum_i (c_beta*beta + V*mul*vy) = c_beta*sum_i beta + V*sum_i mul*vy`.
+            // Node values are stepped by addition as in Phase 1.
+            let mut beta_sums = [ChallengeField::ZERO; 5];
+            let mut mul_vy_sums = [ChallengeField::ZERO; 5];
+            for i in 0..half {
+                let (beta_lo, beta_hi) = (self.beta_y[i], self.beta_y[i + half]);
+                let (mul_lo, mul_hi) = (self.mulx_y[i], self.mulx_y[i + half]);
+                let (vy_lo, vy_hi) = (self.vy[i], self.vy[i + half]);
+                let beta_step = beta_hi - beta_lo;
+                let mul_step = mul_hi - mul_lo;
+                let vy_step = vy_hi - vy_lo;
+                beta_sums[0] += beta_lo;
+                mul_vy_sums[0] += mul_lo * vy_lo;
+                beta_sums[1] += beta_hi;
+                mul_vy_sums[1] += mul_hi * vy_hi;
+                let (mut beta, mut mul, mut vy) = (beta_hi, mul_hi, vy_hi);
+                for (beta_sum, mul_vy_sum) in beta_sums[2..].iter_mut().zip(&mut mul_vy_sums[2..]) {
+                    beta += beta_step;
+                    mul += mul_step;
+                    vy += vy_step;
+                    *beta_sum += beta;
+                    *mul_vy_sum += mul * vy;
                 }
-                vals[ni] = acc;
+            }
+            for (val, (beta_sum, mul_vy_sum)) in
+                vals.iter_mut().zip(beta_sums.iter().zip(&mul_vy_sums))
+            {
+                *val = c_beta * *beta_sum + self.vstar * *mul_vy_sum;
             }
         }
-        RoundPoly::from_coeffs(lagrange_interpolate(&nodes, &vals))
+        RoundPoly::from_coeffs(interpolate_round_values(&self.interp, &vals))
     }
 
     #[cfg_attr(creusot, requires((*self).n_vars() > 0))]
@@ -1212,6 +1341,45 @@ mod tests {
             }
             dense.bind(r);
             sparse.bind(r);
+        }
+    }
+
+    #[test]
+    fn scaled_eq_table_matches_eq_point_index() {
+        let mut rng = Lcg::new(7);
+        for n in 0..=5usize {
+            let point: Vec<ChallengeField> =
+                (0..n).map(|_| cf(u64::from(rng.next_u32()))).collect();
+            let c = cf(u64::from(rng.next_u32()));
+            let table = scaled_eq_table(&point, c);
+            assert_eq!(table.len(), 1usize << n);
+            for (o, t) in table.iter().enumerate() {
+                assert_eq!(*t, c * eq_point_index(&point, o), "n={n} o={o}");
+            }
+        }
+    }
+
+    #[test]
+    fn round_interpolation_matches_lagrange() {
+        // Unit vectors pin every matrix column; random values check the
+        // whole map against the general interpolation.
+        let nodes = [cf(0), cf(1), cf(2), cf(3), cf(4)];
+        let matrix = round_interpolation_matrix();
+        let mut rng = Lcg::new(11);
+        for trial in 0..32usize {
+            let mut vals = [ChallengeField::ZERO; 5];
+            if trial < vals.len() {
+                vals[trial] = ChallengeField::ONE;
+            } else {
+                for v in &mut vals {
+                    *v = cf(u64::from(rng.next_u32()));
+                }
+            }
+            assert_eq!(
+                interpolate_round_values(&matrix, &vals),
+                lagrange_interpolate(&nodes, &vals),
+                "trial {trial}"
+            );
         }
     }
 }

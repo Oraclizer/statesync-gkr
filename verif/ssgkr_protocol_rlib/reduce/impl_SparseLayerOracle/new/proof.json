@@ -28,11 +28,6 @@
       "vc_elim_Some'1": { "prover": "alt-ergo", "time": 0.018 },
       "vc_elim_Some'2": { "prover": "alt-ergo", "time": 0.016 },
       "vc_embed": { "prover": "alt-ergo", "time": 0.016 },
-      "vc_enumerate_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
-        "prover": "alt-ergo",
-        "time": 0.01
-      },
-      "vc_eq_point_index": { "prover": "alt-ergo", "time": 0.013 },
       "vc_from_elem_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
         "time": 0.015
@@ -49,13 +44,17 @@
         "prover": "alt-ergo",
         "time": 0.012
       },
-      "vc_into_iter_Enumerate_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
-        "prover": "alt-ergo",
-        "time": 0.01
-      },
       "vc_into_iter_Map_Range_usize_closure0": {
         "prover": "alt-ergo",
         "time": 0.014
+      },
+      "vc_into_iter_Zip_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.012
+      },
+      "vc_into_iter_ref_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global": {
+        "prover": "alt-ergo",
+        "time": 0.012
       },
       "vc_into_iter_ref_Vec_Gate_MontyField31_KoalaBearParameters_Global": {
         "prover": "alt-ergo",
@@ -87,30 +86,39 @@
         "prover": "alt-ergo",
         "time": 0.018
       },
-      "vc_next_Enumerate_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
-        "prover": "alt-ergo",
-        "time": 0.0
-      },
       "vc_next_Iter_Gate_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
         "time": 0.016
       },
       "vc_next_Iter_tup2_Vec_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Global_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
-        "time": 0.01
+        "time": 0.022
       },
       "vc_next_Iter_tup3_u32_u32_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
         "time": 0.021
       },
+      "vc_next_Zip_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters_Iter_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.016
+      },
       "vc_push_tup3_u32_u32_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
         "time": 0.009
       },
-      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.004 },
+      "vc_round_interpolation_matrix": {
+        "prover": "alt-ergo",
+        "time": 0.015
+      },
+      "vc_scaled_eq_table": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_set_ZERO": { "prover": "alt-ergo", "time": 0.02 },
       "vc_with_capacity_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
         "prover": "alt-ergo",
         "time": 0.01
+      },
+      "vc_zip_IterMut_BinomialExtensionField_MontyField31_KoalaBearParameters_MontyField31_KoalaBearParameters": {
+        "prover": "alt-ergo",
+        "time": 0.015
       }
     }
   }

@@ -24,10 +24,10 @@ their author.
 
 Source and proof scope
 
-The current source manifest identifies the files in this distribution. The
-recorded executable identity and proof describe their historical v1.1 program
-only; an exact compiled identity has not been established for the current
-package metadata. See release/v1.1/LICENSING_DISTRIBUTION.json for the source
-and proof boundaries. License names that appear in historical records or in
+The current source manifest identifies the files in this distribution. Two
+controlled clean builds recorded the compiled program identity of the current
+source; the newest external proof describes the historical v1.1 program only.
+See release/v1.2/IDENTITY_DISTRIBUTION.json for the source, identity and proof
+boundaries. License names that appear in historical records or in
 third-party notices describe those records or components; they are not the
 license grant for v1.1.1 and later versions.

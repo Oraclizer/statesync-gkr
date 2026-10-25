@@ -367,7 +367,9 @@ compilation. Fresh proving can also return `SyncError::Witness`.
 **Prepared witness construction**
 
 `prove_sync_op_prepared` and `make_job_prepared` return `SyncError::Witness`,
-including for a malformed path or an oversized leaf encoding.
+including for a malformed path or an oversized leaf encoding. They return
+`SyncError::KindMismatch` in every build profile when the request's operation
+kind differs from the kind the prepared circuit was compiled for.
 
 **Typed verification**
 
@@ -432,7 +434,7 @@ other application adapters are not bundled with this release.
 cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --release --locked
-python3 release/v1.1/verify.py --mode pull-request
+python3 release/v1.2/verify.py --mode pull-request
 ```
 
 The quickstart is separate from contributor and proof reproduction. Changes to

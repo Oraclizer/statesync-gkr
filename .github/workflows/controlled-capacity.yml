@@ -25,6 +25,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+          # The replay reproduces the controls on the source they measured.
+          # Its Memory observer installs only onto the exact reduction bytes
+          # of the v1.1 line, so the job checks out the last commit at which
+          # that line was the live gate rather than the current v1.2 tree.
+          ref: 1b47601e34b2bfc0d4566973a0f3d00f8be7f861
       - name: Install the pinned toolchain
         run: rustup show
       - name: Build replay callers and run small real controls
