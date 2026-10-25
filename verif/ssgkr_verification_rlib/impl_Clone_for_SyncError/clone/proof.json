@@ -4,9 +4,11 @@
     "Coma": {
       "vc_clone_CompileError": { "prover": "alt-ergo", "time": 0.009 },
       "vc_clone_SmtError": { "prover": "alt-ergo", "time": 0.019 },
-      "vc_clone_SyncError": { "prover": "alt-ergo", "time": 0.013 },
-      "vc_elim_Compile": { "prover": "alt-ergo", "time": 0.006 },
-      "vc_elim_Witness": { "prover": "alt-ergo", "time": 0.01 }
+      "vc_clone_SmtOpKind": { "prover": "alt-ergo", "time": 0.011 },
+      "vc_clone_SyncError": { "prover": "alt-ergo", "time": 0.031 },
+      "vc_elim_Compile": { "prover": "alt-ergo", "time": 0.023 },
+      "vc_elim_KindMismatch": { "prover": "alt-ergo", "time": 0.009 },
+      "vc_elim_Witness": { "prover": "alt-ergo", "time": 0.023 }
     }
   }
 }

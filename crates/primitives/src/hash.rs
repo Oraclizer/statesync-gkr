@@ -409,8 +409,19 @@ impl Poseidon2Gadget {
     /// overwrite mode, every lane absorbed). This is the exact function the
     /// compiled circuit's leaf gadget mirrors; [`HashGadget::hash_leaf`] is
     /// `hash_leaf_pre(leaf_fold(payload)?)`.
+    ///
+    /// # Panics
+    ///
+    /// Panics in every build profile when `pre` is not exactly
+    /// [`leaf_pre_width`] elements wide for this gadget: no compiled leaf
+    /// gadget hashes a pre-image of another width, so returning a digest for
+    /// it would only hide the misuse.
     pub fn hash_leaf_pre(&self, pre: &[BaseField]) -> Digest<BaseField> {
-        debug_assert_eq!(pre.len(), leaf_pre_width(self.leaf_max_fields));
+        assert_eq!(
+            pre.len(),
+            leaf_pre_width(self.leaf_max_fields),
+            "leaf pre-image width differs from leaf_pre_width"
+        );
         debug_assert_eq!(pre.len() % LEAF_SPONGE_RATE, 0);
         Digest(self.sponge.hash_iter(pre.iter().copied()))
     }

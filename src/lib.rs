@@ -263,6 +263,9 @@ impl StateSyncProver {
     /// Proof bytes are identical to [`Self::prove_sync_op`] - both funnel
     /// through the same normative verification-owner pipeline.
     ///
+    /// A request of another operation kind than `prepared` is refused with
+    /// [`SyncError::KindMismatch`] in every build profile.
+    ///
     /// (Creusot: claim-free `trusted`, v0.2 surface - see the section note.)
     #[cfg_attr(creusot, trusted)]
     pub fn prove_sync_op_prepared(
@@ -270,7 +273,13 @@ impl StateSyncProver {
         prepared: &PreparedSync,
         request: &SyncRequest,
     ) -> Result<SyncResult, SyncError> {
-        debug_assert_eq!(request.operation.kind(), prepared.kind);
+        let requested = request.operation.kind();
+        if requested != prepared.kind {
+            return Err(SyncError::KindMismatch {
+                prepared: prepared.kind,
+                requested,
+            });
+        }
         let witness = match generate_witness(
             &self.config.smt,
             self.config.layer_strategy,
@@ -301,6 +310,9 @@ impl StateSyncProver {
     /// cost), this reuses the prepared circuit, so job construction is
     /// witness generation only (~0.5-1.2 ms vs ~17-30 ms with compile).
     ///
+    /// A request of another operation kind than `prepared` is refused with
+    /// [`SyncError::KindMismatch`] in every build profile.
+    ///
     /// (Creusot: claim-free `trusted`, v0.2 surface - see the section note.)
     #[cfg_attr(creusot, trusted)]
     pub fn make_job_prepared(
@@ -308,7 +320,13 @@ impl StateSyncProver {
         prepared: &PreparedSync,
         request: &SyncRequest,
     ) -> Result<ProveJob, SyncError> {
-        debug_assert_eq!(request.operation.kind(), prepared.kind);
+        let requested = request.operation.kind();
+        if requested != prepared.kind {
+            return Err(SyncError::KindMismatch {
+                prepared: prepared.kind,
+                requested,
+            });
+        }
         let witness = match generate_witness(
             &self.config.smt,
             self.config.layer_strategy,

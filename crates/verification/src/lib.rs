@@ -75,6 +75,14 @@ pub enum SyncError {
     Compile(CompileError),
     /// Witness generation failed (for example, path length mismatch).
     Witness(SmtError),
+    /// The request's operation kind differs from the kind the prepared
+    /// circuit was compiled for.
+    KindMismatch {
+        /// Kind of the prepared circuit.
+        prepared: SmtOpKind,
+        /// Kind of the request's operation.
+        requested: SmtOpKind,
+    },
 }
 
 /// The asset key of an operation.
