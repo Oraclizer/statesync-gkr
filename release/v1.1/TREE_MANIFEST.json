@@ -6,11 +6,11 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f831b2285294aca0",
-    "source_manifest_sha256": "711787693c423762fa5cb034ae70b8cda3b8451d52a3557495679e4378281578"
+    "source_manifest_sha256": "24ca9097a1c4ba7d8bb6c3c375fc8eb52cd46c4b7d3561bdcda902ac1ecdd1b1"
   },
   "self_exclusion": "release/v1.1/TREE_MANIFEST.json",
-  "path_count": 960,
-  "candidate_path_count_including_self": 961,
+  "path_count": 979,
+  "candidate_path_count_including_self": 980,
   "entries": [
     {
       "path": ".gitattributes",
@@ -78,8 +78,8 @@
     {
       "path": ".github/workflows/ci.yml",
       "mode": "100644",
-      "bytes": 7624,
-      "sha256": "4272474bfc9112b6f5223eaa14cff2f580661414cb47378e12653b2b911a12fc",
+      "bytes": 8267,
+      "sha256": "a5108b19939c53f5032ac2b2bbfa8bd4664cf37e8d8254f98da28c9d04e6a379",
       "role": "repository-automation-or-community"
     },
     {
@@ -365,8 +365,8 @@
     {
       "path": "benches/README.md",
       "mode": "100644",
-      "bytes": 1231,
-      "sha256": "0488ef0a7d2be9e08dd085b6be65d0a07c40c882a1bf29848f2242db33c57eef",
+      "bytes": 1380,
+      "sha256": "87c681c72b05314010c969057c5ff1aa93e23318ec12c9664555e973349b84d6",
       "role": "documentation"
     },
     {
@@ -2897,6 +2897,139 @@
       "role": "repository-source-or-metadata"
     },
     {
+      "path": "benches/serving/.gitignore",
+      "mode": "100644",
+      "bytes": 8,
+      "sha256": "44c92e3a70ad3307b7056871c2bdb096d8bfa9373f5bf06a79bb6324a20ff2fb",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/Cargo.lock",
+      "mode": "100644",
+      "bytes": 26225,
+      "sha256": "85636139487153e8f635614d29cb52237afc2b0e352a273a57676a4b8ca624ec",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/Cargo.toml",
+      "mode": "100644",
+      "bytes": 741,
+      "sha256": "2a0c38b92cd3f90314f0839ea93fe2fd5a89f90f7aff01b279633833eb29bf7e",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/LICENSE",
+      "mode": "100644",
+      "bytes": 5208,
+      "sha256": "9a44129ee88d76331756f1ca1b5a487b7f8c6f81eeee2e1b04472f90c72251a5",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/README.md",
+      "mode": "100644",
+      "bytes": 10460,
+      "sha256": "48e8545d9f8055797da6d4fbae4dae200e30534abe319114cc3429babda64e0f",
+      "role": "documentation"
+    },
+    {
+      "path": "benches/serving/service-checks.py",
+      "mode": "100644",
+      "bytes": 40121,
+      "sha256": "847d349d1a607695190741be70ab589256215ecb361adeaccf65e23d77bec5e0",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/admission.rs",
+      "mode": "100644",
+      "bytes": 4717,
+      "sha256": "d2c0a8a41d8a242ec5066c0c8b233283415070fb7c0cc7a60d70ce7f3365596e",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/bin/ssgkr-serving/cli.rs",
+      "mode": "100644",
+      "bytes": 2940,
+      "sha256": "054af8138acd1eb053716bfa34b6089a7f48bba4ab2398f717fd55e3d9dcd78a",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/bin/ssgkr-serving/load.rs",
+      "mode": "100644",
+      "bytes": 27380,
+      "sha256": "c551ad0b9d60d577908639ac5659c1b59b44ecf67de54c586c69f49619213508",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/bin/ssgkr-serving/main.rs",
+      "mode": "100644",
+      "bytes": 1752,
+      "sha256": "5fde6d52afaca7c503cdadd75e4fa890019e4a1a2c018f8788578e485940cf50",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/bin/ssgkr-serving/server.rs",
+      "mode": "100644",
+      "bytes": 48071,
+      "sha256": "20864edab669fc13050f1ad72595a03a19559a1c786c9a03d9a29f5f84db81f0",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/bin/ssgkr-serving/shared.rs",
+      "mode": "100644",
+      "bytes": 14733,
+      "sha256": "a21be5c76835a818851d5477125d6e9f231467c7d44b5bf5e0a359dad48c24cc",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/budget.rs",
+      "mode": "100644",
+      "bytes": 6762,
+      "sha256": "014ebae3cd4ece907f45382b6b32da56c7934e9faaab92cc68e2fcaf0a6b49ad",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/completion.rs",
+      "mode": "100644",
+      "bytes": 11129,
+      "sha256": "5a87eb0f5ad72d17e3f5a3941bf07b04827f183a608501800b5380ceaff4e09d",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/fixture.rs",
+      "mode": "100644",
+      "bytes": 3898,
+      "sha256": "7d72d2bc976810678194fec8f0c6932e00042b7c195f6828d5c76bac6d5045f4",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/lib.rs",
+      "mode": "100644",
+      "bytes": 1659,
+      "sha256": "c5c68b0a164a96f120b0b6d24459e619cd0fa206f3f8feb49278313d563ce634",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/timing.rs",
+      "mode": "100644",
+      "bytes": 3311,
+      "sha256": "d29694c0c17f8139771507111f298bef76dcb4cef1cd0352004265163e96d098",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/src/wire.rs",
+      "mode": "100644",
+      "bytes": 31920,
+      "sha256": "344a91c2f612d2bd8340e3371fa1a6f1b09ca9a87eb8efaa7d720cd15606db43",
+      "role": "repository-source-or-metadata"
+    },
+    {
+      "path": "benches/serving/tests/transcript_regression.rs",
+      "mode": "100644",
+      "bytes": 6673,
+      "sha256": "ecbe09c7d3f500b25ece138fa143fa66ca54bd2e98aa525af56b55d175e795ef",
+      "role": "repository-source-or-metadata"
+    },
+    {
       "path": "crates/batching/Cargo.toml",
       "mode": "100644",
       "bytes": 472,
@@ -3719,7 +3852,7 @@
       "path": "release/v1.1/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 4133,
-      "sha256": "9451304378d58f8bf9d83c4bd5ecc8e68968bf3db81889863129d6769f8a1353",
+      "sha256": "a2b2bb0f9793adac28df6cdc0035327fce9309c692d42ec33b6dfff693ebd435",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3761,7 +3894,7 @@
       "path": "release/v1.1/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 4596,
-      "sha256": "164f70ca722efd4e8143656eb9563b5077c53e827244874aa0b35c95e9802ffa",
+      "sha256": "2308b45dc5b7389ae3d5c2c26e0c8e2883f56714df074ca6e4dc11bd9d4bbca8",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -3795,22 +3928,22 @@
     {
       "path": "release/v1.1/SBOM.spdx.json",
       "mode": "100644",
-      "bytes": 781989,
-      "sha256": "0f75cbdb1c3425b1d11b42f2addcc0e871dba6ef23be33ec7f6a38b2dd022501",
+      "bytes": 794525,
+      "sha256": "0bda7c6c037646f9b14335cb7dd6f4156f426013755745ffa9ec15c2110c1f81",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SHA256SUMS",
       "mode": "100644",
       "bytes": 1276,
-      "sha256": "b2ab2eded1efe2a06648e693a4279c8a36b52c929ff47eb5561e3a8e63e352db",
+      "sha256": "1a501ceef3ba9bef3163959a31dccf0536295018ae726d4d4c7d5abfa38fc685",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.1/SOURCE_MANIFEST.json",
       "mode": "100644",
-      "bytes": 265234,
-      "sha256": "711787693c423762fa5cb034ae70b8cda3b8451d52a3557495679e4378281578",
+      "bytes": 269775,
+      "sha256": "24ca9097a1c4ba7d8bb6c3c375fc8eb52cd46c4b7d3561bdcda902ac1ecdd1b1",
       "role": "release-evidence-or-tooling"
     },
     {

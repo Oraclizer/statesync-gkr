@@ -10,6 +10,9 @@ RUSTFLAGS="-Ctarget-cpu=native" cargo run --release --locked --bin measure
 
 Historical development observations are in [`REPORT.md`](REPORT.md).
 
+Serving components for proof services, a reference proof server with four
+serving modes and a load frontend are in [`serving/`](serving/README.md).
+
 These results are not a controlled-hardware release benchmark. They were not
 produced for comparative leadership claims and do not establish production
 latency, capacity, resource ceilings, deadline compliance, or behavior under

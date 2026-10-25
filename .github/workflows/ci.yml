@@ -33,6 +33,13 @@ jobs:
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: Test
         run: cargo test --workspace --release --locked
+      - name: Serving components and reference server
+        run: |
+          cargo fmt --manifest-path benches/serving/Cargo.toml --check
+          cargo clippy --manifest-path benches/serving/Cargo.toml --all-targets --locked -- -D warnings
+          cargo test --manifest-path benches/serving/Cargo.toml --release --locked
+          python3 benches/serving/service-checks.py --binary benches/serving/target/release/ssgkr-serving --suite smoke --out "$RUNNER_TEMP/serving-smoke"
+          python3 benches/serving/service-checks.py --binary benches/serving/target/release/ssgkr-serving --suite metadata --out "$RUNNER_TEMP/serving-metadata"
       - name: Quick start example
         run: |
           cargo run --release --locked --example state_sync_prove_verify > "$RUNNER_TEMP/quickstart.txt"
