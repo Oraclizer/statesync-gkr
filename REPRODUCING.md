@@ -3,14 +3,17 @@
 This guide separates the short source-level reproduction from the exact
 release-asset verification.
 
-The current release is v1.2.0. Its
+The current release is v1.2.1. Its
 [identity record](release/v1.2/IDENTITY_DISTRIBUTION.json) records the program
 identity that two controlled clean builds of the release source produced, and
-states that the attached external proof belongs to the historical v1.1
-program, not to the v1.2.0 program identity.
+binds the attached external proof to that identity. The proof's production
+run and its public verifier receipt are recorded in
+[`release/v1.2/PROOF_MANIFEST.json`](release/v1.2/PROOF_MANIFEST.json).
 
-The measurements and the historical proof refer to v1.1.0, archived as
-[DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
+The earlier measurements refer to v1.1.0, archived as
+[DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385). The
+v1.2.0 measurements and their same-day v1.1.0 references are described in
+[Performance and operating profiles](docs/performance.md).
 Research and other non-production reproduction are permitted under
 [LICENSE](LICENSE).
 
@@ -45,13 +48,13 @@ report template below.
 
 ## Profile 2: exact release package
 
-Download **every** asset of the v1.2.0 release from the
+Download **every** asset of the v1.2.1 release from the
 [Releases page](https://github.com/Oraclizer/statesync-gkr/releases) into one empty directory. `statesync-gkr-v1.2-sha256sums.txt` covers all of them and
 `sha256sum -c` fails on any that is missing, so a partial download cannot pass
 this step. The four the rest of this profile uses directly are:
 
 - `statesync-gkr-v1.2-source.tar.gz`;
-- `statesync-gkr-v1.1-proof.cbor`;
+- `statesync-gkr-v1.2-proof.cbor`;
 - `statesync-gkr-v1.2-attachments.json`;
 - `statesync-gkr-v1.2-sha256sums.txt`.
 
@@ -65,12 +68,14 @@ cd statesync-gkr-v1.2-source
 python3 release/v1.2/verify.py \
   --mode source-archive \
   --require-proof \
-  --proof ../statesync-gkr-v1.1-proof.cbor
+  --proof ../statesync-gkr-v1.2-proof.cbor
 ```
 
 This command checks package integrity and the recorded size and hash of the
-proof attachment. The proof belongs to the historical v1.1 program; the v1.2.0
-program identity is recorded in the identity record named above.
+proof attachment, which is a proof of the v1.2 program identity recorded in
+the identity record named above. The
+[saved-proof verifier](spikes/zkvm-wrap/README.md#verification) additionally
+checks the receipt against the image ID and public journal.
 
 Expected final lines include:
 
@@ -84,7 +89,7 @@ public-surface=PASS
 Create a disposable copy and flip one proof byte:
 
 ```sh
-python3 -c "from pathlib import Path; p=Path('../statesync-gkr-v1.1-proof.cbor'); b=bytearray(p.read_bytes()); b[-1] ^= 1; Path('../tampered-proof.cbor').write_bytes(b)"
+python3 -c "from pathlib import Path; p=Path('../statesync-gkr-v1.2-proof.cbor'); b=bytearray(p.read_bytes()); b[-1] ^= 1; Path('../tampered-proof.cbor').write_bytes(b)"
 python3 release/v1.2/verify.py \
   --mode source-archive \
   --require-proof \

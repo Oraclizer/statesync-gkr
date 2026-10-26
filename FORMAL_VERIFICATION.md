@@ -21,7 +21,7 @@ The formal sources retain their recorded contents, and the Rust prover
 produces the same proof bytes as the previous line. The
 [identity record](release/v1.2/IDENTITY_DISTRIBUTION.json) records the program
 identity of the current source, measured by two controlled clean builds, and
-separates it from the historical v1.1 program that the attached proof covers.
+binds the attached proof to that identity.
 
 <p align="center">
   <picture>
@@ -298,7 +298,7 @@ The release verifier is:
 
 ```sh
 python3 release/v1.2/verify.py --mode clean-history --require-proof \
-  --proof /path/to/statesync-gkr-v1.1-proof.cbor
+  --proof /path/to/statesync-gkr-v1.2-proof.cbor
 ```
 
 Download the proof attachment using [REPRODUCING.md](REPRODUCING.md) and

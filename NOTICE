@@ -26,7 +26,7 @@ Source and proof scope
 
 The current source manifest identifies the files in this distribution. Two
 controlled clean builds recorded the compiled program identity of the current
-source; the newest external proof describes the historical v1.1 program only.
+source; the newest external proof describes that v1.2 program identity.
 See release/v1.2/IDENTITY_DISTRIBUTION.json for the source, identity and proof
 boundaries. License names that appear in historical records or in
 third-party notices describe those records or components; they are not the

@@ -1,7 +1,7 @@
 {
   "schema": "statesync-gkr.identity-distribution.v1",
   "release_line": "v1.2",
-  "distribution_version": "1.2.0",
+  "distribution_version": "1.2.1",
   "license": "BUSL-1.1",
   "identity_source": {
     "path_count": 64,
@@ -17,18 +17,18 @@
     "program_binary_sha256": "e552917c28f7030a46171d33fb90661edb0d1be149efabb1b70bde5b63cc4a28"
   },
   "proof": {
-    "scope": "historical-v1.1-program-only",
-    "release_line": "v1.1",
-    "asset_name": "statesync-gkr-v1.1-proof.cbor",
-    "bytes": 279128,
-    "sha256": "b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822",
-    "bound_image_id": "dc9a5f0da608178bbe56e98604cb895060c555c18329846b453f71d562d16530",
-    "record": "release/v1.1/PROOF_MANIFEST.json",
-    "covers_current_identity": false
+    "scope": "current-v1.2-program",
+    "release_line": "v1.2",
+    "asset_name": "statesync-gkr-v1.2-proof.cbor",
+    "bytes": 279126,
+    "sha256": "1785b88baeb7dbc49aa2dee0913bf86bc1a3bc22075e217881e257a8a6c9f39b",
+    "bound_image_id": "1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131",
+    "record": "release/v1.2/PROOF_MANIFEST.json",
+    "covers_current_identity": true
   },
   "citation": {
-    "version": "1.2.0",
-    "doi": "10.5281/zenodo.23643505",
+    "version": "1.2.1",
+    "doi": "10.5281/zenodo.23655511",
     "status": "LATEST_PUBLISHED_RELEASE"
   },
   "historical_baseline": {
@@ -39,9 +39,9 @@
   "interpretation": [
     "The v1.2 identity selection is the same 64 paths as the previous line; its bytes changed in the prover arithmetic, two release-build misuse checks and one encoding note.",
     "Two controlled clean builds of that selection produced the same eight identity outputs, recorded in the expected identity record.",
-    "Proof bytes of the library are unchanged from the previous line; the program identity changed because the compiled guest includes the changed source.",
-    "The newest external proof belongs to the historical v1.1 program. It is not a proof of the v1.2 program identity.",
-    "The citation names this release, v1.2.0, archived at DOI 10.5281/zenodo.23643505.",
+    "Proof bytes of the library are unchanged from the previous line; the program identity changed because the compiled guest includes the changed source, and the v1.1 proof stays a record of the v1.1 program only.",
+    "The external proof statesync-gkr-v1.2-proof.cbor is a secure succinct proof of the v1.2 program identity, verified against its image identifier when it was produced and accepted by the public verifier recorded in release/v1.2/PROOF_MANIFEST.json.",
+    "The citation names this release, v1.2.1, archived at DOI 10.5281/zenodo.23655511.",
     "The v1.1 and v1.0 baselines stay byte-frozen as records of their identity cycles."
   ]
 }

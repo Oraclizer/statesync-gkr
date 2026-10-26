@@ -29,7 +29,7 @@ body:
     id: revision
     attributes:
       label: Exact tag or commit
-      placeholder: v1.2.0 or a full commit SHA
+      placeholder: v1.2.1 or a full commit SHA
     validations:
       required: true
   - type: textarea

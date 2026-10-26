@@ -4,8 +4,9 @@ Every recorded program identity is bound to an exact source selection, and
 this directory preserves the expected record of each identity line. The
 current source is the v1.2 line: two controlled clean builds of its identity
 selection produced the same eight identity outputs, recorded in
-`risc0-route-b-guest-expected-v1.2.json`. The newest external proof belongs to
-the historical v1.1 program and is not a proof of the v1.2 identity; the
+`risc0-route-b-guest-expected-v1.2.json`. The attached external proof is a
+proof of the v1.2 identity, recorded in
+[PROOF_MANIFEST.json](../../../release/v1.2/PROOF_MANIFEST.json); the
 boundaries are stated in
 [IDENTITY_DISTRIBUTION.json](../../../release/v1.2/IDENTITY_DISTRIBUTION.json).
 This directory holds one expected record per identity line. A record is never
@@ -19,8 +20,8 @@ earlier files stay as they were.
   source, host binary, diagnostic artifacts, and controlled-build inputs, and
   it names the previous line's program binary and image ID under
   `superseded_references` with `covers_current_identity` set to false.
-- `risc0-route-b-guest-expected-v1.1.json` is the historical v1.1 program
-  line, whose program the newest external proof is bound to.
+- `risc0-route-b-guest-expected-v1.1.json` is the v1.1 program line, whose
+  program the v1.1 proof is bound to.
 - `risc0-route-b-guest-expected-v1.json` is the v1.0 line, held byte frozen as
   part of the protected source. It fixes the same fields for the identity the
   v1.0 proof is bound to.
@@ -42,9 +43,8 @@ failure.
 Do not update expected hashes to make a changed build pass. A changed
 protected source is a different candidate identity and requires separately
 authorized identity and proof work. A proof is never carried across lines: the
-v1.0 proof belongs to its recorded v1.0 identity, and the recorded v1.1 proof
-belongs to its historical v1.1 identity. Neither is a proof of the v1.2
-identity.
+v1.0 proof belongs to its recorded v1.0 identity, the v1.1 proof to its
+recorded v1.1 identity, and the v1.2 proof to the recorded v1.2 identity.
 
 ## Public policy check
 

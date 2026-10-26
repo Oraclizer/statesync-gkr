@@ -104,9 +104,8 @@ the named source, assumptions, successful solver leaves and open obligations
 together. [Replay metadata](../verif/README.md) identifies the pinned
 configuration and local tool requirements.
 
-A source consistency check, solver record, executable test and historical
-external zkVM proof answer different questions. The
+A source consistency check, solver record, executable test and external
+zkVM proof answer different questions. The
 [identity record](../release/v1.2/IDENTITY_DISTRIBUTION.json) records the
-compiled identity of the current source and distinguishes it from the recorded
-historical program; the attached historical proof does not cover the current
+compiled identity of the current source and binds the attached proof to that
 identity.

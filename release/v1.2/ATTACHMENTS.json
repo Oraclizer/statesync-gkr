@@ -3,23 +3,23 @@
   "status": "PREPARED_RELEASE_ASSETS",
   "source_archive_two_run_byte_equality": true,
   "proof_tracked_in_source_tree": false,
-  "attachment_count": 13,
+  "attachment_count": 15,
   "attachments": [
     {
       "asset_name": "statesync-gkr-v1.2-source.tar.gz",
       "media_type": "application/gzip",
       "role": "deterministic-source-archive",
-      "bytes": 43367441,
-      "sha256": "3c15f7509938d872a661eccad19513f3a54eb1010de67245362ca20f137c8fa0",
+      "bytes": 43383978,
+      "sha256": "28853839e842a5bd5a9d88a630c718c7c17ce499820157d99056e751e0617756",
       "status": "PREPARED_RELEASE_ASSET"
     },
     {
-      "asset_name": "statesync-gkr-v1.1-proof.cbor",
+      "asset_name": "statesync-gkr-v1.2-proof.cbor",
       "media_type": "application/cbor",
       "role": "public-proof",
-      "proof_scope": "historical-v1.1-program-only",
-      "bytes": 279128,
-      "sha256": "b1a9c3dc86802da706af32eb8ea17eb1ae0ed9c52954a4829cc5e3e9fdee1822",
+      "proof_scope": "current-v1.2-program",
+      "bytes": 279126,
+      "sha256": "1785b88baeb7dbc49aa2dee0913bf86bc1a3bc22075e217881e257a8a6c9f39b",
       "status": "PREPARED_RELEASE_ASSET"
     },
     {
@@ -44,8 +44,8 @@
       "asset_name": "statesync-gkr-v1.2-identity-distribution.json",
       "media_type": "application/json",
       "role": "identity-distribution-record",
-      "bytes": 2415,
-      "sha256": "0c2c1278e7c7b034b75f2e2ecc7acdb717b04a61c9d7cf09a1be7865a88e8c14",
+      "bytes": 2599,
+      "sha256": "c01ab539e6ac3c483863d12cb395504832480861572031e57b80a9747fdaa5c5",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "release/v1.2/IDENTITY_DISTRIBUTION.json"
     },
@@ -57,6 +57,24 @@
       "sha256": "df4d95ee7e353d4281419b5bc8adc4860292a3ada32a515d6fd6a52ecc09b261",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-proof-manifest.json",
+      "media_type": "application/json",
+      "role": "proof-manifest",
+      "bytes": 3876,
+      "sha256": "c5a95ae6d76422a6e51e2a4cfd2110653a7e40003ff94b2ac2c3bff383c4c26c",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/PROOF_MANIFEST.json"
+    },
+    {
+      "asset_name": "statesync-gkr-v1.2-public-inputs.json",
+      "media_type": "application/json",
+      "role": "public-inputs",
+      "bytes": 1645,
+      "sha256": "6bdf325d5a2d85be19acc1057c87b1cca5af39214bb85ac2838f296b3553dea7",
+      "status": "PREPARED_RELEASE_ASSET",
+      "tracked_source_path": "release/v1.2/PUBLIC_INPUTS.json"
     },
     {
       "asset_name": "statesync-gkr-v1.1-proof-manifest.json",
@@ -80,8 +98,8 @@
       "asset_name": "statesync-gkr-v1.2-sbom.spdx.json",
       "media_type": "application/spdx+json",
       "role": "sbom",
-      "bytes": 817523,
-      "sha256": "0585c032d3d3606aad082af7b2f962b62c6452c12c9f36194d84ee8411e4fc3e",
+      "bytes": 820900,
+      "sha256": "28b6ac16323b3d4bc390106fd3c1dc39e0f7525e4e89c66718ee9034807ed79b",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "release/v1.2/SBOM.spdx.json"
     },
@@ -89,8 +107,8 @@
       "asset_name": "statesync-gkr-v1.2-provenance.intoto.jsonl",
       "media_type": "application/jsonl",
       "role": "provenance",
-      "bytes": 5189,
-      "sha256": "d0a394aaa07d4e54d88bafd148e99c73289f8b162a87d1742b86967eb7a33cdd",
+      "bytes": 5181,
+      "sha256": "e7e81499d8878f728786125f0b192f0e07119c12704806bc556f7cd10a20cf66",
       "status": "PREPARED_RELEASE_ASSET",
       "tracked_source_path": "release/v1.2/PROVENANCE.intoto.jsonl"
     },

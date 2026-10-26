@@ -7,8 +7,8 @@ change the identity even when the algorithm appears unchanged.
 
 The current line is v1.2. Its identity supersedes the v1.1 identity, and the
 v1.1 and v1.0 records stay frozen under `release/v1.1` and `release/v1.0`. The
-newest published zkVM proof is bound to the historical v1.1 program identity,
-not to the v1.2 identity. Some non-sensitive historical source annotations are
+newest published zkVM proof is bound to the v1.2 program identity. Some
+non-sensitive historical source annotations are
 retained to preserve the identity they are part of. They are documented here
 and do not represent current release gates, runtime roles, or external
 endorsements.

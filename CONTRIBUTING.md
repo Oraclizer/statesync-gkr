@@ -70,6 +70,13 @@ cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --release --locked
 
+# Serving components and reference server, a separate Cargo workspace.
+cargo fmt --manifest-path benches/serving/Cargo.toml --check
+cargo clippy --manifest-path benches/serving/Cargo.toml --all-targets --locked -- -D warnings
+cargo test --manifest-path benches/serving/Cargo.toml --release --locked
+python3 benches/serving/service-checks.py --binary benches/serving/target/release/ssgkr-serving --suite smoke --out "$(mktemp -d)/serving-smoke"
+python3 benches/serving/service-checks.py --binary benches/serving/target/release/ssgkr-serving --suite metadata --out "$(mktemp -d)/serving-metadata"
+
 # The README quick start must print exactly its documented result.
 cargo run --release --locked --example state_sync_prove_verify
 

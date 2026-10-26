@@ -1,4 +1,4 @@
-name: Source consistency and historical proof
+name: Source consistency and proof attachment
 
 permissions:
   contents: read
@@ -41,7 +41,7 @@ jobs:
           fi
 
   release-proof-attachment:
-    name: exact historical proof attachment
+    name: exact release proof attachment
     if: github.event_name == 'release'
     needs: frozen-source-policy
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
       - name: Download the exact release proof asset
         env:
           GH_TOKEN: ${{ github.token }}
-          PROOF_ASSET: statesync-gkr-v1.1-proof.cbor
+          PROOF_ASSET: statesync-gkr-v1.2-proof.cbor
         run: |
           mkdir "$RUNNER_TEMP/proof"
           gh release download "${{ github.event.release.tag_name }}" \
@@ -69,7 +69,7 @@ jobs:
             --require-proof \
             --proof "$RUNNER_TEMP/proof/$PROOF_ASSET"
 
-# These jobs check source and identity consistency and the historical proof
+# These jobs check source and identity consistency and the release proof
 # attachment. They do not rebuild the guest: the v1.2 compiled identity is the
-# record of two controlled clean builds, and the attached proof belongs to the
-# historical v1.1 program, as release/v1.2/IDENTITY_DISTRIBUTION.json states.
+# record of two controlled clean builds, and the attached proof is a proof of
+# that v1.2 program identity, as release/v1.2/IDENTITY_DISTRIBUTION.json states.

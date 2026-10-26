@@ -111,6 +111,32 @@ later. The selected zkVM identity build has its own documented environment.
 [Installation](https://oraclizer.io/ss-gkr/docs/get-started/installation/)
 covers Git and path dependencies and platform notes.
 
+## Build for proving speed
+
+Proving speed depends on the CPU features the compiler may use. The field
+arithmetic gains most from wide vector instructions, so build the prover for
+the machine that runs it:
+
+```sh
+RUSTFLAGS="-Ctarget-cpu=native" cargo +1.96.1 run --release --locked
+```
+
+| Build | Median of one prepared depth-24 request, one thread |
+| --- | --- |
+| Default `--release` | 28.18 / 30.42 / 42.02 ms |
+| `-Ctarget-cpu=x86-64-v3` | 15.26 / 16.56 / 22.10 ms |
+| `-Ctarget-cpu=native` | 16.96 / 18.33 / 24.63 ms |
+
+The values are membership / non-membership / update with v1.2.0 on the
+192-core bare-metal host of the controlled CPU study. The default release
+build took 1.66–1.71 times as long as the native build. Each build was measured
+in one process of 1,000 timed requests per operation, so the faster x86-64-v3
+result is a single-process observation on that host. The native and the
+default build produce the same proof bytes, and hosted CI compares baseline
+and native proof digests. A native binary uses the instruction set of the CPU
+it was built for, so build it on the deployment host or name that CPU with
+`-Ctarget-cpu`.
+
 ## Complete application
 
 Save the following as `src/main.rs`. It builds a small synthetic membership
@@ -300,6 +326,14 @@ The controlled benchmark also measures a separate caller that parallelizes
 lives in the benchmark driver and is not a built-in witness-parallel method
 of the released facade. The two stages complete in sequence.
 
+For a service, the `ssgkr-serving` crate in
+[`benches/serving`](../benches/serving/README.md) provides `complete` (witness,
+proof, encoding, hash and release of one request on one thread),
+`complete_batch` (the same per job inside a Rayon pool) and `ContinuousRunner`
+(fixed workers that each start the oldest waiting job when they finish the
+previous one). It is a separate Cargo workspace outside the facade and calls
+only the public `statesync-gkr` API.
+
 [Prepared execution](https://oraclizer.io/ss-gkr/docs/guides/prepared-execution/)
 and [Batching and parallelism](https://oraclizer.io/ss-gkr/docs/guides/batching-and-parallelism/)
 cover these APIs with complete pipelines, common mistakes and checklists.
@@ -312,8 +346,25 @@ commitment and derived wiring; each request still needs its own witness,
 transcript and proof. Create the reusable material once per supported profile
 and use an explicitly sized Rayon pool around independent proving jobs.
 
-The measured balanced depth-24 workload supports the following starting points:
+With the v1.2.0 reference proof server in continuous mode, the measured
+balanced depth-24 workload supports these starting points:
 
+| Worker resources | Server settings | Highest offered requests/s with every timed request within 1 s | Runs |
+|---|---|---:|---|
+| 48 cores, 96 GiB | `--workers 48 --max-in-flight 46` | 2,000 | Screen: one 15-second run per rate |
+| 96 cores, 192 GiB | `--workers 96 --max-in-flight 94` | 3,000 | Screen: one 15-second run per rate |
+| 192 cores, 384 GiB | `--workers 192 --max-in-flight 190` | 3,300 on one connection | Confirmed in three 60-second runs and one 30-minute run |
+
+All three use `--max-queue 8192` and the default return budget. Continuous
+mode has no batch cap or batch wait; `--max-in-flight` sets how many jobs
+compute at once, and the measured settings use its default, the worker count
+minus two. The 48- and 96-core values are short screens, not longer
+confirmations. At 500 requests/s for 15 minutes the 48-core server accepted every
+timed request within one second with p99 33.4 ms. Above about 3,300
+requests/s, replies of this size need more than one connection; see
+[Serving capacity on one server](performance.md#serving-capacity-on-one-server).
+
+The earlier v1.1.0 batch caller used these confirmed settings.
 All settings use a 5-ms maximum batch wait. Workers and batch cap are equal
 per worker; the two-worker configuration splits the offered load equally.
 
@@ -330,8 +381,8 @@ service guarantee. A separate 1,150/s, 60-second run accepted all 69,000 request
 within two seconds, but only 70.3667% within one second while its queue grew;
 it does not replace the one-second starting point above.
 
-These settings belong to the benchmark's thin serving caller, not a new
-built-in network service or latency guarantee. It maintains one FIFO per
+These v1.1.0 settings belong to the earlier benchmark's thin serving caller,
+which the reference server's `original` mode reproduces. It maintains one FIFO per
 operation kind, flushes the oldest ready kind, and processes one compute batch
 at a time. A maximum wait makes a batch ready; waiting for an earlier batch can
 take longer. The facade's parallel method follows the caller's Rayon pool and

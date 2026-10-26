@@ -15,10 +15,13 @@ without adopting the SMT operation language.
 [How GKR works](https://oraclizer.io/ss-gkr/docs/concepts/how-gkr-works/)
 introduces the protocol and maps each step to its crate.
 
-The measurements refer to the historical v1.1.0 kernel,
-commit `1b8d2f829792172b347dedbfde969016c2c05789`, archived as
+The v1.2.0 measurements use the release tag v1.2.0, commit
+`8b2908160f36adc233d7b869a403d2ee4d3502a5`, with v1.1.0 measured on the same
+days and instance types as the reference. The earlier campaigns measured the
+historical v1.1.0 kernel, commit `1b8d2f829792172b347dedbfde969016c2c05789`,
+archived as
 [software DOI 10.5281/zenodo.23136385](https://doi.org/10.5281/zenodo.23136385).
-The benchmark callers and observations are separate from that software identity.
+The benchmark callers and observations are separate from those software identities.
 The [performance guide](performance.md) defines every reported interval.
 
 ## Sparse layer reduction
@@ -51,6 +54,17 @@ These benchmark observations use their own JSON representation, separate from
 the official `inner-proof-v1` encoding. Sparse-only scale points have no
 completed Dense proof counterpart. The largest tested point is not a global
 supported maximum or a ranking of all GKR implementations.
+
+Version 1.2.0 keeps this ownership and computes the same proofs with less
+arithmetic. Each scaled output-line weight table is built in one pass, the
+round values of both sumcheck phases come from a single table read, and every
+round is interpolated through a fixed inverse Vandermonde matrix. Proof bytes
+match the v1.1.0 proofs. In the same-day memory study, one width-4,096 mixed
+proof took 1.80 ms against 4.64 ms for the v1.1.0 prover and made 85
+allocation calls instead of 1,282; the requested allocation peak and owned
+capacity did not change. On the 192-core bare-metal host, prepared proving
+throughput rose 2.41–2.71 times against same-day v1.1.0 across one to 192
+workers.
 
 ## Wiring structure at verification
 
@@ -102,10 +116,13 @@ request retains its own public inputs, witness, transcript and proof.
 
 Commitment reuse is especially valuable: the depth-24 membership measurements
 recorded 105.027310 ms for commitment versus 7.902078 ms for compilation.
-Direct fresh/prepared depth-24 measurements show approximately 3.69/3.46/4.45
-times lower per-request proving-path latency for membership/absence/update.
-Each operation and mode has three processes of 1,000 timed requests; ratios
-compare run-matched process summaries. Encoding, transport and acceptance are
+Direct fresh/prepared depth-24 measurements show approximately 7.66/7.19/10.13
+times lower per-request proving-path latency for membership/absence/update with
+v1.2.0, and 3.69/3.46/4.45 times in the earlier v1.1.0 campaign; a prepared
+request takes
+16.95/18.22/24.62 ms on one thread with v1.2.0. Each operation and mode has
+three processes of 1,000 timed requests; ratios compare run-matched process
+summaries. Encoding, transport and acceptance are
 outside that timer. Reuse removes setup while each job keeps its own
 challenge-dependent proof state.
 
@@ -114,7 +131,8 @@ collects one proof per input job in input order. It preserves the existing proof
 format; independent batching is not aggregation. The measured caller also
 parallelizes witness generation and output encoding/verification. At depth 24,
 batch 768 and 192 workers, the output-mode comparison improved the complete
-prepared local batch interval by 9.71–10.71 times across three operations.
+prepared local batch interval by 14.10–14.64 times with v1.2.0 and by
+9.71–10.71 times in the earlier v1.1.0 campaign across three operations.
 That interval includes witness generation, proving, encoding and encoded
 verification. Both policies parallelize witness generation and proving; only
 encoding and encoded verification change mode. Preparation, transport and
@@ -125,7 +143,9 @@ Smaller-batch effects are separately reported.
 
 Remote dispatch is another caller policy. Asynchronous replies may complete out
 of order; request IDs, fixture IDs and operation kinds bind them to the original
-requests. The actual one-worker/two-worker study transferred complete proof
+requests. The v1.2.0 reference server's continuous mode replies in completion
+order, and each reply carries its run and job identifiers, so a client matches
+it to the request without relying on order. The actual one-worker/two-worker study transferred complete proof
 payloads and ended at frontend cryptographic acceptance. It compares resource
 equivalent deployment configurations whose batch caps scale with worker count,
 not topology in isolation. [Usage](usage.md#choosing-worker-and-batch-settings)
