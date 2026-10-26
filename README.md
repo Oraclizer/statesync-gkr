@@ -47,7 +47,7 @@ can build on the same engine and use its
 <p align="center">
   <picture>
     <source media="(max-width: 900px)" srcset="assets/brand/statesync-gkr-performance-overview-mobile.svg">
-    <img src="assets/brand/statesync-gkr-performance-overview.svg" width="1200" alt="StateSync-GKR internal controlled comparisons: 89.46-fold lower peak process RAM in the v1.1.0 measurement (88.87-fold when re-measured with v1.2.0), up to 23.68-fold faster prepared typed verification with the verifier unchanged in v1.2.0, and 14.10 to 14.64-fold faster complete prepared local batches in v1.2.0 (9.71 to 10.71-fold in v1.1.0). Each result has its own matched reference and conditions.">
+    <img src="assets/brand/statesync-gkr-performance-overview.svg" width="1200" alt="StateSync-GKR v1.2.0 in four measured cells, each with its own baseline: 89-fold less peak memory than the engine's own dense baseline on a width-4,096 test circuit (89.46-fold on v1.1.0, 88.87-fold on v1.2.0); 6,470-fold faster proving than that baseline on the same circuit, against 2,507-fold with v1.1.0; 3,300 requests a second on one 192-core server with every request accepted within one second, against 1,150 for v1.1.0 measured the same day; and a 99th-percentile latency of 34 ms at 1,000 requests a second on the same server, against 440 ms for v1.1.0 the same day.">
   </picture>
 </p>
 

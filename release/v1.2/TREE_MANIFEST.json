@@ -6,7 +6,7 @@
     "git_tree": "BOUND_BY_GIT_TAG",
     "history_mode": "CLEAN_SOURCE_ARCHIVE_WITH_FULL_TREE_MANIFEST",
     "protected_manifest_sha256": "7447ba9d07e71d8b66f426940e012a3a29fbfc30eebef43ff36131782930ec33",
-    "source_manifest_sha256": "69f6fbf1c5c391417cc35065d4bd03f2a662d2d74bcb39cde7a6c1988fc19857"
+    "source_manifest_sha256": "f81884ac98d2982212bac9bd07f7ce22e2071be54d78cb64308befaec880231d"
   },
   "self_exclusion": "release/v1.2/TREE_MANIFEST.json",
   "path_count": 1016,
@@ -211,8 +211,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 39321,
-      "sha256": "09699a7b08f06385f5d40ca09961d3ea25527a547f9ffd5076f9e34d14d6937d",
+      "bytes": 39494,
+      "sha256": "11bb62de9872f174ffab6b2cef9b62b28683b50f1bce3246089ff359b8eb2a42",
       "role": "documentation"
     },
     {
@@ -274,15 +274,15 @@
     {
       "path": "assets/brand/statesync-gkr-performance-overview-mobile.svg",
       "mode": "100644",
-      "bytes": 7171,
-      "sha256": "62689f813e23471a2da923d19224c1a14d01c3a6d461e47dbf785372a88129f2",
+      "bytes": 9658,
+      "sha256": "65330da7c778d68e7dd73057e8699eeac8271c77104a7f18dd32d4de2951642c",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/brand/statesync-gkr-performance-overview.svg",
       "mode": "100644",
-      "bytes": 7700,
-      "sha256": "d0e44ed25f243c47bf7b5da7506c6363b5e945e21fec51bffd8197354e2c53d0",
+      "bytes": 9034,
+      "sha256": "b7183de3cdcb01994bd8bfc2411d09071d0b9a090b011ddbb850d8032b25b00e",
       "role": "repository-source-or-metadata"
     },
     {
@@ -3445,8 +3445,8 @@
     {
       "path": "docs/performance.md",
       "mode": "100644",
-      "bytes": 31250,
-      "sha256": "f776b7eda231a40e4ae302510871335fbb43229833bfb471b810d2991355a5d3",
+      "bytes": 31498,
+      "sha256": "5887de3a58259c4653bbe54025ff265fa233cd8e7beb5260c15d97aa5d7d388d",
       "role": "documentation"
     },
     {
@@ -4048,7 +4048,7 @@
       "path": "release/v1.2/ATTACHMENTS.json",
       "mode": "100644",
       "bytes": 5707,
-      "sha256": "cf1d8bd84cd4af750700d1952db3fc4172b1a09a70f4c3ff7edf2816bdef84d5",
+      "sha256": "5c75fb9a2665790f8b3ecead14d89c10dfbec1eecf19dff87755feb3a124a6f6",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4090,7 +4090,7 @@
       "path": "release/v1.2/PROVENANCE.intoto.jsonl",
       "mode": "100644",
       "bytes": 5181,
-      "sha256": "e7e81499d8878f728786125f0b192f0e07119c12704806bc556f7cd10a20cf66",
+      "sha256": "6aa5d6a3c5d4510b6de9d10f3f59070ca6cffc6056fd4dee46b887cfc407d125",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4125,21 +4125,21 @@
       "path": "release/v1.2/SBOM.spdx.json",
       "mode": "100644",
       "bytes": 820900,
-      "sha256": "28b6ac16323b3d4bc390106fd3c1dc39e0f7525e4e89c66718ee9034807ed79b",
+      "sha256": "9a2fc0d7fb1cb873babb489839edc622fc24a104d294537120d1285561f35f5f",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.2/SHA256SUMS",
       "mode": "100644",
       "bytes": 1711,
-      "sha256": "2b66d0859a39fde3ab98669b480903b2c0f939d550f821271b21c1bac7e5d041",
+      "sha256": "8ded8d2c96085fd66bbfdabfcb79deea208807ed711b5c0d759908396e401a70",
       "role": "release-evidence-or-tooling"
     },
     {
       "path": "release/v1.2/SOURCE_MANIFEST.json",
       "mode": "100644",
       "bytes": 279457,
-      "sha256": "69f6fbf1c5c391417cc35065d4bd03f2a662d2d74bcb39cde7a6c1988fc19857",
+      "sha256": "f81884ac98d2982212bac9bd07f7ce22e2071be54d78cb64308befaec880231d",
       "role": "release-evidence-or-tooling"
     },
     {

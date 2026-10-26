@@ -269,6 +269,10 @@ Sparse at mixed width 4,096:
 The Dense reference code did not change. With v1.2.0 the allocation ratio is
 still 3,242.41 and the process-RSS ratio is 88.87; the published 89.46 is the
 v1.1.0 measurement.
+The Dense reference proved the same circuit in 11.63 s on the v1.2.0 run day
+and in 11.61 s in the earlier campaign, so the Sparse prover interval is 6,470
+times shorter with v1.2.0 and 2,507 times shorter with v1.1.0 (medians of three
+processes).
 
 Allocator counters and stage observation are enabled inside both prover timers.
 JSON construction, hashing and verification occur afterwards but remain in

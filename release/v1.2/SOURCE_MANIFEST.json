@@ -237,8 +237,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 39321,
-      "sha256": "09699a7b08f06385f5d40ca09961d3ea25527a547f9ffd5076f9e34d14d6937d",
+      "bytes": 39494,
+      "sha256": "11bb62de9872f174ffab6b2cef9b62b28683b50f1bce3246089ff359b8eb2a42",
       "role": "documentation"
     },
     {
@@ -300,15 +300,15 @@
     {
       "path": "assets/brand/statesync-gkr-performance-overview-mobile.svg",
       "mode": "100644",
-      "bytes": 7171,
-      "sha256": "62689f813e23471a2da923d19224c1a14d01c3a6d461e47dbf785372a88129f2",
+      "bytes": 9658,
+      "sha256": "65330da7c778d68e7dd73057e8699eeac8271c77104a7f18dd32d4de2951642c",
       "role": "repository-source-or-metadata"
     },
     {
       "path": "assets/brand/statesync-gkr-performance-overview.svg",
       "mode": "100644",
-      "bytes": 7700,
-      "sha256": "d0e44ed25f243c47bf7b5da7506c6363b5e945e21fec51bffd8197354e2c53d0",
+      "bytes": 9034,
+      "sha256": "b7183de3cdcb01994bd8bfc2411d09071d0b9a090b011ddbb850d8032b25b00e",
       "role": "repository-source-or-metadata"
     },
     {
@@ -3471,8 +3471,8 @@
     {
       "path": "docs/performance.md",
       "mode": "100644",
-      "bytes": 31250,
-      "sha256": "f776b7eda231a40e4ae302510871335fbb43229833bfb471b810d2991355a5d3",
+      "bytes": 31498,
+      "sha256": "5887de3a58259c4653bbe54025ff265fa233cd8e7beb5260c15d97aa5d7d388d",
       "role": "documentation"
     },
     {
