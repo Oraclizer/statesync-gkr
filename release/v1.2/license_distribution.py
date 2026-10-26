@@ -22,7 +22,10 @@ HISTORICAL_MANIFEST_SHA256 = "23c5ce2c21a9d8658e6c983cd63928f6e87b184af6027df0f8
 HISTORICAL_ALLOWLIST_SHA256 = "3a68db09cabe247e860a88ff4dd3241890c1b2c7ef1d41ebbf9dacaeebe14450"
 EXPECTED_IDENTITY_RECORD = "spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json"
 HISTORICAL_PROOF_MANIFEST = "release/v1.1/PROOF_MANIFEST.json"
-DISTRIBUTION_VERSION = "1.2.0"
+# The distributions this line may record: its release and the following patch
+# release. The citation and the SBOM must name the version the identity record
+# states, so a patch distribution cannot pass with another version's metadata.
+DISTRIBUTION_VERSIONS = ("1.2.0", "1.2.1")
 # The latest published software release before this line is released. Its
 # citation pair stays valid until a published v1.2 release replaces it.
 PUBLISHED_PREDECESSOR = ("1.1.1", "10.5281/zenodo.23280552")
@@ -114,16 +117,17 @@ def cff_fields(text: str) -> dict[str, str]:
     return fields
 
 
-def verify_citation_pair(version: str, doi: str) -> None:
-    """A citation names the published predecessor or a published v1.2 release."""
+def verify_citation_pair(version: str, doi: str, distribution_version: str) -> None:
+    """A citation names the published predecessor or the recorded v1.2 distribution."""
     if (version, doi) == PUBLISHED_PREDECESSOR:
         return
-    if version == DISTRIBUTION_VERSION and re.fullmatch(r"10\.5281/zenodo\.\d+", doi) and doi != PUBLISHED_PREDECESSOR[1]:
+    if (version == distribution_version and version in DISTRIBUTION_VERSIONS
+            and re.fullmatch(r"10\.5281/zenodo\.\d+", doi) and doi != PUBLISHED_PREDECESSOR[1]):
         return
     raise ValueError("citation names neither the published predecessor nor a published v1.2 release")
 
 
-def verify_cff(text: str, citation: dict) -> None:
+def verify_cff(text: str, citation: dict, distribution_version: str) -> None:
     fields = cff_fields(text)
     if cff_scalar(fields.get("license", "")) != "BUSL-1.1":
         raise ValueError("current citation license differs")
@@ -131,7 +135,7 @@ def verify_cff(text: str, citation: dict) -> None:
     doi = cff_scalar(fields.get("doi", "")).lower().removeprefix("https://doi.org/")
     if version != citation["version"] or doi != citation["doi"]:
         raise ValueError("citation differs from the identity record")
-    verify_citation_pair(version, doi)
+    verify_citation_pair(version, doi, distribution_version)
 
 
 def verify_compiled_identity(root: Path, record: dict) -> None:
@@ -186,7 +190,8 @@ def verify_distribution(root: Path, *, require_sbom: bool = True) -> dict:
     record = load_record(root / IDENTITY_RECORD)
     if set(record) != EXPECTED_KEYS or record.get("schema") != "statesync-gkr.identity-distribution.v1":
         raise ValueError("unsupported identity distribution record")
-    if record["release_line"] != "v1.2" or record["distribution_version"] != DISTRIBUTION_VERSION or record["license"] != "BUSL-1.1":
+    distribution_version = record["distribution_version"]
+    if record["release_line"] != "v1.2" or distribution_version not in DISTRIBUTION_VERSIONS or record["license"] != "BUSL-1.1":
         raise ValueError("release line, distribution version or license differs")
     if digest((root / "LICENSE").read_bytes()) != LICENSE_SHA256:
         raise ValueError("approved root BSL text changed")
@@ -209,7 +214,7 @@ def verify_distribution(root: Path, *, require_sbom: bool = True) -> dict:
     citation = record["citation"]
     if set(citation) != {"version", "doi", "status"} or citation["status"] != "LATEST_PUBLISHED_RELEASE":
         raise ValueError("invalid citation section")
-    verify_cff((root / "CITATION.cff").read_text(encoding="utf-8"), citation)
+    verify_cff((root / "CITATION.cff").read_text(encoding="utf-8"), citation, distribution_version)
 
     crates = sorted((root / "crates").glob("*/Cargo.toml"))
     if len(crates) != 8:
@@ -244,6 +249,6 @@ def verify_distribution(root: Path, *, require_sbom: bool = True) -> dict:
     if any(p.get("licenseDeclared") != "BUSL-1.1" or p.get("licenseConcluded") != "BUSL-1.1" for p in own_rows):
         raise ValueError("own SBOM license differs")
     archive = [p for p in own_rows if p.get("SPDXID") == "SPDXRef-Package-SourceArchive"]
-    if archive[0].get("versionInfo") != DISTRIBUTION_VERSION:
+    if archive[0].get("versionInfo") != distribution_version:
         raise ValueError("SBOM source archive version differs from the distribution version")
     return record

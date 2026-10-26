@@ -4122,8 +4122,8 @@
     {
       "path": "release/v1.2/license_distribution.py",
       "mode": "100644",
-      "bytes": 13664,
-      "sha256": "02ee43e43bae053130ecabfe659f242fae1f3e53ce0a4314b3b54be41981757a",
+      "bytes": 14120,
+      "sha256": "0dd17ff54810954b713c4ba029233f3ce46c038b4489f0b78c7098f7ad25099a",
       "role": "release-evidence-or-tooling"
     },
     {
@@ -4143,8 +4143,8 @@
     {
       "path": "release/v1.2/test_license_distribution.py",
       "mode": "100644",
-      "bytes": 20459,
-      "sha256": "322e40db63a898d19d12a5d82ae7ab65a176e2a240c48313dc2f45db8622dd24",
+      "bytes": 24195,
+      "sha256": "3233710c5da82a6b5f9c1364e7880e9dd4c5fdc46bbfa7dd795e36aa9241ab00",
       "role": "release-evidence-or-tooling"
     },
     {
