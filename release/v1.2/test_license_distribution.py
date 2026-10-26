@@ -1,7 +1,7 @@
 """Exercise the v1.2 identity record, the release-line authority and their rejections."""
 from __future__ import annotations
 
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 import json
 import os
 from pathlib import Path
@@ -64,6 +64,27 @@ class IdentityRecordTests(unittest.TestCase):
     def entry_by_path(self):
         return {e["path"]: e for e in self.manifest["entries"]}
 
+    @contextmanager
+    def named_distribution(self, version: str, citation_version: str, doi: str, sbom_version: str):
+        """Name a distribution in the record, a citation in the record and CFF, and the SBOM version."""
+        record_path, cff_path, sbom_path = (self.root / name for name in (policy.IDENTITY_RECORD, "CITATION.cff", policy.SBOM))
+        record = policy.load_record(record_path)
+        current = record["citation"]
+        cff = (cff_path.read_text(encoding="utf-8")
+               .replace(f'\nversion: "{current["version"]}"\n', f'\nversion: "{citation_version}"\n')
+               .replace(f'\ndoi: "{current["doi"]}"\n', f'\ndoi: "{doi}"\n'))
+        fields = policy.cff_fields(cff)
+        self.assertEqual((policy.cff_scalar(fields["version"]), policy.cff_scalar(fields["doi"])), (citation_version, doi))
+        record["distribution_version"] = version
+        record["citation"].update(version=citation_version, doi=doi)
+        sbom = policy.load_record(sbom_path)
+        next(p for p in sbom["packages"] if p["SPDXID"] == "SPDXRef-Package-SourceArchive")["versionInfo"] = sbom_version
+        with ExitStack() as stack:
+            stack.enter_context(changed(record_path, json.dumps(record).encode()))
+            stack.enter_context(changed(cff_path, cff.encode("utf-8")))
+            stack.enter_context(changed(sbom_path, json.dumps(sbom).encode()))
+            yield
+
     def test_exact_current_source_and_recorded_identity_pass(self):
         value = self.check()
         self.assertIs(value["compiled_identity"]["reproduced"], True)
@@ -124,7 +145,7 @@ class IdentityRecordTests(unittest.TestCase):
         path = self.root / policy.IDENTITY_RECORD
         mutations = [
             ("license", lambda v: v.__setitem__("license", "MIT")),
-            ("version", lambda v: v.__setitem__("distribution_version", "1.2.1")),
+            ("version", lambda v: v.__setitem__("distribution_version", "1.3.0")),
             ("reproduced", lambda v: v["compiled_identity"].__setitem__("reproduced", False)),
             ("builds", lambda v: v["compiled_identity"].__setitem__("clean_build_count", 1)),
             ("image", lambda v: v["compiled_identity"].__setitem__("image_id", "0" * 64)),
@@ -166,7 +187,8 @@ class IdentityRecordTests(unittest.TestCase):
                 policy.verify_distribution(self.root)
 
     def test_cff_comment_duplicate_and_historical_doi_rejected(self):
-        citation = policy.load_record(self.root / policy.IDENTITY_RECORD)["citation"]
+        record = policy.load_record(self.root / policy.IDENTITY_RECORD)
+        citation, distribution = record["citation"], record["distribution_version"]
         valid = (self.root / "CITATION.cff").read_text(encoding="utf-8")
         current = citation["doi"]
         self.assertEqual(valid.count(current), 1)
@@ -180,17 +202,49 @@ class IdentityRecordTests(unittest.TestCase):
             with self.subTest(candidate=candidate[-80:]):
                 self.assertNotEqual(candidate, valid)
                 with self.assertRaises(ValueError):
-                    policy.verify_cff(candidate, citation)
-        policy.verify_cff(valid.replace("license: BUSL-1.1", 'license: "BUSL-1.1" # current grant'), citation)
+                    policy.verify_cff(candidate, citation, distribution)
+        policy.verify_cff(valid.replace("license: BUSL-1.1", 'license: "BUSL-1.1" # current grant'), citation, distribution)
 
     def test_citation_names_the_published_predecessor_or_a_published_v12_release(self):
-        policy.verify_citation_pair("1.1.1", "10.5281/zenodo.23280552")
-        policy.verify_citation_pair("1.2.0", "10.5281/zenodo.99999999")
-        for pair in [("1.2.0", "10.5281/zenodo.23280552"), ("1.1.0", "10.5281/zenodo.23136385"),
-                     ("1.2.1", "10.5281/zenodo.99999999"), ("1.2.0", "10.1234/other.1")]:
+        for distribution in policy.DISTRIBUTION_VERSIONS:
+            with self.subTest(distribution=distribution):
+                policy.verify_citation_pair("1.1.1", "10.5281/zenodo.23280552", distribution)
+                policy.verify_citation_pair(distribution, "10.5281/zenodo.99999999", distribution)
+        for pair in [("1.2.0", "10.5281/zenodo.23280552", "1.2.0"), ("1.1.0", "10.5281/zenodo.23136385", "1.2.0"),
+                     ("1.2.1", "10.5281/zenodo.99999999", "1.2.0"), ("1.2.0", "10.1234/other.1", "1.2.0"),
+                     ("1.2.0", "10.5281/zenodo.99999999", "1.2.1"), ("1.2.1", "10.5281/zenodo.23280552", "1.2.1"),
+                     ("1.2.1", "10.1234/other.1", "1.2.1"), ("1.3.0", "10.5281/zenodo.99999999", "1.3.0"),
+                     ("1.2.2", "10.5281/zenodo.99999999", "1.2.2")]:
             with self.subTest(pair=pair):
                 with self.assertRaises(ValueError):
                     policy.verify_citation_pair(*pair)
+
+    def test_patch_distribution_passes_when_record_citation_and_sbom_agree(self):
+        with self.named_distribution("1.2.1", "1.2.1", "10.5281/zenodo.99999999", "1.2.1"):
+            value = self.check()
+        self.assertEqual((value["distribution_version"], value["citation"]["version"]), ("1.2.1", "1.2.1"))
+
+    def test_patch_record_with_another_citation_or_sbom_version_rejected(self):
+        cases = [
+            # Only the record moves to 1.2.1; the citation and the SBOM stay at 1.2.0.
+            ("1.2.0", "10.5281/zenodo.23643505", "1.2.0", "citation names neither"),
+            # The record and the SBOM move to 1.2.1; the citation stays at 1.2.0.
+            ("1.2.0", "10.5281/zenodo.23643505", "1.2.1", "citation names neither"),
+            # The record and the citation move to 1.2.1; the SBOM stays at 1.2.0.
+            ("1.2.1", "10.5281/zenodo.99999999", "1.2.0", "SBOM source archive version"),
+        ]
+        for citation_version, doi, sbom_version, message in cases:
+            with self.subTest(citation=citation_version, sbom=sbom_version), \
+                    self.named_distribution("1.2.1", citation_version, doi, sbom_version):
+                with self.assertRaisesRegex(ValueError, message):
+                    policy.verify_distribution(self.root)
+
+    def test_distribution_outside_the_line_rejected_even_when_consistent(self):
+        for version in ("1.3.0", "1.2.2"):
+            with self.subTest(version=version), \
+                    self.named_distribution(version, version, "10.5281/zenodo.99999999", version):
+                with self.assertRaisesRegex(ValueError, "distribution version or license differs"):
+                    policy.verify_distribution(self.root)
 
     def test_own_sbom_and_caller_metadata_rejected_when_mislabeled(self):
         path = self.root / policy.SBOM
