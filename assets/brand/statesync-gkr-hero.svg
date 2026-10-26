@@ -66,6 +66,6 @@
     <path d="M20 51H112M20 73H88M20 95H100" stroke="#66B8D2" stroke-width="4" stroke-linecap="round"/>
     <g fill="#75E3B0"><circle cx="20" cy="51" r="4"/><circle cx="20" cy="73" r="4"/><circle cx="20" cy="95" r="4"/></g>
     <path d="M20 116H112" stroke="#2B5753"/>
-    <text x="20" y="129" fill="#D5E4E0" font-size="9" letter-spacing=".8">ENGINE / V1.1.1</text>
+    <text x="20" y="129" fill="#D5E4E0" font-size="9" letter-spacing=".8">ENGINE / V1.2.1</text>
   </g>
 </svg>

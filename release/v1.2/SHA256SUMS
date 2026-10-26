@@ -1,6 +1,6 @@
 880456ed769f8c1bc41883b15b418300c28b01b1f2aec54c09f2a38fe25761df  statesync-gkr-v1.1-proof-manifest.json
 67a00effdd8910d1615df7fbcb0d670370961940214ea668a133048d81c107b5  statesync-gkr-v1.1-public-inputs.json
-5c75fb9a2665790f8b3ecead14d89c10dfbec1eecf19dff87755feb3a124a6f6  statesync-gkr-v1.2-attachments.json
+c2fbc632e3d48dd324f3d95d4f6e78ecb0c782f1378b95dd7da1d6fb7be4e258  statesync-gkr-v1.2-attachments.json
 34466e5ce04a074c8072f302da21ace72e9118085c0290467d1cfd8d30201d8b  statesync-gkr-v1.2-dependency-update-policy.json
 df4d95ee7e353d4281419b5bc8adc4860292a3ada32a515d6fd6a52ecc09b261  statesync-gkr-v1.2-expected-guest-identity.json
 e441ee976d22131a498f59a04ce4c7ed82b8b69b9b2980d5343c4d755a58887b  statesync-gkr-v1.2-frozen-source-allowlist.json
@@ -9,8 +9,8 @@ c01ab539e6ac3c483863d12cb395504832480861572031e57b80a9747fdaa5c5  statesync-gkr-
 c5a95ae6d76422a6e51e2a4cfd2110653a7e40003ff94b2ac2c3bff383c4c26c  statesync-gkr-v1.2-proof-manifest.json
 1785b88baeb7dbc49aa2dee0913bf86bc1a3bc22075e217881e257a8a6c9f39b  statesync-gkr-v1.2-proof.cbor
 7447ba9d07e71d8b66f426940e012a3a29fbfc30eebef43ff36131782930ec33  statesync-gkr-v1.2-protected-source-manifest.json
-6aa5d6a3c5d4510b6de9d10f3f59070ca6cffc6056fd4dee46b887cfc407d125  statesync-gkr-v1.2-provenance.intoto.jsonl
+d40ddb994679ed25e9da738707c5a489fd670f77f1cb3656def7cbd616fed1f4  statesync-gkr-v1.2-provenance.intoto.jsonl
 6bdf325d5a2d85be19acc1057c87b1cca5af39214bb85ac2838f296b3553dea7  statesync-gkr-v1.2-public-inputs.json
-9a2fc0d7fb1cb873babb489839edc622fc24a104d294537120d1285561f35f5f  statesync-gkr-v1.2-sbom.spdx.json
+e556863f7108e3b545452950cf6f64039e75deb65a2168b6fe49eb1bb5969ccb  statesync-gkr-v1.2-sbom.spdx.json
 5be29dd579a3fb46fdf94152699bc6fd0008716e6f206359eb2e80ce8dea74fa  statesync-gkr-v1.2-smt-compiler-correctness.pdf
-1ed5fcac0a09104b119768792db24ad73af67ec285e33840fe399e7abd5ced62  statesync-gkr-v1.2-source.tar.gz
+9bf34fd96e6eacb85a2332b5d422057326b3701f4f67f0b5c51bde9e6ebbd2ac  statesync-gkr-v1.2-source.tar.gz
