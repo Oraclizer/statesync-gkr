@@ -26,7 +26,7 @@ cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --release --locked
 cargo run --release --locked --bin proof_digest
 python3 release/v1.2/verify.py --mode clean-history --require-proof \
-  --proof /path/to/statesync-gkr-v1.1-proof.cbor
+  --proof /path/to/statesync-gkr-v1.2-proof.cbor
 ```
 
 The receipt-gated example is local and host-only:
@@ -42,10 +42,12 @@ It creates a local candidate, submits no transaction, and leaves
 kept exactly as that submission happened; they are history, not a claim about
 the current identity.
 
-The proof file is a release attachment, not a source-tree member. It belongs
-to the historical v1.1 program; the required-proof command checks its exact
-size and hash against [IDENTITY_DISTRIBUTION.json](IDENTITY_DISTRIBUTION.json),
-which states that it does not cover the v1.2 program identity. Pull-request
+The proof file is a release attachment, not a source-tree member. It is a
+proof of the v1.2 program identity; the required-proof command checks its
+exact size and hash against
+[IDENTITY_DISTRIBUTION.json](IDENTITY_DISTRIBUTION.json), and
+[the saved-proof verifier](../../spikes/zkvm-wrap/README.md#verification)
+checks the receipt against the image ID and public journal. Pull-request
 checks validate the 79 protected files byte for byte, the sensitive-content
 rules, and the path-membership diff without generating or replacing a proof;
 the full-tree content manifests are enforced when a change lands on the

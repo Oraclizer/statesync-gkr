@@ -5,11 +5,14 @@ v1.2 source has its own program identity: two controlled clean builds of the
 identity source selection produced the same eight identity outputs, recorded
 in [the expected identity record](../../spikes/zkvm-wrap/identity/risc0-route-b-guest-expected-v1.2.json)
 and summarized in [IDENTITY_DISTRIBUTION.json](IDENTITY_DISTRIBUTION.json).
-The newest external proof belongs to the historical v1.1 program and is not a
-proof of the v1.2 program identity.
+The attached external proof is a proof of the v1.2 program identity; its
+production run and the public verifier receipt are recorded in
+[the proof manifest](PROOF_MANIFEST.json).
 
 - [Release verifier](verify.py)
 - [Identity and distribution record](IDENTITY_DISTRIBUTION.json)
+- [Proof manifest](PROOF_MANIFEST.json)
+- [Public inputs](PUBLIC_INPUTS.json)
 - [Attachment inventory](ATTACHMENTS.json)
 - [Checksums](SHA256SUMS)
 - [Software bill of materials](SBOM.spdx.json)
@@ -22,9 +25,11 @@ proof of the v1.2 program identity.
 - [Source reproduction recipe](SOURCE_RECIPE.md)
 - [Reproduce the release](../../REPRODUCING.md)
 
-The line is published as release v1.2.0 (signed tag `v1.2.0`), archived at
-[DOI 10.5281/zenodo.23643505](https://doi.org/10.5281/zenodo.23643505), and
-its changes are summarized in the [release notes](RELEASE_NOTES.md).
+The line is published as releases v1.2.0 and v1.2.1 (signed tags `v1.2.0` and
+`v1.2.1`). The current release, v1.2.1, is archived at
+[DOI 10.5281/zenodo.23655511](https://doi.org/10.5281/zenodo.23655511), and
+the changes of both releases are summarized in the
+[release notes](RELEASE_NOTES.md).
 Manifests on the main branch describe the current branch source tree.
 
 ## What changed in the protected source

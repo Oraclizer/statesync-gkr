@@ -11,12 +11,14 @@ RUSTFLAGS="-Ctarget-cpu=native" cargo run --release --locked --bin measure
 Historical development observations are in [`REPORT.md`](REPORT.md).
 
 Serving components for proof services, a reference proof server with four
-serving modes and a load frontend are in [`serving/`](serving/README.md).
+serving modes and a load frontend are in [`serving/`](serving/README.md). Their
+controlled v1.2.0 measurements are reported in
+[Serving capacity on one server](../docs/performance.md#serving-capacity-on-one-server).
 
-These results are not a controlled-hardware release benchmark. They were not
-produced for comparative leadership claims and do not establish production
-latency, capacity, resource ceilings, deadline compliance, or behavior under
-network, queue, lock, retry, and overload conditions.
+`REPORT.md` records development observations from one machine. Latency,
+capacity, deadline and overload results come from the controlled studies in
+[Performance and operating profiles](../docs/performance.md), which state their
+hosts, timers and conditions.
 
 The controlled studies in this directory are summarized online in
 [Benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/), with

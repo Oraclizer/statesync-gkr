@@ -39,8 +39,8 @@ class IdentityRecordTests(unittest.TestCase):
         names.update({
             "LICENSE", "CITATION.cff", policy.PROTECTED_MANIFEST, policy.IDENTITY_RECORD, policy.SBOM,
             "release/v1.2/FROZEN_SOURCE_ALLOWLIST.json", policy.EXPECTED_IDENTITY_RECORD,
-            policy.HISTORICAL_PROOF_MANIFEST, "release/v1.1/PROTECTED_SOURCE_MANIFEST.json",
-            "release/v1.1/FROZEN_SOURCE_ALLOWLIST.json",
+            policy.HISTORICAL_PROOF_MANIFEST, "release/v1.2/PROOF_MANIFEST.json",
+            "release/v1.1/PROTECTED_SOURCE_MANIFEST.json", "release/v1.1/FROZEN_SOURCE_ALLOWLIST.json",
         })
         for caller in policy.CALLERS:
             names.update({f"{caller}/Cargo.toml", f"{caller}/LICENSE"})
@@ -88,7 +88,8 @@ class IdentityRecordTests(unittest.TestCase):
     def test_exact_current_source_and_recorded_identity_pass(self):
         value = self.check()
         self.assertIs(value["compiled_identity"]["reproduced"], True)
-        self.assertEqual(value["proof"]["scope"], "historical-v1.1-program-only")
+        self.assertEqual(value["proof"]["scope"], "current-v1.2-program")
+        self.assertIs(value["proof"]["covers_current_identity"], True)
         self.assertEqual(policy.identity_source_digest(self.root, self.manifest), (64, policy.IDENTITY_SOURCE_SHA256))
 
     def test_kernel_byte_mutation_rejected(self):
@@ -143,15 +144,16 @@ class IdentityRecordTests(unittest.TestCase):
 
     def test_record_false_claims_and_authority_changes_rejected(self):
         path = self.root / policy.IDENTITY_RECORD
+        historical_image = policy.load_record(self.root / policy.HISTORICAL_PROOF_MANIFEST)["program_identity"]["image_id"]
         mutations = [
             ("license", lambda v: v.__setitem__("license", "MIT")),
             ("version", lambda v: v.__setitem__("distribution_version", "1.3.0")),
             ("reproduced", lambda v: v["compiled_identity"].__setitem__("reproduced", False)),
             ("builds", lambda v: v["compiled_identity"].__setitem__("clean_build_count", 1)),
             ("image", lambda v: v["compiled_identity"].__setitem__("image_id", "0" * 64)),
-            ("covers", lambda v: v["proof"].__setitem__("covers_current_identity", True)),
-            ("scope", lambda v: v["proof"].__setitem__("scope", "current-v1.2-program")),
-            ("bound", lambda v: v["proof"].__setitem__("bound_image_id", v["compiled_identity"]["image_id"])),
+            ("covers", lambda v: v["proof"].__setitem__("covers_current_identity", False)),
+            ("scope", lambda v: v["proof"].__setitem__("scope", "historical-v1.1-program-only")),
+            ("bound", lambda v: v["proof"].__setitem__("bound_image_id", historical_image)),
             ("proof-bytes", lambda v: v["proof"].__setitem__("sha256", "0" * 64)),
             ("source", lambda v: v["identity_source"].__setitem__("sha256", "0" * 64)),
             ("baseline", lambda v: v["historical_baseline"].__setitem__("allowlist_sha256", "0" * 64)),
@@ -162,6 +164,7 @@ class IdentityRecordTests(unittest.TestCase):
         for label, mutate in mutations:
             candidate = policy.load_record(path)
             mutate(candidate)
+            self.assertNotEqual(candidate, policy.load_record(path), label)
             with self.subTest(field=label), changed(path, json.dumps(candidate).encode()):
                 with self.assertRaises(ValueError):
                     policy.verify_distribution(self.root)

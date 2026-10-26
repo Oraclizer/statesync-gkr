@@ -9,6 +9,40 @@ versioned.
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-10-26
+
+Archived as [DOI 10.5281/zenodo.23655511](https://doi.org/10.5281/zenodo.23655511).
+
+The library crates, the proof format and the program identity are unchanged
+from 1.2.0.
+
+### Added
+
+- An external zkVM proof of the v1.2 program identity,
+  `statesync-gkr-v1.2-proof.cbor`: a secure succinct RISC Zero proof bound to
+  image ID `1a8b55f4e1a5f703386dcfc07e5e8b2e42b5adade6be3d0057f2d565f75eb131`.
+  The zkVerify RISC0 verifier on the Volta test network accepted it and
+  aggregated it into an authenticated receipt. `release/v1.2/PROOF_MANIFEST.json`
+  and `release/v1.2/PUBLIC_INPUTS.json` record the proof, its public statement
+  and the receipt, and `spikes/zkvm-wrap/logs/` records the run that produced
+  it.
+
+### Changed
+
+- The identity and distribution record, the attachment inventory, the release
+  check and the documentation name the v1.2 proof as the current proof. The
+  v1.1 proof stays a record of the v1.1 program and is no longer attached to
+  this line's release.
+- The saved-proof verifier in `spikes/zkvm-wrap/risc0-proof-verify` checks the
+  v1.2 proof against the v1.2 image ID and public journal.
+- Documentation: the README, the performance profiles, the benchmark and
+  serving guides, the usage and architecture guides and the troubleshooting
+  notes report the v1.2.0 measurements, with v1.1.0 measured on the same days
+  and instance types as the reference. They describe how to choose a serving
+  mode and its settings and how to build for proving speed. The README adds a
+  figure of the serving results, and CONTRIBUTING lists the serving-crate
+  checks that CI runs.
+
 ## [1.2.0] - 2026-10-25
 
 Archived as [DOI 10.5281/zenodo.23643505](https://doi.org/10.5281/zenodo.23643505).

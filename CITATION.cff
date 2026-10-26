@@ -13,12 +13,12 @@ abstract: >-
   implementation is related to those models through a conditional forward
   verifier-acceptance theorem with an explicit Rust/model value-relation
   premise, recorded contract proofs for selected functions, differential
-  tests, and adversarial vectors. The attached zkVM proof applies to the
-  recorded historical v1.1 program.
+  tests, and adversarial vectors. The attached zkVM proof is a proof of the
+  recorded v1.2 program identity.
 type: software
-version: "1.2.0"
-date-released: "2026-10-25"
-doi: "10.5281/zenodo.23643505"
+version: "1.2.1"
+date-released: "2026-10-26"
+doi: "10.5281/zenodo.23655511"
 # Component release version; separate from unpublished Cargo package versions.
 authors:
   - family-names: "Kim"

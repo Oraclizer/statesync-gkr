@@ -5,7 +5,9 @@ prover owns, how quickly an internal computation completes, and which actual
 arrival load reaches cryptographic acceptance within a stated latency budget.
 These intervals have separate data and units. The [architecture guide](architecture.md)
 connects the results to nine implementation benefits; [usage](usage.md)
-describes their application conditions.
+describes their application conditions. The v1.2.0 sections come first and
+pair each result with v1.1.0 measured on the same day; the sections after them
+keep the earlier v1.1.0 campaigns as their own series.
 The [replay guide](../benches/controlled-capacity-2026-10-07/README.md) contains
 actual small-control commands. The [dataset locator](../benches/controlled-capacity-2026-10-07/DATASET_LOCATOR.json)
 defines the complete raw/table/figure layout and its current preparation status.
@@ -22,12 +24,210 @@ The documentation's
 [Benchmark results](https://oraclizer.io/ss-gkr/docs/benchmarks/results/) page
 lists each result with its comparison target and conditions.
 
-All studies use the immutable v1.1.0 kernel. The earlier two C8a baremetal
+The v1.2.0 studies measured the release tag v1.2.0, commit
+`8b2908160f36adc233d7b869a403d2ee4d3502a5`, and ran v1.1.0 on the same day, on
+the same instance types and with the same corpus, frontend program and latency
+budgets as the reference. Those hosts ran Amazon Linux 2023 with kernel 6.18,
+while the earlier campaigns ran kernel 6.8; pairing the releases on the same
+day keeps that difference out of the version comparisons. Ratios between
+releases come from these same-day pairs unless a value names the earlier
+campaign.
+
+The earlier studies use the immutable v1.1.0 kernel. Its two C8a baremetal
 campaigns contain 243 and 175 distinct process executions on different hosts.
-The later controlled study uses actual C8a 48/96/192-core VMs, fixed corpora,
+The later v1.1.0 controlled study uses actual C8a 48/96/192-core VMs, fixed corpora,
 separate frontend verification, generic same-driver memory contrasts and
 bounded memory-limit tests. Changing a worker count on a large VM is separately
 labelled and is not a measurement of a smaller machine.
+
+## What v1.2.0 changes
+
+Version 1.2.0 keeps the verifier, the proof format, the transcript order and
+every proof byte. It changes how the sparse prover computes its round
+messages, adds serving components with a reference proof server in
+[`benches/serving`](../benches/serving/README.md), and refuses two misuses in
+every build profile.
+
+| Measure | v1.1.0 | v1.2.0 | Conditions |
+| --- | --- | --- | --- |
+| Highest offered rate with every timed request accepted within 1 s, one 192-core VM | 1,000/s in the earlier campaign; 1,150/s on the same day in one 60-s run, the highest rate tried | 3,300/s on one connection; at least 5,000/s on two | v1.2.0 continuous mode; 3,300/s confirmed in three 60-s runs; the two-connection value comes from 15-s screens at a frontend-limited point and is a lower bound |
+| p99 at 1,000 requests/s, one 192-core VM | 433.8–475.1 ms | 33.7–33.9 ms | Three 60-s runs each, 16-core frontend |
+| Highest offered rate within 1 s, one 96-core VM | 500/s; 1,000/s failed | 3,000/s; 4,000/s failed | Screens, not confirmations: one 15-s run per rate for v1.2.0 on the 48-core frontend, one 20-s run per rate for v1.1.0 |
+| Highest offered rate within 1 s, one 48-core VM | 500/s; 1,000/s failed | 2,000/s; 2,400/s failed | Screens, not confirmations: one 15-s run per rate for each release |
+| Compute cost per million requests at that rate, 192-core VM | USD 2.87 at 1,000/s; at most USD 2.50 at 1,150/s | USD 0.87 at 3,300/s | On-demand VM price, continuous operation, frontend excluded; the same-day v1.1.0 value is an upper bound because higher rates were not tried |
+| Proving-only rate at 192 workers, bare metal | 3,195.50 / 2,947.08 / 2,102.02 per s | 7,713.71 / 7,220.36 / 5,390.07 per s | Membership / non-membership / update, depth 24, batch 768 |
+| Prepared request p50 on one thread | 42.10 / 46.10 / 65.03 ms | 16.95 / 18.22 / 24.62 ms | Same operations at depth 24, three processes of 1,000 timed requests each |
+| Allocation calls per proof | 1,282 | 85 | Mixed two-layer circuit of width 4,096, counting-allocator build |
+| Release-build misuse checks | Debug builds only | Every build: `SyncError::KindMismatch`, and a wrong-width leaf pre-image panics | `src/lib.rs`, `crates/primitives/src/hash.rs` |
+
+## Serving capacity on one server
+
+The reference proof server ran in continuous mode on C8a VMs with 48, 96 and
+192 cores. A separate frontend offered the membership/non-membership/update
+1:1:1 mix at depth 24 from 192 fixed fixtures per kind, verified every complete
+proof against its original request and timed each request from its scheduled
+arrival to that acceptance. Both releases faced the same frontend program, the
+load caller of the earlier v1.1.0 campaign. A rate passes when every repeat
+accepted every timed request within one second. A point is marked
+frontend-limited when the frontend used more than 70% of its cores or its
+verification-wait p99 exceeded 50 ms while the server stayed below 90% CPU.
+Such a point bounds the frontend, so it is left out when a server's highest
+rate is judged. [Serving components](../benches/serving/README.md#settings-used-in-the-controlled-measurements)
+lists the server settings.
+
+### 192 cores and the network path
+
+| Measure | v1.1.0, same day | v1.2.0 continuous | v1.2.0 batch-fused |
+| --- | ---: | ---: | ---: |
+| p99 at 1,000 requests/s, three 60-s runs | 433.8–475.1 ms | 33.7–33.9 ms | 95.6–96.0 ms |
+| p99 at 1,150 requests/s, 60-s runs | 580.1 ms (one run) | 33.6 ms (three runs) | 96.1–96.3 ms (three runs) |
+| Highest rate within 1 s on one connection, three 60-s runs | not measured above 1,150/s | 3,300/s, p99 35.4–38.5 ms | 3,300/s, p99 225.1–300.3 ms |
+
+Every run in the first two rows accepted every timed request within one
+second. The v1.1.0 record of the earlier campaign met one second at 1,000/s,
+and at 1,150/s it accepted 70.37% within one second. The 3,300/s
+confirmations used a 48-core frontend, because the 16-core frontend reached its
+own limit at 2,000/s.
+
+A 30-minute continuous run at 3,300 requests/s accepted all 5,940,000 timed
+requests within one second, with p50 26.7 ms, p99 35.3 ms and maximum 58.8 ms.
+Straight-line fits over the run give -0.006 pending requests and -0.006 ms of
+cohort p99 per minute, and +0.08 MiB of server RSS per minute. A second
+192-core VM reproduced the result: three 60-second runs at 3,300 requests/s
+accepted every timed request within one second with p99 37.6–46.4 ms, and its
+1,000/s p99 was 34.1 ms against 666.8 ms for v1.1.0 on that VM. These periods
+describe the observations.
+
+Each reply carries one complete encoded proof, on average about 182.6 kB on
+the wire for this mix. At 3,300 requests/s one connection carried 4.82 Gbit/s
+of reply frames. At 3,400 requests/s the reply traffic on one connection
+levelled at about 4.96 Gbit/s while, in the one-connection runs up to that
+rate, the server used at most 50% and the frontend at most 52% of their cores,
+and the one-second budget failed in all three 60-second runs. This matches the cloud provider's documented 5-Gbit/s
+limit for a single flow between instances outside a cluster placement group.
+With two connections to the same server, 15-second screens met one second at
+every rate from 3,400 to 5,000 requests/s, and the server sent 7.30 Gbit/s at
+5,000/s. There the frontend used 74% of its cores and was marked
+frontend-limited, so 5,000/s is a lower bound for the server. Reply traffic is
+computed from the reply wire bytes of completed requests, before TCP/IP
+headers. Above the one-connection limit the two modes degraded differently: at
+3,500 and 4,000 requests/s continuous completions fell to about 2,000 to 2,200
+per second, while batch-fused held about 3,270 to 3,290 per second.
+
+### 48 and 96 cores
+
+| Server | v1.1.0, same day | v1.2.0 continuous | What limited v1.2.0 |
+| --- | --- | --- | --- |
+| 48 cores | 500/s; 1,000/s failed with 7.9% within 1 s | 2,000/s with p99 147.0 ms; 2,400/s failed with 30.0% within 1 s | Server CPU at 96% |
+| 96 cores | 500/s; 1,000/s failed with 21.1% within 1 s | 3,000/s with p99 37.6 ms; 4,000/s failed with 35.2% within 1 s | Reply transfer on one connection: server CPU at 83%, return budget full, replies at 4.95 Gbit/s |
+
+These rates come from screens, not confirmations: the v1.2.0 points are
+single 15-second runs per rate on the 48-core frontend, and the v1.1.0 points
+single 15-second (48 cores) and 20-second (96 cores) runs per rate on the
+16-core frontend. With only 500 and 1,000/s measured for v1.1.0, its true limit
+lies between them. Counting only runs whose frontend was not the limit, the
+highest completion rates under overload compare throughput more closely: 1,983
+against 599 per second on 48 cores (3.31 times) and 3,386 against 825 per
+second on 96 cores (4.10 times).
+
+At 1,000 requests/s, one 96-core server and two 48-core servers each gave p99
+33.7–34.1 ms with every timed request within one second in three 20-second
+runs. In the earlier v1.1.0 campaign, the single 96-core server accepted 27–32%
+within one second at that rate while the two 48-core servers met it.
+
+At 500 requests/s for 900 seconds on the 48-core VM, all 450,000 timed requests
+were accepted within one second, with p50 25.6 ms, p99 33.4 ms and maximum
+34.0 ms, against p99 267.0 ms and maximum 307.1 ms for v1.1.0 in the earlier
+campaign.
+
+### Overload and server memory
+
+Two 60-second runs offered more than the one-connection limit to the 192-core
+server in continuous mode. At 5,100 requests/s with the server process limited
+to 2,760 MiB of memory and no swap, the server's sampled peak RSS was
+548,064 KiB (535.2 MiB), about 19% of the limit (402,948 KiB or 393.5 MiB by
+GNU time), and it exited normally.
+Of 306,000 timed requests, 125,769 were accepted and 1.15% of the offered
+requests met one second. The server rejected none: the frontend's pending
+limit of 8,192 requests equals the server's admission cap, so the excess,
+180,231 requests, stopped at the frontend unsent, while the server's return
+budget filled to its cap of 192 responses and bounded the finished replies it
+held. With the server's sending rate limited to 400 Mbit/s at 3,400
+requests/s, the sampled peak RSS was 493 MiB (373 MiB by GNU time); 20,131 of
+204,000 timed requests were accepted, 179,756 were not sent and 4,113 sent
+requests had no reply by the frontend's 15-second drain limit. The server
+rejected no request in that run either.
+
+### Compute cost per million requests
+
+At the highest rate that met one second, the 192-core VM costs about USD 0.87
+per million requests with v1.2.0, against USD 2.87 at 1,000/s in the earlier
+campaign and at most USD 2.50 at 1,150/s on the same day with v1.1.0. The
+same-day value is an upper bound: it comes from one 60-second run at 1,150/s,
+and v1.1.0 was not tried at higher rates. The estimate is
+the VM's on-demand Linux hourly price, USD 10.34592 for the 192-core instance
+type in US East (N. Virginia) on 2026-10-25, divided by the measured rate for
+continuous operation. It leaves out the frontend, storage, network transfer
+and taxes.
+
+## Prover computation in v1.2.0
+
+### One thread and the worker curve
+
+On the same 192-core C8a bare-metal type as the earlier CPU campaign, at depth
+24 and batch 768, v1.2.0 proving-only rates are 7,713.71, 7,220.36 and
+5,390.07 inner proofs/s at 192 workers for membership, non-membership and
+update, against 3,195.50, 2,947.08 and 2,102.02 for v1.1.0 measured the same
+day. At 1, 48, 96 and 192 workers the v1.2.0 rate is 2.53, 2.48, 2.43 and 2.41
+times higher for membership, 2.56, 2.52, 2.47 and 2.45 times for
+non-membership, and 2.71, 2.68, 2.63 and 2.56 times for update. The same-day
+v1.1.0 membership rates came within 0.4% of the earlier campaign at 1 and
+192 workers.
+
+A prepared request on one thread took 16.95, 18.22 and 24.62 ms at the median,
+against 42.10, 46.10 and 65.03 ms for v1.1.0 on the same day. A fresh request,
+which also compiles the circuit and commits to it, took 129.92, 130.98 and
+250.09 ms. Within the same runs, reuse therefore lowers per-request latency
+7.66, 7.19 and 10.13 times with v1.2.0, against 3.69, 3.46 and 4.45 times in
+the earlier v1.1.0 campaign; the same-day v1.1.0 runs measured prepared
+requests only. In the five-process output-policy supplement, parallel output
+lowers the complete prepared local-batch time 14.64, 14.10 and 14.45 times with
+v1.2.0, against 10.71, 9.97 and 9.71 times in the earlier v1.1.0 campaign; the
+ratio grew because proving got faster.
+
+### Allocations per proof
+
+In the memory study's mixed two-layer circuit of width 4,096, with one job
+pinned to one CPU, one v1.2.0 proof made 85 allocation calls against 1,282 for
+the v1.1.0 prover rebuilt and run the same day, and took 1.80 ms against
+4.64 ms at the median. At width 65,536 the calls fell from 1,698 to 101 per
+proof and the proof time from 79.11 to 28.84 ms. The additional requested
+allocation peak and the oracle's owned Vec capacity did not change. Requested
+bytes per proof rose from 1,571,688 to 1,710,696 B at width 4,096, as fewer,
+larger requests replaced many small ones. Allocation calls, requested bytes,
+the requested peak and process RSS are separate measures.
+
+### Build settings
+
+| Build | Membership | Non-membership | Update | Relative to native |
+| --- | ---: | ---: | ---: | ---: |
+| Default `--release` | 28.18 ms | 30.42 ms | 42.02 ms | 1.66–1.71 |
+| `-Ctarget-cpu=x86-64-v3` | 15.26 ms | 16.56 ms | 22.10 ms | 0.90 |
+| `-Ctarget-cpu=native` | 16.96 ms | 18.33 ms | 24.63 ms | 1 |
+
+Each value is the median latency of one prepared depth-24 request on one
+thread of the 192-core bare-metal host, from one process of 1,000 timed
+requests per build and operation. These build comparisons were not repeated,
+so the faster x86-64-v3 result on this host is a single-process observation.
+The native build uses AVX-512 on this host and the x86-64-v3 build AVX2.
+
+### Proof bytes
+
+Version 1.2.0 proves the same bytes as v1.1.0. In the engine study, the proof
+hashes of 768 fixtures per operation at depths 24, 28 and 32, in the native and
+the default build, all equal the v1.1.0 hashes: 13,824 comparisons. The memory
+study's 284 v1.2.0 proofs match the earlier campaign's hashes, and the serving
+runs checked accepted replies against the canonical proofs of the fixed corpus.
 
 ## One generic prover: memory and result preservation
 
@@ -53,6 +253,26 @@ observations match and verification accepts every completed pair. These
 observations use benchmark field-basis JSON, separate from `inner-proof-v1`;
 Sparse-only scale cases have no completed Dense counterpart. The controlled
 contrast does not establish an external-engine ranking.
+
+The v1.2.0 rerun of this campaign on the same VM type gives, for production
+Sparse at mixed width 4,096:
+
+| Boundary | v1.1.0, earlier campaign | v1.2.0 |
+|---|---:|---:|
+| Requested allocation peak | 579,584 B | 579,584 B |
+| Exposed oracle Vec capacity | 508,096 B | 508,096 B |
+| Whole-process GNU-time RSS | 20,736 KiB | 20,876 KiB |
+| Observed prover interval | 4,630,590 ns | 1,797,814 ns |
+| Allocation calls per proof | 1,282 | 85 |
+| Requested bytes per proof | 1,571,688 B | 1,710,696 B |
+
+The Dense reference code did not change. With v1.2.0 the allocation ratio is
+still 3,242.41 and the process-RSS ratio is 88.87; the published 89.46 is the
+v1.1.0 measurement.
+The Dense reference proved the same circuit in 11.63 s on the v1.2.0 run day
+and in 11.61 s in the earlier campaign, so the Sparse prover interval is 6,470
+times shorter with v1.2.0 and 2,507 times shorter with v1.1.0 (medians of three
+processes).
 
 Allocator counters and stage observation are enabled inside both prover timers.
 JSON construction, hashing and verification occur afterwards but remain in
@@ -82,11 +302,14 @@ cases. Dense width 8,192 was OOM-killed before returning a proof; Sparse widths
 8,192/16,384/32,768/65,536 each returned one warmup and three timed proofs.
 Width 65,536 is the largest tested point, not a global supported maximum.
 An address-space abort, native OOM, unexecuted condition and controller stop
-are different dispositions. Missing failure RSS is not manufactured.
+are different dispositions. Missing failure RSS is not manufactured. The
+v1.2.0 rerun of all 17 attempts gave the same outcome for each attempt.
 
-## Internal computation: preserved earlier campaigns
+## Internal computation: earlier v1.1.0 campaigns
 
-The [first CPU campaign](../benches/controlled-cpu-2026-10-06/README.md) separates
+These v1.1.0 results are the reference series for
+[Prover computation in v1.2.0](#prover-computation-in-v120). The
+[first CPU campaign](../benches/controlled-cpu-2026-10-06/README.md) separates
 prepared proving, witness creation, fresh setup, worker counts and depth.
 At depth 24/batch 768/192 workers its proving-only rates are
 3,207.74/2,930.85/2,092.03 inner proofs/s for membership/absence/update.
@@ -112,7 +335,8 @@ preparation, proof generation, encoding and transport are outside the timer.
 Across nine depth/operation profiles, the Table/Derived ratio is 10.80–23.68.
 Each value is the median of five process summaries, each itself the median of
 300 same-proof paired ratios. Table is already a sparse wiring oracle; it is
-not the Dense prover memory reference.
+not the Dense prover memory reference. The verifier did not change in
+v1.2.0.
 
 The output-mode ratio 9.71–10.71 applies to depth 24, batch 768 and 192 workers.
 It times the complete prepared local batch: witness generation, proving,
@@ -137,14 +361,15 @@ conditional forward acceptance theorem, summarized in the
 acceptance checks; the measured speed and memory improvements are separate
 engineering observations.
 
-## Arrival through actual full-proof acceptance
+## Arrival through actual full-proof acceptance: v1.1.0 batch caller
 
-The thin caller uses independent periodic scheduled arrivals, one FIFO per
+The v1.1.0 thin caller uses independent periodic scheduled arrivals, one FIFO per
 operation kind, oldest-ready flushing, a batch cap and a maximum waiting
 setting. Each worker processes one compute batch at a time, parallelizes
 witness/proof/encoding, then sends the complete encoded proof. The frontend
 checks framing, hash and original-request binding and calls the strict encoded
-verifier. The measured endpoint is that final acceptance.
+verifier. The measured endpoint is that final acceptance. The reference
+server's `original` mode in `benches/serving` reproduces this loop.
 
 Each offered request has a unique identity. Submitted requests retain their
 sent, admitted, returned, received and completed chain; explicit pre-send
@@ -186,7 +411,7 @@ comparison supports the measured deployment policy rather than proving that
 every 96-core setting is inferior. Proof traffic is routed once; total encoded
 body bytes at the same offered rate are equal across the two topologies.
 
-## Fine tuning, adverse operating points and separate confirmation
+## Fine tuning, adverse operating points and separate confirmation: v1.1.0
 
 The 48-core fine study preserves nineteen conditions with three processes each,
 including workers 32/36/40/44, caps 16/24/32/40/48, waits 1/5/10 ms, rates
@@ -265,12 +490,19 @@ timed offers. A completion-window rate includes drain; acceptance count divided
 by scheduled duration can hide queue growth and is not sustainable capacity.
 Phase plus run ID and process identity avoids conflating repeated run names.
 
+The v1.2.0 serving runs keep five outcomes for a timed request: accepted
+within the budget, accepted late, rejected by the server with a reason string,
+not sent because the frontend's pending limit was full, and sent without a
+reply by the frontend's drain limit. The last two count as failures in success
+fractions and are excluded from accepted-latency quantiles. Continuous mode
+has no batch rows; each reply's `job_stages` record carries that job's
+dispatch, witness, proof, encoding, hash, release and write times.
+
 These measurements end at inner-proof acceptance. They do not measure a live
 database commit, sequential root adoption, consensus, cross-domain settlement
 or product finality, and they add no whole-program or Fiat–Shamir assurance.
-The bounded external KoalaBear compatibility check did not establish a fair
-large-scale external-engine comparison. Plonky3 0.4.3 supplies field, hash and
-challenger primitives; it is not the external GKR baseline. The separately
-probed external GKR implementation was Lambdaworks. Raw diagnostics remain preserved;
+Plonky3 0.4.3 supplies field, hash and challenger primitives. A bounded
+external KoalaBear compatibility check probed the Lambdaworks GKR
+implementation. Raw diagnostics remain preserved;
 results are selected for their actual contribution to the implementation and
 operating questions, with complete validity and provenance disclosed.

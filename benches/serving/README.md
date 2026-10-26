@@ -63,6 +63,28 @@ let runner = ContinuousRunner::spawn(workers, queue, move |request| {
 measurements, for comparisons inside one binary. Every mode shares the same
 admission, rejection, framing, return budget and shutdown behavior.
 
+## Choosing a serving mode
+
+Use `continuous` when requests are independent and the client matches replies
+by job identifier. Use `batch-fused` when the client expects replies in batch
+order. `queued-return` and `original` serve comparisons with the earlier loop.
+
+In the controlled runs on one 192-core VM, with the balanced depth-24 mix and
+every timed request verified by a separate frontend:
+
+| Mode | p99 at 1,000 requests/s | Highest rate with every request within 1 s, one connection |
+| --- | ---: | ---: |
+| `continuous` | 33.7–33.9 ms | 3,300/s, p99 35.4–38.5 ms |
+| `batch-fused` | 95.6–96.0 ms | 3,300/s, p99 225.1–300.3 ms |
+| v1.1.0 serving loop, same day | 433.8–475.1 ms | 1,150/s in one 60-s run; higher rates not tried |
+
+Each cell comes from three 60-second runs, except the single 60-second v1.1.0
+run at 1,150/s. Above the one-connection limit, `batch-fused` kept about 3,270
+to 3,290 completions per second at 3,500 and 4,000 requests/s, while
+`continuous` fell to about 2,000 to 2,200. Proof bytes are the same in every
+mode. [Serving capacity on one server](../../docs/performance.md#serving-capacity-on-one-server)
+reports the full results.
+
 ## Run
 
 ```sh
@@ -72,10 +94,18 @@ target=benches/serving/target/release/ssgkr-serving
 "$target" load --out results/load-1 --targets 127.0.0.1:9400 --rate 100 --duration-sec 30 --verify-workers 8
 ```
 
-Build with `RUSTFLAGS="-C target-cpu=native"` for measurement; the default
-build does not use the CPU vector extensions the field arithmetic benefits
-from. Every result directory must be new; the server and frontend refuse to
-overwrite files.
+Build with `RUSTFLAGS="-C target-cpu=native"` on the host that runs the
+server; the default build does not use the CPU vector extensions the field
+arithmetic benefits from. In the v1.2.0 one-thread measurements the default
+release build took 1.66–1.71 times as long per prepared proof as the native
+build, and both builds produce the same proof bytes. A native binary uses the
+instruction set of the CPU it was built for, so build it on the deployment
+host or name that CPU with `-C target-cpu`. Every result directory must be
+new; the server and frontend refuse to overwrite files.
+
+The frontend opens one connection for each `--targets` entry and spreads jobs
+across them in turn, so naming the same server twice gives two connections to
+it.
 
 ### Server options
 
@@ -108,7 +138,27 @@ admission closes, admitted jobs that have not started receive
 The return budget counts encoded buffer capacity only. Jobs in progress (one
 batch, or up to `--max-in-flight` jobs), prepared circuits, request frames,
 thread stacks, socket buffers and allocator overhead are outside it, so
-compare whole-process memory separately.
+compare whole-process memory separately. In the controlled overload run at
+5,100 requests/s on the 192-core VM, the return budget filled to its cap of
+192 responses while the excess requests waited at the frontend, whose pending
+limit equals `--max-queue`, so the server rejected none. Its sampled peak RSS
+was 548,064 KiB (535.2 MiB) under a 2,760-MiB limit (402,948 KiB or
+393.5 MiB by GNU time). With its sending
+rate limited to 400 Mbit/s, the sampled peak was 493 MiB (373 MiB by GNU
+time).
+
+### Settings used in the controlled measurements
+
+| Server | Mode | `--workers` | `--max-in-flight` | `--batch-max`, `--max-wait-us` | Frontend | Connections |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| 192-core VM | `continuous` | 192 | 190 | not used | 16 cores at the lower rates; 48 cores for the capacity runs | 1, or 2 in the two-connection runs |
+| 192-core VM | `batch-fused` | 192 | not used | 192, 5000 | 16 cores at the lower rates; 48 cores for the capacity runs | 1 |
+| 96-core VM | `continuous` | 96 | 94 | not used | 16 cores at 500 and 1,000/s; 48 cores for the capacity runs | 1 |
+| 48-core VM | `continuous` | 48 | 46 | not used | 16 cores up to 2,000/s; 48 cores for the capacity runs | 1 |
+
+Every run used `--max-queue 8192`, the default return budget of 192 responses
+and 64 MiB, `--depth 24`, `--control-samples 2` and `--telemetry-ms 20`. The
+frontend used a 1,000-ms deadline and an 8,192-request pending limit.
 
 ## Records
 
@@ -155,8 +205,8 @@ python3 benches/serving/service-checks.py --binary benches/serving/target/releas
 | `memory` | With a reader that stops reading, computation stops at the return budget and whole-process memory growth stays under an explicit bound |
 
 These are functional checks on one machine. Their latencies are not capacity,
-throughput or speedup evidence; controlled measurements are reported with the
-benchmark results.
+throughput or speedup evidence. Controlled measurements are reported in
+[Serving capacity on one server](../../docs/performance.md#serving-capacity-on-one-server).
 
 ## License
 
