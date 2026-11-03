@@ -75,7 +75,7 @@ jobs:
     timeout-minutes: 150
     env:
       ISABELLE_SHA256: a20a507bc7c1270d8be96a9f3fbec06345387789d2dc2c4d3df6260d47bfb33c
-      ISABELLE_URL: https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/Isabelle2025-2_linux.tar.gz
+      ISABELLE_URL: https://isabelle.in.tum.de/website-Isabelle2025-2/dist/Isabelle2025-2_linux.tar.gz
       AFP_SHA256: c6189c00b5d93c39c59a0f999b8272e48464c34dccc33d99a553b4308314eacf
       AFP_URL: https://www.isa-afp.org/release/afp-2026-08-05.tar.gz
     steps:
