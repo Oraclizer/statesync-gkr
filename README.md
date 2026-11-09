@@ -643,8 +643,8 @@ The v1.2.0 measurements and their same-day v1.1.0 references are described in
 [reproduction guidance](REPRODUCING.md) separates current source checks from
 the checks of the release assets and the attached proof.
 
-The companion paper, *StateSync-GKR: Machine-Checking the Trust Chain from
-Sparse-Merkle State Transitions to GKR Verification*, is available as
+The companion paper, *Soundness of the GKR Protocol for Sparse-Merkle
+Updates, with a Machine-Checked Core*, is available as
 [arXiv:2610.05335](https://arxiv.org/abs/2610.05335). The paper uses the
 arXiv non-exclusive distribution license. This identifier names the formal
 study. The separate engineering paper, *StateSync-GKR: Design and Evaluation
@@ -652,6 +652,9 @@ of a Reusable Sparse GKR Engine*, is available as
 [arXiv:2610.14849](https://arxiv.org/abs/2610.14849) under the arXiv
 non-exclusive distribution license. It connects the engine design to the
 controlled memory, repeated-request and full-proof delivery measurements.
+The Ethereum Research post
+[GKR with a Machine-Checked Core, and a Sparse Prover Made Faster with Byte-Identical Proofs](https://ethresear.ch/t/gkr-with-a-machine-checked-core-and-a-sparse-prover-made-faster-with-byte-identical-proofs/26226)
+presents both papers as one argument.
 The separate dataset remains prepared for review; its dataset DOI, archive
 digest and public download URL are still unassigned. The current data state
 is recorded in the
